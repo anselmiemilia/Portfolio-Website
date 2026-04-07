@@ -886,6 +886,13 @@ footer p {
     justify-content: center;
   }
 
+  .contact-bubble {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin: 2rem auto 0;
+  }
+
   .projekt-detail {
     padding: 8rem 1.5rem 4rem;
   }
