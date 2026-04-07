@@ -209,36 +209,6 @@ nav a:hover::after {
   text-transform: uppercase;
 }
 
-/* Contact Bubble */
-.contact-bubble {
-  position: absolute;
-  right: 12%;
-  top: 42%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 155px;
-  height: 155px;
-  border-radius: 50%;
-  background-color: #f0d8dc;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: rotate(8deg);
-}
-
-.contact-bubble__link {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  color: var(--weiss);
-  text-align: center;
-  line-height: 1.2;
-  padding: 1rem;
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-
-.contact-bubble:hover {
-  transform: rotate(8deg) scale(1.05);
-}
 
 /* ===========================================
    Projects Section - 3 Column Grid with Hover Overlay
@@ -886,12 +856,6 @@ footer p {
     justify-content: center;
   }
 
-  .contact-bubble {
-    position: relative;
-    right: auto;
-    top: auto;
-    margin: 2rem auto 0;
-  }
 
   .projekt-detail {
     padding: 8rem 1.5rem 4rem;
