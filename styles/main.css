@@ -933,12 +933,12 @@ footer a:hover {
   }
 
   .hero {
-    padding: 8rem 1.5rem 1rem;
+    padding: 7rem 1.5rem 0;
     min-height: auto;
   }
 
   #projekte {
-    padding: 1rem 1.5rem 4rem;
+    padding: 0.5rem 1.5rem 4rem;
   }
 
   .projekt-card--wide,
@@ -951,11 +951,11 @@ footer a:hover {
   .projects-row {
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
+    gap: 2.5rem;
   }
 
   .projects-grid {
-    gap: 0;
+    gap: 1rem;
   }
 
   .projects-row--left,
