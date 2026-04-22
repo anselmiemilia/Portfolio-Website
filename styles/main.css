@@ -800,6 +800,7 @@ footer a:hover {
   backdrop-filter: blur(6px);
   color: var(--weiss);
   padding: 0.75rem 2rem;
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
@@ -981,6 +982,21 @@ footer a:hover {
 
   .projekt-galerie {
     width: 100%;
+  }
+
+  .cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+    font-size: 0.75rem;
+  }
+
+  .cookie-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.6rem 1rem;
   }
 }
 
