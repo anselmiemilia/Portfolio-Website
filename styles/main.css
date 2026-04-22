@@ -1011,7 +1011,54 @@ footer a:hover {
   }
 
   .hero h1 {
-    font-size: 3rem;
+    font-size: 2.4rem;
+  }
+
+  .hero .subtitle {
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    padding: 7rem 1.2rem 1rem;
+  }
+
+  /* About Page */
+  .about-section {
+    padding: 7rem 1.2rem 3rem;
+  }
+
+  .about-images {
+    min-width: unset;
+    max-width: 100%;
+  }
+
+  .about-text {
+    min-width: unset;
+  }
+
+  .about-text h1 {
+    font-size: 2.4rem;
+  }
+
+  /* Kontakt Section */
+  .kontakt-section {
+    padding: 2rem 1.2rem;
+    margin: 0 1.2rem;
+  }
+
+  /* Datenschutz */
+  .datenschutz-section {
+    padding: 7rem 1.2rem 3rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 2rem 1.2rem;
+  }
+
+  /* Projekt Detail */
+  .projekt-detail {
+    padding: 7rem 1.2rem 3rem;
   }
 }
 
