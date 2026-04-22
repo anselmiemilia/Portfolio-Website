@@ -763,6 +763,110 @@ footer p {
   opacity: 0.7;
 }
 
+footer a {
+  color: var(--burgunder);
+  text-decoration: none;
+  opacity: 1;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================================
+   Cookie Banner
+   =========================================== */
+
+.cookie-banner {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--burgunder);
+  color: var(--weiss);
+  padding: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  z-index: 1000;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+}
+
+.cookie-banner p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.cookie-banner a {
+  color: var(--rosa);
+  text-decoration: underline;
+}
+
+.cookie-btn {
+  background: var(--weiss);
+  color: var(--burgunder);
+  border: none;
+  padding: 0.5rem 1.2rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+.cookie-btn:hover {
+  background: var(--rosa);
+  color: var(--weiss);
+}
+
+/* ===========================================
+   Datenschutz Page
+   =========================================== */
+
+.datenschutz-section {
+  padding: 10rem 2rem 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.datenschutz-content h1 {
+  font-family: var(--font-headline);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: normal;
+  color: var(--burgunder);
+  margin-bottom: 2.5rem;
+}
+
+.datenschutz-content h2 {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--burgunder);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.datenschutz-content p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--burgunder);
+}
+
+.datenschutz-content a {
+  color: var(--burgunder);
+  text-decoration: underline;
+}
+
+.datenschutz-stand {
+  margin-top: 3rem;
+  opacity: 0.5;
+  font-size: 0.8rem !important;
+}
+
 /* ===========================================
    Responsive Design
    =========================================== */

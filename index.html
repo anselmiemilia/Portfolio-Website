@@ -231,10 +231,26 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 Emilia Anselmi. Alle Rechte vorbehalten.</p>
+    <p>© 2026 Emilia Anselmi. Alle Rechte vorbehalten. · <a href="datenschutz.html">Datenschutz</a></p>
   </footer>
 
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="cookie-banner">
+    <p>Diese Website verwendet keine Tracking-Cookies. Technisch notwendige Cookies können durch den Hosting-Anbieter (GitHub Pages) gesetzt werden. <a href="datenschutz.html">Mehr erfahren</a></p>
+    <button id="cookie-accept" class="cookie-btn">Verstanden</button>
+  </div>
+
   <script src="scripts/carousel.js"></script>
+  <script>
+    // Cookie Banner
+    if (!localStorage.getItem('cookieAccepted')) {
+      document.getElementById('cookie-banner').style.display = 'flex';
+    }
+    document.getElementById('cookie-accept').addEventListener('click', function () {
+      localStorage.setItem('cookieAccepted', 'true');
+      document.getElementById('cookie-banner').style.display = 'none';
+    });
+  </script>
   <script>
     // Scroll-Position speichern wenn man ein Projekt anklickt
     document.querySelectorAll('.projekt-card').forEach(function (card) {
