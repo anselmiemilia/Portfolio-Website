@@ -1090,7 +1090,7 @@ footer a:hover {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 .readmore-btn {
