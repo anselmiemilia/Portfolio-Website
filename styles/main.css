@@ -933,29 +933,47 @@ footer a:hover {
   }
 
   .hero {
-    padding: 7rem 1.5rem 0;
-    min-height: auto;
+    padding: 6rem 1.5rem 0;
+    min-height: 0;
+    margin-bottom: 0;
+  }
+
+  .hero .subtitle {
+    margin-bottom: 0;
   }
 
   #projekte {
-    padding: 0.5rem 1.5rem 4rem;
+    padding: 0 1.5rem 4rem;
+    margin-top: 0;
   }
 
   .projekt-card--wide,
   .projekt-card--mid,
   .projekt-card--narrow {
     width: 100%;
+    height: auto;
+  }
+
+  .projekt-card--wide img,
+  .projekt-card--mid img,
+  .projekt-card--narrow img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .slideshow-images {
     height: 220px;
   }
 
   .projects-row {
     flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
+    align-items: stretch;
+    gap: 1.5rem;
   }
 
   .projects-grid {
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
   .projects-row--left,
@@ -972,7 +990,7 @@ footer a:hover {
     left: auto;
     right: auto;
     background: transparent;
-    padding: 0.5rem 0 0;
+    padding: 0.4rem 0 0;
     text-align: left;
   }
 
