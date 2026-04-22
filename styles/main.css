@@ -934,10 +934,11 @@ footer a:hover {
 
   .hero {
     padding: 8rem 1.5rem 1rem;
+    min-height: auto;
   }
 
   #projekte {
-    padding: 2rem 1.5rem 4rem;
+    padding: 1rem 1.5rem 4rem;
   }
 
   .projekt-card--wide,
@@ -997,6 +998,45 @@ footer a:hover {
     width: 100%;
     text-align: center;
     padding: 0.6rem 1rem;
+  }
+}
+
+/* ===========================================
+   Mehr lesen
+   =========================================== */
+
+.mehr-lesen-wrapper {
+  position: relative;
+}
+
+.mehr-lesen-text {
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.mehr-lesen-text.collapsed {
+  max-height: 5.4em; /* ~3 Zeilen */
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+.mehr-lesen-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--burgunder);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.5rem 0 0;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .mehr-lesen-btn {
+    display: block;
   }
 }
 

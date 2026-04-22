@@ -32,30 +32,35 @@
 
             <div class="about-text">
                 <h1>Meet the Designer!</h1>
-                <p>
-                    Ich heiße Emilia und bin Grafik- & Informationsdesign-Studentin im vierten Semester an der
-                    <em>New Design University</em> in St. Pölten.
-                </p>
-                <p>
-                    Kunst hat für mich – früher oft eher im Unterbewusstsein – schon immer eine wichtige Rolle
-                    gespielt. Als visueller Mensch ist Design für mich nicht einfach nur schön anzusehen. Es hilft
-                    zu verstehen, dient als visuelle Stütze und wirkt gleichzeitig als starkes, eigenständiges Element.
-                </p>
-                <p>
-                    Meine Passion ist es, über meine Kunst und mein Grafikdesign Gefühle zu vermitteln. Meine
-                    Arbeiten sollen sich stilistisch absetzen – und vor allem verstanden und gefühlt werden.
-                </p>
-                <p>
-                    Auch die Illustration begleitet mich seit einigen Jahren, wobei meine wahre Leidenschaft dafür
-                    auf Reisen entstand. Das bewusste Innehalten, das genaue Beobachten eines Ortes und das
-                    Illustrieren direkt vor Ort wecken in mir eine aktive Bewunderung und Wertschätzung für Natur
-                    und Architektur.
-                </p>
-                <p>
-                    Du bist an einer Zusammenarbeit oder einer Auftragsarbeit interessiert? :)<br>
-                    <strong>Melde dich sehr gerne hier bei mir:</strong><br>
-                    <a href="mailto:emilia@anselmi.at" id="kontakt" class="contact-email-inline">emilia@anselmi.at</a>
-                </p>
+                <div class="mehr-lesen-wrapper">
+                    <div class="mehr-lesen-text collapsed" id="aboutText">
+                        <p>
+                            Ich heiße Emilia und bin Grafik- & Informationsdesign-Studentin im vierten Semester an der
+                            <em>New Design University</em> in St. Pölten.
+                        </p>
+                        <p>
+                            Kunst hat für mich – früher oft eher im Unterbewusstsein – schon immer eine wichtige Rolle
+                            gespielt. Als visueller Mensch ist Design für mich nicht einfach nur schön anzusehen. Es hilft
+                            zu verstehen, dient als visuelle Stütze und wirkt gleichzeitig als starkes, eigenständiges Element.
+                        </p>
+                        <p>
+                            Meine Passion ist es, über meine Kunst und mein Grafikdesign Gefühle zu vermitteln. Meine
+                            Arbeiten sollen sich stilistisch absetzen – und vor allem verstanden und gefühlt werden.
+                        </p>
+                        <p>
+                            Auch die Illustration begleitet mich seit einigen Jahren, wobei meine wahre Leidenschaft dafür
+                            auf Reisen entstand. Das bewusste Innehalten, das genaue Beobachten eines Ortes und das
+                            Illustrieren direkt vor Ort wecken in mir eine aktive Bewunderung und Wertschätzung für Natur
+                            und Architektur.
+                        </p>
+                        <p>
+                            Du bist an einer Zusammenarbeit oder einer Auftragsarbeit interessiert? :)<br>
+                            <strong>Melde dich sehr gerne hier bei mir:</strong><br>
+                            <a href="mailto:emilia@anselmi.at" id="kontakt" class="contact-email-inline">emilia@anselmi.at</a>
+                        </p>
+                    </div>
+                    <button class="mehr-lesen-btn" id="mehrLesenBtn" onclick="toggleText()">Mehr lesen</button>
+                </div>
             </div>
 
         </div>
@@ -65,6 +70,16 @@
     <footer>
         <p>© 2026 Emilia Anselmi. Alle Rechte vorbehalten. · <a href="datenschutz.html">Datenschutz</a></p>
     </footer>
+
+    <script>
+        function toggleText() {
+            const text = document.getElementById('aboutText');
+            const btn = document.getElementById('mehrLesenBtn');
+            const isCollapsed = text.classList.contains('collapsed');
+            text.classList.toggle('collapsed');
+            btn.textContent = isCollapsed ? 'Weniger lesen' : 'Mehr lesen';
+        }
+    </script>
 
 </body>
 
