@@ -5,24 +5,25 @@ document.addEventListener('DOMContentLoaded', function () {
   // Nur auf Mobile
   if (window.innerWidth > 768) return;
 
-  // Wrapper bauen
+  // Wrapper bauen — selbe Klassen wie Über mich
   const wrapper = document.createElement('div');
-  wrapper.className = 'readmore-wrapper';
+  wrapper.className = 'mehr-lesen-wrapper';
   beschreibung.parentNode.insertBefore(wrapper, beschreibung);
   wrapper.appendChild(beschreibung);
 
+  // Text in inner div
+  beschreibung.classList.add('mehr-lesen-text', 'collapsed');
+
   // Button
   const btn = document.createElement('button');
-  btn.className = 'readmore-btn';
-  btn.innerHTML = '... Mehr lesen';
+  btn.className = 'mehr-lesen-btn';
+  btn.style.display = 'block';
+  btn.innerHTML = 'Mehr lesen';
   wrapper.appendChild(btn);
 
-  // Collapsed state setzen
-  beschreibung.classList.add('readmore-collapsed');
-
   btn.addEventListener('click', function () {
-    const isCollapsed = beschreibung.classList.contains('readmore-collapsed');
-    beschreibung.classList.toggle('readmore-collapsed');
-    btn.innerHTML = isCollapsed ? 'Weniger lesen' : '... Mehr lesen';
+    const isCollapsed = beschreibung.classList.contains('collapsed');
+    beschreibung.classList.toggle('collapsed');
+    btn.innerHTML = isCollapsed ? 'Weniger lesen' : 'Mehr lesen';
   });
 });
