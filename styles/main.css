@@ -451,6 +451,19 @@ nav a:hover::after {
   flex-wrap: wrap;
 }
 
+.contact-email-inline {
+  color: var(--burgunder);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--burgunder);
+}
+
+.contact-email-inline:hover {
+  color: var(--rosa);
+  border-bottom-color: var(--rosa);
+}
+
 .contact-links a {
   display: inline-flex;
   align-items: center;
