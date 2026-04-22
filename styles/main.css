@@ -1146,6 +1146,15 @@ footer a:hover {
   .projekt-detail {
     padding: 7rem 1.2rem 3rem;
   }
+
+  .projekt-detail h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .projekt-detail .beschreibung {
+    font-size: 1.05rem;
+  }
 }
 
 /* ===========================================
