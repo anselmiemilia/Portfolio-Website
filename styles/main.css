@@ -945,17 +945,40 @@ footer a:hover {
   .projekt-card--mid,
   .projekt-card--narrow {
     width: 100%;
-    height: 250px;
+    height: 220px;
   }
 
   .projects-row {
     flex-direction: column;
     align-items: center;
+    gap: 3rem;
+  }
+
+  .projects-grid {
+    gap: 0;
   }
 
   .projects-row--left,
   .projects-row--right {
     padding: 0;
+  }
+
+  /* Namen immer sichtbar auf Mobile */
+  .projekt-card .projekt-info {
+    position: relative;
+    transform: none;
+    opacity: 1;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    background: transparent;
+    padding: 0.5rem 0 0;
+    text-align: left;
+  }
+
+  .projekt-card h3 {
+    color: var(--burgunder);
+    font-size: 0.8rem;
   }
 
   .projects-quote--overlay {
