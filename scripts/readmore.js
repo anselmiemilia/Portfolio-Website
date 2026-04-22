@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Button
   const btn = document.createElement('button');
   btn.className = 'readmore-btn';
-  btn.innerHTML = '... mehr lesen';
+  btn.innerHTML = '... Mehr lesen';
   wrapper.appendChild(btn);
 
   // Collapsed state setzen
@@ -23,6 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
   btn.addEventListener('click', function () {
     const isCollapsed = beschreibung.classList.contains('readmore-collapsed');
     beschreibung.classList.toggle('readmore-collapsed');
-    btn.innerHTML = isCollapsed ? 'weniger lesen' : '... mehr lesen';
+    btn.innerHTML = isCollapsed ? 'Weniger lesen' : '... Mehr lesen';
   });
 });

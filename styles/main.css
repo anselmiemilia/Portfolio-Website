@@ -1101,11 +1101,13 @@ footer a:hover {
   font-family: var(--font-body);
   font-size: 0.85rem;
   cursor: pointer;
-  padding: 0.2rem 0 0;
+  padding: 0;
+  margin-top: 0.3rem;
   margin-bottom: 2rem;
   text-decoration: underline;
   text-underline-offset: 3px;
   letter-spacing: 0.02em;
+  line-height: 1;
 }
 
 @media (max-width: 480px) {
