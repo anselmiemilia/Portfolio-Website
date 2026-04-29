@@ -408,6 +408,7 @@ nav a:hover::after {
 
 .about-images {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   flex: 1;
   min-width: 300px;
