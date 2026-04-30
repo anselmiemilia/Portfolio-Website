@@ -994,22 +994,9 @@ footer a:hover {
     padding: 0;
   }
 
-  /* Namen immer sichtbar auf Mobile */
+  /* Projekttitel auf Mobile ausgeblendet */
   .projekt-card .projekt-info {
-    position: relative;
-    transform: none;
-    opacity: 1;
-    bottom: auto;
-    left: auto;
-    right: auto;
-    background: transparent;
-    padding: 0.4rem 0 0;
-    text-align: left;
-  }
-
-  .projekt-card h3 {
-    color: var(--burgunder);
-    font-size: 0.8rem;
+    display: none;
   }
 
   .projects-quote--overlay {
