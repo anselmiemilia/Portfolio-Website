@@ -1061,7 +1061,7 @@ footer a:hover {
   .about-slideshow-mobile {
     display: block;
     width: 65%;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto 0.6rem;
     position: relative;
     padding-bottom: 85%;  /* angenehmes Hochformat */
     border-radius: 6px;
