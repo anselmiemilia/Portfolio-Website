@@ -1023,6 +1023,7 @@ footer a:hover {
   .about-content {
     flex-direction: column;
     text-align: center;
+    gap: 0.5rem;
   }
 
   .contact-links {
@@ -1164,7 +1165,7 @@ footer a:hover {
 
   /* About Page */
   .about-section {
-    padding: 4rem 1.2rem 0.5rem;
+    padding: 3rem 1.2rem 0.5rem;
   }
 
   .about-text {
@@ -1173,6 +1174,7 @@ footer a:hover {
 
   .about-text h1 {
     font-size: 2.4rem;
+    margin-bottom: 0.5rem;
   }
 
   /* Kontakt Section */
