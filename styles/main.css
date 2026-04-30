@@ -1165,7 +1165,8 @@ footer a:hover {
 
   /* About Page */
   .about-section {
-    padding: 1rem 1.2rem 3rem;
+    min-height: 0;
+    padding: 1rem 1.2rem 3.5rem;
   }
 
   .about-text {
