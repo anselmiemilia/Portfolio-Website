@@ -1054,7 +1054,12 @@ footer a:hover {
     padding: 0.6rem 1rem;
   }
 
-  /* Über mich: Desktop-Fotos ausblenden, Slideshow einblenden */
+  /* Über mich */
+  .about-section {
+    min-height: 0;
+    padding: 1rem 1.2rem 3.5rem;
+  }
+
   .about-images {
     display: none;
   }
