@@ -1063,7 +1063,7 @@ footer a:hover {
     width: 65%;
     margin: 0 auto 1.5rem;
     position: relative;
-    padding-bottom: 130%;  /* Hochformat ~2:3 */
+    padding-bottom: 85%;  /* angenehmes Hochformat */
     border-radius: 6px;
     overflow: hidden;
     transform: translateZ(0);
