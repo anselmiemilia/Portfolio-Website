@@ -949,7 +949,7 @@ footer a:hover {
   }
 
   #projekte {
-    padding: 2rem 1.5rem 4rem;
+    padding: 2rem 0.75rem 4rem;
     margin-top: 0;
   }
 
@@ -1057,6 +1057,39 @@ footer a:hover {
     text-align: center;
     padding: 0.6rem 1rem;
   }
+
+  /* Über mich: Desktop-Fotos ausblenden, Slideshow einblenden */
+  .about-images {
+    display: none;
+  }
+
+  .about-slideshow-mobile {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 260px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .about-slideshow-mobile img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+  }
+
+  .about-slideshow-mobile img.active {
+    opacity: 1;
+  }
 }
 
 /* ===========================================
@@ -1137,38 +1170,6 @@ footer a:hover {
   /* About Page */
   .about-section {
     padding: 7rem 1.2rem 3rem;
-  }
-
-  .about-images {
-    display: none;
-  }
-
-  /* Mobile Slideshow einblenden */
-  .about-slideshow-mobile {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 260px;
-    border-radius: 6px;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-  }
-
-  .about-slideshow-mobile img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 20%;
-    border-radius: 6px;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-  }
-
-  .about-slideshow-mobile img.active {
-    opacity: 1;
   }
 
   .about-text {
