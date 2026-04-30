@@ -975,13 +975,13 @@ footer a:hover {
   .projekt-card--wide img,
   .projekt-card--mid img,
   .projekt-card--narrow img {
-    height: 160px;
+    height: 210px;
     width: 100%;
     object-fit: cover;
   }
 
   .slideshow-images {
-    height: 160px;
+    height: 210px;
   }
 
   .projects-row--left,
