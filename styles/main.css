@@ -167,13 +167,13 @@ nav a:hover::after {
 }
 
 .hero .subtitle {
-  font-size: 0.75rem;
+  font-size: clamp(0.85rem, 1.3vw, 1.1rem);
   font-weight: 400;
   max-width: 90%;
   line-height: 1.7;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0;
+  letter-spacing: 0.03em;
 }
 
 /* ===========================================
