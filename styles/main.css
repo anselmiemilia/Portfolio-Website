@@ -573,7 +573,8 @@ nav a:hover::after {
   margin: 0 auto;
 }
 
-.projekt-galerie img {
+.projekt-galerie img,
+.projekt-galerie video {
   display: block;
   width: 100%;
   height: auto;
@@ -581,7 +582,6 @@ nav a:hover::after {
   border-radius: 6px;
   break-inside: avoid;
   transition: var(--transition);
-  cursor: pointer;
 }
 
 .projekt-galerie img:hover {
