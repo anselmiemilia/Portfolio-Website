@@ -675,6 +675,15 @@ nav a:hover::after {
   margin-bottom: 2.5rem;
 }
 
+.home-featured-grid {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.home-featured-grid .projekt-card {
+  flex: 1;
+}
+
 .home-prints-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
