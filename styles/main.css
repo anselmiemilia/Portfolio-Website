@@ -553,6 +553,10 @@ nav a:hover::after {
   margin-bottom: 4rem;
 }
 
+.kunst-tab[data-tab="gallery"] {
+  margin-left: 3rem;
+}
+
 .kunst-tab {
   background: none;
   border: none;
