@@ -810,6 +810,16 @@ nav a:hover::after {
   animation: wave-underline 2s linear infinite;
 }
 
+.alle-projekte-wrapper .back-button::before,
+.home-about-text .back-button::before {
+  content: '→';
+  order: 2;
+}
+.alle-projekte-wrapper .back-button:hover::before,
+.home-about-text .back-button:hover::before {
+  transform: translateX(5px);
+}
+
 /* ===========================================
    Footer
    =========================================== */
