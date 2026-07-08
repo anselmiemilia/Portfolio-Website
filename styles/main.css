@@ -659,12 +659,12 @@ nav a:hover::after {
 
 .alle-projekte-wrapper {
   text-align: right;
-  padding: 1rem 0 3rem;
+  padding: 0.5rem 0 0;
 }
 
 /* Homepage sections */
 .home-section {
-  padding: 4rem 12% 5rem;
+  padding: 2.5rem 12% 2.5rem;
 }
 
 .home-section-title {
@@ -673,7 +673,7 @@ nav a:hover::after {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .home-featured-grid {
@@ -688,12 +688,12 @@ nav a:hover::after {
 
 .home-prints-grid {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .home-prints-grid .shop-card {
-  flex: 1;
-  min-width: 0;
+  flex: none;
+  width: 160px;
 }
 
 .shop-grid {
