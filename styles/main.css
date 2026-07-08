@@ -705,7 +705,7 @@ nav a:hover::after {
 
 .shop-grid .shop-card {
   flex: none;
-  width: 180px;
+  width: 150px;
   min-width: 0;
 }
 
@@ -713,6 +713,13 @@ nav a:hover::after {
   display: block;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.shop-card:hover .shop-card-img {
+  opacity: 0.55;
+  transform: translateY(-3px);
 }
 
 .shop-card-img {
@@ -722,6 +729,7 @@ nav a:hover::after {
   border-radius: 6px;
   opacity: 0.35;
   margin-bottom: 0.7rem;
+  transition: var(--transition);
 }
 
 .shop-card-title {
