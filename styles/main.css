@@ -681,12 +681,36 @@ nav a:hover::after {
   gap: 1.5rem;
 }
 
-.home-print-placeholder {
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.shop-card {
   display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.shop-card-img {
+  aspect-ratio: 4 / 3;
   background: var(--rosa);
   border-radius: 6px;
-  aspect-ratio: 3 / 4;
-  opacity: 0.3;
+  opacity: 0.35;
+  margin-bottom: 0.7rem;
+}
+
+.shop-card-title {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+.shop-card-price {
+  font-size: 0.8rem;
+  color: var(--burgunder);
+  opacity: 0.7;
 }
 
 .home-about-inner {
