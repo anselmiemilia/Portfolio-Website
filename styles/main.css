@@ -717,6 +717,7 @@ nav a:hover::after {
 
 .shop-card-img {
   aspect-ratio: 3 / 4;
+  width: 100%;
   background: var(--rosa);
   border-radius: 6px;
   opacity: 0.35;
