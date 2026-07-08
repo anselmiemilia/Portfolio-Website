@@ -697,16 +697,15 @@ nav a:hover::after {
 }
 
 .shop-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 .shop-grid .shop-card {
-  flex: none !important;
-  width: 150px !important;
-  max-width: 150px !important;
+  width: 100%;
 }
 
 .shop-card {
