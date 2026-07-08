@@ -688,24 +688,24 @@ nav a:hover::after {
 
 .home-prints-grid {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .home-prints-grid .shop-card {
-  flex: none;
-  width: 160px;
+  flex: 1;
+  min-width: 0;
 }
 
 .shop-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
   width: 100%;
 }
 
 .shop-grid .shop-card {
-  flex: 0 0 calc(50% - 0.75rem);
-  width: calc(50% - 0.75rem);
+  flex: none;
+  width: 180px;
   min-width: 0;
 }
 
