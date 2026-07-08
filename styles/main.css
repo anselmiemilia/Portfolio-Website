@@ -683,6 +683,7 @@ nav a:hover::after {
 
 .home-featured-grid .projekt-card {
   flex: 1;
+  height: 420px;
 }
 
 .home-prints-grid {
@@ -736,6 +737,7 @@ nav a:hover::after {
 
 .home-about-img {
   width: 35%;
+  aspect-ratio: 4 / 3;
   border-radius: 6px;
   object-fit: cover;
   object-position: center top;
