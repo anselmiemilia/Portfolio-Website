@@ -686,9 +686,13 @@ nav a:hover::after {
 }
 
 .home-prints-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 1.5rem;
+}
+
+.home-prints-grid .shop-card {
+  flex: 1;
+  min-width: 0;
 }
 
 .shop-grid {
