@@ -704,9 +704,9 @@ nav a:hover::after {
 }
 
 .shop-grid .shop-card {
-  flex: none;
-  width: 150px;
-  min-width: 0;
+  flex: none !important;
+  width: 150px !important;
+  max-width: 150px !important;
 }
 
 .shop-card {
