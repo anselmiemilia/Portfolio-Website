@@ -662,6 +662,62 @@ nav a:hover::after {
   padding: 3rem 0 5rem;
 }
 
+/* Homepage sections */
+.home-section {
+  padding: 4rem 5% 5rem;
+}
+
+.home-section-title {
+  font-family: var(--font-headline);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.home-prints-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.home-print-placeholder {
+  display: block;
+  background: var(--rosa);
+  border-radius: 6px;
+  aspect-ratio: 3 / 4;
+  opacity: 0.3;
+}
+
+.home-about-inner {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.home-about-img {
+  width: 35%;
+  border-radius: 6px;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+}
+
+.home-about-text {
+  flex: 1;
+}
+
+.home-about-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+
+.home-about-text .back-button {
+  margin-top: 1rem;
+  display: inline-block;
+}
+
 .back-button-wrapper {
   width: 70%;
   margin: 0 auto;
