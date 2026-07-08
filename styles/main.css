@@ -697,8 +697,8 @@ nav a:hover::after {
 }
 
 .shop-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   width: 100%;
 }
@@ -707,6 +707,8 @@ nav a:hover::after {
   display: block;
   text-decoration: none;
   color: inherit;
+  flex: 0 0 calc(50% - 0.75rem);
+  min-width: 0;
 }
 
 .shop-card-img {
