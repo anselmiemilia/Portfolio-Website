@@ -657,6 +657,11 @@ nav a:hover::after {
   display: block;
 }
 
+.alle-projekte-wrapper {
+  text-align: center;
+  padding: 3rem 0 5rem;
+}
+
 .back-button-wrapper {
   width: 70%;
   margin: 0 auto;
