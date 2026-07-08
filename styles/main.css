@@ -658,20 +658,21 @@ nav a:hover::after {
 }
 
 .alle-projekte-wrapper {
-  text-align: center;
-  padding: 3rem 0 5rem;
+  text-align: right;
+  padding: 1rem 0 3rem;
 }
 
 /* Homepage sections */
 .home-section {
-  padding: 4rem 5% 5rem;
+  padding: 4rem 12% 5rem;
 }
 
 .home-section-title {
-  font-family: var(--font-headline);
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  font-weight: normal;
+  font-family: var(--font-body);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 0.06em;
   margin-bottom: 2.5rem;
 }
 
