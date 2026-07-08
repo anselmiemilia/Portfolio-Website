@@ -689,6 +689,7 @@ nav a:hover::after {
 .home-prints-grid {
   display: flex;
   gap: 1.5rem;
+  max-width: 380px;
 }
 
 .home-prints-grid .shop-card {
