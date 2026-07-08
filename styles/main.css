@@ -538,6 +538,52 @@ nav a:hover::after {
 .kontakt-section .contact-links { justify-content: center; }
 
 /* ===========================================
+   Kunst
+   =========================================== */
+
+.kunst-section {
+  padding: 10rem 3rem 6rem;
+  max-width: 100%;
+}
+
+.kunst-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.kunst-tab {
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--burgunder);
+  cursor: pointer;
+  padding: 0.5rem 1.2rem;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.kunst-tab:hover {
+  border-bottom-color: var(--rosa);
+}
+
+.kunst-tab.active {
+  border-bottom-color: var(--burgunder);
+}
+
+.kunst-content {
+  display: none;
+}
+
+.kunst-content.active {
+  display: block;
+}
+
+/* ===========================================
    Project Detail
    =========================================== */
 

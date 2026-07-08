@@ -25,9 +25,36 @@
     </header>
 
     <!-- Kunst Section -->
-    <section class="projekt-detail">
-        <h1>Kunst</h1>
-        <p class="beschreibung">Beschreibung folgt ...</p>
+    <section class="kunst-section">
+
+        <div class="kunst-tabs">
+            <button class="kunst-tab" data-tab="prints">Shop Prints</button>
+            <button class="kunst-tab" data-tab="originals">Shop Originals</button>
+            <button class="kunst-tab active" data-tab="gallery">Gallery</button>
+        </div>
+
+        <!-- Shop Prints -->
+        <div class="kunst-content" id="tab-prints">
+            <p class="beschreibung" style="text-align:center;">Beschreibung folgt ...</p>
+        </div>
+
+        <!-- Shop Originals -->
+        <div class="kunst-content" id="tab-originals">
+            <p class="beschreibung" style="text-align:center;">Beschreibung folgt ...</p>
+        </div>
+
+        <!-- Gallery -->
+        <div class="kunst-content active" id="tab-gallery">
+            <div class="projekt-galerie">
+                <img src="assets/projects/kunst/Portofino/portofino-3.jpg" alt="Portofino" loading="lazy">
+                <img src="assets/projects/kunst/Portofino/portofinoiphone.jpg" alt="Portofino" loading="lazy">
+                <img src="assets/projects/kunst/Portofino/portofino-5.jpg" alt="Portofino" loading="lazy">
+                <img src="assets/projects/kunst/Portofino/portofino-7.jpg" alt="Portofino" loading="lazy">
+                <img src="assets/projects/kunst/Portofino/portofinoiphone-2.jpg" alt="Portofino" loading="lazy">
+                <img src="assets/projects/kunst/Portofino/portofino-8.jpg" alt="Portofino" loading="lazy">
+            </div>
+        </div>
+
     </section>
 
     <!-- Footer -->
@@ -35,6 +62,17 @@
         <p>© 2026 Emilia Anselmi. Alle Rechte vorbehalten. · <a href="datenschutz.html">Datenschutz</a></p>
     </footer>
 
+    <script src="scripts/lightbox.js"></script>
+    <script>
+        document.querySelectorAll('.kunst-tab').forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                document.querySelectorAll('.kunst-tab').forEach(function (t) { t.classList.remove('active'); });
+                document.querySelectorAll('.kunst-content').forEach(function (c) { c.classList.remove('active'); });
+                tab.classList.add('active');
+                document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
