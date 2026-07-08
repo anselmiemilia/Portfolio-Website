@@ -703,12 +703,16 @@ nav a:hover::after {
   width: 100%;
 }
 
+.shop-grid .shop-card {
+  flex: 0 0 calc(50% - 0.75rem);
+  width: calc(50% - 0.75rem);
+  min-width: 0;
+}
+
 .shop-card {
   display: block;
   text-decoration: none;
   color: inherit;
-  flex: 0 0 calc(50% - 0.75rem);
-  min-width: 0;
 }
 
 .shop-card-img {
