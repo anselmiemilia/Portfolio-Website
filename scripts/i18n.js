@@ -20,8 +20,8 @@
     'meta.desc.home': { de: 'Portfolio von Emilia Anselmi - Grafikdesign Projekte', en: 'Portfolio of Emilia Anselmi - Graphic Design Projects' },
 
     'hero.subtitle': {
-      de: 'Angehende Grafikdesignerin &amp; Künstlerin aus Vorarlberg,<br>studiere Grafik- &amp; Informationsdesign – zur Zeit in Wien.',
-      en: 'Aspiring graphic designer &amp; artist from Vorarlberg, Austria,<br>studying Graphic &amp; Information Design – currently based in Vienna.'
+      de: 'Angehende Grafikdesignerin &amp; Künstlerin aus Vorarlberg',
+      en: 'Aspiring graphic designer &amp; artist from Vorarlberg, Austria'
     },
 
     'home.prints.cta': { de: 'Zu Kunst', en: 'To Art' },
