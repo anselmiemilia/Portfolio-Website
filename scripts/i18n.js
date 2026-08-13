@@ -25,7 +25,7 @@
     },
 
     'home.prints.cta': { de: 'Zu Kunst', en: 'To Art' },
-    'home.originale.title': { de: 'Originale', en: 'Originals' },
+    'home.printsOriginale.title': { de: 'Prints & Originale', en: 'Prints & Originals' },
     'home.projekte.title': { de: 'Projekte', en: 'Projects' },
     'home.projekte.cta': { de: 'Zu den Projekten', en: 'See all projects' },
     'home.about.title': { de: 'Über mich', en: 'About me' },
@@ -40,8 +40,12 @@
 
     'kontakt.title': { de: 'Kontakt', en: 'Contact' },
     'kontakt.text': {
-      de: 'Du hast Fragen, eine Anfrage zu einer Auftragsarbeit oder sonstiges was du mit mir teilen möchtest? Kontaktiere mich gerne hier:',
-      en: 'Do you have questions, an inquiry about commissioned work, or anything else you’d like to share with me? Feel free to get in touch here:'
+      de: 'Du hast Fragen, eine Anfrage zu einer Auftragsarbeit oder sonstiges was du mit mir teilen möchtest?',
+      en: 'Do you have questions, an inquiry about commissioned work, or anything else you’d like to share with me?'
+    },
+    'kontakt.text2': {
+      de: 'Kontaktiere mich gerne hier:',
+      en: 'Feel free to get in touch here:'
     },
 
     'cookie.text': {

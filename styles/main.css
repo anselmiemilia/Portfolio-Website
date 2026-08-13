@@ -750,15 +750,38 @@ nav a:hover::after {
   padding: 3rem 1rem;
 }
 
-.home-prints-grid {
-  display: flex;
-  gap: 1rem;
+.prints-preview {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
 }
 
-.home-prints-grid .shop-card {
-  flex: none;
-  width: 130px;
+.prints-preview-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
 }
+
+.prints-preview-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 6, 10, 0.68);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.prints-preview-overlay .coming-soon { padding: 0; }
+
+.prints-preview-overlay .back-button { color: var(--weiss); margin-top: 0; }
 
 .shop-grid {
   display: flex;
@@ -883,12 +906,14 @@ nav a:hover::after {
 }
 
 .alle-projekte-wrapper .back-button::before,
-.home-about-text .back-button::before {
+.home-about-text .back-button::before,
+.prints-preview-overlay .back-button::before {
   content: '→';
   order: 2;
 }
 .alle-projekte-wrapper .back-button:hover::before,
-.home-about-text .back-button:hover::before {
+.home-about-text .back-button:hover::before,
+.prints-preview-overlay .back-button:hover::before {
   transform: translateX(5px);
 }
 
