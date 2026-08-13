@@ -583,10 +583,6 @@ nav a:hover::after {
   margin-bottom: 4rem;
 }
 
-.kunst-tab[data-tab="gallery"] {
-  margin-left: 3rem;
-}
-
 .kunst-tab {
   background: none;
   border: none;
@@ -740,6 +736,38 @@ nav a:hover::after {
   gap: 1rem;
   width: 320px;
   margin: 0 auto;
+}
+
+.shop-preview {
+  position: relative;
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.shop-grid-preview {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.shop-grid-preview .shop-card {
+  flex: 1;
+  max-width: 340px;
+}
+
+.shop-veil {
+  position: absolute;
+  inset: 0;
+  background: rgba(214, 155, 165, 0.3);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shop-veil .coming-soon {
+  padding: 0;
 }
 
 .shop-grid .shop-card {
@@ -1086,6 +1114,9 @@ footer a:hover { text-decoration: underline; }
     min-height: 0;
     margin-bottom: 0;
   }
+
+  /* Kunst shop preview */
+  .shop-grid-preview { gap: 1rem; }
 
   /* Projects */
   #projekte {
