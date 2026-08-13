@@ -746,7 +746,7 @@ nav a:hover::after {
 
 .coming-soon {
   font-family: var(--font-headline);
-  font-size: clamp(2.4rem, 7vw, 4.2rem);
+  font-size: clamp(2.8rem, 8vw, 4.5rem);
   color: var(--rosa);
   text-align: center;
   padding: 3rem 1rem;
@@ -1166,6 +1166,9 @@ footer a:hover { text-decoration: underline; }
     margin-bottom: 0;
   }
 
+  /* Prints & Originale preview */
+  .prints-preview-overlay { padding-top: 2.5rem; }
+
   /* Projects */
   #projekte {
     padding: 2rem 0.75rem 4rem;
@@ -1296,7 +1299,11 @@ footer a:hover { text-decoration: underline; }
     gap: 1.5rem;
   }
 
-  .home-about-img { width: 100%; }
+  .home-about-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+  }
 
   .home-about-p2 { display: none; }
 }
