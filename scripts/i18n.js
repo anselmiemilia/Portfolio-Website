@@ -40,8 +40,8 @@
 
     'kontakt.title': { de: 'Kontakt', en: 'Contact' },
     'kontakt.text': {
-      de: 'Interesse an einer Zusammenarbeit?<br>Schreib mir gerne! :)',
-      en: 'Interested in working together?<br>Feel free to write to me! :)'
+      de: 'Du hast Fragen, eine Anfrage zu einer Auftragsarbeit oder sonstiges was du mit mir teilen möchtest? Kontaktiere mich gerne hier:',
+      en: 'Do you have questions, an inquiry about commissioned work, or anything else you’d like to share with me? Feel free to get in touch here:'
     },
 
     'cookie.text': {
