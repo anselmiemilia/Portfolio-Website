@@ -686,27 +686,35 @@ nav a:hover::after {
   height: 420px;
 }
 
+.coming-soon {
+  font-family: var(--font-headline);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: var(--rosa);
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
 .home-prints-grid {
   display: flex;
-  gap: 1.5rem;
-  max-width: 380px;
+  gap: 1rem;
 }
 
 .home-prints-grid .shop-card {
-  flex: 1;
-  min-width: 0;
+  flex: none;
+  width: 130px;
 }
 
 .shop-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  max-width: 420px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 320px;
   margin: 0 auto;
 }
 
 .shop-grid .shop-card {
-  width: 100%;
+  flex: none;
+  width: calc(50% - 0.5rem);
 }
 
 .shop-card {
