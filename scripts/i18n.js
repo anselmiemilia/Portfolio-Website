@@ -25,6 +25,7 @@
     },
 
     'home.prints.cta': { de: 'Zu Kunst', en: 'To Art' },
+    'home.originale.title': { de: 'Originale', en: 'Originals' },
     'home.projekte.title': { de: 'Projekte', en: 'Projects' },
     'home.projekte.cta': { de: 'Zu den Projekten', en: 'See all projects' },
     'home.about.title': { de: 'Über mich', en: 'About me' },

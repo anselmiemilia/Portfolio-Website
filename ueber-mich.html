@@ -7,7 +7,7 @@
     <meta name="description" content="Über Emilia Anselmi - Grafikdesignerin" data-i18n="meta.desc.about">
     <title data-i18n="meta.title.about">Über mich | Emilia Anselmi</title>
     <link rel="icon" type="image/png" href="assets/logo/favicon.png">
-    <link href="styles/main.css?v=50" rel="stylesheet">
+    <link href="styles/main.css?v=52" rel="stylesheet">
   <script src="scripts/i18n.js" defer></script>
 </head>
 
@@ -32,13 +32,6 @@
 
             <div class="about-images">
                 <img src="assets/me/Emilia_Anselmi.jpg" alt="Emilia Anselmi" loading="lazy">
-                <img src="assets/me/Emilia_Anselmi_2.jpg" alt="Emilia Anselmi" loading="lazy">
-            </div>
-
-            <!-- Mobile-only Slideshow -->
-            <div class="about-slideshow-mobile">
-                <img src="assets/me/Emilia_Anselmi.jpg" alt="Emilia Anselmi" class="active">
-                <img src="assets/me/Emilia_Anselmi_2.jpg" alt="Emilia Anselmi">
             </div>
 
             <div class="about-text">
@@ -95,18 +88,6 @@
             text.classList.toggle('collapsed');
             btn.textContent = isCollapsed ? 'Weniger lesen' : 'Mehr lesen';
         }
-
-        // Mobile Slideshow für Über-mich-Fotos
-        (function () {
-            var slides = document.querySelectorAll('.about-slideshow-mobile img');
-            if (!slides.length) return;
-            var current = 0;
-            setInterval(function () {
-                slides[current].classList.remove('active');
-                current = (current + 1) % slides.length;
-                slides[current].classList.add('active');
-            }, 3000);
-        })();
     </script>
 
 </body>
