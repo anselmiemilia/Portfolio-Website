@@ -7,7 +7,8 @@
     <meta name="description" content="Plakatgestaltung Projekt - Emilia Anselmi">
     <title>Plakatgestaltung | Emilia Anselmi</title>
     <link rel="icon" type="image/png" href="../assets/logo/favicon.png">
-    <link href="../styles/main.css?v=48" rel="stylesheet">
+    <link href="../styles/main.css?v=49" rel="stylesheet">
+  <script src="../scripts/i18n.js" defer></script>
 </head>
 
 <body>
@@ -16,11 +17,12 @@
     <header>
         <a href="../index.html" class="logo"><img src="../assets/logo/LOGO_EA_web.png" alt="EA Logo" class="logo-default"><img src="../assets/logo/LOGO_EA_rosa_web.png" alt="EA Logo" class="logo-hover"></a>
         <nav>
-            <a href="../index.html">Home</a>
-            <a href="../kunst.html">Kunst</a>
-            <a href="../projekte.html">Projekte</a>
-            <a href="../ueber-mich.html">Über mich</a>
-            <a href="../index.html#kontakt">Kontakt</a>
+            <a href="../index.html"><span data-i18n="nav.home">Home</span></a>
+            <a href="../kunst.html"><span data-i18n="nav.kunst">Kunst</span></a>
+            <a href="../projekte.html"><span data-i18n="nav.projekte">Projekte</span></a>
+            <a href="../ueber-mich.html"><span data-i18n="nav.about">Über mich</span></a>
+            <a href="../index.html#kontakt"><span data-i18n="nav.kontakt">Kontakt</span></a>
+            <span class="lang-toggle"><button type="button" class="lang-btn" data-lang="de">DE</button><span class="lang-sep">/</span><button type="button" class="lang-btn" data-lang="en">EN</button></span>
         </nav>
     </header>
 
@@ -44,13 +46,13 @@
             <img src="../assets/projects/plakatgestaltung/IMG_7693.jpg" alt="Plakatgestaltung 4" loading="lazy">
         </div>
 
-        <div class="back-button-wrapper"><a href="../projekte.html" class="back-button">Zurück zu Projekte</a>
+        <div class="back-button-wrapper"><a href="../projekte.html" class="back-button" data-i18n="ui.zurueckProjekte">Zurück zu Projekte</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 Emilia Anselmi. Alle Rechte vorbehalten.</p>
+        <p>© 2026 Emilia Anselmi. <span data-i18n="footer.rights">Alle Rechte vorbehalten.</span></p>
     </footer>
 
     <script src="../scripts/lightbox.js"></script>

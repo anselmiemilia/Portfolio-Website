@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Über Emilia Anselmi - Grafikdesignerin">
-    <title>Über mich | Emilia Anselmi</title>
+    <meta name="description" content="Über Emilia Anselmi - Grafikdesignerin" data-i18n="meta.desc.about">
+    <title data-i18n="meta.title.about">Über mich | Emilia Anselmi</title>
     <link rel="icon" type="image/png" href="assets/logo/favicon.png">
-    <link href="styles/main.css?v=48" rel="stylesheet">
+    <link href="styles/main.css?v=49" rel="stylesheet">
+  <script src="scripts/i18n.js" defer></script>
 </head>
 
 <body>
@@ -16,11 +17,12 @@
     <header>
         <a href="index.html" class="logo"><img src="assets/logo/LOGO_EA_web.png" alt="EA Logo" class="logo-default"><img src="assets/logo/LOGO_EA_rosa_web.png" alt="EA Logo" class="logo-hover"></a>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="kunst.html">Kunst</a>
-            <a href="projekte.html">Projekte</a>
-            <a href="ueber-mich.html">Über mich</a>
-            <a href="index.html#kontakt">Kontakt</a>
+            <a href="index.html"><span data-i18n="nav.home">Home</span></a>
+            <a href="kunst.html"><span data-i18n="nav.kunst">Kunst</span></a>
+            <a href="projekte.html"><span data-i18n="nav.projekte">Projekte</span></a>
+            <a href="ueber-mich.html"><span data-i18n="nav.about">Über mich</span></a>
+            <a href="index.html#kontakt"><span data-i18n="nav.kontakt">Kontakt</span></a>
+            <span class="lang-toggle"><button type="button" class="lang-btn" data-lang="de">DE</button><span class="lang-sep">/</span><button type="button" class="lang-btn" data-lang="en">EN</button></span>
         </nav>
     </header>
 
@@ -43,34 +45,34 @@
                 <h1>Meet the Designer!</h1>
                 <div class="mehr-lesen-wrapper">
                     <div class="mehr-lesen-text" id="aboutText">
-                        <p>
+                        <p data-i18n-html="about.p1">
                             Ich heiße Emilia und bin Grafik- & Informationsdesign-Studentin im vierten Semester an der
                             <em>New Design University</em> in St. Pölten.
                         </p>
-                        <p>
+                        <p data-i18n-html="about.p2">
                             Kunst hat für mich – früher oft eher im Unterbewusstsein – schon immer eine wichtige Rolle
                             gespielt. Als visueller Mensch ist Design für mich nicht einfach nur schön anzusehen. Es hilft
                             zu verstehen, dient als visuelle Stütze und wirkt gleichzeitig als starkes, eigenständiges Element.
                         </p>
-                        <p>
+                        <p data-i18n-html="about.p3">
                             Meine Passion ist es, über meine Kunst und mein Grafikdesign Gefühle zu vermitteln. Meine
                             Arbeiten sollen sich stilistisch absetzen – und vor allem verstanden und gefühlt werden.
                         </p>
-                        <p>
+                        <p data-i18n-html="about.p4">
                             Auch die Illustration begleitet mich seit einigen Jahren, wobei meine wahre Leidenschaft dafür
                             auf Reisen entstand. Das bewusste Innehalten, das genaue Beobachten eines Ortes und das
                             Illustrieren direkt vor Ort wecken in mir eine aktive Bewunderung und Wertschätzung für Natur
                             und Architektur.
                         </p>
-                        <p>
+                        <p data-i18n-html="about.p5">
                             Du bist an einer Zusammenarbeit oder einer Auftragsarbeit interessiert? :)
                         </p>
                         <p>
-                            <strong>Melde dich sehr gerne hier bei mir:</strong><br>
+                            <strong data-i18n="about.contact1">Melde dich sehr gerne hier bei mir:</strong><br>
                             <a href="mailto:emilia@anselmi.at" id="kontakt" class="contact-email-inline">emilia@anselmi.at</a>
                         </p>
                         <p>
-                            <strong>Bleib hier up to date:</strong><br>
+                            <strong data-i18n="about.contact2">Bleib hier up to date:</strong><br>
                             <a href="https://instagram.com/atelieranselmi" target="_blank" class="contact-email-inline">@atelieranselmi</a>
                         </p>
                     </div>
@@ -82,7 +84,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2026 Emilia Anselmi. Alle Rechte vorbehalten. · <a href="datenschutz.html">Datenschutz</a></p>
+        <p>© 2026 Emilia Anselmi. <span data-i18n="footer.rights">Alle Rechte vorbehalten.</span> · <a href="datenschutz.html" data-i18n="footer.datenschutz">Datenschutz</a></p>
     </footer>
 
     <script>

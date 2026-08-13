@@ -110,8 +110,38 @@ header {
 
 nav {
   display: flex;
+  align-items: center;
   gap: 2.5rem;
 }
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lang-sep {
+  font-size: 0.85rem;
+  opacity: 0.4;
+}
+
+.lang-btn {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--burgunder);
+  opacity: 0.4;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.lang-btn:hover { opacity: 0.75; }
+.lang-btn.active { opacity: 1; font-weight: 700; }
 
 nav a {
   font-size: 0.85rem;
@@ -1046,8 +1076,9 @@ footer a:hover { text-decoration: underline; }
 
   /* Header */
   header { padding: 1rem 1.5rem; }
-  nav { gap: 1.5rem; }
+  nav { gap: 1.5rem; flex-wrap: wrap; }
   nav a { font-size: 0.75rem; }
+  .lang-btn { font-size: 0.75rem; }
 
   /* Hero */
   .hero {

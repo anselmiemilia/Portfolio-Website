@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Portfolio von Emilia Anselmi - Grafikdesign Projekte">
+  <meta name="description" content="Portfolio von Emilia Anselmi - Grafikdesign Projekte" data-i18n="meta.desc.home">
   <title>Emilia Anselmi | Portfolio</title>
   <link rel="icon" type="image/png" href="assets/logo/favicon.png">
-  <link href="styles/main.css?v=48" rel="stylesheet">
+  <link href="styles/main.css?v=49" rel="stylesheet">
+  <script src="scripts/i18n.js" defer></script>
 </head>
 
 <body>
@@ -16,18 +17,19 @@
   <header>
     <a href="index.html" class="logo"><img src="assets/logo/LOGO_EA_web.png" alt="EA Logo" class="logo-default"><img src="assets/logo/LOGO_EA_rosa_web.png" alt="EA Logo" class="logo-hover"></a>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="kunst.html">Kunst</a>
-      <a href="projekte.html">Projekte</a>
-      <a href="ueber-mich.html">Über mich</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
+      <a href="index.html"><span data-i18n="nav.home">Home</span></a>
+      <a href="kunst.html"><span data-i18n="nav.kunst">Kunst</span></a>
+      <a href="projekte.html"><span data-i18n="nav.projekte">Projekte</span></a>
+      <a href="ueber-mich.html"><span data-i18n="nav.about">Über mich</span></a>
+      <a href="#kontakt"><span data-i18n="nav.kontakt">Kontakt</span></a>
+            <span class="lang-toggle"><button type="button" class="lang-btn" data-lang="de">DE</button><span class="lang-sep">/</span><button type="button" class="lang-btn" data-lang="en">EN</button></span>
+        </nav>
   </header>
 
   <!-- Hero -->
   <section class="hero">
     <h1>Emilia Anselmi</h1>
-    <p class="subtitle">Angehende Grafikdesignerin &amp; Künstlerin aus Vorarlberg,<br>studiere Grafik- &amp; Informationsdesign – zur Zeit in Wien.</p>
+    <p class="subtitle" data-i18n-html="hero.subtitle">Angehende Grafikdesignerin &amp; Künstlerin aus Vorarlberg,<br>studiere Grafik- &amp; Informationsdesign – zur Zeit in Wien.</p>
   </section>
 
   <!-- Prints -->
@@ -35,13 +37,13 @@
     <h2 class="home-section-title">Prints</h2>
     <div class="coming-soon">Coming soon</div>
     <div class="alle-projekte-wrapper">
-      <a href="kunst.html" class="back-button">Zu Kunst</a>
+      <a href="kunst.html" class="back-button" data-i18n="home.prints.cta">Zu Kunst</a>
     </div>
   </section>
 
   <!-- Projekte -->
   <section class="home-section">
-    <h2 class="home-section-title">Projekte</h2>
+    <h2 class="home-section-title" data-i18n="home.projekte.title">Projekte</h2>
     <div class="home-featured-grid">
       <a href="projekte/datenvisualisierung.html" class="projekt-card projekt-card--mid">
         <div class="slideshow-images">
@@ -63,27 +65,27 @@
       </a>
     </div>
     <div class="alle-projekte-wrapper">
-      <a href="projekte.html" class="back-button">Zu den Projekten</a>
+      <a href="projekte.html" class="back-button" data-i18n="home.projekte.cta">Zu den Projekten</a>
     </div>
   </section>
 
   <!-- Über mich -->
   <section class="home-section">
-    <h2 class="home-section-title">Über mich</h2>
+    <h2 class="home-section-title" data-i18n="home.about.title">Über mich</h2>
     <div class="home-about-inner">
       <img src="assets/me/Emilia_Anselmi_2.jpg" alt="Emilia Anselmi" class="home-about-img">
       <div class="home-about-text">
-        <p>Ich heiße Emilia und bin Grafik- & Informationsdesign-Studentin im vierten Semester an der <em>New Design University</em> in St. Pölten.</p>
-        <p>Kunst hat für mich – früher oft eher im Unterbewusstsein – schon immer eine wichtige Rolle gespielt. Als visueller Mensch ist Design für mich nicht einfach nur schön anzusehen.</p>
-        <a href="ueber-mich.html" class="back-button">Mehr lesen</a>
+        <p data-i18n-html="home.about.p1">Ich heiße Emilia und bin Grafik- & Informationsdesign-Studentin im vierten Semester an der <em>New Design University</em> in St. Pölten.</p>
+        <p data-i18n-html="home.about.p2">Kunst hat für mich – früher oft eher im Unterbewusstsein – schon immer eine wichtige Rolle gespielt. Als visueller Mensch ist Design für mich nicht einfach nur schön anzusehen.</p>
+        <a href="ueber-mich.html" class="back-button" data-i18n="ui.mehrLesen">Mehr lesen</a>
       </div>
     </div>
   </section>
 
   <!-- Kontakt -->
   <section id="kontakt" class="kontakt-section">
-    <h2>Kontakt</h2>
-    <p>Interesse an einer Zusammenarbeit?<br>Schreib mir gerne! :)</p>
+    <h2 data-i18n="kontakt.title">Kontakt</h2>
+    <p data-i18n-html="kontakt.text">Interesse an einer Zusammenarbeit?<br>Schreib mir gerne! :)</p>
     <div class="contact-links">
       <a href="mailto:emilia@anselmi.at">emilia@anselmi.at</a>
       <a href="https://instagram.com/atelieranselmi" target="_blank">@atelieranselmi</a>
@@ -92,13 +94,13 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 Emilia Anselmi. Alle Rechte vorbehalten. · <a href="datenschutz.html">Datenschutz</a></p>
+    <p>© 2026 Emilia Anselmi. <span data-i18n="footer.rights">Alle Rechte vorbehalten.</span> · <a href="datenschutz.html" data-i18n="footer.datenschutz">Datenschutz</a></p>
   </footer>
 
   <!-- Cookie Banner -->
   <div id="cookie-banner" class="cookie-banner">
-    <p>Diese Website verwendet keine Tracking-Cookies. Technisch notwendige Cookies können durch den Hosting-Anbieter (GitHub Pages) gesetzt werden. <a href="datenschutz.html">Mehr erfahren</a></p>
-    <button id="cookie-accept" class="cookie-btn">Verstanden</button>
+    <p data-i18n-html="cookie.text">Diese Website verwendet keine Tracking-Cookies. Technisch notwendige Cookies können durch den Hosting-Anbieter (GitHub Pages) gesetzt werden. <a href="datenschutz.html">Mehr erfahren</a></p>
+    <button id="cookie-accept" class="cookie-btn" data-i18n="cookie.accept">Verstanden</button>
   </div>
 
   <script src="scripts/carousel.js"></script>

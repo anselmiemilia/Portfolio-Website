@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const btn = document.createElement('button');
   btn.className = 'mehr-lesen-btn';
   btn.style.display = 'block';
-  btn.textContent = 'Mehr lesen';
+  btn.textContent = window.i18n ? window.i18n.t('ui.mehrLesen') : 'Mehr lesen';
 
   // Struktur aufbauen
   beschreibung.parentNode.insertBefore(outer, beschreibung);
@@ -26,6 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
   btn.addEventListener('click', function () {
     const isCollapsed = inner.classList.contains('collapsed');
     inner.classList.toggle('collapsed');
-    btn.textContent = isCollapsed ? 'Weniger lesen' : 'Mehr lesen';
+    btn.textContent = window.i18n
+      ? window.i18n.t(isCollapsed ? 'ui.wenigerLesen' : 'ui.mehrLesen')
+      : (isCollapsed ? 'Weniger lesen' : 'Mehr lesen');
+  });
+
+  document.addEventListener('langchange', function () {
+    const isCollapsed = inner.classList.contains('collapsed');
+    btn.textContent = window.i18n.t(isCollapsed ? 'ui.mehrLesen' : 'ui.wenigerLesen');
   });
 });
