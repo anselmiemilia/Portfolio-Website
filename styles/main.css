@@ -197,9 +197,9 @@ nav a:hover::after {
 }
 
 .hero-wordmark {
-  width: min(90%, 650px);
+  width: min(75%, 520px);
   height: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 2.25rem;
 }
 
 .hero .subtitle {
