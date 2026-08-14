@@ -62,6 +62,10 @@
 
     'produkt.info.title': { de: 'Info', en: 'Info' },
     'produkt.info.folgt': { de: 'Info folgt ...', en: 'Info coming soon ...' },
+    'produkt.abendrosa.info': {
+      de: 'Acryl und Ölpastel auf Leinwand, 30 × 40 cm – gemalt im Juli 2026. Inspiriert von einem abendlichen Spaziergang durch Marrakesch an einem warmen Februarabend, zeigt dieses Bild die Koutoubia-Moschee im pulsierenden Treiben der Stadt.',
+      en: 'Acrylic and oil pastel on canvas, 30 × 40 cm – painted in July 2026. Inspired by an evening walk through Marrakesh on a warm February evening, this piece captures the Koutoubia Mosque amid the city’s lively evening bustle.'
+    },
     'produkt.details.title': { de: 'Details', en: 'Details' },
     'produkt.details.groesse': { de: 'Größe', en: 'Size' },
     'produkt.details.papier': { de: 'Papierdicke', en: 'Paper thickness' },
