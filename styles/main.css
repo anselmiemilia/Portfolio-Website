@@ -654,19 +654,22 @@ nav a:hover::after {
 }
 
 .shop-prints-card {
-  position: relative;
   display: block;
   flex: 1;
   max-width: 580px;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  border-radius: 6px;
   cursor: pointer;
   color: inherit;
   text-decoration: none;
 }
 
-.shop-prints-card img {
+.shop-prints-img-wrap {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.shop-prints-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -674,7 +677,7 @@ nav a:hover::after {
   transition: transform 1.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.shop-prints-card:hover img {
+.shop-prints-card:hover .shop-prints-img-wrap img {
   transform: scale(1.05);
 }
 
@@ -700,6 +703,10 @@ nav a:hover::after {
   font-size: clamp(1.4rem, 2.5vw, 1.9rem);
   color: var(--weiss);
   font-weight: normal;
+}
+
+.shop-prints-caption {
+  display: none;
 }
 
 /* ===========================================
@@ -866,6 +873,10 @@ nav a:hover::after {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 2rem;
+}
+
+.produkt-related .shop-prints-card {
+  max-width: 260px;
 }
 
 /* ===========================================
@@ -1430,15 +1441,15 @@ footer a:hover { text-decoration: underline; }
 
   .shop-prints-card { max-width: 480px; width: 100%; }
 
-  .shop-prints-overlay {
-    opacity: 1;
-    background: rgba(101, 17, 34, 0.35);
-    align-items: flex-end;
-    padding: 0.8rem;
-  }
+  .shop-prints-overlay { display: none; }
 
-  .shop-prints-overlay span {
-    font-size: 1.1rem;
+  .shop-prints-caption {
+    display: block;
+    margin-top: 0.7rem;
+    font-family: var(--font-headline);
+    font-size: 1.3rem;
+    color: var(--burgunder);
+    text-align: center;
   }
 
   .produkt-detail { padding: 8rem 1.2rem 4rem; }
@@ -1448,6 +1459,8 @@ footer a:hover { text-decoration: underline; }
   .produkt-gallery { position: static; width: 100%; }
 
   .produkt-related { margin-top: 4rem; }
+
+  .produkt-related .shop-prints-card { max-width: 220px; }
 
   /* Home – featured projects */
   .home-section { padding: 2.5rem 1.2rem; }
