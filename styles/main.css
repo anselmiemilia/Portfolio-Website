@@ -833,6 +833,7 @@ nav a:hover::after {
 
 .produkt-kaufen-btn:hover {
   background: var(--rosa);
+  color: var(--weiss);
 }
 
 .produkt-widerruf-hinweis {
