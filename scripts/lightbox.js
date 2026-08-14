@@ -1,6 +1,6 @@
 // Lightbox Gallery Functionality
 document.addEventListener('DOMContentLoaded', function () {
-  const galleryImages = document.querySelectorAll('.projekt-galerie img');
+  const galleryImages = document.querySelectorAll('.projekt-galerie img, .produkt-gallery-main img');
 
   if (galleryImages.length === 0) return;
 
@@ -26,6 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let currentIndex = 0;
   const images = Array.from(galleryImages);
+
+  if (images.length <= 1) {
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+  }
 
   // Open lightbox
   function openLightbox(index) {

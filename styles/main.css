@@ -751,6 +751,7 @@ nav a:hover::after {
   height: 100%;
   object-fit: cover;
   display: block;
+  cursor: zoom-in;
 }
 
 .produkt-gallery-thumbs {
@@ -1003,7 +1004,7 @@ nav a:hover::after {
   position: relative;
   width: 100%;
   max-width: 1200px;
-  height: clamp(140px, 16vw, 210px);
+  height: clamp(110px, 13vw, 165px);
   margin: 0 auto 1.5rem;
   border-radius: 6px;
   overflow: hidden;
@@ -1030,7 +1031,7 @@ nav a:hover::after {
 
 .prints-preview-overlay .coming-soon {
   padding: 0;
-  line-height: 1;
+  line-height: 0.6;
   font-size: clamp(2.6rem, 6vw, 4.2rem);
 }
 
@@ -1420,9 +1421,9 @@ footer a:hover { text-decoration: underline; }
   }
 
   /* Prints & Originale preview */
-  .prints-preview { height: 150px; }
+  .prints-preview { height: 120px; }
   .prints-preview-overlay { gap: 0; padding: 0 1rem; }
-  .prints-preview-overlay .coming-soon { font-size: 2.6rem; line-height: 1; }
+  .prints-preview-overlay .coming-soon { font-size: 2.6rem; line-height: 0.6; }
   .prints-preview-overlay .back-button { font-size: 0.75rem; }
 
   /* Projects */
