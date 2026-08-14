@@ -60,6 +60,18 @@
     'ui.zurueckProjekte': { de: 'Zurück zu Projekte', en: 'Back to Projects' },
     'ui.zurueckKunst': { de: 'Zurück zu Kunst', en: 'Back to Art' },
 
+    'produkt.info.title': { de: 'Info', en: 'Info' },
+    'produkt.info.folgt': { de: 'Info folgt ...', en: 'Info coming soon ...' },
+    'produkt.details.title': { de: 'Details', en: 'Details' },
+    'produkt.details.groesse': { de: 'Größe', en: 'Size' },
+    'produkt.details.papier': { de: 'Papierdicke', en: 'Paper thickness' },
+    'produkt.details.papier.folgt': { de: 'Folgt ...', en: 'Coming soon ...' },
+    'produkt.details.druck': { de: 'Druck', en: 'Print' },
+    'produkt.details.druck.folgt': { de: 'Folgt ...', en: 'Coming soon ...' },
+    'produkt.details.versand': { de: 'Versand', en: 'Shipping' },
+    'produkt.details.versand.folgt': { de: 'Folgt ...', en: 'Coming soon ...' },
+    'produkt.related.title': { de: 'Weitere Prints', en: 'More Prints' },
+
     'about.p1': {
       de: 'Ich heiße Emilia und bin Grafik- & Informationsdesign-Studentin im vierten Semester an der\n                            <em>New Design University</em> in St. Pölten.',
       en: 'My name is Emilia and I’m a Graphic &amp; Information Design student in my fourth semester at the\n                            <em>New Design University</em> in St. Pölten, Austria.'
