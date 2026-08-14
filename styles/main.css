@@ -1031,6 +1031,7 @@ nav a:hover::after {
 
 .prints-preview-overlay .coming-soon {
   padding: 0;
+  margin-top: 1.4rem;
   line-height: 0.6;
   font-size: clamp(2.6rem, 6vw, 4.2rem);
 }
@@ -1423,7 +1424,7 @@ footer a:hover { text-decoration: underline; }
   /* Prints & Originale preview */
   .prints-preview { height: 120px; }
   .prints-preview-overlay { gap: 0; padding: 0 1rem; }
-  .prints-preview-overlay .coming-soon { font-size: 2.6rem; line-height: 0.6; }
+  .prints-preview-overlay .coming-soon { font-size: 2.6rem; line-height: 0.6; margin-top: 1rem; }
   .prints-preview-overlay .back-button { font-size: 0.75rem; }
 
   /* Projects */
