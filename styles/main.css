@@ -973,6 +973,10 @@ nav a:hover::after {
   padding: 2.5rem 12% 2.5rem;
 }
 
+.home-prints-section {
+  padding-top: 7rem;
+}
+
 .home-section-title {
   font-family: var(--font-body);
   font-size: clamp(1.1rem, 2.5vw, 1.75rem);
