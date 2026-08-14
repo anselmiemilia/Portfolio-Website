@@ -858,6 +858,11 @@ nav a:hover::after {
 
 .produkt-detail-row span:first-child {
   opacity: 0.65;
+  flex-shrink: 0;
+}
+
+.produkt-detail-row span:last-child {
+  text-align: right;
 }
 
 .produkt-related {
