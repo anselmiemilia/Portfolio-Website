@@ -24,7 +24,9 @@
       en: 'Aspiring graphic designer &amp; artist from Vorarlberg, Austria'
     },
 
-    'home.prints.cta': { de: 'Zur Kunst', en: 'To Art' },
+    'home.prints.cta': { de: 'Kunst kaufen', en: 'Buy Art' },
+    'home.prints.banner.title': { de: 'Erste Kollektion', en: 'First Collection' },
+    'home.prints.banner.cta': { de: 'Shop Now', en: 'Shop Now' },
     'home.printsOriginale.title': { de: 'Prints & Originale', en: 'Prints & Originals' },
     'home.projekte.title': { de: 'Projekte', en: 'Projects' },
     'home.projekte.cta': { de: 'Zu den Projekten', en: 'See all projects' },

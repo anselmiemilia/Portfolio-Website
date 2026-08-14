@@ -709,6 +709,15 @@ nav a:hover::after {
   display: none;
 }
 
+.home-prints-cta-wrapper {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.home-prints-cta-wrapper .back-button {
+  margin-top: 0;
+}
+
 /* ===========================================
    Product Detail (Shop)
    =========================================== */
@@ -993,17 +1002,17 @@ nav a:hover::after {
 .prints-preview {
   position: relative;
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  border-radius: 6px;
-  overflow: hidden;
-  aspect-ratio: 16 / 10;
+  max-width: 1200px;
+  height: clamp(90px, 11vw, 150px);
+  margin: 0 auto 3rem;
+  overflow: visible;
 }
 
 .prints-preview-img {
   display: block;
   width: 100%;
   height: 100%;
+  border-radius: 6px;
   object-fit: cover;
   object-position: center 30%;
 }
@@ -1016,10 +1025,14 @@ nav a:hover::after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 0;
 }
 
-.prints-preview-overlay .coming-soon { padding: 0; }
+.prints-preview-overlay .coming-soon {
+  padding: 0;
+  line-height: 1;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+}
 
 .prints-preview-overlay .back-button { color: var(--weiss); margin-top: 0; }
 
@@ -1147,13 +1160,15 @@ nav a:hover::after {
 
 .alle-projekte-wrapper .back-button::before,
 .home-about-text .back-button::before,
-.prints-preview-overlay .back-button::before {
+.prints-preview-overlay .back-button::before,
+.home-prints-cta-wrapper .back-button::before {
   content: '→';
   order: 2;
 }
 .alle-projekte-wrapper .back-button:hover::before,
 .home-about-text .back-button:hover::before,
-.prints-preview-overlay .back-button:hover::before {
+.prints-preview-overlay .back-button:hover::before,
+.home-prints-cta-wrapper .back-button:hover::before {
   transform: translateX(5px);
 }
 
@@ -1405,7 +1420,10 @@ footer a:hover { text-decoration: underline; }
   }
 
   /* Prints & Originale preview */
-  .prints-preview-overlay { padding-top: 2.5rem; }
+  .prints-preview { height: 90px; }
+  .prints-preview-overlay { gap: 0; padding: 0 1rem; }
+  .prints-preview-overlay .coming-soon { font-size: 2.6rem; line-height: 1; }
+  .prints-preview-overlay .back-button { font-size: 0.75rem; }
 
   /* Projects */
   #projekte {
