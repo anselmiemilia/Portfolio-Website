@@ -63,25 +63,17 @@
     'produkt.info.title': { de: 'Info', en: 'Info' },
     'produkt.info.folgt': { de: 'Info folgt ...', en: 'Info coming soon ...' },
     'produkt.abendrosa.info': {
-      de: 'Inspiriert von einem abendlichen Spaziergang durch Marrakesch an einem warmen Februarabend, zeigt dieses Bild die Koutoubia-Moschee im pulsierenden Treiben der Stadt.',
-      en: 'Inspired by an evening walk through Marrakesh on a warm February evening, this piece captures the Koutoubia Mosque amid the city’s lively evening bustle.'
+      de: 'Inspiriert von einem abendlichen Spaziergang durch Marrakesch an einem warmen Februarabend, zeigt dieses Bild die Koutoubia-Moschee im pulsierenden Treiben der Stadt. Original gemalt mit Acryl und Ölpastell auf Leinwand, 30 × 40 cm, im Juli 2026.',
+      en: 'Inspired by an evening walk through Marrakesh on a warm February evening, this piece captures the Koutoubia Mosque amid the city’s lively evening bustle. Original painted with acrylic and oil pastel on canvas, 30 × 40 cm, in July 2026.'
     },
     'produkt.docesaomiguel.info': {
-      de: 'Auf einer Reise nach Lissabon im August verlor ich mich in den Gassen von Alfama – dort entdeckte ich die Casa São Miguel, deren Fassade mich auf Anhieb verzauberte und zu diesem Bild inspirierte.',
-      en: 'On a trip to Lisbon in August, I wandered through the lanes of Alfama and came across Casa São Miguel – its façade captivated me instantly and became the inspiration for this piece.'
+      de: 'Auf einer Reise nach Lissabon im August verlor ich mich in den Gassen von Alfama – dort entdeckte ich die Casa São Miguel, deren Fassade mich auf Anhieb verzauberte und zu diesem Bild inspirierte. Original gemalt mit Acryl und Ölpastell auf Leinwand, 50 × 60 cm, im August 2026.',
+      en: 'On a trip to Lisbon in August, I wandered through the lanes of Alfama and came across Casa São Miguel – its façade captivated me instantly and became the inspiration for this piece. Original painted with acrylic and oil pastel on canvas, 50 × 60 cm, in August 2026.'
     },
     'produkt.details.title': { de: 'Details', en: 'Details' },
     'produkt.details.groesse': { de: 'Größe', en: 'Size' },
     'produkt.details.papier': { de: 'Papierdicke', en: 'Paper thickness' },
     'produkt.details.papier.wert': { de: '300 g/m² Naturpapier creme', en: '300 gsm natural cream paper' },
-    'produkt.details.technik': { de: 'Technik', en: 'Medium' },
-    'produkt.details.technik.wert': { de: 'Acryl und Ölpastell auf Leinwand', en: 'Acrylic and oil pastel on canvas' },
-    'produkt.details.originalformat': { de: 'Originalformat', en: 'Original size' },
-    'produkt.details.entstanden': { de: 'Entstanden', en: 'Created' },
-    'produkt.abendrosa.format.wert': { de: '30 × 40 cm', en: '30 × 40 cm' },
-    'produkt.abendrosa.entstanden.wert': { de: 'Juli 2026', en: 'July 2026' },
-    'produkt.docesaomiguel.format.wert': { de: '50 × 60 cm', en: '50 × 60 cm' },
-    'produkt.docesaomiguel.entstanden.wert': { de: 'August 2026', en: 'August 2026' },
     'produkt.related.title': { de: 'Weitere Prints', en: 'More Prints' },
 
     'about.p1': {
