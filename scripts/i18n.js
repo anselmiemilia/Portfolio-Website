@@ -66,8 +66,6 @@
     'produkt.details.groesse': { de: 'Größe', en: 'Size' },
     'produkt.details.papier': { de: 'Papierdicke', en: 'Paper thickness' },
     'produkt.details.papier.wert': { de: '300 g/m² Naturpapier creme', en: '300 gsm natural cream paper' },
-    'produkt.details.versand': { de: 'Versand', en: 'Shipping' },
-    'produkt.details.versand.folgt': { de: 'Folgt ...', en: 'Coming soon ...' },
     'produkt.related.title': { de: 'Weitere Prints', en: 'More Prints' },
 
     'about.p1': {
