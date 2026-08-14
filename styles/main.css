@@ -810,6 +810,19 @@ nav a:hover::after {
   margin-bottom: 2rem;
 }
 
+.produkt-widerruf-hinweis {
+  margin-top: 1.5rem;
+}
+
+.produkt-widerruf-hinweis a {
+  font-size: 0.8rem;
+  color: var(--burgunder);
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.produkt-widerruf-hinweis a:hover { opacity: 1; }
+
 .produkt-groesse-btn {
   padding: 0.6rem 1.4rem;
   border: 1px solid var(--burgunder);
@@ -1265,6 +1278,13 @@ footer a:hover { text-decoration: underline; }
 }
 
 .datenschutz-content a { text-decoration: underline; }
+
+.widerruf-form {
+  background: var(--buttergelb);
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
 
 .datenschutz-stand {
   margin-top: 3rem;

@@ -109,8 +109,8 @@
     },
     'datenschutz.h2.2': { de: '2. Zweck dieser Website', en: '2. Purpose of this Website' },
     'datenschutz.p2': {
-      de: 'Diese Website dient ausschließlich als persönliches Portfolio zur Präsentation gestalterischer Arbeiten.\n                Es werden keine Waren oder Dienstleistungen verkauft, keine Nutzerkonten angelegt und keine\n                Kontaktformulare betrieben.',
-      en: 'This website serves exclusively as a personal portfolio for presenting design work.\n                No goods or services are sold, no user accounts are created, and no\n                contact forms are operated.'
+      de: 'Diese Website dient als persönliches Portfolio zur Präsentation gestalterischer Arbeiten und bietet\n                zusätzlich ausgewählte Kunstdrucke (Prints) zum Kauf an. Informationen zu Widerrufsrecht und\n                Rücksendekosten findest du in der <a href="widerrufsrecht.html">Widerrufsbelehrung</a>. Es werden\n                keine Nutzerkonten angelegt und keine Kontaktformulare betrieben.',
+      en: 'This website serves as a personal portfolio for presenting design work and additionally offers\n                a selection of art prints for sale. For information on the right of withdrawal and return costs,\n                see the <a href="widerrufsrecht.html">withdrawal policy</a>. No user accounts are created and no\n                contact forms are operated.'
     },
     'datenschutz.h2.3': { de: '3. Hosting', en: '3. Hosting' },
     'datenschutz.p3': {
@@ -137,8 +137,48 @@
       de: 'Diese Website kann Links zu externen Seiten (z. B. Instagram, Behance) enthalten.\n                Für deren Inhalte und Datenschutzpraktiken bin ich nicht verantwortlich.',
       en: 'This website may contain links to external sites (e.g. Instagram, Behance).\n                I am not responsible for their content or privacy practices.'
     },
-    'datenschutz.stand': { de: 'Stand: April 2026', en: 'Last updated: April 2026' }
-  };
+    'datenschutz.stand': { de: 'Stand: April 2026', en: 'Last updated: April 2026' },
+
+    'meta.title.widerruf': { de: 'Widerrufsrecht | Emilia Anselmi', en: 'Right of Withdrawal | Emilia Anselmi' },
+    'meta.desc.widerruf': { de: 'Widerrufsrecht und Rücksendebedingungen – Emilia Anselmi', en: 'Right of withdrawal and return conditions – Emilia Anselmi' },
+    'footer.widerruf': { de: 'Widerrufsrecht', en: 'Right of Withdrawal' },
+
+    'widerruf.h1': { de: 'Widerrufsrecht', en: 'Right of Withdrawal' },
+
+    'widerruf.h2.1': { de: '1. Widerrufsrecht', en: '1. Right of Withdrawal' },
+    'widerruf.p1': {
+      de: 'Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.\n                Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter\n                Dritter, der nicht der Beförderer ist, die Waren in Besitz genommen haben bzw. hat.\n                Um Ihr Widerrufsrecht auszuüben, müssen Sie mir (Emilia Anselmi,\n                E-Mail: <a href="mailto:emilia@anselmi.at">emilia@anselmi.at</a>) mittels einer eindeutigen\n                Erklärung (z. B. ein mit der Post versandter Brief oder E-Mail) über Ihren Entschluss, diesen\n                Vertrag zu widerrufen, informieren. Sie können dafür das unten stehende Muster-Widerrufsformular\n                verwenden, was jedoch nicht vorgeschrieben ist. Zur Wahrung der Widerrufsfrist reicht es aus,\n                dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist\n                absenden.',
+      en: 'You have the right to withdraw from this contract within fourteen days without giving any reason.\n                The withdrawal period will expire fourteen days from the day on which you or a third party\n                other than the carrier and indicated by you acquire physical possession of the goods.\n                To exercise the right of withdrawal, you must inform me (Emilia Anselmi,\n                email: <a href="mailto:emilia@anselmi.at">emilia@anselmi.at</a>) of your decision to withdraw\n                from this contract by an unequivocal statement (e.g. a letter sent by post or email). You may\n                use the model withdrawal form below, although it is not obligatory. To meet the withdrawal\n                deadline, it is sufficient for you to send your communication concerning your exercise of the\n                right of withdrawal before the withdrawal period has expired.'
+    },
+
+    'widerruf.h2.2': { de: '2. Folgen des Widerrufs', en: '2. Effects of Withdrawal' },
+    'widerruf.p2': {
+      de: 'Wenn Sie diesen Vertrag widerrufen, habe ich Ihnen alle Zahlungen, die ich von Ihnen erhalten habe,\n                einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben,\n                dass Sie eine andere Art der Lieferung als die von mir angebotene, günstigste Standardlieferung\n                gewählt haben), unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an\n                dem die Mitteilung über Ihren Widerruf dieses Vertrags bei mir eingegangen ist. Für diese\n                Rückzahlung verwende ich dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion\n                eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem\n                Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet. Ich kann die Rückzahlung\n                verweigern, bis ich die Waren wieder zurückerhalten habe oder bis Sie den Nachweis erbracht\n                haben, dass Sie die Waren zurückgesandt haben, je nachdem, welches der frühere Zeitpunkt ist.\n                Sie haben die Waren unverzüglich und in jedem Fall spätestens binnen vierzehn Tagen ab dem Tag,\n                an dem Sie mich über den Widerruf dieses Vertrags unterrichten, an mich zurückzusenden oder zu\n                übergeben. Die Frist ist gewahrt, wenn Sie die Waren vor Ablauf der Frist von vierzehn Tagen\n                absenden. <strong>Sie tragen die unmittelbaren Kosten der Rücksendung der Waren.</strong> Sie\n                müssen für einen etwaigen Wertverlust der Waren nur aufkommen, wenn dieser Wertverlust auf einen\n                zur Prüfung der Beschaffenheit, Eigenschaften und Funktionsweise der Waren nicht notwendigen\n                Umgang mit ihnen zurückzuführen ist.',
+      en: 'If you withdraw from this contract, I shall reimburse to you all payments received from you,\n                including the costs of delivery (except for the supplementary costs resulting from your choice\n                of a type of delivery other than the least expensive type of standard delivery offered by me),\n                without undue delay and in any event not later than fourteen days from the day on which I am\n                informed about your decision to withdraw from this contract. I will carry out such reimbursement\n                using the same means of payment as you used for the initial transaction, unless you have\n                expressly agreed otherwise; in any event, you will not incur any fees as a result of such\n                reimbursement. I may withhold reimbursement until I have received the goods back or you have\n                supplied evidence of having sent back the goods, whichever is the earliest. You shall send back\n                the goods or hand them over to me without undue delay and in any event not later than fourteen\n                days from the day on which you communicate your withdrawal from this contract. The deadline is\n                met if you send back the goods before the period of fourteen days has expired.\n                <strong>You will have to bear the direct cost of returning the goods.</strong> You are only\n                liable for any diminished value of the goods resulting from handling other than what is\n                necessary to establish the nature, characteristics and functioning of the goods.'
+    },
+
+    'widerruf.h2.3': { de: '3. Muster-Widerrufsformular', en: '3. Model Withdrawal Form' },
+    'widerruf.p3intro': {
+      de: '(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.)',
+      en: '(If you want to withdraw from the contract, please fill out this form and send it back.)'
+    },
+    'widerruf.form': {
+      de: 'An: Emilia Anselmi, <a href="mailto:emilia@anselmi.at">emilia@anselmi.at</a><br><br>\n                Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der\n                folgenden Waren (*):<br>\n                _______________________________________________<br><br>\n                Bestellt am (*) / erhalten am (*): _______________________________<br><br>\n                Name des/der Verbraucher(s): _______________________________<br><br>\n                Anschrift des/der Verbraucher(s): _______________________________<br><br>\n                Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier): ___________<br><br>\n                Datum: _______________________________<br><br>\n                (*) Unzutreffendes streichen.',
+      en: 'To: Emilia Anselmi, <a href="mailto:emilia@anselmi.at">emilia@anselmi.at</a><br><br>\n                I/we (*) hereby give notice that I/we (*) withdraw from my/our (*) contract of sale of the\n                following goods (*):<br>\n                _______________________________________________<br><br>\n                Ordered on (*) / received on (*): _______________________________<br><br>\n                Name of consumer(s): _______________________________<br><br>\n                Address of consumer(s): _______________________________<br><br>\n                Signature of consumer(s) (only if this form is notified on paper): ___________<br><br>\n                Date: _______________________________<br><br>\n                (*) Delete as appropriate.'
+    },
+
+    'widerruf.h2.4': { de: '4. Ausnahmen vom Widerrufsrecht', en: '4. Exceptions to the Right of Withdrawal' },
+    'widerruf.p4': {
+      de: 'Da es sich bei den angebotenen Prints um standardisierte Reproduktionen und nicht um für Sie\n                individuell angefertigte Waren handelt, gilt das oben beschriebene Widerrufsrecht uneingeschränkt.',
+      en: 'As the prints offered are standardised reproductions and not goods made to your individual\n                specifications, the right of withdrawal described above applies without restriction.'
+    },
+
+    'widerruf.stand': { de: 'Stand: August 2026', en: 'Last updated: August 2026' },
+
+    'produkt.widerruf.hinweis': {
+      de: '14 Tage Rückgaberecht – Käufer:in trägt die Rücksendekosten.',
+      en: '14-day right of withdrawal – buyer covers return shipping.'
+    },
 
   function getLang() {
     return localStorage.getItem('lang') === 'en' ? 'en' : 'de';
