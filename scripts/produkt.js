@@ -18,6 +18,16 @@ document.addEventListener('DOMContentLoaded', function () {
   var sizeBtns = document.querySelectorAll('.produkt-groesse-btn');
   var priceEl = document.querySelector('.produkt-preis');
   var groesseEl = document.querySelector('[data-detail="groesse"]');
+  var kaufenBtn = document.querySelector('.produkt-kaufen-btn');
+  var produktName = document.querySelector('.produkt-info h1') ? document.querySelector('.produkt-info h1').textContent : '';
+
+  function updateKaufenLink(size, price) {
+    if (!kaufenBtn) return;
+    var subject = 'Bestellung: ' + produktName + ' (' + size + ')';
+    var body = 'Ich möchte gerne folgenden Print bestellen:\n\n' +
+      produktName + ' – ' + size + ' – € ' + price + ',–\n\nName:\nAdresse:';
+    kaufenBtn.href = 'mailto:emilia@anselmi.at?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
 
   sizeBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -25,7 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.classList.add('active');
       if (priceEl) priceEl.textContent = '€ ' + btn.dataset.price + ',–';
       if (groesseEl) groesseEl.textContent = btn.dataset.cm;
+      updateKaufenLink(btn.textContent, btn.dataset.price);
     });
   });
+
+  var activeSizeBtn = document.querySelector('.produkt-groesse-btn.active');
+  if (activeSizeBtn) updateKaufenLink(activeSizeBtn.textContent, activeSizeBtn.dataset.price);
 
 });

@@ -810,8 +810,34 @@ nav a:hover::after {
   margin-bottom: 2rem;
 }
 
+.produkt-kaufen-wrapper {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.produkt-kaufen-btn {
+  display: inline-block;
+  background: var(--burgunder);
+  color: var(--weiss);
+  border: none;
+  border-radius: 4px;
+  padding: 0.85rem 3rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.produkt-kaufen-btn:hover {
+  background: var(--rosa);
+}
+
 .produkt-widerruf-hinweis {
-  margin-top: 1.5rem;
+  margin-top: 4rem;
+  text-align: center;
 }
 
 .produkt-widerruf-hinweis a {

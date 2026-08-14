@@ -77,6 +77,7 @@
     'produkt.details.papier': { de: 'Papierdicke', en: 'Paper thickness' },
     'produkt.details.papier.wert': { de: '300 g/m² Naturpapier creme', en: '300 gsm natural cream paper' },
     'produkt.related.title': { de: 'Weitere Prints', en: 'More Prints' },
+    'produkt.kaufen': { de: 'Kaufen', en: 'Buy' },
 
     'about.p1': {
       de: 'Ich heiße Emilia und bin Grafik- & Informationsdesign-Studentin im vierten Semester an der\n                            <em>New Design University</em> in St. Pölten.',
