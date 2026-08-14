@@ -1446,7 +1446,7 @@ footer a:hover { text-decoration: underline; }
     display: block;
     margin-top: 0.7rem;
     font-family: var(--font-headline);
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     color: var(--burgunder);
     text-align: center;
   }
@@ -1460,6 +1460,8 @@ footer a:hover { text-decoration: underline; }
   .produkt-related { margin-top: 4rem; }
 
   .produkt-related .shop-prints-card { max-width: 220px; }
+
+  .produkt-related .shop-prints-caption { font-size: 1.2rem; }
 
   /* Home – featured projects */
   .home-section { padding: 2.5rem 1.2rem; }
