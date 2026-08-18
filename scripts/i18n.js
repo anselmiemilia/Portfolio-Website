@@ -8,6 +8,8 @@
 
     'footer.rights': { de: 'Alle Rechte vorbehalten.', en: 'All rights reserved.' },
     'footer.datenschutz': { de: 'Datenschutz', en: 'Privacy Policy' },
+    'footer.impressum': { de: 'Impressum', en: 'Legal Notice' },
+    'footer.agb': { de: 'AGB', en: 'Terms & Conditions' },
 
     'meta.title.kunst': { de: 'Kunst | Emilia Anselmi', en: 'Art | Emilia Anselmi' },
     'meta.desc.kunst': { de: 'Kunst – Emilia Anselmi', en: 'Art – Emilia Anselmi' },
@@ -17,6 +19,10 @@
     'meta.desc.about': { de: 'Über Emilia Anselmi - Grafikdesignerin', en: 'About Emilia Anselmi - Graphic Designer' },
     'meta.title.datenschutz': { de: 'Datenschutz | Emilia Anselmi', en: 'Privacy Policy | Emilia Anselmi' },
     'meta.desc.datenschutz': { de: 'Datenschutzerklärung – Emilia Anselmi Portfolio', en: 'Privacy Policy – Emilia Anselmi Portfolio' },
+    'meta.title.impressum': { de: 'Impressum | Emilia Anselmi', en: 'Legal Notice | Emilia Anselmi' },
+    'meta.desc.impressum': { de: 'Impressum – Emilia Anselmi', en: 'Legal Notice – Emilia Anselmi' },
+    'meta.title.agb': { de: 'AGB | Emilia Anselmi', en: 'Terms & Conditions | Emilia Anselmi' },
+    'meta.desc.agb': { de: 'Allgemeine Geschäftsbedingungen – Emilia Anselmi', en: 'Terms & Conditions – Emilia Anselmi' },
     'meta.desc.home': { de: 'Portfolio von Emilia Anselmi - Grafikdesign Projekte', en: 'Portfolio of Emilia Anselmi - Graphic Design Projects' },
 
     'hero.subtitle': {
@@ -216,7 +222,72 @@
     'produkt.widerruf.hinweis': {
       de: '14 Tage Rückgaberecht – Käufer:in trägt die Rücksendekosten.',
       en: '14-day right of withdrawal – buyer covers return shipping.'
-    }
+    },
+    'produkt.preishinweis': {
+      de: 'Alle Preise sind Endpreise (Privatverkauf, keine Umsatzsteuer ausgewiesen).',
+      en: 'All prices are final prices (private sale, no VAT charged).'
+    },
+
+    'impressum.h1': { de: 'Impressum', en: 'Legal Notice' },
+    'impressum.h2.angaben': { de: 'Angaben gemäß § 5 ECG', en: 'Information pursuant to § 5 ECG (Austrian E-Commerce Act)' },
+    'impressum.p.angaben': {
+      de: 'Emilia Anselmi<br>\n                Poststraße 2<br>\n                6850 Dornbirn<br>\n                Österreich<br><br>\n                E-Mail: <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a>',
+      en: 'Emilia Anselmi<br>\n                Poststraße 2<br>\n                6850 Dornbirn<br>\n                Austria<br><br>\n                Email: <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a>'
+    },
+    'impressum.h2.status': { de: 'Unternehmerische Angaben', en: 'Business Status' },
+    'impressum.p.status': {
+      de: 'Der Verkauf der Kunstdrucke erfolgt als Privatperson, nicht im Rahmen eines Gewerbebetriebs.\n                Es besteht keine Gewerbeberechtigung, keine Firmenbuchnummer und keine\n                Umsatzsteuer-Identifikationsnummer. Alle angegebenen Preise sind Endpreise; es wird gemäß\n                der Kleinstunternehmer-Regelung keine Umsatzsteuer ausgewiesen.',
+      en: 'The art prints are sold as a private individual, not as part of a registered business. There is\n                no trade licence, company register number or VAT identification number. All prices shown\n                are final prices; no VAT is charged under the small-business exemption.'
+    },
+    'impressum.h2.streitschlichtung': { de: 'Online-Streitbeilegung', en: 'Online Dispute Resolution' },
+    'impressum.p.streitschlichtung': {
+      de: 'Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit, die\n                unter <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>\n                erreichbar ist. Zur Teilnahme an einem Streitbeilegungsverfahren vor einer\n                Verbraucherschlichtungsstelle bin ich nicht verpflichtet und derzeit auch nicht bereit.',
+      en: 'The European Commission provides a platform for online dispute resolution (ODR), available at\n                <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.\n                I am not obliged, and currently not willing, to take part in dispute resolution\n                proceedings before a consumer arbitration board.'
+    },
+    'impressum.h2.haftung': { de: 'Haftung für Inhalte', en: 'Liability for Content' },
+    'impressum.p.haftung': {
+      de: 'Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für die Inhalte externer\n                Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.',
+      en: 'Despite careful content control, I assume no liability for the content of external links. The\n                operators of linked pages are solely responsible for their content.'
+    },
+    'impressum.stand': { de: 'Stand: August 2026', en: 'Last updated: August 2026' },
+
+    'agb.h1': { de: 'Allgemeine Geschäftsbedingungen', en: 'Terms & Conditions' },
+    'agb.h2.1': { de: '1. Geltungsbereich', en: '1. Scope' },
+    'agb.p1': {
+      de: 'Diese Geschäftsbedingungen gelten für alle Käufe von Kunstdrucken über anselmi.at zwischen\n                Emilia Anselmi (siehe <a href="impressum.html">Impressum</a>) und Verbraucher:innen.',
+      en: 'These terms apply to all purchases of art prints via anselmi.at between Emilia Anselmi (see\n                <a href="impressum.html">Legal Notice</a>) and consumers.'
+    },
+    'agb.h2.2': { de: '2. Vertragsschluss', en: '2. Conclusion of Contract' },
+    'agb.p2': {
+      de: 'Die Darstellung der Produkte im Shop stellt kein bindendes Angebot dar, sondern eine\n                Aufforderung zur Bestellung. Der Kaufvertrag kommt zustande, sobald die Zahlung über den\n                Zahlungsdienstleister Stripe erfolgreich abgeschlossen wurde. Nach Zahlungsabschluss erhältst\n                du eine Bestätigung.',
+      en: 'The display of products in the shop does not constitute a binding offer, but an invitation to\n                order. The purchase contract is concluded once payment via the payment provider Stripe has\n                been completed successfully. You will receive a confirmation after payment.'
+    },
+    'agb.h2.3': { de: '3. Preise und Zahlung', en: '3. Prices and Payment' },
+    'agb.p3': {
+      de: 'Alle angegebenen Preise sind Endpreise in Euro. Der Verkauf erfolgt als Privatperson, es wird\n                keine Umsatzsteuer ausgewiesen. Die Zahlung erfolgt ausschließlich über den\n                Zahlungsdienstleister Stripe (z. B. Kreditkarte, EPS) und ist bei Bestellung fällig.',
+      en: 'All prices shown are final prices in euros. The sale is made as a private individual; no VAT is\n                charged. Payment is made exclusively via the payment provider Stripe (e.g. credit card, EPS)\n                and is due upon ordering.'
+    },
+    'agb.h2.4': { de: '4. Versand', en: '4. Shipping' },
+    'agb.p4': {
+      de: 'Der Versand erfolgt nach Österreich, Deutschland und in weitere EU-Länder. Die Auswahl der\n                verfügbaren Länder und die jeweiligen Versandkosten werden vor Zahlungsabschluss angezeigt.\n                Ein Versand in die Schweiz oder außerhalb der EU ist derzeit nicht möglich.',
+      en: 'Shipping is available to Austria, Germany and other EU countries. The available countries and\n                the respective shipping costs are shown before payment is completed. Shipping to Switzerland\n                or outside the EU is currently not possible.'
+    },
+    'agb.h2.5': { de: '5. Gewährleistung', en: '5. Warranty' },
+    'agb.p5': {
+      de: 'Es gilt die gesetzliche Gewährleistung. Solltest du einen Mangel an einem gelieferten Print\n                feststellen, melde dich bitte per E-Mail unter\n                <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a>.',
+      en: 'Statutory warranty applies. Should you notice a defect in a delivered print, please get in touch\n                by email at <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a>.'
+    },
+    'agb.h2.6': { de: '6. Widerrufsrecht', en: '6. Right of Withdrawal' },
+    'agb.p6': {
+      de: 'Als Verbraucher:in steht dir ein 14-tägiges Widerrufsrecht zu. Details dazu findest du in der\n                <a href="widerrufsrecht.html">Widerrufsbelehrung</a>.',
+      en: 'As a consumer, you have a 14-day right of withdrawal. Details can be found in the\n                <a href="widerrufsrecht.html">withdrawal policy</a>.'
+    },
+    'agb.h2.7': { de: '7. Schlussbestimmungen', en: '7. Final Provisions' },
+    'agb.p7': {
+      de: 'Es gilt österreichisches Recht unter Ausschluss des UN-Kaufrechts. Zwingende\n                verbraucherschützende Bestimmungen deines Wohnsitzstaates bleiben davon unberührt.',
+      en: 'Austrian law applies, excluding the UN Convention on Contracts for the International Sale of\n                Goods. Mandatory consumer-protection provisions of your country of residence remain\n                unaffected.'
+    },
+    'agb.stand': { de: 'Stand: August 2026', en: 'Last updated: August 2026' }
   };
 
   function getLang() {
