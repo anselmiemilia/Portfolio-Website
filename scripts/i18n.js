@@ -91,6 +91,7 @@
     'produkt.kaufen': { de: 'Kaufen', en: 'Buy' },
     'produkt.inDenWarenkorb': { de: 'In den Warenkorb', en: 'Add to Cart' },
     'produkt.ausverkauft': { de: 'Ausverkauft', en: 'Sold out' },
+    'produkt.baldVerfuegbar': { de: 'Bald verfügbar', en: 'Coming soon' },
 
     'cart.oeffnen': { de: 'Warenkorb öffnen', en: 'Open cart' },
     'cart.schliessen': { de: 'Schließen', en: 'Close' },

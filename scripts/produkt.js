@@ -67,7 +67,10 @@ document.addEventListener('DOMContentLoaded', function () {
     currentPrice = parseFloat(activeSizeBtn.dataset.price);
   }
 
-  if (kaufenBtn) {
+  if (kaufenBtn && !window.SHOP_ENABLED) {
+    kaufenBtn.disabled = true;
+    kaufenBtn.textContent = t('produkt.baldVerfuegbar', 'Bald verfügbar');
+  } else if (kaufenBtn) {
     kaufenBtn.addEventListener('click', function () {
       if (!window.cart || !currentSize || kaufenBtn.disabled) return;
       window.cart.add({
@@ -110,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  if (produktId) {
+  if (produktId && window.SHOP_ENABLED) {
     fetch(STOCK_ENDPOINT)
       .then(function (res) { return res.ok ? res.json() : null; })
       .then(function (stock) { if (stock) applyStock(stock[produktId]); })

@@ -1,4 +1,10 @@
 (function () {
+  // Kill switch: the shop isn't open yet. While false, no cart icon/drawer
+  // is shown anywhere and produkt.js shows "Bald verfügbar" instead of a
+  // working buy button. Flip to true when ready to actually sell — nothing
+  // else needs to change.
+  window.SHOP_ENABLED = false;
+
   var STORAGE_KEY = 'ea_cart';
   // The site is served from GitHub Pages (anselmi.at); only this one
   // endpoint runs on Cloudflare Pages, since GitHub Pages can't run server
@@ -260,6 +266,7 @@
   document.addEventListener('langchange', updateTexts);
 
   document.addEventListener('DOMContentLoaded', function () {
+    if (!window.SHOP_ENABLED) return;
     buildToggle();
     buildDrawer();
     renderBadge();
