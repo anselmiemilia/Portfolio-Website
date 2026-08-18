@@ -22,8 +22,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var kaufenBtn = document.querySelector('.produkt-kaufen-btn');
   var produktName = document.querySelector('.produkt-info h1') ? document.querySelector('.produkt-info h1').textContent : '';
 
-  function updateKaufenLink(size, price) {
+  function updateKaufenLink(size, price, paymentLink) {
     if (!kaufenBtn) return;
+    if (paymentLink) {
+      kaufenBtn.href = paymentLink;
+      return;
+    }
     var subject = 'Bestellung: ' + produktName + ' (' + size + ')';
     var body = 'Ich möchte gerne folgenden Print bestellen:\n\n' +
       produktName + ' – ' + size + ' – € ' + price + ',–\n\nName:\nAdresse:';
@@ -44,14 +48,14 @@ document.addEventListener('DOMContentLoaded', function () {
       if (priceEl) priceEl.textContent = '€ ' + btn.dataset.price + ',–';
       if (groesseEl) groesseEl.textContent = btn.dataset.cm;
       updateAuflage(btn.textContent);
-      updateKaufenLink(btn.textContent, btn.dataset.price);
+      updateKaufenLink(btn.textContent, btn.dataset.price, btn.dataset.paymentLink);
     });
   });
 
   var activeSizeBtn = document.querySelector('.produkt-groesse-btn.active');
   if (activeSizeBtn) {
     updateAuflage(activeSizeBtn.textContent);
-    updateKaufenLink(activeSizeBtn.textContent, activeSizeBtn.dataset.price);
+    updateKaufenLink(activeSizeBtn.textContent, activeSizeBtn.dataset.price, activeSizeBtn.dataset.paymentLink);
   }
 
 });
