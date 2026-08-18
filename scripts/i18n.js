@@ -83,6 +83,32 @@
     'produkt.auflage.a3': { de: 'Limitierte Auflage von 10 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 10<br>(hand-signed &amp; numbered)' },
     'produkt.related.title': { de: 'Weitere Prints', en: 'More Prints' },
     'produkt.kaufen': { de: 'Kaufen', en: 'Buy' },
+    'produkt.inDenWarenkorb': { de: 'In den Warenkorb', en: 'Add to Cart' },
+
+    'cart.oeffnen': { de: 'Warenkorb öffnen', en: 'Open cart' },
+    'cart.schliessen': { de: 'Schließen', en: 'Close' },
+    'cart.titel': { de: 'Warenkorb', en: 'Cart' },
+    'cart.leer': { de: 'Dein Warenkorb ist leer.', en: 'Your cart is empty.' },
+    'cart.entfernen': { de: 'Entfernen', en: 'Remove' },
+    'cart.zwischensumme': { de: 'Zwischensumme', en: 'Subtotal' },
+    'cart.versandhinweis': { de: 'zzgl. Versand', en: 'plus shipping' },
+    'cart.zurKasse': { de: 'Zur Kasse', en: 'Checkout' },
+    'cart.wirdGeladen': { de: 'Einen Moment …', en: 'One moment …' },
+    'cart.fehler': {
+      de: 'Der Checkout konnte nicht gestartet werden. Bitte versuche es erneut oder schreib mir eine E-Mail.',
+      en: 'Checkout could not be started. Please try again or send me an email.'
+    },
+
+    'checkout.erfolg.titel': { de: 'Danke für deine Bestellung!', en: 'Thank you for your order!' },
+    'checkout.erfolg.text': {
+      de: 'Deine Zahlung wurde erfolgreich verarbeitet. Du erhältst in Kürze eine Bestätigung per E-Mail.',
+      en: 'Your payment was processed successfully. You’ll receive a confirmation email shortly.'
+    },
+    'checkout.abgebrochen.titel': { de: 'Bestellung abgebrochen', en: 'Order cancelled' },
+    'checkout.abgebrochen.text': {
+      de: 'Der Bezahlvorgang wurde abgebrochen. Dein Warenkorb ist noch gefüllt, du kannst es jederzeit erneut versuchen.',
+      en: 'The checkout was cancelled. Your cart is still filled, you can try again anytime.'
+    },
 
     'about.p1': {
       de: 'Ich heiße Emilia und bin Grafik- & Informationsdesign-Studentin im vierten Semester an der\n                            <em>New Design University</em> in St. Pölten.',
@@ -120,30 +146,35 @@
     },
     'datenschutz.h2.3': { de: '3. Hosting', en: '3. Hosting' },
     'datenschutz.p3': {
-      de: 'Diese Website wird über <strong>GitHub Pages</strong> (GitHub Inc., 88 Colin P Kelly Jr St,\n                San Francisco, CA 94107, USA) gehostet. Beim Aufruf der Website kann GitHub technische Daten\n                wie IP-Adresse, Browsertyp und Uhrzeit des Zugriffs in Server-Logfiles speichern.\n                Diese Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse\n                am sicheren Betrieb der Website). Weitere Informationen findest du in der\n                <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.',
-      en: 'This website is hosted via <strong>GitHub Pages</strong> (GitHub Inc., 88 Colin P Kelly Jr St,\n                San Francisco, CA 94107, USA). When you visit the website, GitHub may store technical data\n                such as IP address, browser type and time of access in server log files.\n                This processing is based on Art. 6 (1)(f) GDPR (legitimate interest\n                in the secure operation of the website). Further information can be found in\n                <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub’s Privacy Statement</a>.'
+      de: 'Diese Website wird über <strong>Cloudflare Pages</strong> (Cloudflare, Inc., 101 Townsend St,\n                San Francisco, CA 94107, USA) gehostet. Beim Aufruf der Website kann Cloudflare technische Daten\n                wie IP-Adresse, Browsertyp und Uhrzeit des Zugriffs in Server-Logfiles speichern.\n                Diese Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse\n                am sicheren Betrieb der Website). Weitere Informationen findest du in der\n                <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Cloudflare</a>.',
+      en: 'This website is hosted via <strong>Cloudflare Pages</strong> (Cloudflare, Inc., 101 Townsend St,\n                San Francisco, CA 94107, USA). When you visit the website, Cloudflare may store technical data\n                such as IP address, browser type and time of access in server log files.\n                This processing is based on Art. 6 (1)(f) GDPR (legitimate interest\n                in the secure operation of the website). Further information can be found in\n                <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare’s Privacy Policy</a>.'
     },
-    'datenschutz.h2.4': { de: '4. Cookies', en: '4. Cookies' },
+    'datenschutz.h2.zahlung': { de: '4. Zahlungsabwicklung', en: '4. Payment Processing' },
+    'datenschutz.p.zahlung': {
+      de: 'Für den Kauf von Prints wird die Zahlung über <strong>Stripe</strong> (Stripe Payments Europe, Ltd.,\n                1 Grand Canal Street Lower, Grand Canal Dock, Dublin, Irland) abgewickelt. Dabei werden deine\n                Zahlungs- und Lieferadressdaten (z. B. Name, Adresse, E-Mail, Zahlungsmittel) direkt an Stripe\n                übermittelt und dort verarbeitet – sie laufen nicht über meine eigenen Systeme. Rechtsgrundlage:\n                Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung). Weitere Informationen findest du in der\n                <a href="https://stripe.com/at/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Stripe</a>.',
+      en: 'To purchase prints, payment is processed via <strong>Stripe</strong> (Stripe Payments Europe, Ltd.,\n                1 Grand Canal Street Lower, Grand Canal Dock, Dublin, Ireland). Your payment and shipping address\n                data (e.g. name, address, email, payment method) is transmitted directly to and processed by\n                Stripe – it does not pass through my own systems. Legal basis: Art. 6 (1)(b) GDPR (contract\n                performance). Further information can be found in\n                <a href="https://stripe.com/at/privacy" target="_blank" rel="noopener">Stripe’s Privacy Policy</a>.'
+    },
+    'datenschutz.h2.4': { de: '5. Cookies', en: '5. Cookies' },
     'datenschutz.p4': {
-      de: 'Diese Website setzt <strong>keine eigenen Cookies</strong>. Es werden keine Tracking-,\n                Analyse- oder Werbe-Cookies verwendet. GitHub Pages kann technisch notwendige Cookies setzen –\n                diese dienen ausschließlich dem Betrieb der Seite und enthalten keine personenbezogenen Daten.',
-      en: 'This website does not set <strong>any cookies of its own</strong>. No tracking,\n                analytics or advertising cookies are used. GitHub Pages may set technically necessary cookies –\n                these serve solely to operate the site and do not contain any personal data.'
+      de: 'Diese Website setzt <strong>keine eigenen Tracking-Cookies</strong>. Es werden keine Analyse- oder\n                Werbe-Cookies verwendet. Cloudflare und – im Zahlungsvorgang – Stripe können technisch notwendige\n                Cookies setzen; diese dienen ausschließlich dem sicheren Betrieb der Seite bzw. der Zahlungsabwicklung\n                und werden nicht zu Werbezwecken genutzt.',
+      en: 'This website does not set <strong>any tracking cookies of its own</strong>. No analytics or\n                advertising cookies are used. Cloudflare and – during checkout – Stripe may set technically\n                necessary cookies; these serve solely the secure operation of the site or the payment process\n                and are not used for advertising purposes.'
     },
-    'datenschutz.h2.5': { de: '5. Kontakt per E-Mail', en: '5. Contact by Email' },
+    'datenschutz.h2.5': { de: '6. Kontakt per E-Mail', en: '6. Contact by Email' },
     'datenschutz.p5': {
       de: 'Wenn du mich per E-Mail kontaktierst, werden deine Angaben (z. B. Name, E-Mail-Adresse,\n                Nachrichteninhalt) ausschließlich zur Bearbeitung deiner Anfrage verwendet und nicht an Dritte\n                weitergegeben. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw.\n                Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).',
       en: 'If you contact me by email, your information (e.g. name, email address,\n                message content) will be used solely to process your inquiry and will not be shared with third\n                parties. Legal basis: Art. 6 (1)(b) GDPR (pre-contractual measures) or\n                Art. 6 (1)(f) GDPR (legitimate interest).'
     },
-    'datenschutz.h2.6': { de: '6. Deine Rechte', en: '6. Your Rights' },
+    'datenschutz.h2.6': { de: '7. Deine Rechte', en: '7. Your Rights' },
     'datenschutz.p6': {
       de: 'Du hast gemäß DSGVO das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der\n                Verarbeitung sowie Datenübertragbarkeit. Bei Fragen wende dich an:\n                <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a>.\n                Außerdem steht dir das Recht zu, Beschwerde bei der österreichischen Datenschutzbehörde\n                einzulegen (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>).',
       en: 'Under the GDPR, you have the right to access, rectification, erasure, restriction of\n                processing and data portability. If you have any questions, please contact:\n                <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a>.\n                You also have the right to lodge a complaint with the Austrian Data Protection Authority\n                (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">www.dsb.gv.at</a>).'
     },
-    'datenschutz.h2.7': { de: '7. Externe Links', en: '7. External Links' },
+    'datenschutz.h2.7': { de: '8. Externe Links', en: '8. External Links' },
     'datenschutz.p7': {
       de: 'Diese Website kann Links zu externen Seiten (z. B. Instagram, Behance) enthalten.\n                Für deren Inhalte und Datenschutzpraktiken bin ich nicht verantwortlich.',
       en: 'This website may contain links to external sites (e.g. Instagram, Behance).\n                I am not responsible for their content or privacy practices.'
     },
-    'datenschutz.stand': { de: 'Stand: April 2026', en: 'Last updated: April 2026' },
+    'datenschutz.stand': { de: 'Stand: August 2026', en: 'Last updated: August 2026' },
 
     'meta.title.widerruf': { de: 'Widerrufsrecht | Emilia Anselmi', en: 'Right of Withdrawal | Emilia Anselmi' },
     'meta.desc.widerruf': { de: 'Widerrufsrecht und Rücksendebedingungen – Emilia Anselmi', en: 'Right of withdrawal and return conditions – Emilia Anselmi' },

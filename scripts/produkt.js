@@ -21,14 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var auflageEl = document.querySelector('[data-detail="auflage"]');
   var kaufenBtn = document.querySelector('.produkt-kaufen-btn');
   var produktName = document.querySelector('.produkt-info h1') ? document.querySelector('.produkt-info h1').textContent : '';
+  var produktId = location.pathname.split('/').pop().replace('.html', '');
 
-  function updateKaufenLink(size, price) {
-    if (!kaufenBtn) return;
-    var subject = 'Bestellung: ' + produktName + ' (' + size + ')';
-    var body = 'Ich möchte gerne folgenden Print bestellen:\n\n' +
-      produktName + ' – ' + size + ' – € ' + price + ',–\n\nName:\nAdresse:';
-    kaufenBtn.href = 'mailto:atelier@anselmi.at?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  }
+  var currentSize = '';
+  var currentPrice = 0;
 
   function updateAuflage(size) {
     if (!auflageEl || !window.i18n) return;
@@ -44,14 +40,30 @@ document.addEventListener('DOMContentLoaded', function () {
       if (priceEl) priceEl.textContent = '€ ' + btn.dataset.price + ',–';
       if (groesseEl) groesseEl.textContent = btn.dataset.cm;
       updateAuflage(btn.textContent);
-      updateKaufenLink(btn.textContent, btn.dataset.price);
+      currentSize = btn.textContent;
+      currentPrice = parseFloat(btn.dataset.price);
     });
   });
 
   var activeSizeBtn = document.querySelector('.produkt-groesse-btn.active');
   if (activeSizeBtn) {
     updateAuflage(activeSizeBtn.textContent);
-    updateKaufenLink(activeSizeBtn.textContent, activeSizeBtn.dataset.price);
+    currentSize = activeSizeBtn.textContent;
+    currentPrice = parseFloat(activeSizeBtn.dataset.price);
+  }
+
+  if (kaufenBtn) {
+    kaufenBtn.addEventListener('click', function () {
+      if (!window.cart || !currentSize) return;
+      window.cart.add({
+        id: produktId,
+        name: produktName,
+        size: currentSize,
+        price: currentPrice,
+        image: mainImg ? mainImg.src : '',
+        qty: 1
+      });
+    });
   }
 
 });
