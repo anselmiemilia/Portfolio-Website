@@ -812,6 +812,7 @@ nav a:hover::after {
 
 .produkt-kaufen-wrapper {
   text-align: center;
+  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
