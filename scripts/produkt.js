@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var subject = 'Bestellung: ' + produktName + ' (' + size + ')';
     var body = 'Ich möchte gerne folgenden Print bestellen:\n\n' +
       produktName + ' – ' + size + ' – € ' + price + ',–\n\nName:\nAdresse:';
-    kaufenBtn.href = 'mailto:emilia@anselmi.at?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    kaufenBtn.href = 'mailto:atelier@anselmi.at?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   }
 
   function updateAuflage(size) {
