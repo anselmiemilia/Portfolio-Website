@@ -1,6 +1,10 @@
 (function () {
   var STORAGE_KEY = 'ea_cart';
-  var CHECKOUT_ENDPOINT = '/api/create-checkout-session';
+  // The site is served from GitHub Pages (anselmi.at); only this one
+  // endpoint runs on Cloudflare Pages, since GitHub Pages can't run server
+  // code. That makes this a cross-origin request — see the matching CORS
+  // headers in functions/api/create-checkout-session.js.
+  var CHECKOUT_ENDPOINT = 'https://atelier-anselmi.pages.dev/api/create-checkout-session';
 
   function readCart() {
     try {

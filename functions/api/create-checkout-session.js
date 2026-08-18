@@ -36,6 +36,28 @@ const SHIPPING_OPTION_LABELS = {
 const SITE_ORIGIN = 'https://anselmi.at';
 const MAX_QTY_PER_ITEM = 10;
 
+// The site itself stays on GitHub Pages (anselmi.at) — only this checkout
+// endpoint runs on Cloudflare Pages, under its own *.pages.dev domain. That
+// makes every call to this function cross-origin from the browser's point
+// of view, so it needs explicit CORS headers naming exactly which origins
+// are allowed to call it.
+const ALLOWED_ORIGINS = ['https://anselmi.at', 'https://www.anselmi.at'];
+
+function corsHeaders(request) {
+  const origin = request.headers.get('Origin');
+  const allowOrigin = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
+  return {
+    'Access-Control-Allow-Origin': allowOrigin,
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    Vary: 'Origin'
+  };
+}
+
+export function onRequestOptions({ request }) {
+  return new Response(null, { status: 204, headers: corsHeaders(request) });
+}
+
 function appendParam(params, key, value) {
   if (value === undefined || value === null) return;
   if (Array.isArray(value)) {
@@ -47,10 +69,10 @@ function appendParam(params, key, value) {
   }
 }
 
-function jsonResponse(body, status) {
+function jsonResponse(body, status, request) {
   return new Response(JSON.stringify(body), {
     status: status || 200,
-    headers: { 'Content-Type': 'application/json' }
+    headers: Object.assign({ 'Content-Type': 'application/json' }, corsHeaders(request))
   });
 }
 
@@ -86,19 +108,19 @@ function buildShippingOptions(format, lang) {
 
 export async function onRequestPost({ request, env }) {
   if (!env.STRIPE_SECRET_KEY) {
-    return jsonResponse({ error: 'Stripe ist nicht konfiguriert.' }, 500);
+    return jsonResponse({ error: 'Stripe ist nicht konfiguriert.' }, 500, request);
   }
 
   let body;
   try {
     body = await request.json();
   } catch (e) {
-    return jsonResponse({ error: 'Ungültige Anfrage.' }, 400);
+    return jsonResponse({ error: 'Ungültige Anfrage.' }, 400, request);
   }
 
   const items = Array.isArray(body.items) ? body.items : [];
   if (!items.length) {
-    return jsonResponse({ error: 'Warenkorb ist leer.' }, 400);
+    return jsonResponse({ error: 'Warenkorb ist leer.' }, 400, request);
   }
 
   const lineItems = [];
@@ -106,7 +128,7 @@ export async function onRequestPost({ request, env }) {
     const product = raw && CATALOG[raw.id];
     const unitAmount = product && product.prices[raw.size];
     if (!product || !unitAmount) {
-      return jsonResponse({ error: 'Unbekannter Artikel im Warenkorb.' }, 400);
+      return jsonResponse({ error: 'Unbekannter Artikel im Warenkorb.' }, 400, request);
     }
     const qty = Math.min(Math.max(parseInt(raw.qty, 10) || 1, 1), MAX_QTY_PER_ITEM);
     lineItems.push({
@@ -147,13 +169,13 @@ export async function onRequestPost({ request, env }) {
       body: params
     });
   } catch (e) {
-    return jsonResponse({ error: 'Stripe konnte nicht erreicht werden.' }, 502);
+    return jsonResponse({ error: 'Stripe konnte nicht erreicht werden.' }, 502, request);
   }
 
   const session = await stripeRes.json();
   if (!stripeRes.ok) {
-    return jsonResponse({ error: session.error && session.error.message }, 500);
+    return jsonResponse({ error: session.error && session.error.message }, 500, request);
   }
 
-  return jsonResponse({ url: session.url });
+  return jsonResponse({ url: session.url }, 200, request);
 }
