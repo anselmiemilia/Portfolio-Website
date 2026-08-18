@@ -84,6 +84,7 @@
     'produkt.related.title': { de: 'Weitere Prints', en: 'More Prints' },
     'produkt.kaufen': { de: 'Kaufen', en: 'Buy' },
     'produkt.inDenWarenkorb': { de: 'In den Warenkorb', en: 'Add to Cart' },
+    'produkt.ausverkauft': { de: 'Ausverkauft', en: 'Sold out' },
 
     'cart.oeffnen': { de: 'Warenkorb öffnen', en: 'Open cart' },
     'cart.schliessen': { de: 'Schließen', en: 'Close' },

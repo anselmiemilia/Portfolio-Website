@@ -2,24 +2,12 @@
 //
 // Creates a Stripe Checkout Session for the items currently in the visitor's
 // cart. Prices are never trusted from the client — every item is looked up
-// against CATALOG below, which is the single source of truth for what
-// something costs. When a new product goes live on the site, add it here
-// too (id must match the product page's filename without ".html").
+// against CATALOG, the single source of truth for what something costs.
 
+import { CATALOG } from '../_lib/catalog.js';
 import { COUNTRIES, PRODUCT_FORMAT, getSelectableCountries } from '../_lib/shippingRates.js';
-
-const CATALOG = {
-  'abendrosa-in-marrakesch': {
-    name: 'Abendrosa in Marrakesch',
-    image: 'https://anselmi.at/assets/kunst/abendrosainmarrakesch.jpg',
-    prices: { A4: 2000, A3: 2500 } // cents
-  },
-  'doce-sao-miguel': {
-    name: 'Doce São Miguel',
-    image: 'https://anselmi.at/assets/kunst/docesaomiguel.jpg',
-    prices: { A4: 2000, A3: 2500 } // cents
-  }
-};
+import { getRemaining } from '../_lib/stock.js';
+import { corsHeaders } from '../_lib/cors.js';
 
 // Versandkosten kommen aus functions/_lib/shippingRates.js (Österreichische
 // Post "Paketmarke", Details dort). Stripe Checkout kennt die vom Kunden
@@ -35,24 +23,6 @@ const SHIPPING_OPTION_LABELS = {
 
 const SITE_ORIGIN = 'https://anselmi.at';
 const MAX_QTY_PER_ITEM = 10;
-
-// The site itself stays on GitHub Pages (anselmi.at) — only this checkout
-// endpoint runs on Cloudflare Pages, under its own *.pages.dev domain. That
-// makes every call to this function cross-origin from the browser's point
-// of view, so it needs explicit CORS headers naming exactly which origins
-// are allowed to call it.
-const ALLOWED_ORIGINS = ['https://anselmi.at', 'https://www.anselmi.at'];
-
-function corsHeaders(request) {
-  const origin = request.headers.get('Origin');
-  const allowOrigin = ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0];
-  return {
-    'Access-Control-Allow-Origin': allowOrigin,
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    Vary: 'Origin'
-  };
-}
 
 export function onRequestOptions({ request }) {
   return new Response(null, { status: 204, headers: corsHeaders(request) });
@@ -124,6 +94,7 @@ export async function onRequestPost({ request, env }) {
   }
 
   const lineItems = [];
+  const metaItems = [];
   for (const raw of items) {
     const product = raw && CATALOG[raw.id];
     const unitAmount = product && product.prices[raw.size];
@@ -131,6 +102,18 @@ export async function onRequestPost({ request, env }) {
       return jsonResponse({ error: 'Unbekannter Artikel im Warenkorb.' }, 400, request);
     }
     const qty = Math.min(Math.max(parseInt(raw.qty, 10) || 1, 1), MAX_QTY_PER_ITEM);
+
+    if (env.STOCK_KV) {
+      const remaining = await getRemaining(env.STOCK_KV, raw.id, raw.size);
+      if (remaining !== null && qty > remaining) {
+        return jsonResponse({
+          error: remaining === 0
+            ? product.name + ' (' + raw.size + ') ist leider ausverkauft.'
+            : 'Von ' + product.name + ' (' + raw.size + ') sind nur noch ' + remaining + ' Stück verfügbar.'
+        }, 409, request);
+      }
+    }
+
     lineItems.push({
       quantity: qty,
       price_data: {
@@ -142,6 +125,7 @@ export async function onRequestPost({ request, env }) {
         }
       }
     });
+    metaItems.push({ id: raw.id, size: raw.size, qty: qty });
   }
 
   const lang = body.lang === 'en' ? 'en' : 'de';
@@ -161,6 +145,9 @@ export async function onRequestPost({ request, env }) {
   const allowedCountries = getSelectableCountries().map(function (c) { return c.code; });
   appendParam(params, 'shipping_address_collection', { allowed_countries: allowedCountries });
   appendParam(params, 'shipping_options', buildShippingOptions(shippingFormat, lang));
+  // Read back by the Stripe webhook once payment completes, to know exactly
+  // which product/size/qty to count against the edition limit.
+  appendParam(params, 'metadata', { items: JSON.stringify(metaItems) });
 
   let stripeRes;
   try {

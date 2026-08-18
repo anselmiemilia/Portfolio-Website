@@ -920,6 +920,21 @@ nav a:hover::after {
   color: var(--weiss);
 }
 
+.produkt-groesse-btn--ausverkauft,
+.produkt-groesse-btn--ausverkauft:hover {
+  border-color: rgba(101, 17, 34, 0.3);
+  color: rgba(101, 17, 34, 0.4);
+  background: none;
+  cursor: default;
+  text-decoration: line-through;
+}
+
+.produkt-kaufen-btn:disabled,
+.produkt-kaufen-btn:disabled:hover {
+  background: rgba(101, 17, 34, 0.35);
+  cursor: default;
+}
+
 .produkt-section {
   padding-top: 1.5rem;
   margin-top: 1.5rem;
