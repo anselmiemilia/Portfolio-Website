@@ -76,7 +76,15 @@ function buildShippingOptions(format, lang) {
   });
 }
 
+// Kill switch: flip to false to instantly stop all checkouts (e.g. while
+// verifying which Stripe key — test or live — is actually configured).
+const SHOP_ENABLED = false;
+
 export async function onRequestPost({ request, env }) {
+  if (!SHOP_ENABLED) {
+    return jsonResponse({ error: 'Der Shop ist gerade vorübergehend nicht verfügbar.' }, 503, request);
+  }
+
   if (!env.STRIPE_SECRET_KEY) {
     return jsonResponse({ error: 'Stripe ist nicht konfiguriert.' }, 500, request);
   }
