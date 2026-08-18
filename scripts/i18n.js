@@ -65,12 +65,12 @@
     'produkt.info.title': { de: 'Info', en: 'Info' },
     'produkt.info.folgt': { de: 'Info folgt ...', en: 'Info coming soon ...' },
     'produkt.abendrosa.info': {
-      de: 'Inspiriert von einem abendlichen Spaziergang durch Marrakesch an einem warmen Februarabend, zeigt dieses Bild die Koutoubia-Moschee im pulsierenden Treiben der Stadt. Original gemalt mit Acryl und Ölpastell auf Leinwand, 30 × 40 cm, im Juli 2026.',
-      en: 'Inspired by an evening walk through Marrakesh on a warm February evening, this piece captures the Koutoubia Mosque amid the city’s lively evening bustle. Original painted with acrylic and oil pastel on canvas, 30 × 40 cm, in July 2026.'
+      de: 'Inspiriert von einem abendlichen Spaziergang durch Marrakesch an einem warmen Februarabend, zeigt dieses Bild die Koutoubia-Moschee im pulsierenden Treiben der Stadt. Original gemalt mit Acryl und Ölpastell auf Leinwand, 30 × 40 cm, im Juli 2026. Der Druck hat einen 15 mm Rand rundum.',
+      en: 'Inspired by an evening walk through Marrakesh on a warm February evening, this piece captures the Koutoubia Mosque amid the city’s lively evening bustle. Original painted with acrylic and oil pastel on canvas, 30 × 40 cm, in July 2026. The print has a 15 mm border all around.'
     },
     'produkt.docesaomiguel.info': {
-      de: 'Auf einer Reise nach Lissabon im August verlor ich mich in den Gassen von Alfama – dort entdeckte ich die Casa São Miguel, deren Fassade mich auf Anhieb verzauberte und zu diesem Bild inspirierte. Original gemalt mit Acryl und Ölpastell auf Leinwand, 50 × 60 cm, im August 2026.',
-      en: 'On a trip to Lisbon in August, I wandered through the lanes of Alfama and came across Casa São Miguel – its façade captivated me instantly and became the inspiration for this piece. Original painted with acrylic and oil pastel on canvas, 50 × 60 cm, in August 2026.'
+      de: 'Auf einer Reise nach Lissabon im August verlor ich mich in den Gassen von Alfama – dort entdeckte ich die Casa São Miguel, deren Fassade mich auf Anhieb verzauberte und zu diesem Bild inspirierte. Original gemalt mit Acryl und Ölpastell auf Leinwand, 50 × 60 cm, im August 2026. Der Druck hat einen 15 mm Rand rundum.',
+      en: 'On a trip to Lisbon in August, I wandered through the lanes of Alfama and came across Casa São Miguel – its façade captivated me instantly and became the inspiration for this piece. Original painted with acrylic and oil pastel on canvas, 50 × 60 cm, in August 2026. The print has a 15 mm border all around.'
     },
     'produkt.details.title': { de: 'Details', en: 'Details' },
     'produkt.details.groesse': { de: 'Größe', en: 'Size' },
