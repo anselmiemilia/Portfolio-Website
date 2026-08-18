@@ -263,19 +263,36 @@
     if (e.key === 'Escape') close();
   });
 
-  document.addEventListener('langchange', updateTexts);
+  document.addEventListener('langchange', function () {
+    updateTexts();
+    if (!window.SHOP_ENABLED) updateComingSoonLabels();
+  });
 
   // While the shop is disabled, any grid that actually lists real products
   // (has links in it — the empty "Shop Originals" placeholder doesn't) gets
   // swapped for the same "coming soon" placeholder used elsewhere on the site.
+  function updateComingSoonLabels() {
+    var label = t('produkt.baldVerfuegbar', 'Bald verfügbar');
+    document.querySelectorAll('[data-shop-placeholder]').forEach(function (el) {
+      el.textContent = label;
+    });
+  }
+
   function hideProductGrids() {
     document.querySelectorAll('.shop-prints-grid').forEach(function (grid) {
       if (!grid.querySelector('a')) return;
       var placeholder = document.createElement('div');
       placeholder.className = 'coming-soon';
-      placeholder.textContent = t('produkt.baldVerfuegbar', 'Bald verfügbar');
+      placeholder.setAttribute('data-shop-placeholder', '');
       grid.replaceWith(placeholder);
     });
+    // "Shop Now" / "Kunst kaufen" CTAs on the homepage banner — same idea,
+    // shouldn't invite a purchase that isn't possible yet.
+    document.querySelectorAll('[data-i18n="home.prints.banner.cta"], [data-i18n="home.prints.cta"]').forEach(function (el) {
+      el.removeAttribute('data-i18n');
+      el.setAttribute('data-shop-placeholder', '');
+    });
+    updateComingSoonLabels();
   }
 
   document.addEventListener('DOMContentLoaded', function () {
