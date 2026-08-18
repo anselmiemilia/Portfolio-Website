@@ -120,4 +120,23 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch(function () { /* stock badge just won't show; checkout still enforces it */ });
   }
 
+  // Collapsible sections (e.g. "Info"): collapsed by default, toggled on click.
+  document.querySelectorAll('.produkt-section-toggle').forEach(function (toggle) {
+    var body = toggle.nextElementSibling;
+    if (!body) return;
+    function setOpen(open) {
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) body.removeAttribute('hidden'); else body.setAttribute('hidden', '');
+    }
+    toggle.addEventListener('click', function () {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    toggle.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle.click();
+      }
+    });
+  });
+
 });

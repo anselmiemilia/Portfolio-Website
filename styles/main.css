@@ -950,6 +950,29 @@ nav a:hover::after {
   font-weight: 700;
 }
 
+.produkt-section-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.produkt-section-toggle::after {
+  content: '+';
+  font-weight: 400;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.produkt-section-toggle[aria-expanded="true"]::after {
+  content: '\2212';
+}
+
+.produkt-section-body {
+  margin-top: -0.25rem;
+}
+
 .produkt-section p {
   font-size: 0.95rem;
   line-height: 1.7;

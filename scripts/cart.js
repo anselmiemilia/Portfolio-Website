@@ -265,8 +265,24 @@
 
   document.addEventListener('langchange', updateTexts);
 
+  // While the shop is disabled, any grid that actually lists real products
+  // (has links in it — the empty "Shop Originals" placeholder doesn't) gets
+  // swapped for the same "coming soon" placeholder used elsewhere on the site.
+  function hideProductGrids() {
+    document.querySelectorAll('.shop-prints-grid').forEach(function (grid) {
+      if (!grid.querySelector('a')) return;
+      var placeholder = document.createElement('div');
+      placeholder.className = 'coming-soon';
+      placeholder.textContent = t('produkt.baldVerfuegbar', 'Bald verfügbar');
+      grid.replaceWith(placeholder);
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
-    if (!window.SHOP_ENABLED) return;
+    if (!window.SHOP_ENABLED) {
+      hideProductGrids();
+      return;
+    }
     buildToggle();
     buildDrawer();
     renderBadge();
