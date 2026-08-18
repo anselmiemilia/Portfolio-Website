@@ -14,10 +14,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Size selector: updates price + Größe detail row
+  // Size selector: updates price + Größe/Auflage detail rows
   var sizeBtns = document.querySelectorAll('.produkt-groesse-btn');
   var priceEl = document.querySelector('.produkt-preis');
   var groesseEl = document.querySelector('[data-detail="groesse"]');
+  var auflageEl = document.querySelector('[data-detail="auflage"]');
   var kaufenBtn = document.querySelector('.produkt-kaufen-btn');
   var produktName = document.querySelector('.produkt-info h1') ? document.querySelector('.produkt-info h1').textContent : '';
 
@@ -29,17 +30,28 @@ document.addEventListener('DOMContentLoaded', function () {
     kaufenBtn.href = 'mailto:emilia@anselmi.at?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   }
 
+  function updateAuflage(size) {
+    if (!auflageEl || !window.i18n) return;
+    var key = size === 'A3' ? 'produkt.auflage.a3' : 'produkt.auflage.a4';
+    auflageEl.setAttribute('data-i18n-html', key);
+    auflageEl.innerHTML = window.i18n.t(key);
+  }
+
   sizeBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
       sizeBtns.forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
       if (priceEl) priceEl.textContent = '€ ' + btn.dataset.price + ',–';
       if (groesseEl) groesseEl.textContent = btn.dataset.cm;
+      updateAuflage(btn.textContent);
       updateKaufenLink(btn.textContent, btn.dataset.price);
     });
   });
 
   var activeSizeBtn = document.querySelector('.produkt-groesse-btn.active');
-  if (activeSizeBtn) updateKaufenLink(activeSizeBtn.textContent, activeSizeBtn.dataset.price);
+  if (activeSizeBtn) {
+    updateAuflage(activeSizeBtn.textContent);
+    updateKaufenLink(activeSizeBtn.textContent, activeSizeBtn.dataset.price);
+  }
 
 });
