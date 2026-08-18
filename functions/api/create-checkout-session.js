@@ -153,7 +153,11 @@ export async function onRequestPost({ request, env }) {
   appendParam(params, 'cancel_url', SITE_ORIGIN + '/shop/abgebrochen.html');
   appendParam(params, 'locale', lang);
   appendParam(params, 'line_items', lineItems);
-  appendParam(params, 'payment_method_types', ['card', 'paypal', 'sepa_debit', 'eps']);
+  // 'paypal' ist absichtlich (noch) nicht dabei – muss in Stripe erst unter
+  // Settings -> Payment methods aktiviert/verbunden werden (eigener PayPal-
+  // Business-Account nötig), sonst lehnt Stripe die ganze Session mit 500 ab.
+  // Sobald das erledigt ist: 'paypal' hier wieder in die Liste aufnehmen.
+  appendParam(params, 'payment_method_types', ['card', 'sepa_debit', 'eps']);
   const allowedCountries = getSelectableCountries().map(function (c) { return c.code; });
   appendParam(params, 'shipping_address_collection', { allowed_countries: allowedCountries });
   appendParam(params, 'shipping_options', buildShippingOptions(shippingFormat, lang));
