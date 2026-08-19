@@ -5,17 +5,17 @@
 export const CATALOG = {
   'abendrosa-in-marrakesch': {
     name: 'Abendrosa in Marrakesch',
-    image: 'https://anselmi.at/assets/kunst/abendrosainmarrakesch.jpg',
+    image: 'https://anselmi.at/assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch.jpg',
     prices: { A4: 2000, A3: 2500 } // cents
   },
   'doce-sao-miguel': {
     name: 'Doce São Miguel',
-    image: 'https://anselmi.at/assets/kunst/docesaomiguel.jpg',
+    image: 'https://anselmi.at/assets/kunst/docesaomiguel/docesaomiguel.jpg',
     prices: { A4: 2000, A3: 2500 } // cents
   },
   'sommer-sonne-baedala': {
     name: 'Sommer, Sonne, Bädala',
-    image: 'https://anselmi.at/assets/kunst/sommersonnebaedala.jpg',
+    image: 'https://anselmi.at/assets/kunst/sommersonnebaedala/sommersonnebaedala.jpg',
     prices: { A4: 2000 } // cents — A4 only
   }
 };
