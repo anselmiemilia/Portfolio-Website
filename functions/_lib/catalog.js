@@ -12,6 +12,11 @@ export const CATALOG = {
     name: 'Doce São Miguel',
     image: 'https://anselmi.at/assets/kunst/docesaomiguel.jpg',
     prices: { A4: 2000, A3: 2500 } // cents
+  },
+  'sommer-sonne-baedala': {
+    name: 'Sommer, Sonne, Bädala',
+    image: 'https://anselmi.at/assets/kunst/sommersonnebaedala.png',
+    prices: { A4: 2000 } // cents — A4 only
   }
 };
 

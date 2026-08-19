@@ -74,6 +74,12 @@
       de: 'Inspiriert von einem abendlichen Spaziergang durch Marrakesch an einem warmen Februarabend, zeigt dieses Bild die Koutoubia-Moschee im pulsierenden Treiben der Stadt. Original gemalt mit Acryl und Ölpastell auf Leinwand, 30 × 40 cm, im Juli 2026.',
       en: 'Inspired by an evening walk through Marrakesh on a warm February evening, this piece captures the Koutoubia Mosque amid the city’s lively evening bustle. Original painted with acrylic and oil pastel on canvas, 30 × 40 cm, in July 2026.'
     },
+    'produkt.details.papier.wert.filz': { de: '300 g/m² Filzmarkiertes Naturpapier', en: '300 gsm felt-marked natural paper' },
+    'produkt.details.rand.wert.1cm': { de: '1 cm rundum', en: '1 cm all around' },
+    'produkt.sommersonnebaedala.info': {
+      de: 'Sommer, Sonne, Bädala entstand als Auftragsarbeit für das Juli/August-Cover der marie Straßenzeitung. Die Szenerie stellt den Bodensee und das sommerliche Treiben dar. Das Schöne am See in Vorarlberg ist, dass er allen Menschen freien Zugang zu einer Abkühlung schafft und einen Ort der Begegnung und des Verweilens darstellt.',
+      en: 'Sommer, Sonne, Bädala was created as a commissioned piece for the July/August cover of the marie street newspaper. The scene shows Lake Constance and the bustle of summer life. What’s lovely about the lake in Vorarlberg is that it gives everyone free access to a place to cool off — a place to meet and to linger.'
+    },
     'produkt.docesaomiguel.info': {
       de: 'Auf einer Reise nach Lissabon im August verlor ich mich in den Gassen von Alfama – dort entdeckte ich die Casa São Miguel, deren Fassade mich auf Anhieb verzauberte und zu diesem Bild inspirierte. Original gemalt mit Acryl und Ölpastell auf Leinwand, 50 × 60 cm, im August 2026.',
       en: 'On a trip to Lisbon in August, I wandered through the lanes of Alfama and came across Casa São Miguel – its façade captivated me instantly and became the inspiration for this piece. Original painted with acrylic and oil pastel on canvas, 50 × 60 cm, in August 2026.'

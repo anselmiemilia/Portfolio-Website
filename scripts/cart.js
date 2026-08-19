@@ -1,9 +1,8 @@
 (function () {
-  // Kill switch: the shop isn't open yet. While false, no cart icon/drawer
-  // is shown anywhere and produkt.js shows "Bald verfügbar" instead of a
-  // working buy button. Flip to true when ready to actually sell — nothing
-  // else needs to change.
-  window.SHOP_ENABLED = false;
+  // Kill switch: flip to false to instantly hide the cart icon/drawer
+  // everywhere and show "Bald verfügbar" instead of a working buy button
+  // (matching functions/api/create-checkout-session.js's own kill switch).
+  window.SHOP_ENABLED = true;
 
   var STORAGE_KEY = 'ea_cart';
   // The site is served from GitHub Pages (anselmi.at); only this one
