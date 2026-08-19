@@ -58,7 +58,7 @@ export const UNSUPPORTED_COUNTRIES = {
 // Welches Format (PM45/PM70) für welches Druckformat gilt
 export const PRODUCT_FORMAT = {
   A4: "PM45",
-  A3: "PM45", // knapp - bei Bedarf auf "PM70" umstellen, siehe Kommentar oben
+  A3: "PM70", // bestätigt: A3-Verpackung braucht PM70, nicht PM45
 };
 
 /**
