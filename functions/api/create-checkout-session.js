@@ -78,7 +78,7 @@ function buildShippingOptions(format, lang) {
 
 // Kill switch: flip to false to instantly stop all checkouts (e.g. while
 // verifying which Stripe key — test or live — is actually configured).
-const SHOP_ENABLED = false;
+const SHOP_ENABLED = true;
 
 export async function onRequestPost({ request, env }) {
   if (!SHOP_ENABLED) {
