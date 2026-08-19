@@ -156,6 +156,9 @@ export async function onRequestPost({ request, env }) {
   // Read back by the Stripe webhook once payment completes, to know exactly
   // which product/size/qty to count against the edition limit.
   appendParam(params, 'metadata', { items: JSON.stringify(metaItems) });
+  // Stripe automatically generates and emails a PDF invoice for the order
+  // once payment succeeds, on top of its own payment-receipt email.
+  appendParam(params, 'invoice_creation', { enabled: 'true' });
 
   let stripeRes;
   try {
