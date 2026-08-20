@@ -34,6 +34,16 @@
   font-display: swap;
 }
 
+/* <picture> must not become the layout box: the <img> stays the flex/grid item.
+   <source> must stay boxless too, or it counts as a flex item and adds a gap. */
+picture {
+  display: contents;
+}
+
+picture > source {
+  display: none;
+}
+
 /* Variables */
 :root {
   --burgunder: #651122;
