@@ -221,7 +221,9 @@ nav a:hover::after {
   position: absolute;
   top: 50%;
   right: 1.3rem;
-  transform: translateY(-50%);
+  /* -1px optical nudge: the icon is ~21px tall against a ~10px cap height, so
+     box-centring leaves it reading low next to the nav labels. */
+  transform: translateY(calc(-50% - 1px));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -577,7 +579,7 @@ nav a:hover::after {
 
 .contact-links {
   display: flex;
-  gap: 0;
+  gap: 1rem 4rem;
   margin-top: 2rem;
   flex-wrap: wrap;
 }
@@ -1734,15 +1736,29 @@ footer a:hover { text-decoration: underline; }
   header {
     position: fixed;
     align-items: center;
-    padding: 1rem 6.6rem 1rem 1.5rem;
+    padding: 1rem 1.5rem;
   }
   .logo { margin-top: 0; }
   .logo img.logo-default,
   .logo img.logo-hover { height: 2.2rem; }
 
-  .nav-toggle { display: flex; }
+  /* Cart first, burger to the right of it. Both run in the normal flow here so
+     the order is set with flex order; the cart stays position: relative because
+     the .cart-count badge is absolutely positioned inside it. */
+  .nav-toggle {
+    display: flex;
+    order: 3;
+  }
 
-  .cart-toggle { right: 4.2rem; }
+  .cart-toggle {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    order: 2;
+    margin-left: auto;
+    margin-right: 1.15rem;
+  }
   .cart-drawer { padding: 1.5rem 1.25rem; }
 
   nav {
@@ -1879,7 +1895,12 @@ footer a:hover { text-decoration: underline; }
     margin-bottom: 1rem;
   }
 
-  .contact-links { justify-content: center; }
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+  }
 
   /* Project Detail */
   .projekt-detail { padding: 8rem 1.5rem 4rem; }
