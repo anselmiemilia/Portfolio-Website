@@ -103,6 +103,7 @@ export async function onRequestPost({ request, env }) {
 
   const lineItems = [];
   const metaItems = [];
+  const summaryParts = [];
   for (const raw of items) {
     const product = raw && CATALOG[raw.id];
     const unitAmount = product && product.prices[raw.size];
@@ -134,6 +135,7 @@ export async function onRequestPost({ request, env }) {
       }
     });
     metaItems.push({ id: raw.id, size: raw.size, qty: qty });
+    summaryParts.push(product.name + ' (' + raw.size + ')' + (qty > 1 ? ' x' + qty : ''));
   }
 
   const lang = body.lang === 'en' ? 'en' : 'de';
@@ -145,6 +147,10 @@ export async function onRequestPost({ request, env }) {
   appendParam(params, 'cancel_url', SITE_ORIGIN + '/shop/abgebrochen.html');
   appendParam(params, 'locale', lang);
   appendParam(params, 'line_items', lineItems);
+  // Shows up directly in the Stripe Payments list without having to open
+  // the payment/session — otherwise there's no way to tell what was
+  // ordered without clicking in.
+  appendParam(params, 'payment_intent_data', { description: summaryParts.join(', ').slice(0, 500) });
   // 'paypal' und 'sepa_debit' sind absichtlich (noch) nicht dabei – müssen
   // in Stripe erst unter Settings -> Payment methods aktiviert werden,
   // sonst lehnt Stripe die ganze Session mit 500 ab. Sobald aktiviert:
