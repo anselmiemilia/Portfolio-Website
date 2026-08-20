@@ -17,6 +17,11 @@ export const CATALOG = {
     name: 'Sommer, Sonne, Bädala',
     image: 'https://anselmi.at/assets/kunst/sommersonnebaedala/sommersonnebaedala.jpg',
     prices: { A4: 2000 } // cents — A4 only
+  },
+  'the-city-of-buses': {
+    name: 'The City of Buses',
+    image: 'https://anselmi.at/assets/kunst/thecityofbuses/thecityofbuses.jpg',
+    prices: { A4: 2000, A3: 2500 } // cents — pre-order, ships end of August
   }
 };
 

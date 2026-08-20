@@ -79,7 +79,8 @@ document.addEventListener('DOMContentLoaded', function () {
         size: currentSize,
         price: currentPrice,
         image: mainImg ? mainImg.src : '',
-        qty: 1
+        qty: 1,
+        preorder: kaufenBtn.dataset.preorder === 'true'
       });
     });
   }

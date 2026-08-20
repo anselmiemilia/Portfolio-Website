@@ -56,7 +56,8 @@
         size: item.size,
         price: item.price,
         image: item.image,
-        qty: item.qty || 1
+        qty: item.qty || 1,
+        preorder: !!item.preorder
       });
     }
     writeCart(items);
@@ -131,6 +132,7 @@
       '<div class="cart-footer">' +
         '<div class="cart-total-row"><span class="cart-total-label"></span><span class="cart-total-value">€ 0,–</span></div>' +
         '<p class="cart-shipping-note"></p>' +
+        '<p class="cart-preorder-note"></p>' +
         '<button type="button" class="cart-checkout-btn produkt-kaufen-btn"></button>' +
         '<p class="cart-error"></p>' +
       '</div>';
@@ -179,6 +181,16 @@
     checkoutBtn.style.display = items.length ? '' : 'none';
     drawerEl.querySelector('.cart-total-row').style.display = items.length ? '' : 'none';
     drawerEl.querySelector('.cart-shipping-note').style.display = items.length ? '' : 'none';
+
+    var preorderNoteEl = drawerEl.querySelector('.cart-preorder-note');
+    var hasPreorder = items.some(function (i) { return i.preorder; });
+    var hasInStock = items.some(function (i) { return !i.preorder; });
+    if (hasPreorder && hasInStock) {
+      preorderNoteEl.textContent = t('cart.vorbestellHinweis', 'Enthält eine Vorbestellung – die gesamte Bestellung wird gemeinsam zum Liefertermin der Vorbestellung (Ende August) verschickt.');
+      preorderNoteEl.style.display = 'block';
+    } else {
+      preorderNoteEl.style.display = 'none';
+    }
 
     items.forEach(function (item) {
       var key = itemKey(item);
