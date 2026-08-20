@@ -32,7 +32,10 @@ document.addEventListener('DOMContentLoaded', function () {
     dotsContainer.className = 'slide-dots';
     images.forEach((_, i) => {
       const dot = document.createElement('button');
+      dot.type = 'button';
       dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Bild ' + (i + 1) + ' von ' + images.length);
+      dot.setAttribute('aria-current', i === 0 ? 'true' : 'false');
       dot.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -64,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       dotsContainer.querySelectorAll('.slide-dot').forEach((dot, i) => {
         dot.classList.toggle('active', i === current);
+        dot.setAttribute('aria-current', i === current ? 'true' : 'false');
       });
     }
 
