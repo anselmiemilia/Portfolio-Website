@@ -120,6 +120,7 @@
     drawerEl = document.createElement('aside');
     drawerEl.className = 'cart-drawer';
     drawerEl.setAttribute('aria-hidden', 'true');
+    drawerEl.inert = true;
     drawerEl.innerHTML =
       '<div class="cart-drawer-header">' +
         '<h2></h2>' +
@@ -214,6 +215,7 @@
     drawerEl.classList.add('open');
     overlayEl.classList.add('open');
     drawerEl.setAttribute('aria-hidden', 'false');
+    drawerEl.inert = false;
   }
 
   function close() {
@@ -221,6 +223,7 @@
     drawerEl.classList.remove('open');
     overlayEl.classList.remove('open');
     drawerEl.setAttribute('aria-hidden', 'true');
+    drawerEl.inert = true;
   }
 
   function toggle() {

@@ -7,17 +7,23 @@
   <meta name="description" content="Portfolio von Emilia Anselmi - Grafikdesign Projekte" data-i18n="meta.desc.home">
   <title>Emilia Anselmi | Portfolio</title>
   <link rel="icon" type="image/png" href="assets/logo/favicon.png">
-  <link href="styles/main.css?v=64" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/logo/hero-wordmark.png" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" fetchpriority="high"
+        imagesizes="(min-width: 900px) 33vw, 100vw"
+        imagesrcset="assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch-400.webp 400w, assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch-800.webp 800w">
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/Military Scribe/Military Scribe.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/apercu-mono-pro/ApercuMonoProRegular.woff2" crossorigin>
+  <link href="styles/main.css?v=66" rel="stylesheet">
   <script src="scripts/i18n.js?v=61" defer></script>
   <script src="scripts/nav.js?v=61" defer></script>
-  <script src="scripts/cart.js?v=1" defer></script>
+  <script src="scripts/cart.js?v=2" defer></script>
 </head>
 
 <body>
 
   <!-- Header -->
   <header>
-    <a href="index.html" class="logo"><img src="assets/logo/LOGO_EA_web.png" alt="EA Logo" class="logo-default"><img src="assets/logo/LOGO_EA_rosa_web.png" alt="EA Logo" class="logo-hover"></a>
+    <a href="index.html" class="logo"><img src="assets/logo/LOGO_EA_web.png" alt="Atelier Anselmi" width="400" height="330" class="logo-default"><img src="assets/logo/LOGO_EA_rosa_web.png" alt="" aria-hidden="true" width="400" height="330" class="logo-hover"></a>
     <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
         <nav>
       <a href="index.html"><span data-i18n="nav.home">Home</span></a>
@@ -29,16 +35,22 @@
         </nav>
   </header>
 
+  <main>
+
   <!-- Hero -->
   <section class="hero">
-    <img src="assets/logo/hero-wordmark.png" alt="Atelier Anselmi" class="hero-wordmark">
+    <img src="assets/logo/hero-wordmark.png" alt="Atelier Anselmi" width="1800" height="621" fetchpriority="high" decoding="async" class="hero-wordmark">
     <p class="subtitle" data-i18n-html="hero.subtitle">Angehende Grafikdesignerin &amp; Künstlerin aus Vorarlberg</p>
   </section>
 
   <!-- Prints & Originale -->
   <section class="home-section home-prints-section">
     <div class="prints-preview">
-      <img src="assets/kunst/lisboa-preview.jpg" alt="First Collection" class="prints-preview-img">
+      <picture>
+        <source type="image/webp" sizes="100vw" srcset="assets/kunst/lisboa-preview-400.webp 400w, assets/kunst/lisboa-preview-800.webp 800w">
+        <img src="assets/kunst/lisboa-preview-800.jpg" sizes="100vw" srcset="assets/kunst/lisboa-preview-400.jpg 400w, assets/kunst/lisboa-preview-800.jpg 800w"
+             width="1600" height="1105" fetchpriority="high" decoding="async" alt="First Collection" class="prints-preview-img">
+      </picture>
       <div class="prints-preview-overlay">
         <div class="coming-soon" data-i18n="home.prints.banner.title">First Collection</div>
         <a href="kunst.html" class="back-button" data-i18n="home.prints.banner.cta">Shop Now</a>
@@ -50,21 +62,33 @@
     <div class="shop-prints-grid">
       <a href="shop/abendrosa-in-marrakesch.html" class="shop-prints-card">
         <div class="shop-prints-img-wrap">
-          <img src="assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch.jpg" alt="Abendrosa in Marrakesch">
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 33vw, 100vw" srcset="assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch-400.webp 400w, assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch-800.webp 800w">
+            <img src="assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch-800.jpg" sizes="(min-width: 900px) 33vw, 100vw" srcset="assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch-400.jpg 400w, assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch-800.jpg 800w"
+                 width="1200" height="1200" fetchpriority="high" decoding="async" alt="">
+          </picture>
           <div class="shop-prints-overlay"><span>Abendrosa in Marrakesch</span></div>
         </div>
         <p class="shop-prints-caption">Abendrosa in Marrakesch</p>
       </a>
       <a href="shop/doce-sao-miguel.html" class="shop-prints-card">
         <div class="shop-prints-img-wrap">
-          <img src="assets/kunst/docesaomiguel/docesaomiguel.jpg" alt="Doce São Miguel">
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 33vw, 100vw" srcset="assets/kunst/docesaomiguel/docesaomiguel-400.webp 400w, assets/kunst/docesaomiguel/docesaomiguel-800.webp 800w">
+            <img src="assets/kunst/docesaomiguel/docesaomiguel-800.jpg" sizes="(min-width: 900px) 33vw, 100vw" srcset="assets/kunst/docesaomiguel/docesaomiguel-400.jpg 400w, assets/kunst/docesaomiguel/docesaomiguel-800.jpg 800w"
+                 width="1200" height="1200" loading="lazy" decoding="async" alt="">
+          </picture>
           <div class="shop-prints-overlay"><span>Doce São Miguel</span></div>
         </div>
         <p class="shop-prints-caption">Doce São Miguel</p>
       </a>
       <a href="shop/sommer-sonne-baedala.html" class="shop-prints-card">
         <div class="shop-prints-img-wrap">
-          <img src="assets/kunst/sommersonnebaedala/sommersonnebaedala.jpg" alt="Sommer, Sonne, Bädala">
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 33vw, 100vw" srcset="assets/kunst/sommersonnebaedala/sommersonnebaedala-400.webp 400w, assets/kunst/sommersonnebaedala/sommersonnebaedala-800.webp 800w">
+            <img src="assets/kunst/sommersonnebaedala/sommersonnebaedala-800.jpg" sizes="(min-width: 900px) 33vw, 100vw" srcset="assets/kunst/sommersonnebaedala/sommersonnebaedala-400.jpg 400w, assets/kunst/sommersonnebaedala/sommersonnebaedala-800.jpg 800w"
+                 width="1200" height="1200" loading="lazy" decoding="async" alt="">
+          </picture>
           <div class="shop-prints-overlay"><span>Sommer, Sonne, Bädala</span></div>
         </div>
         <p class="shop-prints-caption">Sommer, Sonne, Bädala</p>
@@ -81,19 +105,51 @@
     <div class="home-featured-grid">
       <a href="projekte/datenvisualisierung.html" class="projekt-card projekt-card--mid">
         <div class="slideshow-images">
-          <img src="assets/projects/datenvisualisierung/startbild_gommainswirtshus-11.jpg" alt="Datenvisualisierung" class="active">
-          <img src="assets/projects/datenvisualisierung/gommainswirtshus-3.jpg" alt="Datenvisualisierung">
-          <img src="assets/projects/datenvisualisierung/gommainswirtshus-8.jpg" alt="Datenvisualisierung">
-          <img src="assets/projects/datenvisualisierung/gommainswirtshus-13.jpg" alt="Datenvisualisierung">
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/datenvisualisierung/startbild_gommainswirtshus-11-400.webp 400w, assets/projects/datenvisualisierung/startbild_gommainswirtshus-11-800.webp 800w">
+            <img src="assets/projects/datenvisualisierung/startbild_gommainswirtshus-11-800.jpg" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/datenvisualisierung/startbild_gommainswirtshus-11-400.jpg 400w, assets/projects/datenvisualisierung/startbild_gommainswirtshus-11-800.jpg 800w"
+                 width="1400" height="933" loading="lazy" decoding="async" alt="" class="active">
+          </picture>
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/datenvisualisierung/gommainswirtshus-3-400.webp 400w, assets/projects/datenvisualisierung/gommainswirtshus-3-800.webp 800w">
+            <img src="assets/projects/datenvisualisierung/gommainswirtshus-3-800.jpg" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/datenvisualisierung/gommainswirtshus-3-400.jpg 400w, assets/projects/datenvisualisierung/gommainswirtshus-3-800.jpg 800w"
+                 width="1400" height="933" loading="lazy" decoding="async" alt="">
+          </picture>
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/datenvisualisierung/gommainswirtshus-8-400.webp 400w, assets/projects/datenvisualisierung/gommainswirtshus-8-800.webp 800w">
+            <img src="assets/projects/datenvisualisierung/gommainswirtshus-8-800.jpg" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/datenvisualisierung/gommainswirtshus-8-400.jpg 400w, assets/projects/datenvisualisierung/gommainswirtshus-8-800.jpg 800w"
+                 width="1400" height="933" loading="lazy" decoding="async" alt="">
+          </picture>
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/datenvisualisierung/gommainswirtshus-13-400.webp 400w, assets/projects/datenvisualisierung/gommainswirtshus-13-800.webp 800w">
+            <img src="assets/projects/datenvisualisierung/gommainswirtshus-13-800.jpg" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/datenvisualisierung/gommainswirtshus-13-400.jpg 400w, assets/projects/datenvisualisierung/gommainswirtshus-13-800.jpg 800w"
+                 width="1400" height="933" loading="lazy" decoding="async" alt="">
+          </picture>
         </div>
         <div class="projekt-info"><h3>Datenvisualisierung</h3></div>
       </a>
       <a href="projekte/klein_oho_postkartenset.html" class="projekt-card projekt-card--mid">
         <div class="slideshow-images">
-          <img src="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-15.jpg" alt="klein&amp;oho Postkartenset" class="active">
-          <img src="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio.jpg" alt="klein&amp;oho Postkartenset">
-          <img src="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-2.jpg" alt="klein&amp;oho Postkartenset">
-          <img src="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-5.jpg" alt="klein&amp;oho Postkartenset">
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-15-400.webp 400w, assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-15-800.webp 800w">
+            <img src="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-15-800.jpg" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-15-400.jpg 400w, assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-15-800.jpg 800w"
+                 width="1400" height="933" loading="lazy" decoding="async" alt="" class="active">
+          </picture>
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-400.webp 400w, assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-800.webp 800w">
+            <img src="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-800.jpg" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-400.jpg 400w, assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-800.jpg 800w"
+                 width="1400" height="933" loading="lazy" decoding="async" alt="">
+          </picture>
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-2-400.webp 400w, assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-2-800.webp 800w">
+            <img src="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-2-800.jpg" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-2-400.jpg 400w, assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-2-800.jpg 800w"
+                 width="1400" height="933" loading="lazy" decoding="async" alt="">
+          </picture>
+          <picture>
+            <source type="image/webp" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-5-400.webp 400w, assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-5-800.webp 800w">
+            <img src="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-5-800.jpg" sizes="(min-width: 900px) 50vw, 100vw" srcset="assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-5-400.jpg 400w, assets/projects/klein&amp;oho_postkartenset/20260524_klein&amp;ohoportfolio-5-800.jpg 800w"
+                 width="1400" height="933" loading="lazy" decoding="async" alt="">
+          </picture>
         </div>
         <div class="projekt-info"><h3>klein&amp;oho - Vorarlberg Postkartenset</h3></div>
       </a>
@@ -107,7 +163,11 @@
   <section class="home-section">
     <h2 class="home-section-title" data-i18n="home.about.title">Über mich</h2>
     <div class="home-about-inner">
-      <img src="assets/me/Emilia_Anselmi_home.jpg" alt="Emilia Anselmi" class="home-about-img">
+      <picture>
+        <source type="image/webp" sizes="(min-width: 900px) 35vw, 100vw" srcset="assets/me/Emilia_Anselmi_home-400.webp 400w, assets/me/Emilia_Anselmi_home-800.webp 800w">
+        <img src="assets/me/Emilia_Anselmi_home-800.jpg" sizes="(min-width: 900px) 35vw, 100vw" srcset="assets/me/Emilia_Anselmi_home-400.jpg 400w, assets/me/Emilia_Anselmi_home-800.jpg 800w"
+             width="900" height="664" loading="lazy" decoding="async" alt="Emilia Anselmi" class="home-about-img">
+      </picture>
       <div class="home-about-text">
         <p data-i18n-html="home.about.p1">Ich heiße Emilia und bin Grafik- & Informationsdesign-Studentin im vierten Semester an der <em>New Design University</em> in St. Pölten.</p>
         <p class="home-about-p2" data-i18n-html="home.about.p2">Kunst hat für mich – früher oft eher im Unterbewusstsein – schon immer eine wichtige Rolle gespielt. Als visueller Mensch ist Design für mich nicht einfach nur schön anzusehen.</p>
@@ -127,6 +187,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer>
     <p>© 2026 Emilia Anselmi. <span data-i18n="footer.rights">Alle Rechte vorbehalten.</span> · <a href="impressum.html" data-i18n="footer.impressum">Impressum</a> · <a href="datenschutz.html" data-i18n="footer.datenschutz">Datenschutz</a> · <a href="agb.html" data-i18n="footer.agb">AGB</a> · <a href="widerrufsrecht.html" data-i18n="footer.widerruf">Widerrufsrecht</a></p>
@@ -138,7 +200,7 @@
     <button id="cookie-accept" class="cookie-btn" data-i18n="cookie.accept">Verstanden</button>
   </div>
 
-  <script src="scripts/carousel.js"></script>
+  <script src="scripts/carousel.js?v=2"></script>
   <script>
     if (!localStorage.getItem('cookieAccepted')) {
       document.getElementById('cookie-banner').style.display = 'flex';

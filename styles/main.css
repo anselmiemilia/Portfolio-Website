@@ -5,25 +5,43 @@
 /* Fonts */
 @font-face {
   font-family: "Military Scribe";
-  src: url("../assets/fonts/Military Scribe/Military Scribe.ttf") format("truetype");
+  src: url("../assets/fonts/Military Scribe/Military Scribe.woff2") format("woff2"),
+       url("../assets/fonts/Military Scribe/Military Scribe.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Apercu Mono";
-  src: url("../assets/fonts/apercu-mono-pro/ApercuMonoProRegular.ttf") format("truetype");
+  src: url("../assets/fonts/apercu-mono-pro/ApercuMonoProRegular.woff2") format("woff2"),
+       url("../assets/fonts/apercu-mono-pro/ApercuMonoProRegular.ttf") format("truetype");
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Apercu Mono";
-  src: url("../assets/fonts/apercu-mono-pro/ApercuMonoProBold.ttf") format("truetype");
+  src: url("../assets/fonts/apercu-mono-pro/ApercuMonoProBold.woff2") format("woff2"),
+       url("../assets/fonts/apercu-mono-pro/ApercuMonoProBold.ttf") format("truetype");
   font-weight: 700;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Apercu Mono";
-  src: url("../assets/fonts/apercu-mono-pro/ApercuMonoProLight.ttf") format("truetype");
+  src: url("../assets/fonts/apercu-mono-pro/ApercuMonoProLight.woff2") format("woff2"),
+       url("../assets/fonts/apercu-mono-pro/ApercuMonoProLight.ttf") format("truetype");
   font-weight: 300;
+  font-display: swap;
+}
+
+/* <picture> must not become the layout box: the <img> stays the flex/grid item.
+   <source> must stay boxless too, or it counts as a flex item and adds a gap. */
+picture {
+  display: contents;
+}
+
+picture > source {
+  display: none;
 }
 
 /* Variables */
@@ -44,7 +62,10 @@
   padding: 0;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  background-color: var(--buttergelb);
+}
 
 body {
   font-family: var(--font-body);
@@ -53,6 +74,7 @@ body {
   font-size: 0.85rem;
   line-height: 1.6;
   min-height: 100vh;
+  min-height: 100svh;
 }
 
 a {
@@ -203,7 +225,9 @@ nav a:hover::after {
   position: absolute;
   top: 50%;
   right: 1.3rem;
-  transform: translateY(-50%);
+  /* -1px optical nudge: the icon is ~21px tall against a ~10px cap height, so
+     box-centring leaves it reading low next to the nav labels. */
+  transform: translateY(calc(-50% - 1px));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -508,6 +532,7 @@ nav a:hover::after {
 
 .about-section {
   min-height: 100vh;
+  min-height: 100svh;
   padding: 10rem 3rem 6rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -559,7 +584,7 @@ nav a:hover::after {
 
 .contact-links {
   display: flex;
-  gap: 0;
+  gap: 1rem 4rem;
   margin-top: 2rem;
   flex-wrap: wrap;
 }
@@ -1029,13 +1054,18 @@ nav a:hover::after {
   background: rgba(101, 17, 34, 0.35);
   opacity: 0;
   pointer-events: none;
-  transition: var(--transition);
+  /* visibility, not just opacity, so iOS discards the compositing layer when
+     the overlay is closed instead of leaving it parked over the viewport */
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
   z-index: 199;
 }
 
 .cart-overlay.open {
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0s;
 }
 
 .cart-drawer {
@@ -1050,13 +1080,17 @@ nav a:hover::after {
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
-  transition: transform 0.35s ease-in-out;
+  visibility: hidden;
+  transition: transform 0.35s ease-in-out, visibility 0s linear 0.35s;
   z-index: 200;
   padding: 2rem 1.75rem;
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom));
 }
 
 .cart-drawer.open {
   transform: translateX(0);
+  visibility: visible;
+  transition: transform 0.35s ease-in-out, visibility 0s linear 0s;
 }
 
 .cart-drawer-header {
@@ -1716,16 +1750,33 @@ footer a:hover { text-decoration: underline; }
   header {
     position: fixed;
     align-items: center;
-    padding: 1rem 6.6rem 1rem 1.5rem;
+    padding: 1rem 1.5rem;
   }
   .logo { margin-top: 0; }
   .logo img.logo-default,
   .logo img.logo-hover { height: 2.2rem; }
 
-  .nav-toggle { display: flex; }
+  /* Cart first, burger to the right of it. Both run in the normal flow here so
+     the order is set with flex order; the cart stays position: relative because
+     the .cart-count badge is absolutely positioned inside it. */
+  .nav-toggle {
+    display: flex;
+    order: 3;
+  }
 
-  .cart-toggle { right: 4.2rem; }
-  .cart-drawer { padding: 1.5rem 1.25rem; }
+  .cart-toggle {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    order: 2;
+    margin-left: auto;
+    margin-right: 1.15rem;
+  }
+  .cart-drawer {
+    padding: 1.5rem 1.25rem;
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  }
 
   nav {
     display: none;
@@ -1861,7 +1912,12 @@ footer a:hover { text-decoration: underline; }
     margin-bottom: 1rem;
   }
 
-  .contact-links { justify-content: center; }
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+  }
 
   /* Project Detail */
   .projekt-detail { padding: 8rem 1.5rem 4rem; }
