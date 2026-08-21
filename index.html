@@ -13,8 +13,8 @@
         imagesrcset="assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch-400.webp 400w, assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch-800.webp 800w">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/Military Scribe/Military Scribe.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/apercu-mono-pro/ApercuMonoProRegular.woff2" crossorigin>
-  <link href="styles/main.css?v=67" rel="stylesheet">
-  <script src="scripts/i18n.js?v=62" defer></script>
+  <link href="styles/main.css?v=68" rel="stylesheet">
+  <script src="scripts/i18n.js?v=63" defer></script>
   <script src="scripts/nav.js?v=61" defer></script>
   <script src="scripts/cart.js?v=4" defer></script>
 </head>
@@ -196,6 +196,7 @@
     <div class="contact-links">
       <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a>
       <a href="https://instagram.com/atelieranselmi" target="_blank">@atelieranselmi</a>
+      <a href="https://tiktok.com/@atelieranselmi" target="_blank">TikTok @atelieranselmi</a>
     </div>
   </section>
 
@@ -206,22 +207,7 @@
     <p>© 2026 Emilia Anselmi. <span data-i18n="footer.rights">Alle Rechte vorbehalten.</span> · <a href="impressum.html" data-i18n="footer.impressum">Impressum</a> · <a href="datenschutz.html" data-i18n="footer.datenschutz">Datenschutz</a> · <a href="agb.html" data-i18n="footer.agb">AGB</a> · <a href="widerrufsrecht.html" data-i18n="footer.widerruf">Widerrufsrecht</a></p>
   </footer>
 
-  <!-- Cookie Banner -->
-  <div id="cookie-banner" class="cookie-banner">
-    <p data-i18n-html="cookie.text">Diese Website verwendet keine Tracking-Cookies. Technisch notwendige Cookies können durch den Hosting-Anbieter (GitHub Pages) gesetzt werden. <a href="datenschutz.html">Mehr erfahren</a></p>
-    <button id="cookie-accept" class="cookie-btn" data-i18n="cookie.accept">Verstanden</button>
-  </div>
-
   <script src="scripts/carousel.js?v=2"></script>
-  <script>
-    if (!localStorage.getItem('cookieAccepted')) {
-      document.getElementById('cookie-banner').style.display = 'flex';
-    }
-    document.getElementById('cookie-accept').addEventListener('click', function () {
-      localStorage.setItem('cookieAccepted', 'true');
-      document.getElementById('cookie-banner').style.display = 'none';
-    });
-  </script>
   <script>
     document.querySelectorAll('.projekt-card').forEach(function (card) {
       card.addEventListener('click', function () {

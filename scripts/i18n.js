@@ -56,12 +56,6 @@
       en: 'Feel free to get in touch here:'
     },
 
-    'cookie.text': {
-      de: 'Diese Website verwendet keine Tracking-Cookies. Technisch notwendige Cookies können durch den Hosting-Anbieter (GitHub Pages) gesetzt werden. <a href="datenschutz.html">Mehr erfahren</a>',
-      en: 'This website does not use tracking cookies. Technically necessary cookies may be set by the hosting provider (GitHub Pages). <a href="datenschutz.html">Learn more</a>'
-    },
-    'cookie.accept': { de: 'Verstanden', en: 'Got it' },
-
     'ui.mehrLesen': { de: 'Mehr lesen', en: 'Read more' },
     'ui.wenigerLesen': { de: 'Weniger lesen', en: 'Read less' },
     'ui.beschreibungFolgt': { de: 'Beschreibung folgt ...', en: 'Description coming soon ...' },
@@ -168,8 +162,8 @@
     },
     'datenschutz.h2.3': { de: '3. Hosting', en: '3. Hosting' },
     'datenschutz.p3': {
-      de: 'Diese Website wird über <strong>Cloudflare Pages</strong> (Cloudflare, Inc., 101 Townsend St,\n                San Francisco, CA 94107, USA) gehostet. Beim Aufruf der Website kann Cloudflare technische Daten\n                wie IP-Adresse, Browsertyp und Uhrzeit des Zugriffs in Server-Logfiles speichern.\n                Diese Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse\n                am sicheren Betrieb der Website). Weitere Informationen findest du in der\n                <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Cloudflare</a>.',
-      en: 'This website is hosted via <strong>Cloudflare Pages</strong> (Cloudflare, Inc., 101 Townsend St,\n                San Francisco, CA 94107, USA). When you visit the website, Cloudflare may store technical data\n                such as IP address, browser type and time of access in server log files.\n                This processing is based on Art. 6 (1)(f) GDPR (legitimate interest\n                in the secure operation of the website). Further information can be found in\n                <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare’s Privacy Policy</a>.'
+      de: 'Diese Website wird über <strong>GitHub Pages</strong> (GitHub, Inc., 88 Colin P Kelly Jr Street,\n                San Francisco, CA 94107, USA) gehostet. Beim Aufruf der Website kann GitHub technische Daten\n                wie IP-Adresse, Browsertyp und Uhrzeit des Zugriffs in Server-Logfiles speichern.\n                Diese Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse\n                am sicheren Betrieb der Website). Weitere Informationen findest du in der\n                <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.\n                <br><br>\n                Der Bestellvorgang im Shop (z. B. Abfrage des Lagerstands, Start der Kaufabwicklung) läuft technisch\n                über <strong>Cloudflare Pages Functions</strong> (Cloudflare, Inc., 101 Townsend St, San Francisco,\n                CA 94107, USA). Dabei kann Cloudflare technische Daten wie IP-Adresse und Zeitpunkt der Anfrage\n                verarbeiten. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der sicheren\n                Abwicklung des Bestellvorgangs). Weitere Informationen findest du in der\n                <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Datenschutzerklärung von Cloudflare</a>.',
+      en: 'This website is hosted via <strong>GitHub Pages</strong> (GitHub, Inc., 88 Colin P Kelly Jr Street,\n                San Francisco, CA 94107, USA). When you visit the website, GitHub may store technical data\n                such as IP address, browser type and time of access in server log files.\n                This processing is based on Art. 6 (1)(f) GDPR (legitimate interest\n                in the secure operation of the website). Further information can be found in\n                <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub’s Privacy Statement</a>.\n                <br><br>\n                The shop’s ordering process (e.g. checking stock levels, starting checkout) runs technically via\n                <strong>Cloudflare Pages Functions</strong> (Cloudflare, Inc., 101 Townsend St, San Francisco,\n                CA 94107, USA). Cloudflare may process technical data such as IP address and time of request in\n                doing so. Legal basis: Art. 6 (1)(f) GDPR (legitimate interest in securely processing orders).\n                Further information can be found in\n                <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare’s Privacy Policy</a>.'
     },
     'datenschutz.h2.zahlung': { de: '4. Zahlungsabwicklung', en: '4. Payment Processing' },
     'datenschutz.p.zahlung': {
@@ -178,8 +172,8 @@
     },
     'datenschutz.h2.4': { de: '5. Cookies', en: '5. Cookies' },
     'datenschutz.p4': {
-      de: 'Diese Website setzt <strong>keine eigenen Tracking-Cookies</strong>. Es werden keine Analyse- oder\n                Werbe-Cookies verwendet. Cloudflare und – im Zahlungsvorgang – Stripe können technisch notwendige\n                Cookies setzen; diese dienen ausschließlich dem sicheren Betrieb der Seite bzw. der Zahlungsabwicklung\n                und werden nicht zu Werbezwecken genutzt.',
-      en: 'This website does not set <strong>any tracking cookies of its own</strong>. No analytics or\n                advertising cookies are used. Cloudflare and – during checkout – Stripe may set technically\n                necessary cookies; these serve solely the secure operation of the site or the payment process\n                and are not used for advertising purposes.'
+      de: 'Diese Website selbst setzt <strong>keine Cookies</strong>. Für den Warenkorb und die Sprachauswahl\n                wird ausschließlich lokaler Speicher (localStorage) in deinem Browser verwendet – diese Daten\n                verlassen dein Gerät nicht und dienen keinem Tracking. Erst auf der separaten, eigenständigen\n                Bezahlseite von Stripe (stripe.com) können im Rahmen der Zahlungsabwicklung Cookies gesetzt werden;\n                dies liegt außerhalb meines Einflussbereichs und ist in der\n                <a href="https://stripe.com/at/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Stripe</a> beschrieben.',
+      en: 'This website itself does not set <strong>any cookies</strong>. The shopping cart and language\n                selection use only local browser storage (localStorage) – this data never leaves your device and\n                is not used for tracking. Only on Stripe’s separate, independent checkout page (stripe.com) may\n                cookies be set as part of payment processing; this is outside my control and is described in\n                <a href="https://stripe.com/at/privacy" target="_blank" rel="noopener">Stripe’s Privacy Policy</a>.'
     },
     'datenschutz.h2.5': { de: '6. Kontakt per E-Mail', en: '6. Contact by Email' },
     'datenschutz.p5': {
@@ -193,8 +187,8 @@
     },
     'datenschutz.h2.7': { de: '8. Externe Links', en: '8. External Links' },
     'datenschutz.p7': {
-      de: 'Diese Website kann Links zu externen Seiten (z. B. Instagram, Behance) enthalten.\n                Für deren Inhalte und Datenschutzpraktiken bin ich nicht verantwortlich.',
-      en: 'This website may contain links to external sites (e.g. Instagram, Behance).\n                I am not responsible for their content or privacy practices.'
+      de: 'Diese Website kann Links zu externen Seiten (z. B. Instagram, TikTok) enthalten.\n                Für deren Inhalte und Datenschutzpraktiken bin ich nicht verantwortlich.',
+      en: 'This website may contain links to external sites (e.g. Instagram, TikTok).\n                I am not responsible for their content or privacy practices.'
     },
     'datenschutz.stand': { de: 'Stand: August 2026', en: 'Last updated: August 2026' },
 
