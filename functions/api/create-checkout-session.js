@@ -46,10 +46,13 @@ function jsonResponse(body, status, request) {
   });
 }
 
-// Ein Paket, das mehrere Größen enthält, braucht mindestens das größte
-// benötigte Format – z.B. wird ein Warenkorb mit A3 nur dann auf PM70
-// gehoben, wenn PRODUCT_FORMAT.A3 künftig auf "PM70" gestellt wird.
+// Ein Paket, das mehrere Größen/Formate enthält, braucht mindestens das
+// größte benötigte Format. Ein Leinwand-Original wiegt/misst mehr als jeder
+// Print, deshalb hebt es die ganze Bestellung auf die ORIGINAL-Tarifspalte,
+// egal welche Prints sonst noch im Warenkorb liegen.
 function requiredShippingFormat(items) {
+  var needsOriginal = items.some(function (i) { return PRODUCT_FORMAT[i.size] === 'ORIGINAL'; });
+  if (needsOriginal) return 'ORIGINAL';
   var needsPM70 = items.some(function (i) { return PRODUCT_FORMAT[i.size] === 'PM70'; });
   return needsPM70 ? 'PM70' : 'PM45';
 }

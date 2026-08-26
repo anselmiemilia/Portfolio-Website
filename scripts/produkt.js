@@ -65,6 +65,11 @@ document.addEventListener('DOMContentLoaded', function () {
     updateAuflage(activeSizeBtn.dataset.size);
     currentSize = activeSizeBtn.dataset.size;
     currentPrice = parseFloat(activeSizeBtn.dataset.price);
+  } else if (sizeBtns.length === 0 && kaufenBtn && kaufenBtn.dataset.size) {
+    // Size-less product (e.g. a one-of-a-kind original): no A4/A3 selector,
+    // so size + price come straight off the buy button itself.
+    currentSize = kaufenBtn.dataset.size;
+    currentPrice = parseFloat(kaufenBtn.dataset.price);
   }
 
   if (kaufenBtn && !window.SHOP_ENABLED) {
@@ -92,9 +97,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!stockForProduct) return;
 
     // Size-less product (e.g. a one-of-a-kind original): no A4/A3 buttons
-    // to toggle, just the single ORIGINAL pseudo-size deciding the button.
+    // to toggle, just the single Original pseudo-size deciding the button.
     if (sizeBtns.length === 0) {
-      if (stockForProduct.ORIGINAL === 0 && kaufenBtn) {
+      if (stockForProduct.Original === 0 && kaufenBtn) {
         kaufenBtn.disabled = true;
         kaufenBtn.textContent = t('produkt.ausverkauft', 'Ausverkauft');
       }

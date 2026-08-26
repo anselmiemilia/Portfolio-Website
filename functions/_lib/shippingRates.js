@@ -65,12 +65,12 @@ export const UNSUPPORTED_COUNTRIES = {
 export const PRODUCT_FORMAT = {
   A4: "PM45",
   A3: "PM70", // bestätigt: A3-Verpackung braucht PM70, nicht PM45
-  ORIGINAL: "ORIGINAL", // Leinwand-Original, eigene Tarifspalte statt PM45/PM70
+  Original: "ORIGINAL", // Leinwand-Original, eigene Tarifspalte statt PM45/PM70
 };
 
 /**
  * Ermittelt den Versandpreis für ein Druckformat und Zielland.
- * @param {"A4"|"A3"} productSize
+ * @param {"A4"|"A3"|"Original"} productSize
  * @param {string} countryCode - ISO 3166-1 alpha-2, z.B. "AT", "DE", "FR"
  * @returns {number} Preis in Euro
  * @throws {Error} wenn das Land nicht unterstützt wird

@@ -22,6 +22,39 @@ export const CATALOG = {
     name: 'The City of Buses',
     image: 'https://anselmi.at/assets/kunst/thecityofbuses/thecityofbuses.jpg',
     prices: { A4: 2000, A3: 2500 } // cents — pre-order, ships end of August
+  },
+  // One-of-a-kind canvases ("Originale" section). Each has a single price
+  // under the "Original" pseudo-size instead of A4/A3 — there's only ever
+  // one of these, not a print edition.
+  'dinner-at-la-maison-rose': {
+    name: 'Dinner at La Maison Rose?',
+    image: 'https://anselmi.at/assets/kunst/originale/Paris/dinneratlamaisonrose.jpg',
+    prices: { Original: 35000 } // cents
+  },
+  'in-barcelona': {
+    name: 'In Barcelona',
+    image: 'https://anselmi.at/assets/kunst/originale/Barcelona/inbarcelona.jpg',
+    prices: { Original: 25000 } // cents
+  },
+  'smells-like-northern-italy': {
+    name: 'Smells Like Northern Italy',
+    image: 'https://anselmi.at/assets/kunst/originale/Como/smellslikenorthernitaly.jpg',
+    prices: { Original: 25000 } // cents
+  },
+  'feldkircher-aussichten': {
+    name: 'Feldkircher Aussichten',
+    image: 'https://anselmi.at/assets/kunst/originale/Feldkirch/feldkircheraussichten.jpg',
+    prices: { Original: 25000 } // cents
+  },
+  'lissabon': {
+    name: 'Lissabon',
+    image: 'https://anselmi.at/assets/kunst/originale/Lissabon/lissabon.jpg',
+    prices: { Original: 25000 } // cents
+  },
+  'the-city-of-buses-original': {
+    name: 'The City of Buses',
+    image: 'https://anselmi.at/assets/kunst/originale/London/thecityofbusesoriginal.jpg',
+    prices: { Original: 25000 } // cents
   }
 };
 
@@ -29,8 +62,6 @@ export const CATALOG = {
 // across products) — matches the "Limitierte Auflage von X Stück" text
 // shown on the product pages.
 //
-// ORIGINAL is the pseudo-size for one-of-a-kind canvases (the "Originale"
+// Original is the pseudo-size for one-of-a-kind canvases (the "Originale"
 // section): each is a single unique piece, so its edition is always 1.
-// Not wired into CATALOG/checkout yet — the buy button on those pages is
-// still hardcoded `disabled` until that's turned on deliberately.
-export const EDITION_LIMITS = { A4: 20, A3: 10, ORIGINAL: 1 };
+export const EDITION_LIMITS = { A4: 20, A3: 10, Original: 1 };
