@@ -1,7 +1,7 @@
 (function () {
   var translations = {
     'nav.home': { de: 'Home', en: 'Home' },
-    'nav.kunst': { de: 'Kunst', en: 'Art' },
+    'nav.kunst': { de: 'Shop', en: 'Shop' },
     'nav.projekte': { de: 'Projekte', en: 'Projects' },
     'nav.about': { de: 'Über mich', en: 'About me' },
     'nav.kontakt': { de: 'Kontakt', en: 'Contact' },
@@ -78,6 +78,51 @@
       de: 'Auf einer Reise nach Lissabon im August verlor ich mich in den Gassen von Alfama – dort entdeckte ich die Casa São Miguel, deren Fassade mich auf Anhieb verzauberte und zu diesem Bild inspirierte. Original gemalt mit Acryl und Ölpastell auf Leinwand, 50 × 60 cm, im August 2026.',
       en: 'On a trip to Lisbon in August, I wandered through the lanes of Alfama and came across Casa São Miguel – its façade captivated me instantly and became the inspiration for this piece. Original painted with acrylic and oil pastel on canvas, 50 × 60 cm, in August 2026.'
     },
+    'produkt.thecityofbusesoriginal.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „The&nbsp;City&nbsp;of&nbsp;Buses“, London.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “The&nbsp;City&nbsp;of&nbsp;Buses”, London.'
+    },
+    'produkt.dinneratlamaisonrose.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Dinner&nbsp;at&nbsp;La&nbsp;Maison&nbsp;Rose?“, Paris.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “Dinner&nbsp;at&nbsp;La&nbsp;Maison&nbsp;Rose?”, Paris.'
+    },
+    'produkt.inbarcelona.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „In&nbsp;Barcelona“, Barcelona.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “In&nbsp;Barcelona”, Barcelona.'
+    },
+    'produkt.smellslikenorthernitaly.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Smells&nbsp;Like&nbsp;Northern&nbsp;Italy“, Como.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “Smells&nbsp;Like&nbsp;Northern&nbsp;Italy”, Como.'
+    },
+    'produkt.feldkircheraussichten.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Feldkircher&nbsp;Aussichten“, Feldkirch.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “Feldkircher&nbsp;Aussichten”, Feldkirch.'
+    },
+    'produkt.lissabon.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Lissabon“, Lissabon.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “Lissabon”, Lissabon.'
+    },
+    'produkt.original.technik.wert': {
+      de: 'Acryl, Permanent Marker & Ölpastell auf Leinwand',
+      en: 'Acrylic, permanent marker & oil pastel on canvas'
+    },
+    'produkt.original.material.wert': {
+      de: 'Feine Baumwollleinwand (100 %) auf Keilrahmen, 45 mm Rahmenstärke',
+      en: 'Fine cotton canvas (100%) on a stretcher frame, 45 mm depth'
+    },
+    'produkt.smellslikenorthernitaly.material': {
+      de: 'Feine Baumwollleinwand (100 %) auf Keilrahmen, 17 mm Rahmenstärke',
+      en: 'Fine cotton canvas (100%) on a stretcher frame, 17 mm depth'
+    },
+    'produkt.details.signatur': { de: 'Signatur', en: 'Signature' },
+    'produkt.original.signatur.wert': { de: 'Handsigniert und datiert von der Künstlerin', en: 'Hand-signed and dated by the artist' },
+    'produkt.details.zertifikat': { de: 'Zertifikat', en: 'Certificate' },
+    'produkt.original.zertifikat.wert': { de: 'Inklusive Echtheitszertifikat', en: 'Certificate of authenticity included' },
+    'produkt.details.versand': { de: 'Versand', en: 'Shipping' },
+    'produkt.original.versandHinweis': {
+      de: 'Dein Original wird mit größter Sorgfalt verpackt, damit es sicher und unversehrt bei dir ankommt.',
+      en: 'Your original is packaged with the utmost care, so it arrives safely and undamaged.'
+    },
     'produkt.details.title': { de: 'Details', en: 'Details' },
     'produkt.details.groesse': { de: 'Größe', en: 'Size' },
     'produkt.details.papier': { de: 'Papierdicke', en: 'Paper thickness' },
@@ -85,9 +130,14 @@
     'produkt.details.rand': { de: 'Rand', en: 'Border' },
     'produkt.details.rand.wert': { de: '15 mm rundum', en: '15 mm all around' },
     'produkt.details.auflage': { de: 'Auflage', en: 'Edition' },
+    'produkt.details.material': { de: 'Material', en: 'Material' },
+    'produkt.details.technik': { de: 'Technik', en: 'Technique' },
     'produkt.auflage.a4': { de: 'Limitierte Auflage von 20 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 20<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.a3': { de: 'Limitierte Auflage von 10 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 10<br>(hand-signed &amp; numbered)' },
     'produkt.related.title': { de: 'Weitere Prints', en: 'More Prints' },
+    'produkt.related.originale.title': { de: 'Weitere Originale', en: 'More Originals' },
+    'produkt.preisFolgt': { de: 'Preis folgt', en: 'Price coming soon' },
+    'produkt.abPreis20': { de: 'ab € 20,–', en: 'from € 20' },
     'produkt.kaufen': { de: 'Kaufen', en: 'Buy' },
     'produkt.inDenWarenkorb': { de: 'In den Warenkorb', en: 'Add to Cart' },
     'produkt.ausverkauft': { de: 'Ausverkauft', en: 'Sold out' },

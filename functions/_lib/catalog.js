@@ -28,4 +28,9 @@ export const CATALOG = {
 // Each product has its own limited edition per size (not a shared pool
 // across products) — matches the "Limitierte Auflage von X Stück" text
 // shown on the product pages.
-export const EDITION_LIMITS = { A4: 20, A3: 10 };
+//
+// ORIGINAL is the pseudo-size for one-of-a-kind canvases (the "Originale"
+// section): each is a single unique piece, so its edition is always 1.
+// Not wired into CATALOG/checkout yet — the buy button on those pages is
+// still hardcoded `disabled` until that's turned on deliberately.
+export const EDITION_LIMITS = { A4: 20, A3: 10, ORIGINAL: 1 };

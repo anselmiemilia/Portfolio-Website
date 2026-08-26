@@ -737,6 +737,7 @@ nav a:hover::after {
 /* Listing grids (Kunst tab, homepage) show three per row; extra cards wrap
    to their own row instead of squeezing a fourth card into the line. */
 #tab-prints .shop-prints-grid,
+#tab-originals .shop-prints-grid,
 .home-prints-section .shop-prints-grid {
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -745,6 +746,11 @@ nav a:hover::after {
 #tab-prints .shop-prints-card,
 .home-prints-section .shop-prints-card {
   flex: 0 1 calc(33.333% - 1.667rem);
+}
+
+/* Originals show two per row - the artworks read better larger. */
+#tab-originals .shop-prints-card {
+  flex: 0 1 calc(50% - 1.25rem);
 }
 
 .shop-prints-img-wrap {
@@ -792,6 +798,34 @@ nav a:hover::after {
 
 .shop-prints-caption {
   display: none;
+}
+
+/* Originals overview: show the title again, bold, above the price. */
+#tab-originals .shop-prints-caption {
+  display: block;
+  margin-top: 1.1rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--burgunder);
+}
+
+#tab-originals .shop-prints-card:hover .shop-prints-caption {
+  color: var(--burgunder);
+}
+
+#tab-originals .shop-prints-price {
+  margin-top: 0.3rem;
+}
+
+.shop-prints-price {
+  text-align: left;
+  margin-top: 1.1rem;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+  color: var(--burgunder);
 }
 
 .home-prints-cta-wrapper {

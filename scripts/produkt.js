@@ -90,6 +90,17 @@ document.addEventListener('DOMContentLoaded', function () {
   // created, so a stale/failed fetch here can't oversell anything.
   function applyStock(stockForProduct) {
     if (!stockForProduct) return;
+
+    // Size-less product (e.g. a one-of-a-kind original): no A4/A3 buttons
+    // to toggle, just the single ORIGINAL pseudo-size deciding the button.
+    if (sizeBtns.length === 0) {
+      if (stockForProduct.ORIGINAL === 0 && kaufenBtn) {
+        kaufenBtn.disabled = true;
+        kaufenBtn.textContent = t('produkt.ausverkauft', 'Ausverkauft');
+      }
+      return;
+    }
+
     var firstAvailableBtn = null;
 
     sizeBtns.forEach(function (btn) {

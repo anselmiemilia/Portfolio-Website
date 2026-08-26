@@ -15,36 +15,42 @@
  *                   -> Vor Go-Live mit echter Verpackung nachmessen.
  */
 
+// ORIGINAL: Versand für die einzigartigen Leinwand-Originale (schwerer/
+// sperriger als ein flaches Print-Paket) - fixe Tarife pro Zone, nicht nach
+// Größe gestaffelt. Noch nicht in create-checkout-session.js verdrahtet;
+// der Kaufen-Button auf den Originale-Seiten ist bis dahin hardcoded
+// `disabled`.
+//
 // Alle unterstützten Länder mit Preisen in Euro
 // tier: "AT" | "DE" | "EU_OTHER" - bestimmt welche Preisspalte gilt
 export const COUNTRIES = {
-  AT: { name: "Österreich",     tier: "AT",       PM45: 5.21,  PM70: 7.83  },
-  DE: { name: "Deutschland",    tier: "DE",       PM45: 12.62, PM70: 18.90 },
-  BE: { name: "Belgien",        tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  BG: { name: "Bulgarien",      tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  DK: { name: "Dänemark",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  EE: { name: "Estland",        tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  FI: { name: "Finnland",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  FR: { name: "Frankreich",     tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  GR: { name: "Griechenland",   tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  IE: { name: "Irland",         tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  IT: { name: "Italien",        tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  HR: { name: "Kroatien",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  LV: { name: "Lettland",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  LT: { name: "Litauen",        tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  LU: { name: "Luxemburg",      tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  MT: { name: "Malta",          tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  NL: { name: "Niederlande",    tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  PL: { name: "Polen",          tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  PT: { name: "Portugal",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  RO: { name: "Rumänien",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  SE: { name: "Schweden",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  SK: { name: "Slowakei",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  SI: { name: "Slowenien",      tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  ES: { name: "Spanien",        tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  CZ: { name: "Tschechien",     tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  HU: { name: "Ungarn",         tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
-  CY: { name: "Zypern",         tier: "EU_OTHER", PM45: 16.54, PM70: 22.87 },
+  AT: { name: "Österreich",     tier: "AT",       PM45: 5.21,  PM70: 7.83,  ORIGINAL: 15 },
+  DE: { name: "Deutschland",    tier: "DE",       PM45: 12.62, PM70: 18.90, ORIGINAL: 20 },
+  BE: { name: "Belgien",        tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  BG: { name: "Bulgarien",      tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  DK: { name: "Dänemark",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  EE: { name: "Estland",        tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  FI: { name: "Finnland",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  FR: { name: "Frankreich",     tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  GR: { name: "Griechenland",   tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  IE: { name: "Irland",         tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  IT: { name: "Italien",        tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  HR: { name: "Kroatien",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  LV: { name: "Lettland",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  LT: { name: "Litauen",        tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  LU: { name: "Luxemburg",      tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  MT: { name: "Malta",          tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  NL: { name: "Niederlande",    tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  PL: { name: "Polen",          tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  PT: { name: "Portugal",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  RO: { name: "Rumänien",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  SE: { name: "Schweden",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  SK: { name: "Slowakei",       tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  SI: { name: "Slowenien",      tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  ES: { name: "Spanien",        tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  CZ: { name: "Tschechien",     tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  HU: { name: "Ungarn",         tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  CY: { name: "Zypern",         tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
 };
 
 // Länder, die NICHT über die Paketmarke versendbar sind
@@ -59,6 +65,7 @@ export const UNSUPPORTED_COUNTRIES = {
 export const PRODUCT_FORMAT = {
   A4: "PM45",
   A3: "PM70", // bestätigt: A3-Verpackung braucht PM70, nicht PM45
+  ORIGINAL: "ORIGINAL", // Leinwand-Original, eigene Tarifspalte statt PM45/PM70
 };
 
 /**

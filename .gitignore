@@ -25,3 +25,6 @@ npm-debug.log*
 CLAUDE.md
 *.mp4
 !*_web.mp4
+
+# Kunst originale - raw master photos (compressed web versions are tracked instead)
+assets/kunst/originale/*/*_Original*.jpg
