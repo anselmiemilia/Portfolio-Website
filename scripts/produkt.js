@@ -12,16 +12,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Gallery thumbnails
   var mainImg = document.querySelector('.produkt-gallery-main img');
-  var thumbs = document.querySelectorAll('.produkt-thumb');
+  var galleryMain = document.querySelector('.produkt-gallery-main');
+  var thumbs = Array.prototype.slice.call(document.querySelectorAll('.produkt-thumb'));
+
+  function activateThumb(thumb) {
+    thumbs.forEach(function (t) { t.classList.remove('active'); });
+    thumb.classList.add('active');
+    mainImg.src = thumb.dataset.full;
+    mainImg.alt = thumb.dataset.alt || mainImg.alt;
+  }
+
   if (mainImg && thumbs.length > 1) {
     thumbs.forEach(function (thumb) {
-      thumb.addEventListener('click', function () {
-        thumbs.forEach(function (t) { t.classList.remove('active'); });
-        thumb.classList.add('active');
-        mainImg.src = thumb.dataset.full;
-        mainImg.alt = thumb.dataset.alt || mainImg.alt;
-      });
+      thumb.addEventListener('click', function () { activateThumb(thumb); });
     });
+
+    // Swipe left/right on the main photo to step through the gallery —
+    // mirrors the thumbnail strip, mainly for mobile where tapping the
+    // (smaller) thumbnails is fiddlier than just swiping the photo itself.
+    var galleryTouchStartX = null;
+    galleryMain.addEventListener('touchstart', function (e) {
+      galleryTouchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+
+    galleryMain.addEventListener('touchend', function (e) {
+      if (galleryTouchStartX === null) return;
+      var dx = e.changedTouches[0].clientX - galleryTouchStartX;
+      galleryTouchStartX = null;
+      if (Math.abs(dx) < 50) return;
+      var activeIndex = thumbs.findIndex(function (t) { return t.classList.contains('active'); });
+      if (activeIndex === -1) activeIndex = 0;
+      var nextIndex = ((activeIndex + (dx < 0 ? 1 : -1)) % thumbs.length + thumbs.length) % thumbs.length;
+      activateThumb(thumbs[nextIndex]);
+    }, { passive: true });
   }
 
   // Size selector: updates price + Größe/Auflage detail rows
