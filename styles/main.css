@@ -743,12 +743,12 @@ nav a:hover::after {
   justify-content: flex-start;
 }
 
-#tab-prints .shop-prints-card,
 .home-prints-section .shop-prints-card {
   flex: 0 1 calc(33.333% - 1.667rem);
 }
 
-/* Originals show two per row - the artworks read better larger. */
+/* Shop overview (prints + originals) shows two per row - the artworks read better larger. */
+#tab-prints .shop-prints-card,
 #tab-originals .shop-prints-card {
   flex: 0 1 calc(50% - 1.25rem);
 }
@@ -800,7 +800,8 @@ nav a:hover::after {
   display: none;
 }
 
-/* Originals overview: show the title again, bold, above the price. */
+/* Shop overview (prints + originals): show the title again, bold, above the price. */
+#tab-prints .shop-prints-caption,
 #tab-originals .shop-prints-caption {
   display: block;
   margin-top: 1.1rem;
@@ -811,10 +812,12 @@ nav a:hover::after {
   color: var(--burgunder);
 }
 
+#tab-prints .shop-prints-card:hover .shop-prints-caption,
 #tab-originals .shop-prints-card:hover .shop-prints-caption {
   color: var(--burgunder);
 }
 
+#tab-prints .shop-prints-price,
 #tab-originals .shop-prints-price {
   margin-top: 0.3rem;
 }
@@ -1906,6 +1909,11 @@ footer a:hover { text-decoration: underline; }
     font-size: 1.7rem;
     color: var(--burgunder);
     text-align: center;
+  }
+
+  #tab-prints .shop-prints-caption,
+  #tab-originals .shop-prints-caption {
+    text-transform: none;
   }
 
   .produkt-detail { padding: 8rem 1.2rem 4rem; }

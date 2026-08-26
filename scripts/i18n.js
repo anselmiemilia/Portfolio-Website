@@ -38,8 +38,8 @@
     'home.projekte.cta': { de: 'Zu den Projekten', en: 'See all projects' },
     'home.about.title': { de: 'Über mich', en: 'About me' },
     'home.about.p1': {
-      de: 'Ich heiße Emilia und bin Grafik- & Informationsdesign-Studentin im vierten Semester an der <em>New Design University</em> in St. Pölten.',
-      en: 'My name is Emilia and I’m a Graphic &amp; Information Design student in my fourth semester at the <em>New Design University</em> in St. Pölten, Austria.'
+      de: 'Ich heiße Emilia und bin angehende Künstlerin, Grafik- & Informationsdesign-Studentin im vierten Semester an der <em>New Design University</em> in St. Pölten.',
+      en: 'My name is Emilia and I’m an aspiring artist, Graphic &amp; Information Design student in my fourth semester at the <em>New Design University</em> in St. Pölten, Austria.'
     },
     'home.about.p2': {
       de: 'Kunst hat für mich – früher oft eher im Unterbewusstsein – schon immer eine wichtige Rolle gespielt. Als visueller Mensch ist Design für mich nicht einfach nur schön anzusehen.',
@@ -177,8 +177,8 @@
     },
 
     'about.p1': {
-      de: 'Ich heiße Emilia und bin Grafik- & Informationsdesign-Studentin im vierten Semester an der\n                            <em>New Design University</em> in St. Pölten.',
-      en: 'My name is Emilia and I’m a Graphic &amp; Information Design student in my fourth semester at the\n                            <em>New Design University</em> in St. Pölten, Austria.'
+      de: 'Ich heiße Emilia und bin angehende Künstlerin, Grafik- & Informationsdesign-Studentin im vierten Semester an der\n                            <em>New Design University</em> in St. Pölten.',
+      en: 'My name is Emilia and I’m an aspiring artist, Graphic &amp; Information Design student in my fourth semester at the\n                            <em>New Design University</em> in St. Pölten, Austria.'
     },
     'about.p2': {
       de: 'Kunst hat für mich – früher oft eher im Unterbewusstsein – schon immer eine wichtige Rolle\n                            gespielt. Als visueller Mensch ist Design für mich nicht einfach nur schön anzusehen. Es hilft\n                            zu verstehen, dient als visuelle Stütze und wirkt gleichzeitig als starkes, eigenständiges Element.',
