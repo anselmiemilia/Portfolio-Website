@@ -12,9 +12,14 @@ import { corsHeaders } from '../_lib/cors.js';
 // Versandkosten kommen aus functions/_lib/shippingRates.js (Österreichische
 // Post "Paketmarke", Details dort). Stripe Checkout kennt die vom Kunden
 // gewählte Lieferadresse erst NACH dem Erstellen der Session, nicht davor –
-// deshalb bekommt jede Bestellung hier drei Versandoptionen (AT / DE /
-// übrige EU) zur Auswahl, statt dass der Preis automatisch anhand der
-// eingegebenen Adresse berechnet wird.
+// deshalb wählt der Warenkorb VOR dem Checkout schon die Versandzone (AT /
+// DE / übrige EU), und wir bauen daraus genau eine einzige Versandoption
+// statt drei zur Auswahl. So kann nicht mehr aus Versehen die falsche
+// (günstigere) Zone angeklickt werden. shipping_address_collection wird
+// zusätzlich auf genau die Länder dieser Zone eingeschränkt, damit die in
+// Stripe eingegebene Adresse gar nicht in eine andere Zone fallen kann.
+const VALID_ZONES = ['AT', 'DE', 'EU_OTHER'];
+
 const SHIPPING_OPTION_LABELS = {
   AT: { de: 'Österreich', en: 'Austria' },
   DE: { de: 'Deutschland', en: 'Germany' },
@@ -61,22 +66,28 @@ function euroToCents(amount) {
   return Math.round(amount * 100);
 }
 
-function buildShippingOptions(format, lang) {
-  var euOtherPrice = Object.values(COUNTRIES).filter(function (c) { return c.tier === 'EU_OTHER'; })[0][format];
-  var tiers = [
-    { key: 'AT', amount: COUNTRIES.AT[format] },
-    { key: 'DE', amount: COUNTRIES.DE[format] },
-    { key: 'EU_OTHER', amount: euOtherPrice }
-  ];
-  return tiers.map(function (tier) {
-    return {
-      shipping_rate_data: {
-        type: 'fixed_amount',
-        fixed_amount: { amount: euroToCents(tier.amount), currency: 'eur' },
-        display_name: SHIPPING_OPTION_LABELS[tier.key][lang]
-      }
-    };
-  });
+// Only ever the ONE shipping option matching the zone chosen in the cart —
+// never all three — so there's nothing to mis-click at Stripe's end.
+function buildShippingOptions(format, lang, zone) {
+  var amount = zone === 'EU_OTHER'
+    ? Object.values(COUNTRIES).filter(function (c) { return c.tier === 'EU_OTHER'; })[0][format]
+    : COUNTRIES[zone][format];
+  return [{
+    shipping_rate_data: {
+      type: 'fixed_amount',
+      fixed_amount: { amount: euroToCents(amount), currency: 'eur' },
+      display_name: SHIPPING_OPTION_LABELS[zone][lang]
+    }
+  }];
+}
+
+// Restricts Stripe's own address form to just the countries in the chosen
+// zone, so the address actually entered can't end up in a different
+// (cheaper) zone than the one already paid for.
+function allowedCountriesForZone(zone) {
+  var all = getSelectableCountries().map(function (c) { return c.code; });
+  if (zone === 'AT' || zone === 'DE') return [zone];
+  return all.filter(function (code) { return COUNTRIES[code].tier === 'EU_OTHER'; });
 }
 
 // Kill switch: flip to false to instantly stop all checkouts (e.g. while
@@ -102,6 +113,11 @@ export async function onRequestPost({ request, env }) {
   const items = Array.isArray(body.items) ? body.items : [];
   if (!items.length) {
     return jsonResponse({ error: 'Warenkorb ist leer.' }, 400, request);
+  }
+
+  const shippingZone = VALID_ZONES.includes(body.shippingZone) ? body.shippingZone : null;
+  if (!shippingZone) {
+    return jsonResponse({ error: 'Bitte wähle dein Versandland aus.' }, 400, request);
   }
 
   const lineItems = [];
@@ -159,9 +175,8 @@ export async function onRequestPost({ request, env }) {
   // sonst lehnt Stripe die ganze Session mit 500 ab. Sobald aktiviert:
   // hier wieder ergänzen.
   appendParam(params, 'payment_method_types', ['card', 'eps']);
-  const allowedCountries = getSelectableCountries().map(function (c) { return c.code; });
-  appendParam(params, 'shipping_address_collection', { allowed_countries: allowedCountries });
-  appendParam(params, 'shipping_options', buildShippingOptions(shippingFormat, lang));
+  appendParam(params, 'shipping_address_collection', { allowed_countries: allowedCountriesForZone(shippingZone) });
+  appendParam(params, 'shipping_options', buildShippingOptions(shippingFormat, lang, shippingZone));
   // Read back by the Stripe webhook once payment completes, to know exactly
   // which product/size/qty to count against the edition limit.
   appendParam(params, 'metadata', { items: JSON.stringify(metaItems) });

@@ -158,6 +158,12 @@
     'cart.entfernen': { de: 'Entfernen', en: 'Remove' },
     'cart.zwischensumme': { de: 'Zwischensumme', en: 'Subtotal' },
     'cart.versandhinweis': { de: 'zzgl. Versand', en: 'plus shipping' },
+    'cart.versandland': { de: 'Versandland', en: 'Shipping country' },
+    'cart.versandland.placeholder': { de: 'Bitte wählen …', en: 'Please select …' },
+    'cart.versandland.at': { de: 'Österreich', en: 'Austria' },
+    'cart.versandland.de': { de: 'Deutschland', en: 'Germany' },
+    'cart.versandland.eu': { de: 'Übrige EU', en: 'Rest of EU' },
+    'cart.versandland.fehlt': { de: 'Bitte wähle dein Versandland aus.', en: 'Please select your shipping country.' },
     'cart.zurKasse': { de: 'Zur Kasse', en: 'Checkout' },
     'cart.wirdGeladen': { de: 'Einen Moment …', en: 'One moment …' },
     'cart.fehler': {

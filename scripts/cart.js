@@ -5,6 +5,7 @@
   window.SHOP_ENABLED = true;
 
   var STORAGE_KEY = 'ea_cart';
+  var SHIPPING_ZONE_KEY = 'ea_cart_shipping_zone';
   // The site is served from GitHub Pages (anselmi.at); only this one
   // endpoint runs on Cloudflare Pages, since GitHub Pages can't run server
   // code. That makes this a cross-origin request — see the matching CORS
@@ -22,6 +23,24 @@
 
   function itemKey(item) {
     return item.id + '::' + item.size;
+  }
+
+  var VALID_ZONES = ['AT', 'DE', 'EU_OTHER'];
+
+  function getShippingZone() {
+    try {
+      var zone = localStorage.getItem(SHIPPING_ZONE_KEY);
+      return VALID_ZONES.indexOf(zone) !== -1 ? zone : '';
+    } catch (e) {
+      return '';
+    }
+  }
+
+  function setShippingZone(zone) {
+    try {
+      if (VALID_ZONES.indexOf(zone) !== -1) localStorage.setItem(SHIPPING_ZONE_KEY, zone);
+      else localStorage.removeItem(SHIPPING_ZONE_KEY);
+    } catch (e) { /* ignore */ }
   }
 
   function formatPrice(n) {
@@ -85,7 +104,7 @@
 
   // ---------- DOM ----------
 
-  var toggleEl, badgeEl, drawerEl, overlayEl, itemsEl, totalEl, checkoutBtn, emptyEl, errorEl;
+  var toggleEl, badgeEl, drawerEl, overlayEl, itemsEl, totalEl, checkoutBtn, emptyEl, errorEl, shippingZoneSelect;
 
   function t(key, fallback) {
     if (window.i18n && window.i18n.t) {
@@ -132,6 +151,15 @@
       '<div class="cart-footer">' +
         '<div class="cart-total-row"><span class="cart-total-label"></span><span class="cart-total-value">€ 0,–</span></div>' +
         '<p class="cart-shipping-note"></p>' +
+        '<div class="cart-shipping-zone">' +
+          '<label class="cart-shipping-zone-label" for="cartShippingZone"></label>' +
+          '<select id="cartShippingZone" class="cart-shipping-zone-select">' +
+            '<option value=""></option>' +
+            '<option value="AT"></option>' +
+            '<option value="DE"></option>' +
+            '<option value="EU_OTHER"></option>' +
+          '</select>' +
+        '</div>' +
         '<p class="cart-preorder-note"></p>' +
         '<button type="button" class="cart-checkout-btn produkt-kaufen-btn"></button>' +
         '<p class="cart-error"></p>' +
@@ -145,9 +173,15 @@
     totalEl = drawerEl.querySelector('.cart-total-value');
     checkoutBtn = drawerEl.querySelector('.cart-checkout-btn');
     errorEl = drawerEl.querySelector('.cart-error');
+    shippingZoneSelect = drawerEl.querySelector('.cart-shipping-zone-select');
 
     drawerEl.querySelector('.cart-close').addEventListener('click', close);
     checkoutBtn.addEventListener('click', checkout);
+    shippingZoneSelect.value = getShippingZone();
+    shippingZoneSelect.addEventListener('change', function () {
+      setShippingZone(shippingZoneSelect.value);
+      errorEl.textContent = '';
+    });
 
     updateTexts();
   }
@@ -160,6 +194,12 @@
     emptyEl.textContent = t('cart.leer', 'Dein Warenkorb ist leer.');
     drawerEl.querySelector('.cart-total-label').textContent = t('cart.zwischensumme', 'Zwischensumme');
     drawerEl.querySelector('.cart-shipping-note').textContent = t('cart.versandhinweis', 'zzgl. Versand');
+    drawerEl.querySelector('.cart-shipping-zone-label').textContent = t('cart.versandland', 'Versandland');
+    var zoneOptions = shippingZoneSelect.querySelectorAll('option');
+    zoneOptions[0].textContent = t('cart.versandland.placeholder', 'Bitte wählen …');
+    zoneOptions[1].textContent = t('cart.versandland.at', 'Österreich');
+    zoneOptions[2].textContent = t('cart.versandland.de', 'Deutschland');
+    zoneOptions[3].textContent = t('cart.versandland.eu', 'Übrige EU');
     if (!checkoutBtn.disabled) {
       checkoutBtn.textContent = t('cart.zurKasse', 'Zur Kasse');
     }
@@ -246,6 +286,17 @@
     var items = readCart();
     if (!items.length) return;
     errorEl.textContent = '';
+
+    // The shipping zone decides which single shipping rate the server offers
+    // Stripe — required so nobody can pick a cheaper zone than where the
+    // order is actually going.
+    var zone = getShippingZone();
+    if (!zone) {
+      errorEl.textContent = t('cart.versandland.fehlt', 'Bitte wähle dein Versandland aus.');
+      if (shippingZoneSelect) shippingZoneSelect.focus();
+      return;
+    }
+
     checkoutBtn.disabled = true;
     var originalText = checkoutBtn.textContent;
     checkoutBtn.textContent = t('cart.wirdGeladen', 'Einen Moment …');
@@ -255,19 +306,23 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         items: items.map(function (i) { return { id: i.id, size: i.size, qty: i.qty }; }),
+        shippingZone: zone,
         lang: window.i18n ? window.i18n.getLang() : 'de'
       })
     })
       .then(function (res) {
-        if (!res.ok) throw new Error('checkout-failed');
-        return res.json();
+        return res.json().then(function (data) {
+          if (!res.ok || !data.url) throw new Error((data && data.error) || 'checkout-failed');
+          return data;
+        });
       })
       .then(function (data) {
-        if (!data.url) throw new Error('checkout-failed');
         window.location.href = data.url;
       })
-      .catch(function () {
-        errorEl.textContent = t('cart.fehler', 'Der Checkout konnte nicht gestartet werden. Bitte versuche es erneut oder schreib mir eine E-Mail.');
+      .catch(function (err) {
+        errorEl.textContent = (err && err.message && err.message !== 'checkout-failed')
+          ? err.message
+          : t('cart.fehler', 'Der Checkout konnte nicht gestartet werden. Bitte versuche es erneut oder schreib mir eine E-Mail.');
         checkoutBtn.disabled = false;
         checkoutBtn.textContent = originalText;
       });

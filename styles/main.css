@@ -1304,6 +1304,27 @@ nav a:hover::after {
   margin-bottom: 1.25rem;
 }
 
+.cart-shipping-zone {
+  margin-bottom: 1.25rem;
+}
+
+.cart-shipping-zone-label {
+  display: block;
+  font-size: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.cart-shipping-zone-select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--burgunder);
+  border-radius: 4px;
+  background: var(--weiss);
+  color: var(--burgunder);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+}
+
 .cart-preorder-note {
   display: none;
   font-size: 0.75rem;
