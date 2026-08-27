@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (sizeBtns.length === 0) {
       if (stockForProduct.Original === 0 && kaufenBtn) {
         kaufenBtn.disabled = true;
-        kaufenBtn.textContent = t('produkt.ausverkauft', 'Ausverkauft');
+        kaufenBtn.textContent = t('produkt.verkauft', 'Verkauft');
       }
       return;
     }

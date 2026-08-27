@@ -7,7 +7,7 @@
     <meta name="description" content="Kunst – Emilia Anselmi" data-i18n="meta.desc.kunst">
     <title data-i18n="meta.title.kunst">Kunst | Emilia Anselmi</title>
     <link rel="icon" type="image/png" href="assets/logo/favicon.png">
-    <link href="styles/main.css?v=80" rel="stylesheet">
+    <link href="styles/main.css?v=81" rel="stylesheet">
   <script src="scripts/i18n.js?v=63" defer></script>
   <script src="scripts/nav.js?v=61" defer></script>
   <script src="scripts/cart.js?v=5" defer></script>
@@ -149,6 +149,30 @@
                 tab.classList.add('active');
                 document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
             });
+        });
+
+        // Mark sold originals with a "Verkauft" badge, same principle as the
+        // "Vorbestellen" badge on The City of Buses print above. Waits for
+        // DOMContentLoaded since cart.js (deferred) is what sets
+        // window.SHOP_ENABLED, and defers run after this inline script.
+        document.addEventListener('DOMContentLoaded', function () {
+            if (!window.SHOP_ENABLED) return;
+            fetch('https://atelier-anselmi.pages.dev/api/stock')
+                .then(function (res) { return res.ok ? res.json() : null; })
+                .then(function (stock) {
+                    if (!stock) return;
+                    document.querySelectorAll('#tab-originals .shop-prints-card').forEach(function (card) {
+                        var id = card.getAttribute('href').split('/').pop().replace('.html', '');
+                        var info = stock[id];
+                        if (!info || info.Original !== 0) return;
+                        var badge = document.createElement('span');
+                        badge.className = 'preorder-badge sold-badge';
+                        badge.setAttribute('data-i18n', 'produkt.verkauft');
+                        badge.textContent = (window.i18n && window.i18n.t('produkt.verkauft')) || 'Verkauft';
+                        card.querySelector('.shop-prints-img-wrap').appendChild(badge);
+                    });
+                })
+                .catch(function () { /* badge just won't show */ });
         });
     </script>
 </body>

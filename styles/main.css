@@ -885,6 +885,10 @@ nav a:hover::after {
   border-radius: 4px;
 }
 
+.sold-badge {
+  background: var(--burgunder);
+}
+
 .produkt-gallery-main img {
   width: 100%;
   height: 100%;
