@@ -102,6 +102,10 @@
       de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Lissabon“, Lissabon.',
       en: 'Original artwork by Emilia Anselmi, 2026, “Lissabon”, Lissabon.'
     },
+    'produkt.cafecentral.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Café&nbsp;Central“, Wien.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “Café&nbsp;Central”, Vienna.'
+    },
     'produkt.original.technik.wert': {
       de: 'Acryl, Permanent Marker & Ölpastell auf Leinwand',
       en: 'Acrylic, permanent marker & oil pastel on canvas'
