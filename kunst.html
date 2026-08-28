@@ -165,6 +165,21 @@
         // DOMContentLoaded since cart.js (deferred) is what sets
         // window.SHOP_ENABLED, and defers run after this inline script.
         document.addEventListener('DOMContentLoaded', function () {
+            var originalsGrid = document.querySelector('#tab-originals .shop-prints-grid');
+
+            // Sold pieces sink to the end of the grid, keeping the rest of
+            // the order intact — appendChild just moves the existing node.
+            function sinkSoldCards() {
+                if (!originalsGrid) return;
+                Array.prototype.slice.call(originalsGrid.querySelectorAll('.shop-prints-card'))
+                    .filter(function (card) { return !!card.querySelector('.sold-badge'); })
+                    .forEach(function (card) { originalsGrid.appendChild(card); });
+            }
+
+            // A piece already marked sold in the markup (e.g. sold outside
+            // the shop) sinks right away, before any stock fetch.
+            sinkSoldCards();
+
             if (!window.SHOP_ENABLED) return;
             fetch('https://atelier-anselmi.pages.dev/api/stock')
                 .then(function (res) { return res.ok ? res.json() : null; })
@@ -180,6 +195,7 @@
                         badge.textContent = (window.i18n && window.i18n.t('produkt.verkauft')) || 'Verkauft';
                         card.querySelector('.shop-prints-img-wrap').appendChild(badge);
                     });
+                    sinkSoldCards();
                 })
                 .catch(function () { /* badge just won't show */ });
         });
