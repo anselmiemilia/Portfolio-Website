@@ -66,12 +66,21 @@ document.addEventListener('DOMContentLoaded', function () {
     auflageEl.innerHTML = window.i18n.t(key);
   }
 
+  var sizeHints = document.querySelectorAll('[data-show-for-size]');
+
+  function updateSizeHints(size) {
+    sizeHints.forEach(function (el) {
+      el.hidden = el.dataset.showForSize !== size;
+    });
+  }
+
   function selectSize(btn) {
     sizeBtns.forEach(function (b) { b.classList.remove('active'); });
     btn.classList.add('active');
     if (priceEl) priceEl.textContent = '€ ' + btn.dataset.price + ',–';
     if (groesseEl) groesseEl.textContent = btn.dataset.cm;
     updateAuflage(btn.dataset.size);
+    updateSizeHints(btn.dataset.size);
     currentSize = btn.dataset.size;
     currentPrice = parseFloat(btn.dataset.price);
   }
@@ -86,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var activeSizeBtn = document.querySelector('.produkt-groesse-btn.active');
   if (activeSizeBtn) {
     updateAuflage(activeSizeBtn.dataset.size);
+    updateSizeHints(activeSizeBtn.dataset.size);
     currentSize = activeSizeBtn.dataset.size;
     currentPrice = parseFloat(activeSizeBtn.dataset.price);
   } else if (sizeBtns.length === 0 && kaufenBtn && kaufenBtn.dataset.size) {

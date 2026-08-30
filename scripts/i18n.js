@@ -149,7 +149,8 @@
     'produkt.baldVerfuegbar': { de: 'Bald verfügbar', en: 'Coming soon' },
     'produkt.verfuegbarAb': { de: 'Verfügbar ab Ende August', en: 'Available from late August' },
     'produkt.vorbestellen': { de: 'Vorbestellen', en: 'Pre-order' },
-    'produkt.versandAbEndeAugust': { de: 'Versand ab Ende August', en: 'Shipping from late August' },
+    'produkt.versandAbEndeAugust': { de: 'Versand Anfang bis Mitte September', en: 'Shipping early to mid September' },
+    'produkt.a3NurNochDrei': { de: 'Nur noch 3 Stück verfügbar', en: 'Only 3 left' },
     'produkt.farbabweichung': { de: 'Farben können durch Druck und Bildschirmdarstellung leicht abweichen.', en: 'Colors may vary slightly due to printing and screen display.' },
     'cart.vorbestellHinweis': {
       de: 'Enthält eine Vorbestellung – die gesamte Bestellung wird gemeinsam zum Liefertermin der Vorbestellung (Ende August) verschickt.',
