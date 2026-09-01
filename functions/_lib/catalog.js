@@ -22,11 +22,12 @@ export const CATALOG = {
     name: 'The City of Buses',
     image: 'https://anselmi.at/assets/kunst/thecityofbuses/thecityofbuses.jpg',
     prices: { A4: 2000, A3: 2500 }, // cents — pre-order, ships early/mid September
-    // 9 of the 10 A3s are already spoken for outside the site (physical
-    // presales), so only 1 is actually left to sell here — this keeps the
-    // site's stock count and "Ausverkauft" state accurate without needing
-    // a manual KV edit once that last one sells.
-    reserved: { A3: 9 }
+    // 8 of the 10 A3s are already spoken for outside the site (physical
+    // presales); 1 has sold through the site itself (counted in KV), so
+    // only 1 is actually left to sell here — this keeps the site's stock
+    // count and "Ausverkauft" state accurate without needing a manual KV
+    // edit once that last one sells.
+    reserved: { A3: 8 }
   },
   // One-of-a-kind canvases ("Originale" section). Each has a single price
   // under the "Original" pseudo-size instead of A4/A3 — there's only ever
