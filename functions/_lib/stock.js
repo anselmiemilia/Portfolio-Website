@@ -1,4 +1,4 @@
-import { EDITION_LIMITS } from './catalog.js';
+import { EDITION_LIMITS, CATALOG } from './catalog.js';
 
 // KV holds one key per product+size with the number sold so far. Counts
 // are only incremented from the Stripe webhook, once a payment has actually
@@ -23,8 +23,9 @@ export async function getSold(kv, id, size) {
 export async function getRemaining(kv, id, size) {
   const limit = EDITION_LIMITS[size];
   if (limit === undefined) return null;
+  const reserved = (CATALOG[id] && CATALOG[id].reserved && CATALOG[id].reserved[size]) || 0;
   const sold = await getSold(kv, id, size);
-  return Math.max(limit - sold, 0);
+  return Math.max(limit - reserved - sold, 0);
 }
 
 export async function incrementSold(kv, id, size, qty) {

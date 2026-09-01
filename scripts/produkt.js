@@ -66,13 +66,30 @@ document.addEventListener('DOMContentLoaded', function () {
     auflageEl.innerHTML = window.i18n.t(key);
   }
 
+  // Low-stock hint (e.g. "Nur noch 1 Stück verfügbar"): shown above the buy
+  // button only for the currently selected size, and only once real stock
+  // (fetched below) is low but not yet zero — zero is handled by the
+  // sold-out styling in applyStock() instead.
+  var LOW_STOCK_THRESHOLD = 2;
   var sizeHints = document.querySelectorAll('[data-show-for-size]');
+  var latestStock = null;
+
+  function stockHintText(n) {
+    var template = t('produkt.nurNochX', 'Nur noch {n} Stück verfügbar');
+    return template.replace('{n}', n);
+  }
 
   function updateSizeHints(size) {
     sizeHints.forEach(function (el) {
-      el.hidden = el.dataset.showForSize !== size;
+      var remaining = latestStock ? latestStock[el.dataset.showForSize] : undefined;
+      var show = el.dataset.showForSize === size &&
+        typeof remaining === 'number' && remaining > 0 && remaining <= LOW_STOCK_THRESHOLD;
+      el.hidden = !show;
+      if (show) el.textContent = stockHintText(remaining);
     });
   }
+
+  document.addEventListener('langchange', function () { updateSizeHints(currentSize); });
 
   function selectSize(btn) {
     sizeBtns.forEach(function (b) { b.classList.remove('active'); });
@@ -128,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // created, so a stale/failed fetch here can't oversell anything.
   function applyStock(stockForProduct) {
     if (!stockForProduct) return;
+    latestStock = stockForProduct;
 
     // Size-less product (e.g. a one-of-a-kind original): no A4/A3 buttons
     // to toggle, just the single Original pseudo-size deciding the button.
@@ -155,6 +173,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var activeBtn = document.querySelector('.produkt-groesse-btn.active');
     if (activeBtn && activeBtn.disabled && firstAvailableBtn) {
       selectSize(firstAvailableBtn);
+    } else {
+      updateSizeHints(currentSize);
     }
 
     if (!firstAvailableBtn && kaufenBtn) {
