@@ -22,7 +22,6 @@ export const CATALOG = {
     name: 'The City of Buses',
     image: 'https://anselmi.at/assets/kunst/thecityofbuses/thecityofbuses.jpg',
     prices: { A4: 2000, A3: 2500 }, // cents — pre-order, ships early/mid September
-    // (redeploy nudge)
     // Stripe shows 9 completed/paid A3 orders (checked directly via the
     // Stripe API), but STOCK_KV's sold counter only reflects 2 of them —
     // the increment webhook evidently missed the earlier ones. Edition is
