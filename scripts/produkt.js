@@ -59,9 +59,13 @@ document.addEventListener('DOMContentLoaded', function () {
   var currentSize = '';
   var currentPrice = 0;
 
-  function updateAuflage(size) {
+  function updateAuflage(btn) {
     if (!auflageEl || !window.i18n) return;
-    var key = size === 'A3' ? 'produkt.auflage.a3' : 'produkt.auflage.a4';
+    var size = btn && btn.dataset.size;
+    // A product with a non-default edition size (see catalog.js `editions`)
+    // points its size buttons at their own data-auflage-key instead of the
+    // sitewide default produkt.auflage.a3/a4 keys.
+    var key = (btn && btn.dataset.auflageKey) || (size === 'A3' ? 'produkt.auflage.a3' : 'produkt.auflage.a4');
     auflageEl.setAttribute('data-i18n-html', key);
     auflageEl.innerHTML = window.i18n.t(key);
   }
@@ -96,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btn.classList.add('active');
     if (priceEl) priceEl.textContent = '€ ' + btn.dataset.price + ',–';
     if (groesseEl) groesseEl.textContent = btn.dataset.cm;
-    updateAuflage(btn.dataset.size);
+    updateAuflage(btn);
     updateSizeHints(btn.dataset.size);
     currentSize = btn.dataset.size;
     currentPrice = parseFloat(btn.dataset.price);
@@ -111,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var activeSizeBtn = document.querySelector('.produkt-groesse-btn.active');
   if (activeSizeBtn) {
-    updateAuflage(activeSizeBtn.dataset.size);
+    updateAuflage(activeSizeBtn);
     updateSizeHints(activeSizeBtn.dataset.size);
     currentSize = activeSizeBtn.dataset.size;
     currentPrice = parseFloat(activeSizeBtn.dataset.price);

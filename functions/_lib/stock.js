@@ -21,9 +21,12 @@ export async function getSold(kv, id, size) {
 }
 
 export async function getRemaining(kv, id, size) {
-  const limit = EDITION_LIMITS[size];
+  const product = CATALOG[id];
+  const limit = (product && product.editions && product.editions[size] !== undefined)
+    ? product.editions[size]
+    : EDITION_LIMITS[size];
   if (limit === undefined) return null;
-  const reserved = (CATALOG[id] && CATALOG[id].reserved && CATALOG[id].reserved[size]) || 0;
+  const reserved = (product && product.reserved && product.reserved[size]) || 0;
   const sold = await getSold(kv, id, size);
   return Math.max(limit - reserved - sold, 0);
 }

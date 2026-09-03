@@ -32,6 +32,14 @@ export const CATALOG = {
     // corrected directly.
     reserved: { A3: 8 }
   },
+  'pink-new-york-city-print': {
+    name: 'Pink New York City',
+    image: 'https://anselmi.at/assets/kunst/pinknewyorkcity/pinknewyorkcity.jpg',
+    prices: { A4: 2000, A3: 2500 }, // cents — pre-order
+    // Larger edition than the other prints (default 20/10 from
+    // EDITION_LIMITS below) — overrides it per size here.
+    editions: { A4: 30, A3: 20 }
+  },
   // One-of-a-kind canvases ("Originale" section). Each has a single price
   // under the "Original" pseudo-size instead of A4/A3 — there's only ever
   // one of these, not a print edition.
@@ -77,9 +85,10 @@ export const CATALOG = {
   }
 };
 
-// Each product has its own limited edition per size (not a shared pool
-// across products) — matches the "Limitierte Auflage von X Stück" text
-// shown on the product pages.
+// Default limited edition per size (not a shared pool across products) —
+// matches the "Limitierte Auflage von X Stück" text shown on the product
+// pages. A product can override this via its own `editions` field (see
+// 'pink-new-york-city-print' above) when its edition size differs.
 //
 // Original is the pseudo-size for one-of-a-kind canvases (the "Originale"
 // section): each is a single unique piece, so its edition is always 1.
