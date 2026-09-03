@@ -35,6 +35,16 @@ export const CATALOG = {
   // One-of-a-kind canvases ("Originale" section). Each has a single price
   // under the "Original" pseudo-size instead of A4/A3 — there's only ever
   // one of these, not a print edition.
+  'first-district': {
+    name: 'First District',
+    image: 'https://anselmi.at/assets/kunst/originale/FirstDistrict/firstdistrict.jpg',
+    prices: { Original: 45000 } // cents
+  },
+  'pink-new-york-city': {
+    name: 'Pink New York City',
+    image: 'https://anselmi.at/assets/kunst/originale/PinkNewYorkCity/pinknewyorkcity.jpg',
+    prices: { Original: 35000 } // cents
+  },
   'dinner-at-la-maison-rose': {
     name: 'Dinner at La Maison Rose?',
     image: 'https://anselmi.at/assets/kunst/originale/Paris/dinneratlamaisonrose.jpg',

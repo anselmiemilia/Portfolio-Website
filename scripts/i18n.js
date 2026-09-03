@@ -65,8 +65,8 @@
     'produkt.info.title': { de: 'Info', en: 'Info' },
     'produkt.info.folgt': { de: 'Info folgt ...', en: 'Info coming soon ...' },
     'produkt.abendrosa.info': {
-      de: 'Inspiriert von einem abendlichen Spaziergang durch Marrakesch an einem warmen Februarabend, zeigt dieses Bild die Koutoubia-Moschee im pulsierenden Treiben der Stadt. Original gemalt mit Acryl und Ölpastell auf Leinwand, 30 × 40 cm, im Juli 2026.',
-      en: 'Inspired by an evening walk through Marrakesh on a warm February evening, this piece captures the Koutoubia Mosque amid the city’s lively evening bustle. Original painted with acrylic and oil pastel on canvas, 30 × 40 cm, in July 2026.'
+      de: 'Inspiriert von einem abendlichen Spaziergang durch Marrakesch an einem warmen Februarabend, zeigt dieses Bild die Koutoubia-Moschee im pulsierenden Treiben der Stadt. Original gemalt mit Acryl und Ölpastell auf Leinwand, 40 × 50 cm, im Juli 2026.',
+      en: 'Inspired by an evening walk through Marrakesh on a warm February evening, this piece captures the Koutoubia Mosque amid the city’s lively evening bustle. Original painted with acrylic and oil pastel on canvas, 40 × 50 cm, in July 2026.'
     },
     'produkt.details.papier.wert.filz': { de: '300 g/m² Filzmarkiertes Naturpapier', en: '300 gsm felt-marked natural paper' },
     'produkt.details.rand.wert.1cm': { de: '1 cm rundum', en: '1 cm all around' },
@@ -101,6 +101,14 @@
     'produkt.lissabon.info': {
       de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Lissabon“, Lissabon.',
       en: 'Original artwork by Emilia Anselmi, 2026, “Lissabon”, Lissabon.'
+    },
+    'produkt.firstdistrict.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „First&nbsp;District“, Wien.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “First&nbsp;District”, Vienna.'
+    },
+    'produkt.pinknewyorkcity.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Pink&nbsp;New&nbsp;York&nbsp;City“, New York.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “Pink&nbsp;New&nbsp;York&nbsp;City”, New York.'
     },
     'produkt.cafecentral.info': {
       de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Café&nbsp;Central“, Wien.',
@@ -140,6 +148,7 @@
     'produkt.auflage.a3': { de: 'Limitierte Auflage von 10 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 10<br>(hand-signed &amp; numbered)' },
     'produkt.related.title': { de: 'Weitere Prints', en: 'More Prints' },
     'produkt.related.originale.title': { de: 'Weitere Originale', en: 'More Originals' },
+    'produkt.related.originale.alle': { de: 'Alle Originale ansehen', en: 'View all Originals' },
     'produkt.preisFolgt': { de: 'Preis folgt', en: 'Price coming soon' },
     'produkt.abPreis20': { de: 'ab € 20,–', en: 'from € 20' },
     'produkt.kaufen': { de: 'Kaufen', en: 'Buy' },

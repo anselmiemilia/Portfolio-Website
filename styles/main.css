@@ -1119,8 +1119,25 @@ nav a:hover::after {
   margin-bottom: 2rem;
 }
 
+.produkt-related .shop-prints-grid {
+  flex-wrap: wrap;
+}
+
+/* Show at most one row of 4 — the rest link out via the "Alle Originale
+   ansehen" CTA below instead of piling every other original into view. */
 .produkt-related .shop-prints-card {
   max-width: 260px;
+  flex: 0 1 calc(25% - 1.875rem);
+}
+
+.produkt-related .shop-prints-card:nth-child(n+5) {
+  display: none;
+}
+
+/* Cards are small here, so the burgundy title overlay reads oversized —
+   keep just the image zoom on hover. */
+.produkt-related .shop-prints-card:hover .shop-prints-overlay {
+  opacity: 0;
 }
 
 /* ===========================================
