@@ -80,7 +80,7 @@
         <!-- Shop Originals -->
         <div class="kunst-content" id="tab-originals">
             <div class="shop-prints-grid">
-                <a href="shop/pink-new-york-city.html" class="shop-prints-card">
+                <a href="shop/pink-new-york-city.html" class="shop-prints-card" data-keep-position>
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/originale/PinkNewYorkCity/pinknewyorkcity.jpg" alt="Pink New York City">
                         <div class="shop-prints-overlay"><span>Pink New York City</span></div>
@@ -192,10 +192,14 @@
 
             // Sold pieces sink to the end of the grid, keeping the rest of
             // the order intact — appendChild just moves the existing node.
+            // A card marked data-keep-position stays where it is even once
+            // sold, so a showpiece can lead the grid regardless of stock.
             function sinkSoldCards() {
                 if (!originalsGrid) return;
                 Array.prototype.slice.call(originalsGrid.querySelectorAll('.shop-prints-card'))
-                    .filter(function (card) { return !!card.querySelector('.sold-badge'); })
+                    .filter(function (card) {
+                        return !!card.querySelector('.sold-badge') && !card.hasAttribute('data-keep-position');
+                    })
                     .forEach(function (card) { originalsGrid.appendChild(card); });
             }
 
