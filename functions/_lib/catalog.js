@@ -38,12 +38,12 @@ export const CATALOG = {
   'first-district': {
     name: 'First District',
     image: 'https://anselmi.at/assets/kunst/originale/FirstDistrict/firstdistrict.jpg',
-    prices: { Original: 45000 } // cents
+    prices: { Original: 40000 } // cents
   },
   'pink-new-york-city': {
     name: 'Pink New York City',
     image: 'https://anselmi.at/assets/kunst/originale/PinkNewYorkCity/pinknewyorkcity.jpg',
-    prices: { Original: 35000 } // cents
+    prices: { Original: 30000 } // cents
   },
   'dinner-at-la-maison-rose': {
     name: 'Dinner at La Maison Rose?',
