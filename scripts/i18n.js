@@ -141,6 +141,8 @@
     'produkt.details.papier.wert': { de: '300 g/m² Naturpapier creme', en: '300 gsm natural cream paper' },
     'produkt.details.rand': { de: 'Rand', en: 'Border' },
     'produkt.details.rand.wert': { de: '15 mm rundum', en: '15 mm all around' },
+    'produkt.details.rahmen': { de: 'Rahmen', en: 'Frame' },
+    'produkt.details.rahmen.wert': { de: 'Ungerahmt – nur der Kunstdruck', en: 'Unframed – print only' },
     'produkt.details.auflage': { de: 'Auflage', en: 'Edition' },
     'produkt.details.material': { de: 'Material', en: 'Material' },
     'produkt.details.technik': { de: 'Technik', en: 'Technique' },
