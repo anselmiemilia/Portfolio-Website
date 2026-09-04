@@ -6,7 +6,7 @@
 
 import { CATALOG } from '../_lib/catalog.js';
 import { COUNTRIES, PRODUCT_FORMAT, getSelectableCountries } from '../_lib/shippingRates.js';
-import { getRemaining } from '../_lib/stock.js';
+import { loadSold, remainingFor } from '../_lib/stock.js';
 import { corsHeaders } from '../_lib/cors.js';
 
 // Versandkosten kommen aus functions/_lib/shippingRates.js (Österreichische
@@ -120,6 +120,20 @@ export async function onRequestPost({ request, env }) {
     return jsonResponse({ error: 'Bitte wähle dein Versandland aus.' }, 400, request);
   }
 
+  // One KV read for the whole cart. If KV is unavailable (e.g. the daily
+  // free-tier read limit is exhausted) we deliberately fail OPEN: a checkout
+  // that goes through without the stock check is far cheaper than a shop
+  // that can't sell at all during a traffic spike. The webhook still counts
+  // the sale once KV is back (Stripe retries failed webhook deliveries).
+  let sold = null;
+  if (env.STOCK_KV) {
+    try {
+      sold = await loadSold(env.STOCK_KV);
+    } catch (e) {
+      console.error('STOCK_KV read failed, skipping stock check:', e && e.message);
+    }
+  }
+
   const lineItems = [];
   const metaItems = [];
   const summaryParts = [];
@@ -131,8 +145,8 @@ export async function onRequestPost({ request, env }) {
     }
     const qty = Math.min(Math.max(parseInt(raw.qty, 10) || 1, 1), MAX_QTY_PER_ITEM);
 
-    if (env.STOCK_KV) {
-      const remaining = await getRemaining(env.STOCK_KV, raw.id, raw.size);
+    if (sold) {
+      const remaining = remainingFor(sold, raw.id, raw.size);
       if (remaining !== null && qty > remaining) {
         return jsonResponse({
           error: remaining === 0
