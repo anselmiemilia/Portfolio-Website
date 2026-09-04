@@ -165,6 +165,11 @@
     'produkt.verfuegbarAb': { de: 'Verfügbar ab Ende August', en: 'Available from late August' },
     'produkt.vorbestellen': { de: 'Vorbestellen', en: 'Pre-order' },
     'produkt.versandAbEndeAugust': { de: 'Versand Anfang bis Mitte September', en: 'Shipping early to mid September' },
+    'produkt.versandAbEndeSeptember': { de: 'Versand ab Ende September', en: 'Shipping from end of September' },
+    'produkt.pinknyc.info': {
+      de: 'Hochwertiger Fine-Art-Print, farblich an das Original „Pink New York City“ angepasst, um dessen kräftige Pink- und Magenta-Töne so originalgetreu wie möglich wiederzugeben.',
+      en: 'A fine art print, color-matched to the original “Pink New York City” painting to capture its bold pink and magenta tones as faithfully as possible.'
+    },
     'produkt.nurNochX': { de: 'Nur noch {n} Stück verfügbar', en: 'Only {n} left' },
     'produkt.farbabweichung': { de: 'Farben können durch Druck und Bildschirmdarstellung leicht abweichen.', en: 'Colors may vary slightly due to printing and screen display.' },
     'cart.vorbestellHinweis': {
