@@ -148,10 +148,10 @@
     'produkt.details.technik': { de: 'Technik', en: 'Technique' },
     'produkt.auflage.a4': { de: 'Limitierte Auflage von 20 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 20<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.a3': { de: 'Limitierte Auflage von 10 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 10<br>(hand-signed &amp; numbered)' },
-    // Pink New York City print has a larger edition (30/20) than the
+    // Pink New York City print has a larger edition (30/30) than the
     // sitewide default (20/10) — its own keys instead of the ones above.
     'produkt.auflage.pinknyc.a4': { de: 'Limitierte Auflage von 30 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 30<br>(hand-signed &amp; numbered)' },
-    'produkt.auflage.pinknyc.a3': { de: 'Limitierte Auflage von 20 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 20<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.pinknyc.a3': { de: 'Limitierte Auflage von 30 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 30<br>(hand-signed &amp; numbered)' },
     'produkt.related.title': { de: 'Weitere Prints', en: 'More Prints' },
     'produkt.related.originale.title': { de: 'Weitere Originale', en: 'More Originals' },
     'produkt.related.originale.alle': { de: 'Alle Originale ansehen', en: 'View all Originals' },
