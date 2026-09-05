@@ -30,7 +30,9 @@ export const CATALOG = {
     // site orders + the 1 outside sale) to make remaining come out to 0.
     // Drop/adjust this once the webhook gap is fixed and/or KV is
     // corrected directly.
-    reserved: { A3: 8 }
+    // A4: 2 sold outside the site entirely (Instagram DMs, to poppy.ben23
+    // and elspeth) — not counted by STOCK_KV, so reserved covers them too.
+    reserved: { A3: 8, A4: 2 }
   },
   'pink-new-york-city-print': {
     name: 'Pink New York City',
@@ -38,7 +40,11 @@ export const CATALOG = {
     prices: { A4: 2000, A3: 2500 }, // cents — pre-order
     // Larger edition than the other prints (default 20/10 from
     // EDITION_LIMITS below) — overrides it per size here.
-    editions: { A4: 30, A3: 20 }
+    editions: { A4: 30, A3: 20 },
+    // 2 A3s sold outside the site entirely (physical presales, to Nele
+    // Holstegge and Lottie Cook) — not counted by STOCK_KV, so `reserved`
+    // covers them to keep remaining stock accurate.
+    reserved: { A3: 2 }
   },
   // One-of-a-kind canvases ("Originale" section). Each has a single price
   // under the "Original" pseudo-size instead of A4/A3 — there's only ever
