@@ -40,8 +40,8 @@ export const CATALOG = {
     prices: { A4: 2000, A3: 2500 }, // cents — pre-order
     // Larger edition than the other prints (default 20/10 from
     // EDITION_LIMITS below) — overrides it per size here. A3 raised from
-    // 20 to 30 on 2026-09-05.
-    editions: { A4: 30, A3: 30 },
+    // 20 to 30 on 2026-09-05, then to 40 on 2026-09-07.
+    editions: { A4: 30, A3: 40 },
     // 2 A3s sold outside the site entirely (physical presales, to Nele
     // Holstegge and Lottie Cook) — not counted by STOCK_KV, so `reserved`
     // covers them to keep remaining stock accurate.
