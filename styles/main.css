@@ -831,6 +831,11 @@ nav a:hover::after {
   color: var(--burgunder);
 }
 
+/* Originals are one-of-a-kind — once sold, the price is no longer relevant. */
+#tab-originals .shop-prints-card:has(.sold-badge) .shop-prints-price {
+  display: none;
+}
+
 .home-prints-cta-wrapper {
   text-align: center;
   margin-top: 2.5rem;

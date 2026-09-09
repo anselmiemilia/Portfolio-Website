@@ -6,7 +6,11 @@ export const CATALOG = {
   'abendrosa-in-marrakesch': {
     name: 'Abendrosa in Marrakesch',
     image: 'https://anselmi.at/assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch.jpg',
-    prices: { A4: 2000, A3: 2500 } // cents
+    prices: { A4: 2000, A3: 2500 }, // cents
+    // 1 A3 sold via a manually created Stripe invoice — that doesn't fire
+    // checkout.session.completed with item metadata, so STOCK_KV never
+    // counts it. reserved covers it to keep remaining stock accurate.
+    reserved: { A3: 1 }
   },
   'doce-sao-miguel': {
     name: 'Doce São Miguel',
@@ -30,9 +34,10 @@ export const CATALOG = {
     // site orders + the 1 outside sale) to make remaining come out to 0.
     // Drop/adjust this once the webhook gap is fixed and/or KV is
     // corrected directly.
-    // A4: 2 sold outside the site entirely (Instagram DMs, to poppy.ben23
-    // and elspeth) — not counted by STOCK_KV, so reserved covers them too.
-    reserved: { A3: 8, A4: 2 }
+    // A4: 3 sold outside the site entirely (Instagram DMs, to poppy.ben23
+    // and elspeth, plus 1 via Vinted) — not counted by STOCK_KV, so
+    // reserved covers them too.
+    reserved: { A3: 8, A4: 3 }
   },
   'pink-new-york-city-print': {
     name: 'Pink New York City',
@@ -42,24 +47,21 @@ export const CATALOG = {
     // EDITION_LIMITS below) — overrides it per size here. A3 raised from
     // 20 to 30 on 2026-09-05, then to 40 on 2026-09-07.
     editions: { A4: 30, A3: 40 },
-    // 2 A3s sold outside the site entirely (physical presales, to Nele
-    // Holstegge and Lottie Cook) — not counted by STOCK_KV, so `reserved`
-    // covers them to keep remaining stock accurate.
-    reserved: { A3: 2 }
+    // 3 A3s sold outside the site entirely (physical presales to Nele
+    // Holstegge and Lottie Cook, plus 1 via a manually created Stripe
+    // invoice) — not counted by STOCK_KV, so `reserved` covers them to
+    // keep remaining stock accurate.
+    reserved: { A3: 3 }
   },
   // One-of-a-kind canvases ("Originale" section). Each has a single price
   // under the "Original" pseudo-size instead of A4/A3 — there's only ever
   // one of these, not a print edition.
-  'first-district': {
-    name: 'First District',
-    image: 'https://anselmi.at/assets/kunst/originale/FirstDistrict/firstdistrict.jpg',
-    prices: { Original: 40000 } // cents
-  },
-  'pink-new-york-city': {
-    name: 'Pink New York City',
-    image: 'https://anselmi.at/assets/kunst/originale/PinkNewYorkCity/pinknewyorkcity.jpg',
-    prices: { Original: 30000 } // cents
-  },
+  //
+  // A sold original is removed from CATALOG entirely rather than tracked
+  // via `reserved` — there's only ever one unit, so once it's gone it's
+  // gone for good (no future restock to reserve against, unlike a print
+  // edition). Its product page hardcodes the disabled "Verkauft" button
+  // and the overview badge is static, same pattern as Café Central.
   'dinner-at-la-maison-rose': {
     name: 'Dinner at La Maison Rose?',
     image: 'https://anselmi.at/assets/kunst/originale/Paris/dinneratlamaisonrose.jpg',
@@ -70,24 +72,9 @@ export const CATALOG = {
     image: 'https://anselmi.at/assets/kunst/originale/Barcelona/inbarcelona.jpg',
     prices: { Original: 25000 } // cents
   },
-  'smells-like-northern-italy': {
-    name: 'Smells Like Northern Italy',
-    image: 'https://anselmi.at/assets/kunst/originale/Como/smellslikenorthernitaly.jpg',
-    prices: { Original: 25000 } // cents
-  },
-  'feldkircher-aussichten': {
-    name: 'Feldkircher Aussichten',
-    image: 'https://anselmi.at/assets/kunst/originale/Feldkirch/feldkircheraussichten.jpg',
-    prices: { Original: 25000 } // cents
-  },
   'lissabon': {
     name: 'Lissabon',
     image: 'https://anselmi.at/assets/kunst/originale/Lissabon/lissabon.jpg',
-    prices: { Original: 25000 } // cents
-  },
-  'the-city-of-buses-original': {
-    name: 'The City of Buses',
-    image: 'https://anselmi.at/assets/kunst/originale/London/thecityofbusesoriginal.jpg',
     prices: { Original: 25000 } // cents
   }
 };
