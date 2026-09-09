@@ -25,7 +25,7 @@ export const CATALOG = {
   'the-city-of-buses': {
     name: 'The City of Buses',
     image: 'https://anselmi.at/assets/kunst/thecityofbuses/thecityofbuses.jpg',
-    prices: { A4: 2000, A3: 2500 }, // cents — pre-order, ships early/mid September
+    prices: { A4: 2000, A3: 2500 }, // cents
     // Edition of 10 is now fully spoken for: 9 completed/paid A3 orders
     // via Stripe (checked directly via the Stripe API) plus 1 sold outside
     // the site entirely. STOCK_KV's sold counter only reflects 2 of the 9
