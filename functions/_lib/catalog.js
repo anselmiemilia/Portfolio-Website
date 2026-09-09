@@ -47,11 +47,11 @@ export const CATALOG = {
     // EDITION_LIMITS below) — overrides it per size here. A3 raised from
     // 20 to 30 on 2026-09-05, then to 40 on 2026-09-07.
     editions: { A4: 30, A3: 40 },
-    // 3 A3s sold outside the site entirely (physical presales to Nele
-    // Holstegge and Lottie Cook, plus 1 via a manually created Stripe
-    // invoice) — not counted by STOCK_KV, so `reserved` covers them to
-    // keep remaining stock accurate.
-    reserved: { A3: 3 }
+    // 4 A3s sold outside the site entirely (physical presales to Nele
+    // Holstegge and Lottie Cook, 1 via a manually created Stripe invoice,
+    // plus 1 given to a friend) — not counted by STOCK_KV, so `reserved`
+    // covers them to keep remaining stock accurate.
+    reserved: { A3: 4 }
   },
   // One-of-a-kind canvases ("Originale" section). Each has a single price
   // under the "Original" pseudo-size instead of A4/A3 — there's only ever
