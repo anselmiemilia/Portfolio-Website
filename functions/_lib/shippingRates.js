@@ -64,7 +64,7 @@ export const UNSUPPORTED_COUNTRIES = {
 // Welches Format (PM45/PM70) für welches Druckformat gilt
 export const PRODUCT_FORMAT = {
   A4: "PM45",
-  A3: "PM70", // bestätigt: A3-Verpackung braucht PM70, nicht PM45
+  A3: "PM45", // A3 zahlt jetzt denselben Versand wie A4, nicht mehr PM70
   Original: "ORIGINAL", // Leinwand-Original, eigene Tarifspalte statt PM45/PM70
 };
 
