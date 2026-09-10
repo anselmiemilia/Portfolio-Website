@@ -34,10 +34,11 @@ export const CATALOG = {
     // site orders + the 1 outside sale) to make remaining come out to 0.
     // Drop/adjust this once the webhook gap is fixed and/or KV is
     // corrected directly.
-    // A4: 3 sold outside the site entirely (Instagram DMs, to poppy.ben23
-    // and elspeth, plus 1 via Vinted) — not counted by STOCK_KV, so
-    // reserved covers them too.
-    reserved: { A3: 8, A4: 3 }
+    // A4: 2 sold outside the site entirely (1 Instagram DM, to elspeth,
+    // plus 1 via Vinted) — not counted by STOCK_KV, so reserved covers
+    // them too. The poppy.ben23 DM sale turned out not to have happened
+    // after all, so it's been dropped from this count.
+    reserved: { A3: 8, A4: 2 }
   },
   'pink-new-york-city-print': {
     name: 'Pink New York City',
