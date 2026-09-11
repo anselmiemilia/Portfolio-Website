@@ -20,7 +20,10 @@ export const CATALOG = {
   'sommer-sonne-baedala': {
     name: 'Sommer, Sonne, Bädala',
     image: 'https://anselmi.at/assets/kunst/sommersonnebaedala/sommersonnebaedala.jpg',
-    prices: { A4: 2000 } // cents — A4 only
+    prices: { A4: 2000 }, // cents — A4 only
+    // 1 A4 sold outside the site via PayPal — not counted by STOCK_KV, so
+    // reserved covers it to keep remaining stock accurate.
+    reserved: { A4: 1 }
   },
   'the-city-of-buses': {
     name: 'The City of Buses',
