@@ -168,6 +168,12 @@ nav {
   gap: 0.4rem;
 }
 
+/* Cloned into the header by nav.js for mobile; hidden until the mobile
+   breakpoint below turns it on next to the burger button. */
+.lang-toggle-mobile {
+  display: none;
+}
+
 .lang-sep {
   font-size: 0.85rem;
   opacity: 0.4;
@@ -1856,12 +1862,13 @@ footer a:hover { text-decoration: underline; }
   .logo img.logo-default,
   .logo img.logo-hover { height: 2.2rem; }
 
-  /* Cart first, burger to the right of it. Both run in the normal flow here so
-     the order is set with flex order; the cart stays position: relative because
-     the .cart-count badge is absolutely positioned inside it. */
+  /* Cart, then the language switch, then the burger last. All run in the
+     normal flow here so the order is set with flex order; the cart stays
+     position: relative because the .cart-count badge is absolutely
+     positioned inside it. */
   .nav-toggle {
     display: flex;
-    order: 3;
+    order: 4;
   }
 
   .cart-toggle {
@@ -1876,6 +1883,16 @@ footer a:hover { text-decoration: underline; }
   .cart-drawer {
     padding: 1.5rem 1.25rem;
     padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  }
+
+  /* Language switch, cloned by nav.js right next to the burger button so
+     it's visible without opening the menu — buried inside the collapsed
+     nav, people often didn't notice it. The original inside nav is hidden
+     below to avoid showing it twice once the menu is open. */
+  .lang-toggle-mobile {
+    display: flex;
+    order: 3;
+    margin-right: 0.9rem;
   }
 
   nav {
@@ -1896,7 +1913,7 @@ footer a:hover { text-decoration: underline; }
 
   nav a { font-size: 0.9rem; }
   .lang-btn { font-size: 0.9rem; }
-  .lang-toggle { margin-top: 0.25rem; }
+  nav .lang-toggle { display: none; }
 
   /* Hero */
   .hero {
