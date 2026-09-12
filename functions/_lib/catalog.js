@@ -29,26 +29,20 @@ export const CATALOG = {
     name: 'The City of Buses',
     image: 'https://anselmi.at/assets/kunst/thecityofbuses/thecityofbuses.jpg',
     prices: { A4: 2000, A3: 2500 }, // cents
-    // Edition of 10, confirmed by Emilia on 2026-09-12: 9 sold, 1 truly
-    // available — no new orders were coming in, so the sold counter
-    // climbing on every check (2, then 3, 4, 5, 6) wasn't real sales.
-    // Root cause: stripe-webhook.js had no idempotency guard, so a
-    // redelivered Stripe event (retries, transient failures — Stripe is
-    // at-least-once delivery) incremented the same order's count again
-    // each time it was redelivered; fixed there by keying on event.id.
-    // It kept climbing once more after that fix, which points at either
-    // deploy lag or two concurrent deliveries racing past the idempotency
-    // check rather than a genuinely unfixed bug — worth another look if
-    // this drifts again. KV had 6 of the 9 counted as of this last check,
-    // so reserved covers the other 3. reserved(3) + KV(6) = 9 sold,
-    // leaving 1 available. The already-inflated KV value itself isn't
-    // retroactively corrected — only (hopefully) prevented from
-    // drifting further.
+    // TEMP DIAGNOSTIC (2026-09-12): remainingFor() clamps at 0 via
+    // Math.max(), so repeatedly seeing "remaining: 0" while lowering
+    // `reserved` never actually proved what STOCK_KV's real A3 sold count
+    // is — it could have been sitting far below the true value in a way
+    // the clamp hid completely. This inflates the edition hugely and
+    // zeroes reserved so remaining reads out the true raw KV count
+    // unclamped. Drop this override once that's read and reserved is set
+    // correctly for real (see the A4 note below for the actual edition).
+    editions: { A3: 1000 },
     // A4: 2 sold outside the site entirely (1 Instagram DM, to elspeth,
     // plus 1 via Vinted) — not counted by STOCK_KV, so reserved covers
     // them too. The poppy.ben23 DM sale turned out not to have happened
     // after all, so it's been dropped from this count.
-    reserved: { A3: 3, A4: 2 }
+    reserved: { A3: 0, A4: 2 }
   },
   'pink-new-york-city-print': {
     name: 'Pink New York City',
