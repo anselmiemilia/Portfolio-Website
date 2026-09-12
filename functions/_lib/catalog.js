@@ -30,19 +30,21 @@ export const CATALOG = {
     image: 'https://anselmi.at/assets/kunst/thecityofbuses/thecityofbuses.jpg',
     prices: { A4: 2000, A3: 2500 }, // cents
     // Edition of 10, confirmed by Emilia on 2026-09-12: 9 sold, 1 truly
-    // available. STOCK_KV's sold counter kept creeping up while this was
-    // being debugged (2, then 3, then 4 — new orders landing live, not a
-    // stale read), so `reserved` was re-chased against it repeatedly and
-    // got out of sync. Last checked against live /api/stock on 2026-09-12:
-    // KV had 4 of the 9 counted, so reserved covers the other 5.
-    // reserved(5) + KV(4) = 9 sold, leaving 1 available. If this drifts
-    // out of sync again, check /api/stock right after deploying rather
-    // than assuming KV hasn't moved.
+    // available — no new orders were coming in, so the sold counter
+    // climbing on every check (2, then 3, then 4, then 5) wasn't real
+    // sales. Root cause: stripe-webhook.js had no idempotency guard, so a
+    // redelivered Stripe event (retries, transient failures — Stripe is
+    // at-least-once delivery) incremented the same order's count again
+    // each time it was redelivered. Fixed in stripe-webhook.js by keying
+    // on event.id. KV had 5 of the 9 counted as of that last check, so
+    // reserved covers the other 4. reserved(4) + KV(5) = 9 sold, leaving 1
+    // available. The already-inflated KV value itself isn't retroactively
+    // corrected — only prevented from drifting further.
     // A4: 2 sold outside the site entirely (1 Instagram DM, to elspeth,
     // plus 1 via Vinted) — not counted by STOCK_KV, so reserved covers
     // them too. The poppy.ben23 DM sale turned out not to have happened
     // after all, so it's been dropped from this count.
-    reserved: { A3: 5, A4: 2 }
+    reserved: { A3: 4, A4: 2 }
   },
   'pink-new-york-city-print': {
     name: 'Pink New York City',

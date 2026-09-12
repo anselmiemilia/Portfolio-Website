@@ -69,15 +69,29 @@ export async function onRequestPost({ request, env }) {
   }
 
   if (event.type === 'checkout.session.completed' && env.STOCK_KV) {
-    const session = event.data && event.data.object;
-    const itemsRaw = session && session.metadata && session.metadata.items;
-    if (itemsRaw) {
-      let items = [];
-      try { items = JSON.parse(itemsRaw); } catch (e) { items = []; }
-      for (const item of items) {
-        if (item && item.id && item.size && item.qty) {
-          await incrementSold(env.STOCK_KV, item.id, item.size, item.qty);
+    // Stripe has at-least-once delivery: a slow response, a transient 5xx,
+    // or Stripe's own retries can redeliver the same event, and without
+    // this guard every redelivery would increment the sold counter again
+    // for an order that was already counted. Each event.id is unique per
+    // delivery attempt of the same underlying event, so it's a reliable
+    // idempotency key — first write wins, later ones short-circuit.
+    const eventKey = 'processed-event:' + event.id;
+    const alreadyProcessed = event.id && await env.STOCK_KV.get(eventKey);
+    if (!alreadyProcessed) {
+      const session = event.data && event.data.object;
+      const itemsRaw = session && session.metadata && session.metadata.items;
+      if (itemsRaw) {
+        let items = [];
+        try { items = JSON.parse(itemsRaw); } catch (e) { items = []; }
+        for (const item of items) {
+          if (item && item.id && item.size && item.qty) {
+            await incrementSold(env.STOCK_KV, item.id, item.size, item.qty);
+          }
         }
+      }
+      if (event.id) {
+        // 30 days comfortably outlives Stripe's redelivery window (a few days).
+        await env.STOCK_KV.put(eventKey, '1', { expirationTtl: 2592000 });
       }
     }
   }
