@@ -29,22 +29,20 @@ export const CATALOG = {
     name: 'The City of Buses',
     image: 'https://anselmi.at/assets/kunst/thecityofbuses/thecityofbuses.jpg',
     prices: { A4: 2000, A3: 2500 }, // cents
-    // Edition of 10: 9 completed/paid A3 orders via Stripe (checked
-    // directly via the Stripe API), the 10th unit was earmarked for an
-    // outside sale that fell through on 2026-09-12 and is back up for
-    // grabs. STOCK_KV's sold counter now reflects 3 of those 9 Stripe
-    // orders (checked live against /api/stock on 2026-09-12 — it was 2
-    // when this was first written, so it's crept up since) — the
-    // increment webhook evidently missed the rest — so `reserved` covers
-    // the other 6 uncounted orders. 6 (reserved) + 3 (KV) = 9 sold,
-    // leaving 1 truly available.
-    // Drop/adjust this once the webhook gap is fixed and/or KV is
-    // corrected directly.
+    // Edition of 10, confirmed by Emilia on 2026-09-12: 9 sold, 1 truly
+    // available. STOCK_KV's sold counter kept creeping up while this was
+    // being debugged (2, then 3, then 4 — new orders landing live, not a
+    // stale read), so `reserved` was re-chased against it repeatedly and
+    // got out of sync. Last checked against live /api/stock on 2026-09-12:
+    // KV had 4 of the 9 counted, so reserved covers the other 5.
+    // reserved(5) + KV(4) = 9 sold, leaving 1 available. If this drifts
+    // out of sync again, check /api/stock right after deploying rather
+    // than assuming KV hasn't moved.
     // A4: 2 sold outside the site entirely (1 Instagram DM, to elspeth,
     // plus 1 via Vinted) — not counted by STOCK_KV, so reserved covers
     // them too. The poppy.ben23 DM sale turned out not to have happened
     // after all, so it's been dropped from this count.
-    reserved: { A3: 6, A4: 2 }
+    reserved: { A3: 5, A4: 2 }
   },
   'pink-new-york-city-print': {
     name: 'Pink New York City',
