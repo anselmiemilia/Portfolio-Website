@@ -29,21 +29,20 @@ export const CATALOG = {
     name: 'The City of Buses',
     image: 'https://anselmi.at/assets/kunst/thecityofbuses/thecityofbuses.jpg',
     prices: { A4: 2000, A3: 2500 }, // cents
-    // Base edition of 10 was fully spoken for (9 completed/paid A3 orders
-    // via Stripe, checked directly via the Stripe API, plus 1 sold outside
-    // the site entirely) — raised to 11 on 2026-09-12 to offer one more A3.
-    // STOCK_KV's sold counter only reflects 2 of the 9 Stripe orders — the
-    // increment webhook evidently missed the rest — so `reserved` covers
-    // everything KV doesn't know about (7 uncounted site orders + the 1
-    // outside sale) to keep remaining accurate.
+    // Edition of 10: 9 completed/paid A3 orders via Stripe (checked
+    // directly via the Stripe API), the 10th unit was earmarked for an
+    // outside sale that fell through on 2026-09-12 and is back up for
+    // grabs. STOCK_KV's sold counter only reflects 2 of the 9 Stripe
+    // orders — the increment webhook evidently missed the rest — so
+    // `reserved` covers everything KV doesn't know about (7 uncounted
+    // site orders) to keep remaining accurate.
     // Drop/adjust this once the webhook gap is fixed and/or KV is
     // corrected directly.
-    editions: { A3: 11 },
     // A4: 2 sold outside the site entirely (1 Instagram DM, to elspeth,
     // plus 1 via Vinted) — not counted by STOCK_KV, so reserved covers
     // them too. The poppy.ben23 DM sale turned out not to have happened
     // after all, so it's been dropped from this count.
-    reserved: { A3: 8, A4: 2 }
+    reserved: { A3: 7, A4: 2 }
   },
   'pink-new-york-city-print': {
     name: 'Pink New York City',
