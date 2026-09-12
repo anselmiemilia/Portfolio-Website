@@ -29,20 +29,21 @@ export const CATALOG = {
     name: 'The City of Buses',
     image: 'https://anselmi.at/assets/kunst/thecityofbuses/thecityofbuses.jpg',
     prices: { A4: 2000, A3: 2500 }, // cents
-    // TEMP DIAGNOSTIC (2026-09-12): remainingFor() clamps at 0 via
-    // Math.max(), so repeatedly seeing "remaining: 0" while lowering
-    // `reserved` never actually proved what STOCK_KV's real A3 sold count
-    // is — it could have been sitting far below the true value in a way
-    // the clamp hid completely. This inflates the edition hugely and
-    // zeroes reserved so remaining reads out the true raw KV count
-    // unclamped. Drop this override once that's read and reserved is set
-    // correctly for real (see the A4 note below for the actual edition).
-    editions: { A3: 1000 },
+    // Edition of 10 (default EDITION_LIMITS.A3, no override needed). A
+    // diagnostic on 2026-09-12 (editions.A3 temporarily set to 1000,
+    // reserved.A3 to 0, to read STOCK_KV's raw count unclamped) confirmed
+    // it was genuinely at 9 — not a runaway counter. The earlier "reserved
+    // covers 7 uncounted orders" workaround was needed because the
+    // stripe-webhook.js delivery gap meant KV only reflected 2 of the 9;
+    // once the idempotency fix (keyed on event.id) was deployed, the
+    // remaining redeliveries caught up one at a time and landed correctly
+    // instead of being lost or double-counted, so KV now accurately
+    // reflects all 9 on its own — no `reserved` offset needed here anymore.
     // A4: 2 sold outside the site entirely (1 Instagram DM, to elspeth,
     // plus 1 via Vinted) — not counted by STOCK_KV, so reserved covers
     // them too. The poppy.ben23 DM sale turned out not to have happened
     // after all, so it's been dropped from this count.
-    reserved: { A3: 0, A4: 2 }
+    reserved: { A4: 2 }
   },
   'pink-new-york-city-print': {
     name: 'Pink New York City',
