@@ -952,6 +952,11 @@ nav a:hover::after {
   margin-bottom: 1.75rem;
 }
 
+/* A sold one-of-a-kind original is gone for good — its price is no longer relevant. */
+.produkt-grid:has(.sold-badge) .produkt-preis {
+  display: none;
+}
+
 .produkt-groessen {
   display: flex;
   gap: 0.75rem;
