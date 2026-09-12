@@ -25,6 +25,30 @@
     return item.id + '::' + item.size;
   }
 
+  // Live stock, fetched once on load (see fetchStock() below). The cart is
+  // a UX convenience only here too — create-checkout-session.js re-checks
+  // the real value right before a Stripe session is created, so a
+  // stale/missing fetch here can't oversell anything, it just means the
+  // qty stepper won't grey out until the authoritative check at checkout.
+  var stockCache = null;
+
+  function remainingForItem(id, size) {
+    return (stockCache && stockCache[id] && typeof stockCache[id][size] === 'number')
+      ? stockCache[id][size]
+      : null;
+  }
+
+  function fetchStock() {
+    fetch('https://atelier-anselmi.pages.dev/api/stock')
+      .then(function (res) { return res.ok ? res.json() : null; })
+      .then(function (stock) {
+        if (!stock) return;
+        stockCache = stock;
+        renderDrawer();
+      })
+      .catch(function () { /* qty cap just won't show, checkout still enforces it */ });
+  }
+
   var VALID_ZONES = ['AT', 'DE', 'EU_OTHER'];
 
   function getShippingZone() {
@@ -66,8 +90,11 @@
     var items = readCart();
     var key = itemKey(item);
     var existing = items.filter(function (i) { return itemKey(i) === key; })[0];
+    var desiredQty = (existing ? existing.qty : 0) + (item.qty || 1);
+    var remaining = remainingForItem(item.id, item.size);
+    var finalQty = remaining !== null ? Math.min(desiredQty, remaining) : desiredQty;
     if (existing) {
-      existing.qty += item.qty || 1;
+      existing.qty = finalQty;
     } else {
       items.push({
         id: item.id,
@@ -75,7 +102,7 @@
         size: item.size,
         price: item.price,
         image: item.image,
-        qty: item.qty || 1,
+        qty: finalQty,
         preorder: !!item.preorder
       });
     }
@@ -87,7 +114,12 @@
     var items = readCart();
     var item = items.filter(function (i) { return itemKey(i) === key; })[0];
     if (!item) return;
-    item.qty += delta;
+    var newQty = item.qty + delta;
+    if (delta > 0) {
+      var remaining = remainingForItem(item.id, item.size);
+      if (remaining !== null) newQty = Math.min(newQty, remaining);
+    }
+    item.qty = newQty;
     if (item.qty <= 0) {
       items = items.filter(function (i) { return itemKey(i) !== key; });
     }
@@ -234,6 +266,8 @@
 
     items.forEach(function (item) {
       var key = itemKey(item);
+      var remaining = remainingForItem(item.id, item.size);
+      var atMax = remaining !== null && item.qty >= remaining;
       var row = document.createElement('div');
       row.className = 'cart-item';
       row.innerHTML =
@@ -244,7 +278,9 @@
           '<div class="cart-item-qty">' +
             '<button type="button" class="cart-qty-btn" data-action="dec" aria-label="-">&minus;</button>' +
             '<span>' + item.qty + '</span>' +
-            '<button type="button" class="cart-qty-btn" data-action="inc" aria-label="+">+</button>' +
+            '<button type="button" class="cart-qty-btn" data-action="inc" aria-label="+"' +
+              (atMax ? ' disabled title="' + t('cart.maxErreicht', 'Maximal verfügbare Menge erreicht') + '"' : '') +
+            '>+</button>' +
           '</div>' +
         '</div>' +
         '<div class="cart-item-right">' +
@@ -373,6 +409,7 @@
     buildDrawer();
     renderBadge();
     renderDrawer();
+    fetchStock();
   });
 
   window.cart = {

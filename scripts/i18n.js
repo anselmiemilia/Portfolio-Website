@@ -181,6 +181,7 @@
     'cart.titel': { de: 'Warenkorb', en: 'Cart' },
     'cart.leer': { de: 'Dein Warenkorb ist leer.', en: 'Your cart is empty.' },
     'cart.entfernen': { de: 'Entfernen', en: 'Remove' },
+    'cart.maxErreicht': { de: 'Maximal verfügbare Menge erreicht', en: 'Maximum available quantity reached' },
     'cart.zwischensumme': { de: 'Zwischensumme', en: 'Subtotal' },
     'cart.versandhinweis': { de: 'zzgl. Versand', en: 'plus shipping' },
     'cart.versandland': { de: 'Versandland', en: 'Shipping country' },

@@ -1297,6 +1297,12 @@ nav a:hover::after {
   color: var(--weiss);
 }
 
+.cart-qty-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
 .cart-item-right {
   display: flex;
   flex-direction: column;
