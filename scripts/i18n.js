@@ -110,6 +110,10 @@
       de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Pink&nbsp;New&nbsp;York&nbsp;City“, New York.',
       en: 'Original artwork by Emilia Anselmi, 2026, “Pink&nbsp;New&nbsp;York&nbsp;City”, New York.'
     },
+    'produkt.loveinnewyorkcity.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Love&nbsp;in&nbsp;New&nbsp;York&nbsp;City“, New York.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “Love&nbsp;in&nbsp;New&nbsp;York&nbsp;City”, New York.'
+    },
     'produkt.cafecentral.info': {
       de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Café&nbsp;Central“, Wien.',
       en: 'Original artwork by Emilia Anselmi, 2026, “Café&nbsp;Central”, Vienna.'
