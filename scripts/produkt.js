@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var groesseEl = document.querySelector('[data-detail="groesse"]');
   var auflageEl = document.querySelector('[data-detail="auflage"]');
   var kaufenBtn = document.querySelector('.produkt-kaufen-btn');
+  var soldOutTitel = document.querySelector('.produkt-soldout-titel');
   var produktName = document.querySelector('.produkt-info h1') ? document.querySelector('.produkt-info h1').textContent : '';
   var produktId = location.pathname.split('/').pop().replace('.html', '');
 
@@ -157,6 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (stockForProduct.Original === 0 && kaufenBtn) {
         kaufenBtn.disabled = true;
         kaufenBtn.textContent = t('produkt.verkauft', 'Verkauft');
+        if (soldOutTitel) soldOutTitel.hidden = false;
       }
       return;
     }
@@ -184,6 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!firstAvailableBtn && kaufenBtn) {
       kaufenBtn.disabled = true;
       kaufenBtn.textContent = t('produkt.ausverkauft', 'Ausverkauft');
+      if (soldOutTitel) soldOutTitel.hidden = false;
     }
   }
 

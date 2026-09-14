@@ -952,6 +952,13 @@ nav a:hover::after {
   margin-bottom: 0.5rem;
 }
 
+.produkt-soldout-titel {
+  font-family: var(--font-headline);
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  color: var(--burgunder);
+  margin-bottom: 0.25rem;
+}
+
 .produkt-preis {
   font-size: 1.3rem;
   color: var(--burgunder);
