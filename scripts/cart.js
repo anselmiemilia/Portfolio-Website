@@ -49,7 +49,7 @@
       .catch(function () { /* qty cap just won't show, checkout still enforces it */ });
   }
 
-  var VALID_ZONES = ['AT', 'DE', 'EU_OTHER'];
+  var VALID_ZONES = ['AT', 'DE', 'EU_OTHER', 'GB'];
 
   function getShippingZone() {
     try {
@@ -190,6 +190,7 @@
             '<option value="AT"></option>' +
             '<option value="DE"></option>' +
             '<option value="EU_OTHER"></option>' +
+            '<option value="GB"></option>' +
           '</select>' +
         '</div>' +
         '<p class="cart-preorder-note"></p>' +
@@ -232,6 +233,7 @@
     zoneOptions[1].textContent = t('cart.versandland.at', 'Österreich');
     zoneOptions[2].textContent = t('cart.versandland.de', 'Deutschland');
     zoneOptions[3].textContent = t('cart.versandland.eu', 'Übrige EU');
+    zoneOptions[4].textContent = t('cart.versandland.uk', 'Vereinigtes Königreich (UK)');
     if (!checkoutBtn.disabled) {
       checkoutBtn.textContent = t('cart.zurKasse', 'Zur Kasse');
     }

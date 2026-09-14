@@ -13,17 +13,18 @@ import { corsHeaders } from '../_lib/cors.js';
 // Post "Paketmarke", Details dort). Stripe Checkout kennt die vom Kunden
 // gewählte Lieferadresse erst NACH dem Erstellen der Session, nicht davor –
 // deshalb wählt der Warenkorb VOR dem Checkout schon die Versandzone (AT /
-// DE / übrige EU), und wir bauen daraus genau eine einzige Versandoption
-// statt drei zur Auswahl. So kann nicht mehr aus Versehen die falsche
+// DE / übrige EU / UK), und wir bauen daraus genau eine einzige Versandoption
+// statt zur Auswahl aus allen. So kann nicht mehr aus Versehen die falsche
 // (günstigere) Zone angeklickt werden. shipping_address_collection wird
 // zusätzlich auf genau die Länder dieser Zone eingeschränkt, damit die in
 // Stripe eingegebene Adresse gar nicht in eine andere Zone fallen kann.
-const VALID_ZONES = ['AT', 'DE', 'EU_OTHER'];
+const VALID_ZONES = ['AT', 'DE', 'EU_OTHER', 'GB'];
 
 const SHIPPING_OPTION_LABELS = {
   AT: { de: 'Österreich', en: 'Austria' },
   DE: { de: 'Deutschland', en: 'Germany' },
-  EU_OTHER: { de: 'Übrige EU', en: 'Rest of EU' }
+  EU_OTHER: { de: 'Übrige EU', en: 'Rest of EU' },
+  GB: { de: 'Vereinigtes Königreich (UK)', en: 'United Kingdom' }
 };
 
 const SITE_ORIGIN = 'https://anselmi.at';
@@ -58,8 +59,8 @@ function jsonResponse(body, status, request) {
 function requiredShippingFormat(items) {
   var needsOriginal = items.some(function (i) { return PRODUCT_FORMAT[i.size] === 'ORIGINAL'; });
   if (needsOriginal) return 'ORIGINAL';
-  var needsPM70 = items.some(function (i) { return PRODUCT_FORMAT[i.size] === 'PM70'; });
-  return needsPM70 ? 'PM70' : 'PM45';
+  var needsA3 = items.some(function (i) { return PRODUCT_FORMAT[i.size] === 'A3'; });
+  return needsA3 ? 'A3' : 'PM45';
 }
 
 function euroToCents(amount) {
@@ -69,9 +70,10 @@ function euroToCents(amount) {
 // Only ever the ONE shipping option matching the zone chosen in the cart —
 // never all three — so there's nothing to mis-click at Stripe's end.
 function buildShippingOptions(format, lang, zone) {
-  var amount = zone === 'EU_OTHER'
-    ? Object.values(COUNTRIES).filter(function (c) { return c.tier === 'EU_OTHER'; })[0][format]
-    : COUNTRIES[zone][format];
+  var country = zone === 'EU_OTHER'
+    ? Object.values(COUNTRIES).filter(function (c) { return c.tier === 'EU_OTHER'; })[0]
+    : COUNTRIES[zone];
+  var amount = format in country ? country[format] : country.PM45;
   return [{
     shipping_rate_data: {
       type: 'fixed_amount',
@@ -86,7 +88,7 @@ function buildShippingOptions(format, lang, zone) {
 // (cheaper) zone than the one already paid for.
 function allowedCountriesForZone(zone) {
   var all = getSelectableCountries().map(function (c) { return c.code; });
-  if (zone === 'AT' || zone === 'DE') return [zone];
+  if (zone === 'AT' || zone === 'DE' || zone === 'GB') return [zone];
   return all.filter(function (code) { return COUNTRIES[code].tier === 'EU_OTHER'; });
 }
 

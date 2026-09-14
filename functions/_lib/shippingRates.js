@@ -5,6 +5,10 @@
  * Deckt ab: Österreich + alle EU-Länder
  * NICHT abgedeckt: Schweiz (kein EU-Zollgebiet) -> siehe unsupportedCountries unten
  *
+ * GB (Vereinigtes Königreich) läuft NICHT über die Paketmarke (kein EU-
+ * Zollgebiet, wie die Schweiz), sondern über eine separate Versandart -
+ * eigene, manuell gepflegte Tarife unten (tier: "GB").
+ *
  * Format-Logik der Post: "längste Seite + kürzeste Seite" des Pakets in Summe
  *   PM45 = Summe bis 45cm  -> deckt A4 UND A3 flach im dünnen Umschlag ab
  *   PM70 = Summe bis 70cm  -> Sicherheitsmarge, falls Verpackung dicker wird
@@ -22,7 +26,7 @@
 // `disabled`.
 //
 // Alle unterstützten Länder mit Preisen in Euro
-// tier: "AT" | "DE" | "EU_OTHER" - bestimmt welche Preisspalte gilt
+// tier: "AT" | "DE" | "EU_OTHER" | "GB" - bestimmt welche Preisspalte gilt
 export const COUNTRIES = {
   AT: { name: "Österreich",     tier: "AT",       PM45: 5.21,  PM70: 7.83,  ORIGINAL: 15 },
   DE: { name: "Deutschland",    tier: "DE",       PM45: 12.62, PM70: 18.90, ORIGINAL: 20 },
@@ -51,6 +55,7 @@ export const COUNTRIES = {
   CZ: { name: "Tschechien",     tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
   HU: { name: "Ungarn",         tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
   CY: { name: "Zypern",         tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
+  GB: { name: "Vereinigtes Königreich (UK)", tier: "GB", PM45: 12.40, A3: 17.25, ORIGINAL: 22.55 },
 };
 
 // Länder, die NICHT über die Paketmarke versendbar sind
@@ -64,7 +69,10 @@ export const UNSUPPORTED_COUNTRIES = {
 // Welches Format (PM45/PM70) für welches Druckformat gilt
 export const PRODUCT_FORMAT = {
   A4: "PM45",
-  A3: "PM45", // A3 zahlt jetzt denselben Versand wie A4, nicht mehr PM70
+  // Eigene Spalte "A3": fällt in getShippingPrice() auf PM45 zurück, wenn
+  // ein Land keine eigene A3-Spalte definiert (dort zahlt A3 weiterhin
+  // denselben Versand wie A4). Nur UK hat aktuell einen eigenen A3-Tarif.
+  A3: "A3",
   Original: "ORIGINAL", // Leinwand-Original, eigene Tarifspalte statt PM45/PM70
 };
 
@@ -94,7 +102,7 @@ export function getShippingPrice(productSize, countryCode) {
     throw new Error(`Unbekanntes Produktformat "${productSize}". Erlaubt: A4, A3.`);
   }
 
-  return country[format];
+  return format in country ? country[format] : country.PM45;
 }
 
 /**

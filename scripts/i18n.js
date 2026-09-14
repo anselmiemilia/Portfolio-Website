@@ -193,6 +193,7 @@
     'cart.versandland.at': { de: 'Österreich', en: 'Austria' },
     'cart.versandland.de': { de: 'Deutschland', en: 'Germany' },
     'cart.versandland.eu': { de: 'Übrige EU', en: 'Rest of EU' },
+    'cart.versandland.uk': { de: 'Vereinigtes Königreich (UK)', en: 'United Kingdom' },
     'cart.versandland.fehlt': { de: 'Bitte wähle dein Versandland aus.', en: 'Please select your shipping country.' },
     'cart.zurKasse': { de: 'Zur Kasse', en: 'Checkout' },
     'cart.wirdGeladen': { de: 'Einen Moment …', en: 'One moment …' },
