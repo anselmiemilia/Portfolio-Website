@@ -281,13 +281,13 @@ nav a:hover::after {
    =========================================== */
 
 .hero {
-  min-height: 60vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   text-align: center;
-  padding: 14rem 2rem 2rem;
+  padding: 9rem 2rem 1rem;
 }
 
 .hero h1 {
@@ -731,6 +731,16 @@ nav a:hover::after {
   margin: 0 auto;
 }
 
+.kunst-empty-note {
+  text-align: center;
+  color: var(--burgunder);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  padding: 2rem 0;
+}
+
 .shop-prints-card {
   display: block;
   flex: 1;
@@ -742,21 +752,45 @@ nav a:hover::after {
 
 /* Listing grids (Kunst tab, homepage) show three per row; extra cards wrap
    to their own row instead of squeezing a fourth card into the line. */
+#tab-fineart .shop-prints-grid,
 #tab-prints .shop-prints-grid,
 #tab-originals .shop-prints-grid,
-.home-prints-section .shop-prints-grid {
+.home-fineart-section .shop-prints-grid,
+.home-originals-section .shop-prints-grid,
+.home-basicprints-section .shop-prints-grid {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
 
-.home-prints-section .shop-prints-card {
+.home-originals-section .shop-prints-card,
+.home-basicprints-section .shop-prints-card {
   flex: 0 1 calc(33.333% - 1.667rem);
+}
+
+/* Fine Art Prints reads better bigger, same idea as the Kunst-tab override below. */
+.home-fineart-section .shop-prints-card {
+  flex: 0 1 calc(45% - 1.5rem);
+  max-width: 480px;
+}
+
+/* Fine Art Prints is a growing collection — fewer than three items so far,
+   so center the row instead of hugging the left edge like the full grids. */
+#tab-fineart .shop-prints-grid,
+.home-fineart-section .shop-prints-grid {
+  justify-content: center;
 }
 
 /* Shop overview (prints + originals) shows two per row - the artworks read better larger. */
 #tab-prints .shop-prints-card,
 #tab-originals .shop-prints-card {
   flex: 0 1 calc(50% - 1.25rem);
+}
+
+/* Fine Art Prints tab: same two-per-row idea, sized up further since it's
+   only ever showing a couple of pieces so far. */
+#tab-fineart .shop-prints-card {
+  flex: 0 1 calc(50% - 1.25rem);
+  max-width: 650px;
 }
 
 .shop-prints-img-wrap {
@@ -952,6 +986,15 @@ nav a:hover::after {
   margin-bottom: 0.5rem;
 }
 
+.produkt-kategorie {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--burgunder);
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+
 .produkt-soldout-titel {
   font-family: var(--font-headline);
   font-size: clamp(1.6rem, 3.2vw, 2.2rem);
@@ -1059,6 +1102,17 @@ nav a:hover::after {
   font-size: 0.75rem;
   color: var(--burgunder);
   opacity: 0.7;
+  text-align: center;
+}
+
+.produkt-druck-hinweis {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--burgunder);
+  opacity: 0.85;
+  line-height: 1.6;
+  margin: 1.25rem auto 0;
+  max-width: 32rem;
   text-align: center;
 }
 
@@ -1482,8 +1536,14 @@ nav a:hover::after {
   padding: 2.5rem 12% 2.5rem;
 }
 
-.home-prints-section {
-  padding-top: 7rem;
+.home-fineart-section {
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+}
+
+.home-originals-section,
+.home-basicprints-section {
+  padding-top: 5rem;
 }
 
 .home-section-title {
@@ -1495,6 +1555,39 @@ nav a:hover::after {
   margin-bottom: 1.5rem;
 }
 
+.home-fineart-title {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(0.85rem, 1.6vw, 1.1rem);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--burgunder);
+  text-align: center;
+  line-height: 1.3;
+  max-width: 900px;
+  margin: 0 auto 1rem;
+}
+
+.home-fineart-cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-align: center;
+  margin: 0 auto 1rem;
+}
+
+.home-fineart-cta-main {
+  display: inline-block;
+  font-family: var(--font-headline);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--burgunder);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.home-fineart-cta-main:hover { color: var(--rosa); }
+
 .home-featured-grid {
   display: flex;
   gap: 1.5rem;
@@ -1504,52 +1597,6 @@ nav a:hover::after {
   flex: 1;
   height: 420px;
 }
-
-.coming-soon {
-  font-family: var(--font-headline);
-  font-size: clamp(2.8rem, 8vw, 4.5rem);
-  color: var(--rosa);
-  text-align: center;
-  padding: 3rem 1rem;
-}
-
-.prints-preview {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
-  height: clamp(110px, 13vw, 165px);
-  margin: 0 auto 1.5rem;
-  border-radius: 6px;
-  overflow: hidden;
-}
-
-.prints-preview-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-}
-
-.prints-preview-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(20, 6, 10, 0.68);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-}
-
-.prints-preview-overlay .coming-soon {
-  padding: 0;
-  margin-top: 1.4rem;
-  line-height: 0.6;
-  font-size: clamp(2.6rem, 6vw, 4.2rem);
-}
-
-.prints-preview-overlay .back-button { color: var(--weiss); margin-top: 0; }
 
 .shop-grid {
   display: flex;
@@ -1675,14 +1722,12 @@ nav a:hover::after {
 
 .alle-projekte-wrapper .back-button::before,
 .home-about-text .back-button::before,
-.prints-preview-overlay .back-button::before,
 .home-prints-cta-wrapper .back-button::before {
   content: '→';
   order: 2;
 }
 .alle-projekte-wrapper .back-button:hover::before,
 .home-about-text .back-button:hover::before,
-.prints-preview-overlay .back-button:hover::before,
 .home-prints-cta-wrapper .back-button:hover::before {
   transform: translateX(5px);
 }
@@ -1941,12 +1986,6 @@ footer a:hover { text-decoration: underline; }
     margin-bottom: 0;
   }
 
-  /* Prints & Originale preview */
-  .prints-preview { height: 120px; }
-  .prints-preview-overlay { gap: 0; padding: 0 1rem; }
-  .prints-preview-overlay .coming-soon { font-size: 2.6rem; line-height: 0.6; margin-top: 1rem; }
-  .prints-preview-overlay .back-button { font-size: 0.75rem; }
-
   /* Projects */
   #projekte {
     padding: 2rem 0.75rem 4rem;
@@ -1986,7 +2025,9 @@ footer a:hover { text-decoration: underline; }
   .shop-prints-card { max-width: 480px; width: 100%; }
 
   #tab-prints .shop-prints-card,
-  .home-prints-section .shop-prints-card { flex-basis: auto; }
+  .home-fineart-section .shop-prints-card,
+  .home-originals-section .shop-prints-card,
+  .home-basicprints-section .shop-prints-card { flex-basis: auto; }
 
   .shop-prints-overlay { display: none; }
 

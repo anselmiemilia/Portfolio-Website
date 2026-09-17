@@ -7,8 +7,8 @@
     <meta name="description" content="Kunst – Emilia Anselmi" data-i18n="meta.desc.kunst">
     <title data-i18n="meta.title.kunst">Kunst | Emilia Anselmi</title>
     <link rel="icon" type="image/png" href="assets/logo/favicon.png">
-    <link href="styles/main.css?v=88" rel="stylesheet">
-  <script src="scripts/i18n.js?v=68" defer></script>
+    <link href="styles/main.css?v=89" rel="stylesheet">
+  <script src="scripts/i18n.js?v=75" defer></script>
   <script src="scripts/nav.js?v=62" defer></script>
   <script src="scripts/cart.js?v=6" defer></script>
 </head>
@@ -34,22 +34,36 @@
     <section class="kunst-section">
 
         <div class="kunst-tabs">
-            <button class="kunst-tab active" data-tab="prints">Shop Prints</button>
-            <button class="kunst-tab" data-tab="originals">Shop Originals</button>
+            <button class="kunst-tab active" data-tab="fineart">Fine Art Prints</button>
+            <button class="kunst-tab" data-tab="prints">Prints</button>
+            <button class="kunst-tab" data-tab="originals">Originals</button>
+        </div>
+
+        <!-- Fine Art Prints -->
+        <div class="kunst-content active" id="tab-fineart">
+            <div class="shop-prints-grid" id="fineart-grid">
+                <a href="shop/her-little-london.html" class="shop-prints-card">
+                    <div class="shop-prints-img-wrap">
+                        <img src="assets/kunst/herlittlelondon/herlittlelondon.jpg" alt="Her Little London">
+                        <div class="shop-prints-overlay"><span>Her Little London</span></div>
+                    </div>
+                    <p class="shop-prints-caption">Her Little London</p>
+                    <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
+                </a>
+                <a href="shop/love-in-new-york-city-print.html" class="shop-prints-card">
+                    <div class="shop-prints-img-wrap">
+                        <img src="assets/kunst/loveinnyc/loveinnyc.jpg" alt="Love in New York City">
+                        <div class="shop-prints-overlay"><span>Love in New York City</span></div>
+                    </div>
+                    <p class="shop-prints-caption">Love in New York City</p>
+                    <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
+                </a>
+            </div>
         </div>
 
         <!-- Shop Prints -->
-        <div class="kunst-content active" id="tab-prints">
+        <div class="kunst-content" id="tab-prints">
             <div class="shop-prints-grid">
-                <a href="shop/pink-new-york-city-print.html" class="shop-prints-card">
-                    <div class="shop-prints-img-wrap">
-                        <span class="preorder-badge" data-i18n="produkt.vorbestellen">Vorbestellen</span>
-                        <img src="assets/kunst/pinknewyorkcity/pinknewyorkcity.jpg" alt="Pink New York City">
-                        <div class="shop-prints-overlay"><span>Pink New York City</span></div>
-                    </div>
-                    <p class="shop-prints-caption">Pink New York City</p>
-                    <p class="shop-prints-price" data-i18n="produkt.abPreis20">ab € 20,–</p>
-                </a>
                 <a href="shop/abendrosa-in-marrakesch.html" class="shop-prints-card">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch.jpg" alt="Abendrosa in Marrakesch">
@@ -76,10 +90,20 @@
                 </a>
                 <a href="shop/the-city-of-buses.html" class="shop-prints-card">
                     <div class="shop-prints-img-wrap">
+                        <span class="preorder-badge sold-badge" data-i18n="produkt.ausverkauft">Ausverkauft</span>
                         <img src="assets/kunst/thecityofbuses/thecityofbuses.jpg" alt="The City of Buses">
                         <div class="shop-prints-overlay"><span>The City of Buses</span></div>
                     </div>
                     <p class="shop-prints-caption">The City of Buses</p>
+                    <p class="shop-prints-price" data-i18n="produkt.abPreis20">ab € 20,–</p>
+                </a>
+                <a href="shop/pink-new-york-city-print.html" class="shop-prints-card">
+                    <div class="shop-prints-img-wrap">
+                        <span class="preorder-badge sold-badge" data-i18n="produkt.ausverkauft">Ausverkauft</span>
+                        <img src="assets/kunst/pinknewyorkcity/pinknewyorkcity.jpg" alt="Pink New York City">
+                        <div class="shop-prints-overlay"><span>Pink New York City</span></div>
+                    </div>
+                    <p class="shop-prints-caption">Pink New York City</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis20">ab € 20,–</p>
                 </a>
             </div>

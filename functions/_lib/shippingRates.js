@@ -68,6 +68,7 @@ export const UNSUPPORTED_COUNTRIES = {
 
 // Welches Format (PM45/PM70) für welches Druckformat gilt
 export const PRODUCT_FORMAT = {
+  A5: "PM45", // smaller than A4, same envelope/tier
   A4: "PM45",
   // Eigene Spalte "A3": fällt in getShippingPrice() auf PM45 zurück, wenn
   // ein Land keine eigene A3-Spalte definiert (dort zahlt A3 weiterhin

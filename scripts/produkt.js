@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var priceEl = document.querySelector('.produkt-preis');
   var groesseEl = document.querySelector('[data-detail="groesse"]');
   var auflageEl = document.querySelector('[data-detail="auflage"]');
+  var randEl = document.querySelector('[data-detail="rand"]');
   var kaufenBtn = document.querySelector('.produkt-kaufen-btn');
   var soldOutTitel = document.querySelector('.produkt-soldout-titel');
   var produktName = document.querySelector('.produkt-info h1') ? document.querySelector('.produkt-info h1').textContent : '';
@@ -96,12 +97,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.addEventListener('langchange', function () { updateSizeHints(currentSize); });
 
+  // A product whose border width differs by size (see 'her-little-london'
+  // in catalog.js) points its size buttons at their own data-rand-key
+  // instead of leaving the sitewide default Rand text untouched.
+  function updateRand(btn) {
+    if (!randEl || !window.i18n) return;
+    var key = btn && btn.dataset.randKey;
+    if (!key) return;
+    randEl.setAttribute('data-i18n', key);
+    randEl.textContent = window.i18n.t(key);
+  }
+
   function selectSize(btn) {
     sizeBtns.forEach(function (b) { b.classList.remove('active'); });
     btn.classList.add('active');
     if (priceEl) priceEl.textContent = '€ ' + btn.dataset.price + ',–';
     if (groesseEl) groesseEl.textContent = btn.dataset.cm;
     updateAuflage(btn);
+    updateRand(btn);
     updateSizeHints(btn.dataset.size);
     currentSize = btn.dataset.size;
     currentPrice = parseFloat(btn.dataset.price);

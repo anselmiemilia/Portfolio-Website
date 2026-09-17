@@ -59,6 +59,21 @@ export const CATALOG = {
     // covers them to keep remaining stock accurate.
     reserved: { A3: 4 }
   },
+  'her-little-london': {
+    name: 'Her Little London',
+    image: 'https://anselmi.at/assets/kunst/herlittlelondon/herlittlelondon.jpg',
+    prices: { A5: 2500, A4: 4500, A3: 7500 }, // cents
+    // Fine Art Giclée print — own edition per size instead of the sitewide
+    // A4/A3 defaults (see EDITION_LIMITS below), plus a smaller A5 size.
+    editions: { A5: 40, A4: 40, A3: 20 }
+  },
+  'love-in-new-york-city-print': {
+    name: 'Love in New York City',
+    image: 'https://anselmi.at/assets/kunst/loveinnyc/loveinnyc.jpg',
+    prices: { A5: 2500, A4: 4500, A3: 7500 }, // cents
+    // Fine Art Giclée print, same edition structure as Her Little London.
+    editions: { A5: 40, A4: 40, A3: 20 }
+  },
   // One-of-a-kind canvases ("Originale" section). Each has a single price
   // under the "Original" pseudo-size instead of A4/A3 — there's only ever
   // one of these, not a print edition.

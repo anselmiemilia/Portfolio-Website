@@ -34,6 +34,15 @@
     'home.prints.banner.title': { de: 'Erste Kollektion', en: 'First Collection' },
     'home.prints.banner.cta': { de: 'Shop Now', en: 'Shop Now' },
     'home.printsOriginale.title': { de: 'Prints & Originale', en: 'Prints & Originals' },
+    'home.fineart.title': {
+      de: 'Art that lasts generations',
+      en: 'Art that lasts generations'
+    },
+    'home.fineart.cta': { de: 'Shop New Fine Art Giclée Prints', en: 'Shop New Fine Art Giclée Prints' },
+    'home.fineart.ctaOriginals': { de: 'Shop Originals', en: 'Shop Originals' },
+    'home.fineart.ctaPrints': { de: 'Shop Prints', en: 'Shop Prints' },
+    'home.originals.title': { de: 'Originals', en: 'Originals' },
+    'home.basicPrints.title': { de: 'Basic Prints', en: 'Basic Prints' },
     'home.projekte.title': { de: 'Projekte', en: 'Projects' },
     'home.projekte.cta': { de: 'Zu den Projekten', en: 'See all projects' },
     'home.about.title': { de: 'Über mich', en: 'About me' },
@@ -140,27 +149,55 @@
       en: 'Your original is packaged with the utmost care, so it arrives safely and undamaged.'
     },
     'produkt.details.title': { de: 'Details', en: 'Details' },
+    'produkt.kategorie.fineart': { de: 'Fine Art Print', en: 'Fine Art Print' },
     'produkt.details.groesse': { de: 'Größe', en: 'Size' },
     'produkt.details.papier': { de: 'Papierdicke', en: 'Paper thickness' },
     'produkt.details.papier.wert': { de: '300 g/m² Naturpapier creme', en: '300 gsm natural cream paper' },
+    'produkt.details.papier.wert.gallerySilk': {
+      de: '270 g/m² Galerie FineArt Textured Silk – seidig-mattes Museumspapier mit feiner Textur',
+      en: '270 gsm Gallery FineArt Textured Silk – a silky-matte museum-grade paper with a fine texture'
+    },
     'produkt.details.rand': { de: 'Rand', en: 'Border' },
     'produkt.details.rand.wert': { de: '15 mm rundum', en: '15 mm all around' },
+    // Her Little London only: same numbers as the sitewide default above,
+    // just without "rundum"/"all around" in the wording (per request) —
+    // kept as its own keys so the other prints' wording stays untouched.
+    'produkt.details.rand.wert.10mm': { de: '10 mm', en: '10 mm' },
+    'produkt.details.rand.wert.15mmHll': { de: '15 mm', en: '15 mm' },
     'produkt.details.rahmen': { de: 'Rahmen', en: 'Frame' },
     'produkt.details.rahmen.wert': { de: 'Ungerahmt – nur der Kunstdruck', en: 'Unframed – print only' },
     'produkt.details.auflage': { de: 'Auflage', en: 'Edition' },
     'produkt.details.material': { de: 'Material', en: 'Material' },
     'produkt.details.technik': { de: 'Technik', en: 'Technique' },
+    'produkt.details.druck.wert': {
+      de: 'Fine Art Giclée-Druck mit archivfesten Pigmenttinten auf hochwertigem Papier, um Farben, Textur und Details des Originals bestmöglich wiederzugeben – für außergewöhnliche Lichtechtheit und Langlebigkeit. Jeder Print ist eine limitierte Auflage, von Hand gedruckt, signiert, datiert und sorgfältig verpackt von der Künstlerin selbst.',
+      en: 'Fine art giclée print made with archival pigment inks on premium paper, to preserve the colour, texture and detail of the original artwork – for outstanding lightfastness and longevity. Every print is a limited edition, hand-printed, signed, dated and carefully packaged by the artist herself.'
+    },
+    'produkt.details.hinweis': { de: 'Hinweis', en: 'Note' },
+    'produkt.details.hinweis.abweichung': {
+      de: 'Bildausschnitt und Proportionen können je nach gewählter Druckgröße leicht abweichen.',
+      en: 'Crop and proportions may vary slightly depending on the print size chosen.'
+    },
     'produkt.auflage.a4': { de: 'Limitierte Auflage von 20 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 20<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.a3': { de: 'Limitierte Auflage von 10 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 10<br>(hand-signed &amp; numbered)' },
     // Pink New York City print has a larger edition (30/30) than the
     // sitewide default (20/10) — its own keys instead of the ones above.
     'produkt.auflage.pinknyc.a4': { de: 'Limitierte Auflage von 30 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 30<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.pinknyc.a3': { de: 'Limitierte Auflage von 40 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 40<br>(hand-signed &amp; numbered)' },
+    // Her Little London (Fine Art Print): three sizes, each its own edition.
+    'produkt.auflage.herlittlelondon.a5': { de: 'Limitierte Auflage von 40 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 40<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.herlittlelondon.a4': { de: 'Limitierte Auflage von 40 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 40<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.herlittlelondon.a3': { de: 'Limitierte Auflage von 20 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 20<br>(hand-signed &amp; numbered)' },
+    // Love in New York City (Fine Art Print): same edition structure as Her Little London.
+    'produkt.auflage.loveinnyc.a5': { de: 'Limitierte Auflage von 40 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 40<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.loveinnyc.a4': { de: 'Limitierte Auflage von 40 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 40<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.loveinnyc.a3': { de: 'Limitierte Auflage von 20 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 20<br>(hand-signed &amp; numbered)' },
     'produkt.related.title': { de: 'Weitere Prints', en: 'More Prints' },
     'produkt.related.originale.title': { de: 'Weitere Originale', en: 'More Originals' },
     'produkt.related.originale.alle': { de: 'Alle Originale ansehen', en: 'View all Originals' },
     'produkt.preisFolgt': { de: 'Preis folgt', en: 'Price coming soon' },
     'produkt.abPreis20': { de: 'ab € 20,–', en: 'from € 20' },
+    'produkt.abPreis25': { de: 'ab € 25,–', en: 'from € 25' },
     'produkt.kaufen': { de: 'Kaufen', en: 'Buy' },
     'produkt.inDenWarenkorb': { de: 'In den Warenkorb', en: 'Add to Cart' },
     'produkt.ausverkauft': { de: 'Ausverkauft', en: 'Sold out' },
