@@ -42,7 +42,7 @@
     'home.fineart.ctaOriginals': { de: 'Shop Originals', en: 'Shop Originals' },
     'home.fineart.ctaPrints': { de: 'Shop Prints', en: 'Shop Prints' },
     'home.fineart.alleAnsehen': { de: 'Alle ansehen', en: 'View all' },
-    'home.favourites.title': { de: 'Deine Favoriten sind zurück', en: 'Your favourites are back' },
+    'home.favourites.title': { de: 'Your favourites are back', en: 'Your favourites are back' },
     'home.favourites.caption': { de: 'Shop in A5 Fine Art Format', en: 'Shop in A5 Fine Art Format' },
     'home.originals.title': { de: 'Originals', en: 'Originals' },
     'home.basicPrints.title': { de: 'Basic Prints', en: 'Basic Prints' },
