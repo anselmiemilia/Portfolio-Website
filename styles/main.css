@@ -1588,6 +1588,30 @@ nav a:hover::after {
 
 .home-fineart-cta-main:hover { color: var(--rosa); }
 
+.home-favourites-wrapper {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(101, 17, 34, 0.15);
+  text-align: center;
+}
+
+.home-favourites-title {
+  font-family: var(--font-headline);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  color: var(--burgunder);
+  margin-bottom: 2rem;
+}
+
+.home-favourites-caption {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--burgunder);
+  opacity: 0.75;
+}
+
 .home-featured-grid {
   display: flex;
   gap: 1.5rem;

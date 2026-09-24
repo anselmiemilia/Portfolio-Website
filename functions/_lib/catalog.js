@@ -102,6 +102,21 @@ export const CATALOG = {
     // Fine Art Giclée print, same edition structure as Café Central.
     editions: { A5: 100, A4: 100, A3: 100 }
   },
+  // A5-only Fine Art Prints: reuse the existing Basic Print artwork photos,
+  // just a separate SKU/edition since these two already have a (sold-out)
+  // Basic Print A4/A3 version under a different product id.
+  'pink-new-york-city-fineart': {
+    name: 'Pink New York City',
+    image: 'https://anselmi.at/assets/kunst/pinknewyorkcity/pinknewyorkcity.jpg',
+    prices: { A5: 2500 }, // cents — A5 only
+    editions: { A5: 100 }
+  },
+  'the-city-of-buses-fineart': {
+    name: 'The City of Buses',
+    image: 'https://anselmi.at/assets/kunst/thecityofbuses/thecityofbuses.jpg',
+    prices: { A5: 2500 }, // cents — A5 only
+    editions: { A5: 100 }
+  },
   // One-of-a-kind canvases ("Originale" section). Each has a single price
   // under the "Original" pseudo-size instead of A4/A3 — there's only ever
   // one of these, not a print edition.

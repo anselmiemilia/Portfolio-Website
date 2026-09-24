@@ -165,12 +165,17 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!stockForProduct) return;
     latestStock = stockForProduct;
 
-    // Size-less product (e.g. a one-of-a-kind original): no A4/A3 buttons
-    // to toggle, just the single Original pseudo-size deciding the button.
+    // Size-less product (e.g. a one-of-a-kind original, or an A5-only Fine
+    // Art Print): no A4/A3 buttons to toggle, just the single size on the
+    // buy button itself deciding the button. A one-of-a-kind Original reads
+    // "Verkauft" once sold; a limited-edition print reads "Ausverkauft".
     if (sizeBtns.length === 0) {
-      if (stockForProduct.Original === 0 && kaufenBtn) {
+      var soloSize = kaufenBtn && kaufenBtn.dataset.size;
+      if (soloSize && stockForProduct[soloSize] === 0 && kaufenBtn) {
         kaufenBtn.disabled = true;
-        kaufenBtn.textContent = t('produkt.verkauft', 'Verkauft');
+        kaufenBtn.textContent = soloSize === 'Original'
+          ? t('produkt.verkauft', 'Verkauft')
+          : t('produkt.ausverkauft', 'Ausverkauft');
         if (soldOutTitel) soldOutTitel.hidden = false;
       }
       return;
