@@ -74,6 +74,13 @@ export const CATALOG = {
     // Fine Art Giclée print, same edition structure as Her Little London.
     editions: { A5: 40, A4: 40, A3: 40 }
   },
+  'cafe-central-print': {
+    name: 'Café Central',
+    image: 'https://anselmi.at/assets/kunst/cafecentral/cafecentral.jpg',
+    prices: { A5: 2500, A4: 4500, A3: 7500 }, // cents
+    // Fine Art Giclée print — larger edition of 100 per size.
+    editions: { A5: 100, A4: 100, A3: 100 }
+  },
   // One-of-a-kind canvases ("Originale" section). Each has a single price
   // under the "Original" pseudo-size instead of A4/A3 — there's only ever
   // one of these, not a print edition.
