@@ -41,6 +41,7 @@
     'home.fineart.cta': { de: 'Shop New Fine Art Giclée Prints', en: 'Shop New Fine Art Giclée Prints' },
     'home.fineart.ctaOriginals': { de: 'Shop Originals', en: 'Shop Originals' },
     'home.fineart.ctaPrints': { de: 'Shop Prints', en: 'Shop Prints' },
+    'home.fineart.alleAnsehen': { de: 'Alle ansehen', en: 'View all' },
     'home.originals.title': { de: 'Originals', en: 'Originals' },
     'home.basicPrints.title': { de: 'Basic Prints', en: 'Basic Prints' },
     'home.projekte.title': { de: 'Projekte', en: 'Projects' },
