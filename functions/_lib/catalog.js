@@ -88,6 +88,13 @@ export const CATALOG = {
     // Fine Art Giclée print, same edition structure as Café Central.
     editions: { A5: 100, A4: 100, A3: 100 }
   },
+  'first-district-print': {
+    name: 'First District',
+    image: 'https://anselmi.at/assets/kunst/firstdistrict/firstdistrict.jpg',
+    prices: { A5: 2500, A4: 4500, A3: 7500 }, // cents
+    // Fine Art Giclée print, same edition structure as Café Central.
+    editions: { A5: 100, A4: 100, A3: 100 }
+  },
   // One-of-a-kind canvases ("Originale" section). Each has a single price
   // under the "Original" pseudo-size instead of A4/A3 — there's only ever
   // one of these, not a print edition.

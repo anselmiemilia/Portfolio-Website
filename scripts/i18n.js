@@ -200,6 +200,10 @@
     'produkt.auflage.kissinginflorence.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.kissinginflorence.a4': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.kissinginflorence.a3': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    // First District (Fine Art Print): same edition structure as Café Central.
+    'produkt.auflage.firstdistrict.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.firstdistrict.a4': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.firstdistrict.a3': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.related.title': { de: 'Weitere Prints', en: 'More Prints' },
     'produkt.related.originale.title': { de: 'Weitere Originale', en: 'More Originals' },
     'produkt.related.originale.alle': { de: 'Alle Originale ansehen', en: 'View all Originals' },
