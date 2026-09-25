@@ -65,7 +65,8 @@ export const CATALOG = {
     prices: { A5: 2500, A4: 4500, A3: 7500 }, // cents
     // Fine Art Giclée print — own edition per size instead of the sitewide
     // A4/A3 defaults (see EDITION_LIMITS below), plus a smaller A5 size.
-    editions: { A5: 40, A4: 40, A3: 40 }
+    // A3 raised from 40 to 100 on 2026-09-25 after strong early sell-through.
+    editions: { A5: 40, A4: 40, A3: 100 }
   },
   'love-in-new-york-city-print': {
     name: 'Love in New York City',

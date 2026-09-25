@@ -190,7 +190,7 @@
     // Her Little London (Fine Art Print): three sizes, each its own edition.
     'produkt.auflage.herlittlelondon.a5': { de: 'Limitierte Auflage von 40 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 40<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.herlittlelondon.a4': { de: 'Limitierte Auflage von 40 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 40<br>(hand-signed &amp; numbered)' },
-    'produkt.auflage.herlittlelondon.a3': { de: 'Limitierte Auflage von 40 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 40<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.herlittlelondon.a3': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     // Love in New York City (Fine Art Print): same edition structure as Her Little London.
     'produkt.auflage.loveinnyc.a5': { de: 'Limitierte Auflage von 40 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 40<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.loveinnyc.a4': { de: 'Limitierte Auflage von 40 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 40<br>(hand-signed &amp; numbered)' },
