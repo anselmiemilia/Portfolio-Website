@@ -10,7 +10,10 @@ export const CATALOG = {
     // 1 A3 sold via a manually created Stripe invoice — that doesn't fire
     // checkout.session.completed with item metadata, so STOCK_KV never
     // counts it. reserved covers it to keep remaining stock accurate.
-    reserved: { A3: 1 }
+    // 1 A4 lost in the post (2026-09-26) — a free replacement is being sent,
+    // which uses up another physical print without a second sale, so it's
+    // reserved here too rather than counted as sold.
+    reserved: { A4: 1, A3: 1 }
   },
   'doce-sao-miguel': {
     name: 'Doce São Miguel',
