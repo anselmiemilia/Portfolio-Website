@@ -137,25 +137,10 @@ export const CATALOG = {
   // gone for good (no future restock to reserve against, unlike a print
   // edition). Its product page hardcodes the disabled "Verkauft" button
   // and the overview badge is static, same pattern as Café Central.
-  'love-in-new-york-city': {
-    name: 'Love in New York City',
-    image: 'https://anselmi.at/assets/kunst/originale/LoveInNewYorkCity/loveinnewyorkcity.jpg',
-    prices: { Original: 35000 } // cents
-  },
   'dinner-at-la-maison-rose': {
     name: 'Dinner at La Maison Rose?',
     image: 'https://anselmi.at/assets/kunst/originale/Paris/dinneratlamaisonrose.jpg',
     prices: { Original: 35000 } // cents
-  },
-  'in-barcelona': {
-    name: 'In Barcelona',
-    image: 'https://anselmi.at/assets/kunst/originale/Barcelona/inbarcelona.jpg',
-    prices: { Original: 25000 } // cents
-  },
-  'lissabon': {
-    name: 'Lissabon',
-    image: 'https://anselmi.at/assets/kunst/originale/Lissabon/lissabon.jpg',
-    prices: { Original: 25000 } // cents
   }
 };
 
