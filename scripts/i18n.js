@@ -156,9 +156,9 @@
     'produkt.details.groesse': { de: 'Größe', en: 'Size' },
     'produkt.details.papier': { de: 'Papierdicke', en: 'Paper thickness' },
     'produkt.details.papier.wert': { de: '300 g/m² Naturpapier creme', en: '300 gsm natural cream paper' },
-    'produkt.details.papier.wert.gallerySilk': {
-      de: '270 g/m² Galerie FineArt Textured Silk – seidig-mattes Museumspapier mit feiner Textur',
-      en: '270 gsm Gallery FineArt Textured Silk – a silky-matte museum-grade paper with a fine texture'
+    'produkt.details.papier.wert.williamTurner': {
+      de: '310 g/m² Hahnemühle William Turner – strukturiertes 100 % Baumwollpapier in Museumsqualität',
+      en: '310 gsm Hahnemühle William Turner – textured 100% cotton, museum-quality paper'
     },
     'produkt.details.rand': { de: 'Rand', en: 'Border' },
     'produkt.details.rand.wert': { de: '15 mm rundum', en: '15 mm all around' },
@@ -211,6 +211,10 @@
     'produkt.auflage.inbarcelona.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.inbarcelona.a4': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.inbarcelona.a3': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    // Am Dorabira Marktplatz (Fine Art Print): same edition structure as Café Central.
+    'produkt.auflage.amdorabiramarktplatz.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.amdorabiramarktplatz.a4': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.amdorabiramarktplatz.a3': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     // A5-only Fine Art Prints (reuse existing artwork, separate SKU from the Basic Print).
     'produkt.auflage.pinknycFineart.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.thecityofbusesFineart.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
