@@ -83,7 +83,10 @@ export const CATALOG = {
     image: 'https://anselmi.at/assets/kunst/cafecentral/cafecentral.jpg',
     prices: { A5: 2500, A4: 4500, A3: 7500 }, // cents
     // Fine Art Giclée print — larger edition of 100 per size.
-    editions: { A5: 100, A4: 100, A3: 100 }
+    editions: { A5: 100, A4: 100, A3: 100 },
+    // 1 A3 given to Nadia as a gift — not counted by STOCK_KV, so reserved
+    // covers it to keep remaining stock accurate.
+    reserved: { A3: 1 }
   },
   'kissing-in-florence': {
     name: 'Kissing in Florence',
@@ -137,11 +140,9 @@ export const CATALOG = {
   // gone for good (no future restock to reserve against, unlike a print
   // edition). Its product page hardcodes the disabled "Verkauft" button
   // and the overview badge is static, same pattern as Café Central.
-  'dinner-at-la-maison-rose': {
-    name: 'Dinner at La Maison Rose?',
-    image: 'https://anselmi.at/assets/kunst/originale/Paris/dinneratlamaisonrose.jpg',
-    prices: { Original: 35000 } // cents
-  }
+  //
+  // As of 2026-09-27 every original painted so far has sold — this section
+  // is empty until a new one-of-a-kind piece goes up for sale.
 };
 
 // Default limited edition per size (not a shared pool across products) —

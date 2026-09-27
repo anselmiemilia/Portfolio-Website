@@ -45,7 +45,7 @@
     'home.favourites.title': { de: 'Your favourites are back', en: 'Your favourites are back' },
     'home.favourites.caption': { de: 'Shop in A5 Fine Art Format', en: 'Shop in A5 Fine Art Format' },
     'home.originals.title': { de: 'Originals', en: 'Originals' },
-    'home.basicPrints.title': { de: 'Basic Prints', en: 'Basic Prints' },
+    'home.basicPrints.title': { de: 'Classic Prints', en: 'Classic Prints' },
     'home.projekte.title': { de: 'Projekte', en: 'Projects' },
     'home.projekte.cta': { de: 'Zu den Projekten', en: 'See all projects' },
     'home.about.title': { de: 'Über mich', en: 'About me' },
