@@ -18,7 +18,12 @@ export const CATALOG = {
   'doce-sao-miguel': {
     name: 'Doce São Miguel',
     image: 'https://anselmi.at/assets/kunst/docesaomiguel/docesaomiguel.jpg',
-    prices: { A4: 2000, A3: 2500 } // cents
+    prices: { A4: 2000, A3: 2500 }, // cents
+    // 1 A3 sold manually outside the site (invoice/PayPal) — not counted by
+    // STOCK_KV, so reserved covers it to keep remaining stock accurate.
+    // Together with the 9 already sold via the site, this sells out the A3
+    // edition of 10 (2026-09-27).
+    reserved: { A3: 1 }
   },
   'sommer-sonne-baedala': {
     name: 'Sommer, Sonne, Bädala',

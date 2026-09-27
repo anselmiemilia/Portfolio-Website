@@ -228,6 +228,7 @@
     'produkt.inDenWarenkorb': { de: 'In den Warenkorb', en: 'Add to Cart' },
     'produkt.ausverkauft': { de: 'Ausverkauft', en: 'Sold out' },
     'produkt.verkauft': { de: 'Verkauft', en: 'Sold' },
+    'produkt.neu': { de: 'Neu', en: 'New' },
     'produkt.baldVerfuegbar': { de: 'Bald verfügbar', en: 'Coming soon' },
     'produkt.verfuegbarAb': { de: 'Verfügbar ab Ende August', en: 'Available from late August' },
     'produkt.vorbestellen': { de: 'Vorbestellen', en: 'Pre-order' },
