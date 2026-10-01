@@ -121,6 +121,13 @@ export const CATALOG = {
     // Fine Art Giclée print, same edition structure as Café Central.
     editions: { A5: 100, A4: 100, A3: 100 }
   },
+  'bonjour-paris': {
+    name: 'Bonjour Paris',
+    image: 'https://anselmi.at/assets/kunst/bonjourparis/bonjourparis.jpg',
+    prices: { A5: 2500, A4: 4500, A3: 7500 }, // cents
+    // Fine Art Giclée print, same edition structure as Café Central.
+    editions: { A5: 100, A4: 100, A3: 100 }
+  },
   // A5-only Fine Art Prints: reuse the existing Basic Print artwork photos,
   // just a separate SKU/edition since these two already have a (sold-out)
   // Basic Print A4/A3 version under a different product id.
