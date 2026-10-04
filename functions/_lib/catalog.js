@@ -128,6 +128,12 @@ export const CATALOG = {
     // Fine Art Giclée print, same edition structure as Café Central.
     editions: { A5: 100, A4: 100, A3: 100 }
   },
+  'nyhavn': {
+    name: 'Nyhavn',
+    image: 'https://anselmi.at/assets/kunst/nyhavn/nyhavn.jpg',
+    prices: { A5: 2500 }, // cents — A5 only (for now)
+    editions: { A5: 100 }
+  },
   // A5-only Fine Art Prints: reuse the existing Basic Print artwork photos,
   // just a separate SKU/edition since these two already have a (sold-out)
   // Basic Print A4/A3 version under a different product id.

@@ -218,6 +218,7 @@
     'produkt.auflage.bonjourparis.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.bonjourparis.a4': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.bonjourparis.a3': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.nyhavn.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     // A5-only Fine Art Prints (reuse existing artwork, separate SKU from the Basic Print).
     'produkt.auflage.pinknycFineart.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.thecityofbusesFineart.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
