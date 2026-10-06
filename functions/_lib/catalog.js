@@ -149,6 +149,18 @@ export const CATALOG = {
     prices: { A5: 2500 }, // cents — A5 only
     editions: { A5: 100 }
   },
+  'abendrosa-in-marrakesch-fineart': {
+    name: 'Abendrosa in Marrakesch',
+    image: 'https://anselmi.at/assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch.jpg',
+    prices: { A5: 2500 }, // cents — A5 only
+    editions: { A5: 100 }
+  },
+  'lissabon-fineart': {
+    name: 'Lissabon',
+    image: 'https://anselmi.at/assets/kunst/originale/Lissabon/lissabon.jpg',
+    prices: { A5: 2500 }, // cents — A5 only
+    editions: { A5: 100 }
+  },
   // One-of-a-kind canvases ("Originale" section). Each has a single price
   // under the "Original" pseudo-size instead of A4/A3 — there's only ever
   // one of these, not a print edition.

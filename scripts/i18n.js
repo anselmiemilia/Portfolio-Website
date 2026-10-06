@@ -222,6 +222,8 @@
     // A5-only Fine Art Prints (reuse existing artwork, separate SKU from the Basic Print).
     'produkt.auflage.pinknycFineart.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.thecityofbusesFineart.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.abendrosaFineart.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.lissabonFineart.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.related.title': { de: 'Weitere Prints', en: 'More Prints' },
     'produkt.related.originale.title': { de: 'Weitere Originale', en: 'More Originals' },
     'produkt.related.originale.alle': { de: 'Alle Originale ansehen', en: 'View all Originals' },
