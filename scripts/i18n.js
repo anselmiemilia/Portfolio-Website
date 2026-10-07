@@ -151,6 +151,19 @@
       de: 'Dein Original wird mit größter Sorgfalt verpackt, damit es sicher und unversehrt bei dir ankommt.',
       en: 'Your original is packaged with the utmost care, so it arrives safely and undamaged.'
     },
+    'produkt.versandinfo.title': { de: 'Versandinfo', en: 'Shipping info' },
+    'produkt.versandinfo.uk': {
+      de: '<strong>Versand ins Vereinigte Königreich (UK):</strong> Es fallen voraussichtlich Einfuhrabgaben von rund 25 % des Kaufpreises an. Diese sind nicht im Preis oder in den Versandkosten enthalten und müssen von der Empfängerin bzw. dem Empfänger bezahlt werden.',
+      en: '<strong>Shipping to the United Kingdom (UK):</strong> Import charges of around 25% of the purchase price will likely apply. They are not included in the price or the shipping costs and must be paid by the recipient.'
+    },
+    'produkt.versandinfo.adresse': {
+      de: '<strong>Empfängeradresse:</strong> Ist die Adresse unvollständig oder fehlerhaft und die Sendung kann nicht zugestellt werden, trägt die Käuferin bzw. der Käufer die Kosten für die Rücksendung und jeden erneuten Versand.',
+      en: '<strong>Delivery address:</strong> If the address is incomplete or incorrect and the shipment cannot be delivered, the buyer bears the costs of the return shipment and of any renewed shipment.'
+    },
+    'produkt.versandinfo.agb': {
+      de: 'Alle Details findest du in den <a href="../agb.html">AGB</a>.',
+      en: 'You can find all details in the <a href="../agb.html">Terms &amp; Conditions</a>.'
+    },
     'produkt.details.title': { de: 'Details', en: 'Details' },
     'produkt.kategorie.fineart': { de: 'Fine Art Print', en: 'Fine Art Print' },
     'produkt.details.groesse': { de: 'Größe', en: 'Size' },
@@ -435,8 +448,16 @@
     },
     'agb.h2.4': { de: '4. Versand', en: '4. Shipping' },
     'agb.p4': {
-      de: 'Der Versand erfolgt nach Österreich, Deutschland und in weitere EU-Länder. Die Auswahl der\n                verfügbaren Länder und die jeweiligen Versandkosten werden vor Zahlungsabschluss angezeigt.\n                Ein Versand in die Schweiz oder außerhalb der EU ist derzeit nicht möglich.',
-      en: 'Shipping is available to Austria, Germany and other EU countries. The available countries and\n                the respective shipping costs are shown before payment is completed. Shipping to Switzerland\n                or outside the EU is currently not possible.'
+      de: 'Der Versand erfolgt nach Österreich, Deutschland, in weitere EU-Länder und in das Vereinigte\n                Königreich (UK). Die Auswahl der verfügbaren Länder und die jeweiligen Versandkosten werden vor\n                Zahlungsabschluss angezeigt. Ein Versand in die Schweiz oder in andere Länder außerhalb der EU\n                und des UK ist derzeit nicht möglich.',
+      en: 'Shipping is available to Austria, Germany, other EU countries and the United Kingdom (UK). The\n                available countries and the respective shipping costs are shown before payment is completed.\n                Shipping to Switzerland or to other countries outside the EU and the UK is currently not\n                possible.'
+    },
+    'agb.p4b': {
+      de: '<strong>Sendungen in das Vereinigte Königreich (UK):</strong> Hier fallen voraussichtlich Einfuhrabgaben\n                (Einfuhrumsatzsteuer bzw. Zoll) an, in der Regel rund 25 % des Kaufpreises. Diese Abgaben sind weder im\n                Kaufpreis noch in den Versandkosten enthalten und müssen von der Empfängerin bzw. dem Empfänger\n                bezahlt werden.',
+      en: '<strong>Shipments to the United Kingdom (UK):</strong> Import charges (import VAT and/or customs duty) will\n                likely apply, usually around 25% of the purchase price. These charges are included neither in the\n                purchase price nor in the shipping costs and must be paid by the recipient.'
+    },
+    'agb.p4c': {
+      de: '<strong>Ungenügende Empfängeradresse:</strong> Ist die angegebene Empfängeradresse unvollständig oder\n                fehlerhaft und kann die Sendung deshalb nicht zugestellt werden, trägt die Käuferin bzw. der Käufer\n                die Kosten für die Rücksendung sowie für jeden erneuten Versand.',
+      en: '<strong>Insufficient delivery address:</strong> If the delivery address provided is incomplete or incorrect\n                and the shipment therefore cannot be delivered, the buyer bears the costs of the return shipment and of\n                any renewed shipment.'
     },
     'agb.h2.5': { de: '5. Gewährleistung', en: '5. Warranty' },
     'agb.p5': {
@@ -453,7 +474,7 @@
       de: 'Es gilt österreichisches Recht unter Ausschluss des UN-Kaufrechts. Zwingende\n                verbraucherschützende Bestimmungen deines Wohnsitzstaates bleiben davon unberührt.',
       en: 'Austrian law applies, excluding the UN Convention on Contracts for the International Sale of\n                Goods. Mandatory consumer-protection provisions of your country of residence remain\n                unaffected.'
     },
-    'agb.stand': { de: 'Stand: August 2026', en: 'Last updated: August 2026' }
+    'agb.stand': { de: 'Stand: Oktober 2026', en: 'Last updated: October 2026' }
   };
 
   function getLang() {
