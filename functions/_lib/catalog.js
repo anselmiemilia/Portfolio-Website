@@ -158,6 +158,13 @@ export const CATALOG = {
   'lissabon-fineart': {
     name: 'Lissabon',
     image: 'https://anselmi.at/assets/kunst/originale/Lissabon/lissabon.jpg',
+    prices: { A5: 2500, A4: 4500, A3: 7500 }, // cents
+    // Fine Art Giclée print, same edition structure as Café Central.
+    editions: { A5: 100, A4: 100, A3: 100 }
+  },
+  'doce-sao-miguel-fineart': {
+    name: 'Doce São Miguel',
+    image: 'https://anselmi.at/assets/kunst/docesaomiguel/docesaomiguel.jpg',
     prices: { A5: 2500 }, // cents — A5 only
     editions: { A5: 100 }
   },
