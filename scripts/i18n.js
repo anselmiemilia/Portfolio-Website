@@ -152,6 +152,10 @@
       en: 'Your original is packaged with the utmost care, so it arrives safely and undamaged.'
     },
     'produkt.versandinfo.title': { de: 'Versandinfo', en: 'Shipping info' },
+    'produkt.versandinfo.eu': {
+      de: '<strong>Lieferzeit in der EU:</strong> Der Versand dauert standardmäßig 5–10 Tage.',
+      en: '<strong>Delivery time within the EU:</strong> Shipping takes 5–10 days as standard.'
+    },
     'produkt.versandinfo.uk': {
       de: '<strong>Versand ins Vereinigte Königreich (UK):</strong> Es fallen voraussichtlich Einfuhrabgaben von rund 25 % des Kaufpreises an. Diese sind nicht im Preis oder in den Versandkosten enthalten und müssen von der Empfängerin bzw. dem Empfänger bezahlt werden.',
       en: '<strong>Shipping to the United Kingdom (UK):</strong> Import charges of around 25% of the purchase price will likely apply. They are not included in the price or the shipping costs and must be paid by the recipient.'
