@@ -153,9 +153,9 @@ export const CATALOG = {
   // Basic Print A4/A3 version under a different product id.
   'pink-new-york-city-fineart': {
     name: 'Pink New York City',
-    image: 'https://anselmi.at/assets/kunst/pinknewyorkcity/pinknewyorkcity.jpg',
-    prices: { A5: 2500 }, // cents — A5 only
-    editions: { A5: 100 }
+    image: 'https://anselmi.at/assets/kunst/pinknycfineart/pinknycfineart.jpg',
+    prices: { A5: 2500, A3: 7500 }, // cents — A5 and A3 only
+    editions: { A5: 100, A3: 100 }
   },
   'the-city-of-buses-fineart': {
     name: 'The City of Buses',

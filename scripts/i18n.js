@@ -184,6 +184,7 @@
     // kept as its own keys so the other prints' wording stays untouched.
     'produkt.details.rand.wert.10mm': { de: '10 mm', en: '10 mm' },
     'produkt.details.rand.wert.15mmHll': { de: '15 mm', en: '15 mm' },
+    'produkt.details.rand.wert.pinknyc': { de: '1 cm links und rechts, 3 cm oben und unten', en: '1 cm left and right, 3 cm top and bottom' },
     'produkt.details.rahmen': { de: 'Rahmen', en: 'Frame' },
     'produkt.details.rahmen.wert': { de: 'Ungerahmt – nur der Kunstdruck', en: 'Unframed – print only' },
     'produkt.details.auflage': { de: 'Auflage', en: 'Edition' },
@@ -238,6 +239,7 @@
     'produkt.auflage.nyhavn.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     // A5-only Fine Art Prints (reuse existing artwork, separate SKU from the Basic Print).
     'produkt.auflage.pinknycFineart.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.pinknycFineart.a3': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.thecityofbusesFineart.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.abendrosaFineart.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.lissabonFineart.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
