@@ -436,6 +436,35 @@
     },
     'impressum.stand': { de: 'Stand: August 2026', en: 'Last updated: August 2026' },
 
+    'meta.title.faq': { de: 'FAQ | Emilia Anselmi', en: 'FAQ | Emilia Anselmi' },
+    'meta.desc.faq': { de: 'Häufige Fragen zu Prints, Versand und Bestellung – Emilia Anselmi', en: 'Frequently asked questions about prints, shipping and orders – Emilia Anselmi' },
+    'nav.faq': { de: 'FAQ', en: 'FAQ' },
+    'faq.h1': { de: 'Häufige Fragen', en: 'Frequently Asked Questions' },
+    'faq.q1': { de: 'Was ist ein Fine Art Giclée-Print?', en: 'What is a fine art giclée print?' },
+    'faq.a1': {
+      de: '<p>Ein Giclée-Druck ist ein hochwertiger Pigmentdruck mit archivfesten Tinten. Er gibt Farben, Textur und Details des Originals bestmöglich wieder und ist außergewöhnlich lichtecht und langlebig.</p>',
+      en: '<p>A giclée print is a high-quality pigment print made with archival inks. It reproduces the colours, texture and details of the original as faithfully as possible and is exceptionally lightfast and long-lasting.</p>'
+    },
+    'faq.q2': { de: 'Versendest du weltweit?', en: 'Do you ship worldwide?' },
+    'faq.a2': {
+      de: '<p>Leider nicht aktuell. Ich versende EU-weit und ins Vereinigte Königreich (UK).</p><p>Stay tuned für Erweiterungen der Versandländer.</p>',
+      en: '<p>Unfortunately not at the moment. I ship across the EU and to the United Kingdom (UK).</p><p>Stay tuned for more shipping countries.</p>'
+    },
+    'faq.q3': { de: 'Nimmst du auch Auftragsarbeiten an und wie viel kosten sie?', en: 'Do you take commissions, and how much do they cost?' },
+    'faq.a3': {
+      de: '<p>Ja, ich mache auch Auftragsarbeiten.</p><p>Schreib mir dazu am besten eine E-Mail an <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a> mit deinen Ideen, der gewünschten Größe und einem Zeitlimit, falls du eins hast.</p><p>Ich setze dich auf meine Warteliste und melde mich, sobald ich Zeit habe!</p>',
+      en: '<p>Yes, I also take on commissions.</p><p>Please send me an email at <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a> with your ideas, the size you have in mind and a deadline, if you have one.</p><p>I will put you on my waiting list and get back to you as soon as I have time!</p>'
+    },
+    'faq.q4': { de: 'Wie lange dauert der Versand?', en: 'How long does shipping take?' },
+    'faq.a4': {
+      de: '<p>Innerhalb von Österreich dauert der Versand etwa 1–3 Werktage, nach Deutschland 3–7 Werktage, in die übrige EU und ins Vereinigte Königreich etwa 5–10 Werktage.</p><p>Bestellungen in die EU erhalten automatisch eine E-Mail mit der Tracking-Nummer an die bei der Bestellung angegebene E-Mail-Adresse.</p>',
+      en: '<p>Within Austria shipping takes about 1–3 working days, to Germany 3–7 working days, and to the rest of the EU and the United Kingdom about 5–10 working days.</p><p>Orders to the EU automatically receive an email with the tracking number at the email address provided with the order.</p>'
+    },
+    'faq.q5': { de: 'Gibt es Restocks deiner Prints?', en: 'Will your prints be restocked?' },
+    'faq.a5': {
+      de: '<p>Grundsätzlich nein.</p><p>Die exakten Formate und Motive in ihrer aktuellen Form gibt es nur in der auf der Produktseite angegebenen Auflage. Sind sie einmal vergriffen, wird es sie so nicht mehr geben.</p><p>Neue Auflagen in anderen Formaten oder mit anderem Framing sind aber möglich.</p>',
+      en: '<p>Generally not.</p><p>The exact formats and motifs in their current form are only available in the edition size stated on the product page. Once they are sold out, they will not be available in this form again.</p><p>New editions in other formats or with different framing are possible, though.</p>'
+    },
     'agb.h1': { de: 'Allgemeine Geschäftsbedingungen', en: 'Terms & Conditions' },
     'agb.h2.1': { de: '1. Geltungsbereich', en: '1. Scope' },
     'agb.p1': {

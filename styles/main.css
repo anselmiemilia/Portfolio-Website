@@ -1807,6 +1807,66 @@ footer a:hover { text-decoration: underline; }
 
 .datenschutz-content a { text-decoration: underline; }
 
+/* FAQ accordion: native <details>, arrow on the right flips when open */
+.faq-list {
+  border-top: 1px solid rgba(101, 17, 34, 0.15);
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(101, 17, 34, 0.15);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.1rem 0;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--burgunder);
+  transition: var(--transition);
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+  content: '';
+  flex: 0 0 auto;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-0.15rem) rotate(45deg);
+  transition: transform 0.25s ease;
+}
+
+.faq-item[open] summary::after {
+  transform: translateY(0.15rem) rotate(-135deg);
+}
+
+.faq-item summary:hover { color: var(--rosa); }
+
+.faq-item summary:focus-visible {
+  outline: 2px solid var(--rosa);
+  outline-offset: 2px;
+}
+
+.faq-answer {
+  padding: 0.25rem 2rem 1.4rem 0;
+}
+
+.faq-answer p {
+  margin: 0 0 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.faq-answer p:last-child { margin-bottom: 0; }
+
 .widerruf-form {
   background: var(--buttergelb);
   border-radius: 6px;
