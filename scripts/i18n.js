@@ -153,8 +153,8 @@
     },
     'produkt.versandinfo.title': { de: 'Versandinfo', en: 'Shipping info' },
     'produkt.versandinfo.eu': {
-      de: '<strong>Lieferzeit in der EU:</strong> Der Versand dauert standardmäßig 5–10 Tage.',
-      en: '<strong>Delivery time within the EU:</strong> Shipping takes 5–10 days as standard.'
+      de: '<strong>Lieferzeit in der EU:</strong> Der Versand dauert standardmäßig 5–10 Werktage.',
+      en: '<strong>Delivery time within the EU:</strong> Shipping takes 5–10 working days as standard.'
     },
     'produkt.versandinfo.uk': {
       de: '<strong>Versand ins Vereinigte Königreich (UK):</strong> Es fallen voraussichtlich Einfuhrabgaben von rund 25 % des Kaufpreises an. Diese sind nicht im Preis oder in den Versandkosten enthalten und müssen von der Empfängerin bzw. dem Empfänger bezahlt werden.',
@@ -243,6 +243,12 @@
     'produkt.auflage.lissabonFineart.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.lissabonFineart.a4': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.auflage.doceSaoMiguelFineart.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.portofino.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.portofino.a4': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.portofino.a3': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.feldkircherAussichten.a5': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.feldkircherAussichten.a4': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
+    'produkt.auflage.feldkircherAussichten.a3': { de: 'Limitierte Auflage von 100 Stück<br>(handsigniert &amp; nummeriert)', en: 'Limited edition of 100<br>(hand-signed &amp; numbered)' },
     'produkt.related.title': { de: 'Weitere Prints', en: 'More Prints' },
     'produkt.related.originale.title': { de: 'Weitere Originale', en: 'More Originals' },
     'produkt.related.originale.alle': { de: 'Alle Originale ansehen', en: 'View all Originals' },
@@ -452,8 +458,8 @@
     },
     'faq.q3': { de: 'Nimmst du auch Auftragsarbeiten an und wie viel kosten sie?', en: 'Do you take commissions, and how much do they cost?' },
     'faq.a3': {
-      de: '<p>Ja, ich mache auch Auftragsarbeiten.</p><p>Schreib mir dazu am besten eine E-Mail an <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a> mit deinen Ideen, der gewünschten Größe und einem Zeitlimit, falls du eins hast.</p><p>Ich setze dich auf meine Warteliste und melde mich, sobald ich Zeit habe!</p>',
-      en: '<p>Yes, I also take on commissions.</p><p>Please send me an email at <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a> with your ideas, the size you have in mind and a deadline, if you have one.</p><p>I will put you on my waiting list and get back to you as soon as I have time!</p>'
+      de: '<p>Ja, ich mache auch Auftragsarbeiten.</p><p>Die Kosten hängen von Größe und Motiv ab.</p><p>Schreib mir dazu am besten eine E-Mail an <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a> mit deinen Ideen, der gewünschten Größe und einem Zeitlimit, falls du eins hast.</p><p>Ich setze dich auf meine Warteliste und melde mich, sobald ich Zeit habe!</p>',
+      en: '<p>Yes, I also take on commissions.</p><p>The cost depends on the size and the motif.</p><p>Please send me an email at <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a> with your ideas, the size you have in mind and a deadline, if you have one.</p><p>I will put you on my waiting list and get back to you as soon as I have time!</p>'
     },
     'faq.q4': { de: 'Wie lange dauert der Versand?', en: 'How long does shipping take?' },
     'faq.a4': {
