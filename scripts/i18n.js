@@ -110,6 +110,10 @@
       de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Feldkircher&nbsp;Aussichten“, Feldkirch.',
       en: 'Original artwork by Emilia Anselmi, 2026, “Feldkircher&nbsp;Aussichten”, Feldkirch.'
     },
+    'produkt.onvenicebridges.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „On&nbsp;Venice&nbsp;Bridges“, Venedig.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “On&nbsp;Venice&nbsp;Bridges”, Venice.'
+    },
     'produkt.lissabon.info': {
       de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Lissabon“, Lissabon.',
       en: 'Original artwork by Emilia Anselmi, 2026, “Lissabon”, Lissabon.'
