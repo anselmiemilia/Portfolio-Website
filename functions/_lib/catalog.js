@@ -98,7 +98,10 @@ export const CATALOG = {
     image: 'https://anselmi.at/assets/kunst/kissinginflorence/kissinginflorence.jpg',
     prices: { A5: 2500, A4: 4500, A3: 7500 }, // cents
     // Fine Art Giclée print, same edition structure as Café Central.
-    editions: { A5: 100, A4: 100, A3: 100 }
+    editions: { A5: 100, A4: 100, A3: 100 },
+    // 1 A4 sold outside the site to Johann Pichler — not counted by STOCK_KV,
+    // so reserved covers it to keep remaining stock accurate.
+    reserved: { A4: 1 }
   },
   'first-district-print': {
     name: 'First District',
@@ -112,7 +115,10 @@ export const CATALOG = {
     image: 'https://anselmi.at/assets/kunst/inbarcelona/inbarcelona.jpg',
     prices: { A5: 2500, A4: 4500, A3: 7500 }, // cents
     // Fine Art Giclée print, same edition structure as Café Central.
-    editions: { A5: 100, A4: 100, A3: 100 }
+    editions: { A5: 100, A4: 100, A3: 100 },
+    // 1 A4 sold outside the site to Johann Pichler — not counted by STOCK_KV,
+    // so reserved covers it to keep remaining stock accurate.
+    reserved: { A4: 1 }
   },
   'am-dorabira-marktplatz': {
     name: 'Am Dorabira Marktplatz',
