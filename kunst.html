@@ -7,8 +7,8 @@
     <meta name="description" content="Kunst – Emilia Anselmi" data-i18n="meta.desc.kunst">
     <title data-i18n="meta.title.kunst">Kunst | Emilia Anselmi</title>
     <link rel="icon" type="image/png" href="assets/logo/favicon.png">
-    <link href="styles/main.css?v=93" rel="stylesheet">
-  <script src="scripts/i18n.js?v=100" defer></script>
+    <link href="styles/main.css?v=94" rel="stylesheet">
+  <script src="scripts/i18n.js?v=102" defer></script>
   <script src="scripts/nav.js?v=62" defer></script>
   <script src="scripts/cart.js?v=6" defer></script>
 </head>
@@ -395,9 +395,21 @@
                 card.querySelector('.shop-prints-img-wrap').appendChild(badge);
             }
 
+            // Sold-out Classic Prints are greyed out in CSS and can't be
+            // clicked; this also takes them out of the keyboard tab order.
+            function lockSoldPrints() {
+                if (!printsGrid) return;
+                printsGrid.querySelectorAll('.shop-prints-card').forEach(function (card) {
+                    if (!card.querySelector('.sold-badge')) return;
+                    card.setAttribute('aria-disabled', 'true');
+                    card.setAttribute('tabindex', '-1');
+                });
+            }
+
             // A piece already marked sold in the markup (e.g. sold outside
             // the shop) sinks right away, before any stock fetch.
             sinkSoldCards(originalsGrid);
+            lockSoldPrints();
 
             if (!window.SHOP_ENABLED) return;
             fetch('https://atelier-anselmi.pages.dev/api/stock')
@@ -427,6 +439,7 @@
 
                     sinkSoldCards(originalsGrid);
                     sinkSoldCards(printsGrid);
+                    lockSoldPrints();
                 })
                 .catch(function () { /* badge just won't show */ });
         });

@@ -786,6 +786,20 @@ nav a:hover::after {
   flex: 0 1 calc(50% - 1.25rem);
 }
 
+/* Sold-out Classic Prints: milky grey and not clickable. Also catches cards
+   that kunst.html marks sold at runtime from the live stock. */
+#tab-prints .shop-prints-card:has(.sold-badge) {
+  pointer-events: none;
+  cursor: default;
+}
+
+#tab-prints .shop-prints-card:has(.sold-badge) .shop-prints-img-wrap img,
+#tab-prints .shop-prints-card:has(.sold-badge) .shop-prints-caption,
+#tab-prints .shop-prints-card:has(.sold-badge) .shop-prints-price {
+  filter: grayscale(1);
+  opacity: 0.45;
+}
+
 /* Fine Art Prints tab: same two-per-row idea, sized up further since it's
    only ever showing a couple of pieces so far. */
 #tab-fineart .shop-prints-card {

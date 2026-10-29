@@ -167,8 +167,8 @@ export const CATALOG = {
   'pink-new-york-city-fineart': {
     name: 'Pink New York City',
     image: 'https://anselmi.at/assets/kunst/pinknycfineart/pinknycfineart.jpg',
-    prices: { A5: 2500, A3: 7500 }, // cents — A5 and A3 only
-    editions: { A5: 100, A3: 100 }
+    prices: { A5: 2500, A4: 4500, A3: 7500 }, // cents
+    editions: { A5: 100, A4: 100, A3: 100 }
   },
   'the-city-of-buses-fineart': {
     name: 'The City of Buses',
