@@ -11,23 +11,23 @@
     'footer.impressum': { de: 'Impressum', en: 'Legal Notice' },
     'footer.agb': { de: 'AGB', en: 'Terms & Conditions' },
 
-    'meta.title.kunst': { de: 'Kunst | Emilia Anselmi', en: 'Art | Emilia Anselmi' },
+    'meta.title.kunst': { de: 'Kunst | Atelier Anselmi', en: 'Art | Atelier Anselmi' },
     'meta.desc.kunst': { de: 'Kunst – Emilia Anselmi', en: 'Art – Emilia Anselmi' },
-    'meta.title.projekte': { de: 'Projekte | Emilia Anselmi', en: 'Projects | Emilia Anselmi' },
+    'meta.title.projekte': { de: 'Projekte | Atelier Anselmi', en: 'Projects | Atelier Anselmi' },
     'meta.desc.projekte': { de: 'Alle Projekte – Emilia Anselmi', en: 'All Projects – Emilia Anselmi' },
-    'meta.title.about': { de: 'Über mich | Emilia Anselmi', en: 'About me | Emilia Anselmi' },
+    'meta.title.about': { de: 'Über mich | Atelier Anselmi', en: 'About me | Atelier Anselmi' },
     'meta.desc.about': { de: 'Über Emilia Anselmi - Grafikdesignerin', en: 'About Emilia Anselmi - Graphic Designer' },
-    'meta.title.datenschutz': { de: 'Datenschutz | Emilia Anselmi', en: 'Privacy Policy | Emilia Anselmi' },
-    'meta.desc.datenschutz': { de: 'Datenschutzerklärung – Emilia Anselmi Portfolio', en: 'Privacy Policy – Emilia Anselmi Portfolio' },
-    'meta.title.impressum': { de: 'Impressum | Emilia Anselmi', en: 'Legal Notice | Emilia Anselmi' },
+    'meta.title.datenschutz': { de: 'Datenschutz | Atelier Anselmi', en: 'Privacy Policy | Atelier Anselmi' },
+    'meta.desc.datenschutz': { de: 'Datenschutzerklärung – Atelier Anselmi', en: 'Privacy Policy – Atelier Anselmi' },
+    'meta.title.impressum': { de: 'Impressum | Atelier Anselmi', en: 'Legal Notice | Atelier Anselmi' },
     'meta.desc.impressum': { de: 'Impressum – Emilia Anselmi', en: 'Legal Notice – Emilia Anselmi' },
-    'meta.title.agb': { de: 'AGB | Emilia Anselmi', en: 'Terms & Conditions | Emilia Anselmi' },
+    'meta.title.agb': { de: 'AGB | Atelier Anselmi', en: 'Terms & Conditions | Atelier Anselmi' },
     'meta.desc.agb': { de: 'Allgemeine Geschäftsbedingungen – Emilia Anselmi', en: 'Terms & Conditions – Emilia Anselmi' },
-    'meta.desc.home': { de: 'Portfolio von Emilia Anselmi - Grafikdesign Projekte', en: 'Portfolio of Emilia Anselmi - Graphic Design Projects' },
+    'meta.desc.home': { de: 'Atelier Anselmi – Künstlerin und Grafikdesign Studentin in Wien', en: 'Atelier Anselmi – Artist and graphic design student in Vienna' },
 
     'hero.subtitle': {
-      de: 'Angehende Grafikdesignerin &amp; Künstlerin aus Vorarlberg',
-      en: 'Aspiring graphic designer &amp; artist from Vorarlberg, Austria'
+      de: 'Künstlerin und Grafikdesign Studentin in Wien',
+      en: 'Artist and graphic design student in Vienna'
     },
 
     'home.prints.cta': { de: 'Kunst kaufen', en: 'Buy Art' },
@@ -38,13 +38,14 @@
       de: 'Art that lasts generations',
       en: 'Art that lasts generations'
     },
-    'home.fineart.cta': { de: 'Shop New Fine Art Giclée Prints', en: 'Shop New Fine Art Giclée Prints' },
+    'home.fineart.cta': { de: 'Shop My Fine Art Giclée Prints', en: 'Shop My Fine Art Giclée Prints' },
     'home.fineart.ctaOriginals': { de: 'Shop Originals', en: 'Shop Originals' },
     'home.fineart.ctaPrints': { de: 'Shop Prints', en: 'Shop Prints' },
     'home.fineart.alleAnsehen': { de: 'Alle ansehen', en: 'View all' },
     'home.favourites.title': { de: 'Your favourites are back', en: 'Your favourites are back' },
     'home.favourites.caption': { de: 'Shop in A5 Fine Art Format', en: 'Shop in A5 Fine Art Format' },
     'home.originals.title': { de: 'Originals', en: 'Originals' },
+    'home.originals.soon': { de: 'New Originals Coming Soon', en: 'New Originals Coming Soon' },
     'home.basicPrints.title': { de: 'Classic Prints', en: 'Classic Prints' },
     'home.projekte.title': { de: 'Projekte', en: 'Projects' },
     'home.projekte.cta': { de: 'Zu den Projekten', en: 'See all projects' },
@@ -387,7 +388,7 @@
     },
     'datenschutz.stand': { de: 'Stand: August 2026', en: 'Last updated: August 2026' },
 
-    'meta.title.widerruf': { de: 'Widerrufsrecht | Emilia Anselmi', en: 'Right of Withdrawal | Emilia Anselmi' },
+    'meta.title.widerruf': { de: 'Widerrufsrecht | Atelier Anselmi', en: 'Right of Withdrawal | Atelier Anselmi' },
     'meta.desc.widerruf': { de: 'Widerrufsrecht und Rücksendebedingungen – Emilia Anselmi', en: 'Right of withdrawal and return conditions – Emilia Anselmi' },
     'footer.widerruf': { de: 'Widerrufsrecht', en: 'Right of Withdrawal' },
 
@@ -455,7 +456,7 @@
     },
     'impressum.stand': { de: 'Stand: August 2026', en: 'Last updated: August 2026' },
 
-    'meta.title.faq': { de: 'FAQ | Emilia Anselmi', en: 'FAQ | Emilia Anselmi' },
+    'meta.title.faq': { de: 'FAQ | Atelier Anselmi', en: 'FAQ | Atelier Anselmi' },
     'meta.desc.faq': { de: 'Häufige Fragen zu Prints, Versand und Bestellung – Emilia Anselmi', en: 'Frequently asked questions about prints, shipping and orders – Emilia Anselmi' },
     'nav.faq': { de: 'FAQ', en: 'FAQ' },
     'faq.h1': { de: 'Häufige Fragen', en: 'Frequently Asked Questions' },

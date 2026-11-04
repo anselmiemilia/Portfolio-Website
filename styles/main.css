@@ -136,6 +136,12 @@ nav {
   gap: 2.5rem;
 }
 
+/* Projekte tab and the homepage Projekte section are hidden for now while the
+   projects get updated; delete these two rules to bring them back. The pages
+   themselves stay online. */
+header nav a[href$="projekte.html"] { display: none; }
+.home-projekte-section { display: none; }
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -1692,10 +1698,8 @@ nav a:hover::after {
 
 .home-about-img {
   width: 35%;
-  aspect-ratio: 4 / 3;
+  height: auto;
   border-radius: 6px;
-  object-fit: cover;
-  object-position: center center;
   flex-shrink: 0;
 }
 
@@ -2240,7 +2244,7 @@ footer a:hover { text-decoration: underline; }
     gap: 1.5rem;
   }
 
-  .home-about-img { width: 100%; }
+  .home-about-img { width: 72%; max-width: 320px; }
 
   .home-about-p2 { display: none; }
 }
