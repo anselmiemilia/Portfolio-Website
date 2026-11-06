@@ -51,12 +51,12 @@
     'home.projekte.cta': { de: 'Zu den Projekten', en: 'See all projects' },
     'home.about.title': { de: 'Über mich', en: 'About me' },
     'home.about.p1': {
-      de: 'Ich heiße Emilia und bin angehende Künstlerin und Grafik- & Informationsdesign-Studentin im vierten Semester an der <em>New Design University</em> in St. Pölten.',
-      en: 'My name is Emilia and I’m an aspiring artist and Graphic &amp; Information Design student in my fourth semester at the <em>New Design University</em> in St. Pölten, Austria.'
+      de: 'Ich bin Künstlerin und studiere Grafik- & Informationsdesign im fünften Semester an der <em>New Design University</em> in St. Pölten. Ich bin ein sehr visueller Mensch: Bilder helfen mir zu verstehen und Gefühle zu vermitteln, und sie wirken gleichzeitig als eigenständiges Element.',
+      en: 'I’m an artist studying Graphic &amp; Information Design in my fifth semester at the <em>New Design University</em> in St. Pölten, Austria. I’m a very visual person: images help me understand and convey feelings, and at the same time they work as an element in their own right.'
     },
     'home.about.p2': {
-      de: 'Kunst hat für mich – früher oft eher im Unterbewusstsein – schon immer eine wichtige Rolle gespielt. Als visueller Mensch ist Design für mich nicht einfach nur schön anzusehen.',
-      en: 'Art has always played an important role for me – earlier often more subconsciously. As a visual person, design isn’t just something nice to look at to me.'
+      de: 'Kunst war schon immer da, früher etwas alltäglicher und unauffälliger. Heute ist sie mein Zuhause.',
+      en: 'Art has always been there, just a little more everyday and unobtrusive. Today, it is my home.'
     },
 
     'kontakt.title': { de: 'Kontakt', en: 'Contact' },
@@ -331,22 +331,26 @@
     },
 
     'about.p1': {
-      de: 'Ich heiße Emilia und bin angehende Künstlerin und Grafik- & Informationsdesign-Studentin im vierten Semester an der\n                            <em>New Design University</em> in St. Pölten.',
-      en: 'My name is Emilia and I’m an aspiring artist and Graphic &amp; Information Design student in my fourth semester at the\n                            <em>New Design University</em> in St. Pölten, Austria.'
+      de: 'Ich bin Künstlerin und studiere Grafik- & Informationsdesign im fünften Semester an der <em>New Design University</em> in St. Pölten. Ich bin ein sehr visueller Mensch: Bilder helfen mir zu verstehen und Gefühle zu vermitteln, und sie wirken gleichzeitig als eigenständiges Element.',
+      en: 'I’m an artist studying Graphic &amp; Information Design in my fifth semester at the <em>New Design University</em> in St. Pölten, Austria. I’m a very visual person: images help me understand and convey feelings, and at the same time they work as an element in their own right.'
     },
     'about.p2': {
-      de: 'Kunst hat für mich – früher oft eher im Unterbewusstsein – schon immer eine wichtige Rolle\n                            gespielt. Als visueller Mensch ist Design für mich nicht einfach nur schön anzusehen. Es hilft\n                            zu verstehen, dient als visuelle Stütze und wirkt gleichzeitig als starkes, eigenständiges Element.',
-      en: 'Art has always played an important role for me – earlier often more subconsciously. As a\n                            visual person, design isn’t just something nice to look at to me. It helps understanding,\n                            serves as a visual aid, and at the same time acts as a strong, independent element.'
+      de: 'Kunst war schon immer da, früher etwas alltäglicher und unauffälliger. Heute ist sie mein Zuhause.',
+      en: 'Art has always been there, just a little more everyday and unobtrusive. Today, it is my home.'
     },
     'about.p3': {
-      de: 'Meine Passion ist es, über meine Kunst und mein Grafikdesign Gefühle zu vermitteln. Meine\n                            Arbeiten sollen sich stilistisch absetzen – und vor allem verstanden und gefühlt werden.',
-      en: 'My passion is conveying emotions through my art and graphic design. My work should stand\n                            out stylistically – and above all be understood and felt.'
+      de: 'In meinen Illustrationen zeige ich Orte so, wie ich sie sehe: bunt, weich und mit etwas Leichtigkeit. Ich möchte den kindlichen Blick auf die Welt zurückbringen, der uns oft zu schnell verloren geht. Meine Kunst ist für alle, die Pink lieben, von einer bunten Welt träumen oder sich in nostalgischer Girlhood verlieren wollen. Sie soll einen eigenen Stil haben und nicht nur gesehen, sondern gefühlt werden.',
+      en: 'In my illustrations, I show places the way I see them: colorful, soft and with a touch of lightness. I want to bring back the childlike view of the world that we so often lose too quickly. My art is for everyone who loves pink, dreams of a colorful world or wants to get lost in nostalgic girlhood. It should have a style of its own and not just be seen, but felt.'
     },
     'about.p4': {
-      de: 'Auch die Illustration begleitet mich seit einigen Jahren, wobei meine wahre Leidenschaft dafür\n                            auf Reisen entstand. Das bewusste Innehalten, das genaue Beobachten eines Ortes und das\n                            Illustrieren direkt vor Ort wecken in mir eine aktive Bewunderung und Wertschätzung für Natur\n                            und Architektur.',
-      en: 'Illustration has also accompanied me for several years, with my true passion for it emerging\n                            while traveling. Consciously pausing, closely observing a place and illustrating right there\n                            awaken an active admiration and appreciation for nature and architecture in me.'
+      de: 'Alles begann mit zehn kleinen Vorarlberger Motiven. Anfang 2026 durfte ich ein Postkartenset für die marie, die Vorarlberger Straßenzeitung, illustrieren. Im Mai kamen die Postkarten auf die Straßen. Seitdem teile ich meine Kunst mit mehr als nur meinen Liebsten, und genau das hat mich hierhergebracht, wo ich sein will.',
+      en: 'It all began with ten small Vorarlberg motifs. In early 2026, I got to illustrate a postcard set for marie, the Vorarlberg street newspaper. In May, the postcards hit the streets. Since then, I’ve been sharing my art with more than just my loved ones, and that is exactly what brought me to where I want to be.'
     },
     'about.p5': {
+      de: 'Seit ein paar Monaten zeige ich meine Arbeiten auf Social Media. Viele Originale und hunderte Kunstdrucke haben seither in ganz Europa ein neues Zuhause gefunden. Ich freue mich über jedes einzelne und darauf, die Welt weiter ein bisschen bunter zu machen.',
+      en: 'For a few months now, I’ve been showing my work on social media. Many originals and hundreds of art prints have since found a new home all over Europe. I’m grateful for every single one and look forward to making the world a little more colorful.'
+    },
+    'about.collab': {
       de: 'Du bist an einer Zusammenarbeit oder einer Auftragsarbeit interessiert? :)',
       en: 'Interested in a collaboration or commissioned work? :)'
     },
