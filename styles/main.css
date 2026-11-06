@@ -2334,7 +2334,7 @@ footer a:hover { text-decoration: underline; }
 }
 .home-launch-img {
   position: relative;
-  aspect-ratio: 2.1 / 1;
+  aspect-ratio: 2.5 / 1;
   overflow: hidden;
   border-radius: 6px;
 }
@@ -2347,7 +2347,7 @@ footer a:hover { text-decoration: underline; }
   height: auto;
   max-width: none;
   left: -25.4%;
-  top: -109.9%;
+  top: -140.3%;
   display: block;
   transition: transform 1.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -2401,8 +2401,8 @@ footer a:hover { text-decoration: underline; }
 
 @media (max-width: 768px) {
   .home-launch { width: calc(100vw - 2rem); margin-bottom: 3rem; }
-  .home-launch-img { aspect-ratio: 4 / 3; }
-  .home-launch-img img { width: 172%; left: -36.3%; top: -65.6%; }
+  .home-launch-img { aspect-ratio: 3 / 2; }
+  .home-launch-img img { width: 172%; left: -36.3%; top: -80%; }
   .launch-countdown { gap: 0.55rem; }
   .launch-countdown span { min-width: 3.1rem; }
   .home-launch-overlay .launch-countdown span { min-width: 2.5rem; }
