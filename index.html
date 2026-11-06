@@ -11,8 +11,9 @@
   <link rel="preload" as="image" href="assets/logo/hero-wordmark.png" fetchpriority="high">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/Military Scribe/Military Scribe.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/apercu-mono-pro/ApercuMonoProRegular.woff2" crossorigin>
-  <link href="styles/main.css?v=98" rel="stylesheet">
-  <script src="scripts/i18n.js?v=107" defer></script>
+  <link href="styles/main.css?v=100" rel="stylesheet">
+  <script src="scripts/i18n.js?v=109" defer></script>
+  <script src="scripts/launch.js?v=1" defer></script>
   <script src="scripts/nav.js?v=62" defer></script>
   <script src="scripts/cart.js?v=6" defer></script>
 </head>
@@ -49,6 +50,27 @@
     <div class="home-fineart-cta-wrapper">
       <a href="kunst.html" class="home-fineart-cta-main" data-i18n="home.fineart.cta">Shop My Fine Art Giclée Prints</a>
     </div>
+
+    <a href="shop/im-pinken-wien.html" class="home-launch" data-launch-at="2026-11-07T18:00:00+01:00">
+      <div class="home-launch-img">
+        <img src="assets/kunst/impinkenwien/impinkenwien.jpg" loading="lazy" decoding="async" alt="Im Pinken Wien">
+        <div class="launch-veil" data-launch-before data-launch-at="2026-11-07T18:00:00+01:00"><span data-i18n="launch.availableFrom">Verfügbar ab 7.11. um 18 Uhr</span></div>
+      </div>
+      <div class="home-launch-text">
+        <p class="home-launch-kicker" data-launch-before data-launch-at="2026-11-07T18:00:00+01:00" data-i18n="launch.new">Neuer Fine Art Print</p>
+        <p class="home-launch-kicker" data-launch-after data-launch-at="2026-11-07T18:00:00+01:00" data-i18n="launch.live" hidden>Jetzt erhältlich</p>
+        <h3 class="home-launch-title">„Im Pinken Wien“</h3>
+        <div data-launch-before data-launch-at="2026-11-07T18:00:00+01:00">
+          <p class="home-launch-when" data-i18n="launch.availableFrom">Verfügbar ab 7.11. um 18 Uhr</p>
+          <div class="launch-countdown" aria-live="off">
+  <span><b data-u="d">00</b><small data-i18n="launch.d">Tage</small></span>
+  <span><b data-u="h">00</b><small data-i18n="launch.h">Std</small></span>
+  <span><b data-u="m">00</b><small data-i18n="launch.m">Min</small></span>
+  <span><b data-u="s">00</b><small data-i18n="launch.s">Sek</small></span>
+</div>
+        </div>
+      </div>
+    </a>
 
     <div class="shop-prints-grid home-fineart-grid">
       <a href="shop/durch-rom-spazieren.html" class="shop-prints-card">

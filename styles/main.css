@@ -2248,3 +2248,131 @@ footer a:hover { text-decoration: underline; }
 
   .home-about-p2 { display: none; }
 }
+
+/* ── Scheduled release ("Im Pinken Wien"): pink veil + countdown ───────── */
+.launch-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(214, 155, 165, 0.4);
+  -webkit-backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(1.5px);
+  pointer-events: none;
+}
+.launch-veil[hidden] { display: none; }
+.launch-veil span {
+  font-family: var(--font-headline);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.15;
+  color: var(--weiss);
+  text-shadow: 0 1px 12px rgba(101, 17, 34, 0.55);
+}
+/* While the veil is up, the hover title overlay would only fight it. */
+.shop-prints-card:has(.launch-veil:not([hidden])) .shop-prints-overlay { display: none; }
+
+.launch-countdown {
+  display: inline-flex;
+  gap: 0.9rem;
+  margin-top: 0.9rem;
+}
+.launch-countdown span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 3.4rem;
+  padding: 0.55rem 0.4rem 0.45rem;
+  background: var(--rosa);
+  color: var(--weiss);
+  border-radius: 6px;
+}
+.launch-countdown b {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.launch-countdown small {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* Product page: replaces the buy button until the release */
+.produkt-launch {
+  margin: 2rem 0;
+  padding: 1.4rem 1rem 1.5rem;
+  text-align: center;
+  background: rgba(214, 155, 165, 0.22);
+  border: 1px solid var(--rosa);
+  border-radius: 6px;
+}
+.produkt-launch[hidden] { display: none; }
+.produkt-launch-label {
+  font-family: var(--font-headline);
+  font-size: 1.6rem;
+  color: var(--burgunder);
+  line-height: 1.2;
+}
+
+/* Homepage teaser */
+.home-launch {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 900px;
+  margin: 2.5rem auto 3.5rem;
+  color: inherit;
+  text-decoration: none;
+}
+.home-launch-img {
+  position: relative;
+  flex: 0 0 48%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.home-launch-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.home-launch:hover .home-launch-img img { transform: scale(1.05); }
+.home-launch-text { flex: 1; text-align: left; }
+.home-launch-kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rosa);
+  font-weight: 600;
+}
+.home-launch-title {
+  font-family: var(--font-headline);
+  font-weight: normal;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0.3rem 0 1rem;
+  color: var(--burgunder);
+}
+.home-launch-when {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+.home-launch-text [hidden] { display: none; }
+
+@media (max-width: 768px) {
+  .home-launch { flex-direction: column; gap: 1.2rem; margin: 2rem auto 2.5rem; }
+  .home-launch-img { flex-basis: auto; width: 100%; }
+  .home-launch-text { text-align: center; }
+  .launch-countdown { gap: 0.55rem; }
+  .launch-countdown span { min-width: 3.1rem; }
+  .launch-veil span { font-size: 1.6rem; }
+}

@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var randEl = document.querySelector('[data-detail="rand"]');
   var kaufenBtn = document.querySelector('.produkt-kaufen-btn');
   var soldOutTitel = document.querySelector('.produkt-soldout-titel');
-  var produktName = document.querySelector('.produkt-info h1') ? document.querySelector('.produkt-info h1').textContent : '';
+  var produktName = document.querySelector('.produkt-info h1') ? document.querySelector('.produkt-info h1').textContent.replace(/[„“"]/g, '').trim() : '';
   var produktId = location.pathname.split('/').pop().replace('.html', '');
 
   var currentSize = '';

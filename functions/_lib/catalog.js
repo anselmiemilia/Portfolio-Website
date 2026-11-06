@@ -168,6 +168,17 @@ export const CATALOG = {
     // Fine Art Giclée print, same edition structure as Café Central.
     editions: { A5: 100, A4: 100, A3: 100 }
   },
+  // New Fine Art Print, teased on the homepage and released on a schedule.
+  // `availableFrom` is enforced in create-checkout-session.js; the product
+  // page + teasers count down to it via scripts/launch.js (keep the
+  // data-launch-at dates in index.html / kunst.html / the product page in sync).
+  'im-pinken-wien': {
+    name: 'Im Pinken Wien',
+    image: 'https://anselmi.at/assets/kunst/impinkenwien/impinkenwien.jpg',
+    availableFrom: '2026-11-07T18:00:00+01:00',
+    prices: { A5: 2500, A4: 4500, A3: 7500 }, // cents
+    editions: { A5: 100, A4: 100, A3: 100 }
+  },
   // A5-only Fine Art Prints: reuse the existing Basic Print artwork photos,
   // just a separate SKU/edition since these two already have a (sold-out)
   // Basic Print A4/A3 version under a different product id.

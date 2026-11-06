@@ -145,6 +145,11 @@ export async function onRequestPost({ request, env }) {
     if (!product || !unitAmount) {
       return jsonResponse({ error: 'Unbekannter Artikel im Warenkorb.' }, 400, request);
     }
+    // Scheduled release: not purchasable before `availableFrom`, no matter
+    // what the (hidden) buy button on the client does.
+    if (product.availableFrom && Date.now() < Date.parse(product.availableFrom)) {
+      return jsonResponse({ error: product.name + ' ist noch nicht erhältlich (verfügbar ab 7.11. um 18 Uhr).' }, 409, request);
+    }
     const qty = Math.min(Math.max(parseInt(raw.qty, 10) || 1, 1), MAX_QTY_PER_ITEM);
 
     if (sold) {
