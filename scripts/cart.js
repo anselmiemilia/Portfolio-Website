@@ -49,7 +49,9 @@
       .catch(function () { /* qty cap just won't show, checkout still enforces it */ });
   }
 
-  var VALID_ZONES = ['AT', 'DE', 'EU_OTHER', 'GB'];
+  var VALID_ZONES = ['AT', 'DE', 'EU_OTHER', 'GB', 'PICKUP_1129', 'PICKUP_1213'];
+
+  function isPickup(zone) { return zone === 'PICKUP_1129' || zone === 'PICKUP_1213'; }
 
   function getShippingZone() {
     try {
@@ -191,6 +193,8 @@
             '<option value="DE"></option>' +
             '<option value="EU_OTHER"></option>' +
             '<option value="GB"></option>' +
+            '<option value="PICKUP_1129"></option>' +
+            '<option value="PICKUP_1213"></option>' +
           '</select>' +
         '</div>' +
         '<p class="cart-preorder-note"></p>' +
@@ -214,6 +218,7 @@
     shippingZoneSelect.addEventListener('change', function () {
       setShippingZone(shippingZoneSelect.value);
       errorEl.textContent = '';
+      updateShippingNote();
     });
 
     updateTexts();
@@ -226,18 +231,29 @@
     drawerEl.querySelector('.cart-close').setAttribute('aria-label', t('cart.schliessen', 'Schließen'));
     emptyEl.textContent = t('cart.leer', 'Dein Warenkorb ist leer.');
     drawerEl.querySelector('.cart-total-label').textContent = t('cart.zwischensumme', 'Zwischensumme');
-    drawerEl.querySelector('.cart-shipping-note').textContent = t('cart.versandhinweis', 'zzgl. Versand');
-    drawerEl.querySelector('.cart-shipping-zone-label').textContent = t('cart.versandland', 'Versandland');
+    drawerEl.querySelector('.cart-shipping-zone-label').textContent = t('cart.versandland', 'Versand / Abholung');
     var zoneOptions = shippingZoneSelect.querySelectorAll('option');
     zoneOptions[0].textContent = t('cart.versandland.placeholder', 'Bitte wählen …');
     zoneOptions[1].textContent = t('cart.versandland.at', 'Österreich');
     zoneOptions[2].textContent = t('cart.versandland.de', 'Deutschland');
     zoneOptions[3].textContent = t('cart.versandland.eu', 'Übrige EU');
     zoneOptions[4].textContent = t('cart.versandland.uk', 'Vereinigtes Königreich (UK)');
+    zoneOptions[5].textContent = t('cart.abholung.1129', 'Abholung Wild im West – 29.11.');
+    zoneOptions[6].textContent = t('cart.abholung.1213', 'Abholung Wild im West – 13.12.');
+    updateShippingNote();
     if (!checkoutBtn.disabled) {
       checkoutBtn.textContent = t('cart.zurKasse', 'Zur Kasse');
     }
     renderDrawer();
+  }
+
+  // "zzgl. Versand" bei Versand, bei Abholung: kostenlos + Vorauszahlung.
+  function updateShippingNote() {
+    if (!drawerEl) return;
+    var note = drawerEl.querySelector('.cart-shipping-note');
+    note.textContent = isPickup(getShippingZone())
+      ? t('cart.abholhinweis', 'Abholung ohne Versandkosten – Bezahlung vorab online')
+      : t('cart.versandhinweis', 'zzgl. Versand');
   }
 
   function renderBadge(items) {
@@ -330,7 +346,7 @@
     // order is actually going.
     var zone = getShippingZone();
     if (!zone) {
-      errorEl.textContent = t('cart.versandland.fehlt', 'Bitte wähle dein Versandland aus.');
+      errorEl.textContent = t('cart.versandland.fehlt', 'Bitte wähle Versandland oder Abholung aus.');
       if (shippingZoneSelect) shippingZoneSelect.focus();
       return;
     }

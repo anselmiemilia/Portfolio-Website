@@ -8,6 +8,7 @@ import { CATALOG } from '../_lib/catalog.js';
 import { COUNTRIES, PRODUCT_FORMAT, getSelectableCountries } from '../_lib/shippingRates.js';
 import { loadSold, remainingFor } from '../_lib/stock.js';
 import { corsHeaders } from '../_lib/cors.js';
+import { PICKUP_OPTIONS, isPickupZone, pickupUnavailableReason, pickupText } from '../_lib/pickup.js';
 
 // Versandkosten kommen aus functions/_lib/shippingRates.js (Österreichische
 // Post "Paketmarke", Details dort). Stripe Checkout kennt die vom Kunden
@@ -19,6 +20,10 @@ import { corsHeaders } from '../_lib/cors.js';
 // zusätzlich auf genau die Länder dieser Zone eingeschränkt, damit die in
 // Stripe eingegebene Adresse gar nicht in eine andere Zone fallen kann.
 const VALID_ZONES = ['AT', 'DE', 'EU_OTHER', 'GB'];
+
+// Abholung beim Flohmarkt „Wild im West“ zählt als eigene "Zone": keine
+// Versandkosten, keine Adresse (functions/_lib/pickup.js).
+const VALID_PICKUPS = Object.keys(PICKUP_OPTIONS);
 
 const SHIPPING_OPTION_LABELS = {
   AT: { de: 'Österreich', en: 'Austria' },
@@ -117,9 +122,15 @@ export async function onRequestPost({ request, env }) {
     return jsonResponse({ error: 'Warenkorb ist leer.' }, 400, request);
   }
 
-  const shippingZone = VALID_ZONES.includes(body.shippingZone) ? body.shippingZone : null;
+  const shippingZone = (VALID_ZONES.includes(body.shippingZone) || VALID_PICKUPS.includes(body.shippingZone))
+    ? body.shippingZone : null;
   if (!shippingZone) {
     return jsonResponse({ error: 'Bitte wähle dein Versandland aus.' }, 400, request);
+  }
+  const isPickup = isPickupZone(shippingZone);
+  if (isPickup) {
+    const reason = pickupUnavailableReason(shippingZone);
+    if (reason) return jsonResponse({ error: reason }, 409, request);
   }
 
   // One KV read for the whole cart. If KV is unavailable (e.g. the daily
@@ -190,20 +201,42 @@ export async function onRequestPost({ request, env }) {
   // Shows up directly in the Stripe Payments list without having to open
   // the payment/session — otherwise there's no way to tell what was
   // ordered without clicking in.
-  appendParam(params, 'payment_intent_data', { description: summaryParts.join(', ').slice(0, 500) });
+  appendParam(params, 'payment_intent_data', {
+    description: ((isPickup ? 'ABHOLUNG ' + PICKUP_OPTIONS[shippingZone].date.de + ' – ' : '') + summaryParts.join(', ')).slice(0, 500)
+  });
   // 'paypal' und 'sepa_debit' sind absichtlich (noch) nicht dabei – müssen
   // in Stripe erst unter Settings -> Payment methods aktiviert werden,
   // sonst lehnt Stripe die ganze Session mit 500 ab. Sobald aktiviert:
   // hier wieder ergänzen.
   appendParam(params, 'payment_method_types', ['card', 'eps']);
-  appendParam(params, 'shipping_address_collection', { allowed_countries: allowedCountriesForZone(shippingZone) });
-  appendParam(params, 'shipping_options', buildShippingOptions(shippingFormat, lang, shippingZone));
+  if (isPickup) {
+    // Abholung: keine Lieferadresse, keine Versandkosten. Ort/Zeit stehen
+    // über dem Bezahlen-Button und auf der Rechnung; Telefonnummer für
+    // Rückfragen am Abholtag.
+    const pickupInfo = pickupText(shippingZone, lang);
+    appendParam(params, 'phone_number_collection', { enabled: 'true' });
+    appendParam(params, 'custom_text', { submit: { message: pickupInfo } });
+  } else {
+    appendParam(params, 'shipping_address_collection', { allowed_countries: allowedCountriesForZone(shippingZone) });
+    appendParam(params, 'shipping_options', buildShippingOptions(shippingFormat, lang, shippingZone));
+  }
   // Read back by the Stripe webhook once payment completes, to know exactly
   // which product/size/qty to count against the edition limit.
-  appendParam(params, 'metadata', { items: JSON.stringify(metaItems) });
+  appendParam(params, 'metadata', Object.assign(
+    { items: JSON.stringify(metaItems) },
+    isPickup ? { pickup: shippingZone, pickup_date: PICKUP_OPTIONS[shippingZone].date.de } : {}
+  ));
   // Stripe automatically generates and emails a PDF invoice for the order
   // once payment succeeds, on top of its own payment-receipt email.
-  appendParam(params, 'invoice_creation', { enabled: 'true' });
+  appendParam(params, 'invoice_creation', isPickup
+    ? {
+        enabled: 'true',
+        invoice_data: {
+          custom_fields: [{ name: lang === 'en' ? 'Pickup' : 'Abholung', value: (PICKUP_OPTIONS[shippingZone].date[lang] + ' · ' + PICKUP_OPTIONS[shippingZone].time[lang]).slice(0, 140) }],
+          description: pickupText(shippingZone, lang).slice(0, 1500)
+        }
+      }
+    : { enabled: 'true' });
 
   let stripeRes;
   try {
