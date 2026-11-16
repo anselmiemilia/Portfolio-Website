@@ -896,6 +896,35 @@ nav a:hover::after {
   display: none;
 }
 
+/* Collapsible "Verkauft" section under the available originals */
+.kunst-sold { margin: 3rem 0 1rem; }
+.kunst-sold > summary {
+  list-style: none;
+  cursor: pointer;
+  text-align: center;
+  color: var(--burgunder);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(101, 17, 34, 0.2);
+  border-bottom: 1px solid rgba(101, 17, 34, 0.2);
+  margin-bottom: 2rem;
+  user-select: none;
+}
+.kunst-sold > summary::-webkit-details-marker { display: none; }
+.kunst-sold > summary::after { content: " \25BE"; }
+.kunst-sold[open] > summary::after { content: " \25B4"; }
+.kunst-sold > summary:hover { opacity: 0.7; }
+
+/* Sold originals: milky grey like sold-out prints, but still clickable so
+   the product page (with its "Verkauft" state) can be opened. */
+#tab-originals .shop-prints-card:has(.sold-badge) .shop-prints-img-wrap img,
+#tab-originals .shop-prints-card:has(.sold-badge) .shop-prints-caption {
+  filter: grayscale(1);
+  opacity: 0.45;
+}
+
 .home-prints-cta-wrapper {
   text-align: center;
   margin-top: 2.5rem;
@@ -2399,10 +2428,62 @@ footer a:hover { text-decoration: underline; }
 .home-launch-overlay .launch-countdown small { font-size: 0.58rem; }
 .home-launch-overlay [hidden] { display: none; }
 
+/* Originals teaser banner: a plain photo as background instead of the
+   zoomed artwork crop used for "Im Pinken Wien". */
+.home-launch.home-launch-originals .home-launch-img img {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: 50% 62%;
+}
+.home-launch.home-launch-originals:not(.is-live) .home-launch-overlay {
+  background: rgba(101, 17, 34, 0.28);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.home-launch-originals { cursor: default; }
+a.home-launch-originals { cursor: pointer; }
+
+/* Homepage: three small previews under the originals countdown banner */
+.home-launch.home-launch-originals { margin-bottom: 1.5rem; }
+.originals-preview-cta { margin-top: 0; }
+.originals-preview {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto 1.8rem;
+}
+.originals-preview-thumb {
+  position: relative;
+  display: block;
+  width: 220px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.originals-preview-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(214, 155, 165, 0.3);
+  -webkit-backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(1.5px);
+  transition: opacity 0.4s;
+}
+.originals-preview-thumb:hover::after { opacity: 0.4; }
+.originals-preview-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.home-originals-teaser { padding-bottom: 0; }
+
 @media (max-width: 768px) {
   .home-launch { width: calc(100vw - 2rem); margin-bottom: 3rem; }
   .home-launch-img { aspect-ratio: 3 / 2; }
   .home-launch-img img { width: 172%; left: -36.3%; top: -80%; }
+  .home-launch.home-launch-originals .home-launch-img img { width: 100%; left: 0; top: 0; }
+  .home-launch.home-launch-originals .home-launch-img { aspect-ratio: 4 / 3.6; }
+  .originals-preview { gap: 0.55rem; padding: 0 1rem; }
+  .originals-preview-thumb { width: calc((100vw - 2rem - 1.1rem) / 3); }
   .launch-countdown { gap: 0.55rem; }
   .launch-countdown span { min-width: 3.1rem; }
   .home-launch-overlay .launch-countdown span { min-width: 2.9rem; }

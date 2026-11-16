@@ -111,6 +111,22 @@
       de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Feldkircher&nbsp;Aussichten“, Feldkirch.',
       en: 'Original artwork by Emilia Anselmi, 2026, “Feldkircher&nbsp;Aussichten”, Feldkirch.'
     },
+    'produkt.impinkenwienOriginal.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Im&nbsp;Pinken&nbsp;Wien“, Wien.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “Im&nbsp;Pinken&nbsp;Wien”, Vienna.'
+    },
+    'produkt.durchromspazierenOriginal.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Durch&nbsp;Rom&nbsp;Spazieren“, Rom.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “Durch&nbsp;Rom&nbsp;Spazieren”, Rome.'
+    },
+    'produkt.langsdeamsterdamsegrachtenOriginal.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Langs&nbsp;de&nbsp;Amsterdamse&nbsp;Grachten“, Amsterdam.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “Langs&nbsp;de&nbsp;Amsterdamse&nbsp;Grachten”, Amsterdam.'
+    },
+    'produkt.portofino.info': {
+      de: 'Original Kunstwerk von Emilia Anselmi, 2026, „Portofino“, Portofino.',
+      en: 'Original artwork by Emilia Anselmi, 2026, “Portofino”, Portofino.'
+    },
     'produkt.onvenicebridges.info': {
       de: 'Original Kunstwerk von Emilia Anselmi, 2026, „On&nbsp;Venice&nbsp;Bridges“, Venedig.',
       en: 'Original artwork by Emilia Anselmi, 2026, “On&nbsp;Venice&nbsp;Bridges”, Venice.'
@@ -156,6 +172,7 @@
       de: 'Dein Original wird mit größter Sorgfalt verpackt, damit es sicher und unversehrt bei dir ankommt.',
       en: 'Your original is packaged with the utmost care, so it arrives safely and undamaged.'
     },
+    'produkt.original.versandStart': { de: 'Versand der Originale startet ab 27.11.', en: 'Shipping of the originals starts from 27 Nov.' },
     'produkt.versandinfo.title': { de: 'Versandinfo', en: 'Shipping info' },
     'produkt.versandinfo.eu': {
       de: '<strong>Lieferzeit in der EU:</strong> Der Versand dauert standardmäßig 5–10 Werktage.',
@@ -279,6 +296,11 @@
     'launch.availableFromShort': { de: 'Ab 7.11. um 18 Uhr', en: 'From 7 Nov at 6 pm' },
     'launch.new': { de: 'Neuer Fine Art Print', en: 'New Fine Art Print' },
     'launch.live': { de: 'Jetzt erhältlich', en: 'Available now' },
+    'launch.originals.kicker': { de: 'Neue Originale', en: 'New Originals' },
+    'launch.originals.preview': { de: 'Vorschau ansehen', en: 'Get a preview' },
+    'launch.originals.new': { de: 'Strolling through the Cities', en: 'Strolling through the Cities' },
+    'launch.originals.availableFrom': { de: 'Verfügbar ab 22.11. um 17 Uhr', en: 'Available from 22 Nov at 5 pm' },
+    'launch.originals.availableFromShort': { de: 'Ab 22.11. um 17 Uhr', en: 'From 22 Nov at 5 pm' },
     'launch.d': { de: 'Tage', en: 'Days' },
     'launch.h': { de: 'Std', en: 'Hrs' },
     'launch.m': { de: 'Min', en: 'Min' },

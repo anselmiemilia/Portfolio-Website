@@ -159,7 +159,12 @@ export async function onRequestPost({ request, env }) {
     // Scheduled release: not purchasable before `availableFrom`, no matter
     // what the (hidden) buy button on the client does.
     if (product.availableFrom && Date.now() < Date.parse(product.availableFrom)) {
-      return jsonResponse({ error: product.name + ' ist noch nicht erhältlich (verfügbar ab 7.11. um 18 Uhr).' }, 409, request);
+      // Format the release time (Vienna time) from the catalog instead of hardcoding it.
+      const parts = Object.fromEntries(new Intl.DateTimeFormat('de-AT', {
+        timeZone: 'Europe/Vienna', day: 'numeric', month: 'numeric', hour: 'numeric', minute: '2-digit', hourCycle: 'h23'
+      }).formatToParts(new Date(product.availableFrom)).map(function (p) { return [p.type, p.value]; }));
+      const when = parts.day + '.' + parts.month + '. um ' + parts.hour + (parts.minute === '00' ? '' : ':' + parts.minute) + ' Uhr';
+      return jsonResponse({ error: product.name + ' ist noch nicht erhältlich (verfügbar ab ' + when + ').' }, 409, request);
     }
     const qty = Math.min(Math.max(parseInt(raw.qty, 10) || 1, 1), MAX_QTY_PER_ITEM);
 
