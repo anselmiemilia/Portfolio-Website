@@ -2553,7 +2553,7 @@ a.home-launch-originals { cursor: pointer; }
 html.anfrage-offen, html.anfrage-offen body { overflow: hidden; }
 
 .anfrage-dialog {
-  width: min(920px, calc(100% - 3rem));
+  width: min(620px, calc(100% - 2rem));
   max-width: none;
   max-height: none;
   margin: auto;
@@ -2566,21 +2566,12 @@ html.anfrage-offen, html.anfrage-offen body { overflow: hidden; }
   overflow: hidden;
   box-shadow: 0 30px 80px -30px rgba(60, 8, 20, 0.45);
 }
-.anfrage-dialog[open] { display: grid; grid-template-columns: 38% 1fr; }
 .anfrage-dialog::backdrop { background: rgba(101, 17, 34, 0.45); }
 .anfrage-dialog[open] { animation: anfrage-in 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .anfrage-dialog[open]::backdrop { animation: anfrage-fade 0.3s ease; }
 @keyframes anfrage-in { from { opacity: 0; transform: translateY(12px); } }
 @keyframes anfrage-fade { from { opacity: 0; } }
 
-.anfrage-dialog-bild { position: relative; background: var(--buttergelb); }
-.anfrage-dialog-bild img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 .anfrage-dialog-main {
   max-height: min(88vh, 780px);
   max-height: min(88dvh, 780px);
@@ -2696,7 +2687,657 @@ html.anfrage-offen, html.anfrage-offen body { overflow: hidden; }
   box-shadow: none;
 }
 .anfrage-dialog.is-inline .anfrage-dialog-main { max-height: none; }
-.anfrage-dialog.is-inline .anfrage-dialog-bild,
+.anfrage-dialog.is-inline .anfrage-close,
+.anfrage-dialog.is-inline .anfrage-done { display: none; }
+
+@media (max-width: 768px) {
+
+  /* Header */
+  header {
+    position: fixed;
+    align-items: center;
+    padding: 1rem 1.5rem;
+  }
+  .logo { margin-top: 0; }
+  .logo img.logo-default,
+  .logo img.logo-hover { height: 2.2rem; }
+
+  /* Cart, then the language switch, then the burger last. All run in the
+     normal flow here so the order is set with flex order; the cart stays
+     position: relative because the .cart-count badge is absolutely
+     positioned inside it. */
+  .nav-toggle {
+    display: flex;
+    order: 4;
+  }
+
+  .cart-toggle {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    order: 2;
+    margin-left: auto;
+    margin-right: 1.15rem;
+  }
+  .cart-drawer {
+    padding: 1.5rem 1.25rem;
+    padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  }
+
+  /* Language switch, cloned by nav.js right next to the burger button so
+     it's visible without opening the menu — buried inside the collapsed
+     nav, people often didn't notice it. The original inside nav is hidden
+     below to avoid showing it twice once the menu is open. */
+  .lang-toggle-mobile {
+    display: flex;
+    order: 3;
+    gap: 0.25rem;
+    margin-right: 0.75rem;
+  }
+
+  .lang-toggle-mobile .lang-btn,
+  .lang-toggle-mobile .lang-sep {
+    font-size: 0.7rem;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.1rem;
+    background-color: var(--buttergelb);
+    padding: 1.5rem;
+    box-shadow: 0 12px 24px rgba(101, 17, 34, 0.1);
+  }
+
+  nav.nav-open { display: flex; }
+
+  nav a { font-size: 0.9rem; }
+  .lang-btn { font-size: 0.9rem; }
+  nav .lang-toggle { display: none; }
+
+  /* Hero */
+  .hero {
+    padding: 7.5rem 1.5rem 0;
+    min-height: 0;
+    margin-bottom: 0;
+  }
+
+  /* Projects */
+  #projekte {
+    padding: 2rem 0.75rem 4rem;
+    margin-top: 0;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .projects-row,
+  .projects-row--left,
+  .projects-row--right,
+  .projects-row--center { display: contents; }
+
+  .projekt-card {
+    padding: 0;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .projekt-card--wide,
+  .projekt-card--mid,
+  .projekt-card--narrow {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  .projekt-card .projekt-info { display: none; }
+  .projects-quote--overlay { display: none; }
+
+  .shop-prints-grid { flex-direction: column; align-items: center; gap: 1.5rem; }
+
+  .shop-prints-card { max-width: 480px; width: 100%; }
+
+  #tab-prints .shop-prints-card,
+  .home-fineart-section .shop-prints-card,
+  .home-originals-section .shop-prints-card,
+  .home-basicprints-section .shop-prints-card { flex-basis: auto; }
+
+  .shop-prints-overlay { display: none; }
+
+  .shop-prints-caption {
+    display: block;
+    margin-top: 0.7rem;
+    font-family: var(--font-headline);
+    font-size: 1.7rem;
+    color: var(--burgunder);
+    text-align: center;
+  }
+
+  #tab-prints .shop-prints-caption,
+  #tab-originals .shop-prints-caption {
+    text-transform: none;
+  }
+
+  .produkt-detail { padding: 8rem 1.2rem 4rem; }
+
+  .produkt-grid { flex-direction: column; gap: 2rem; }
+
+  .produkt-gallery { position: static; width: 100%; }
+
+  .produkt-related { margin-top: 4rem; }
+
+  .produkt-related .shop-prints-card { max-width: 220px; }
+
+  .produkt-related .shop-prints-caption { font-size: 1.2rem; }
+
+  /* Home – featured projects */
+  .home-section { padding: 2.5rem 1.2rem; }
+
+  .home-featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .home-featured-grid .projekt-card {
+    padding: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+
+  /* About */
+  .about-section {
+    min-height: 0 !important;
+    padding: 5.5rem 1.2rem 3.5rem !important;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .about-images {
+    width: 65%;
+    max-width: 320px;
+    margin: 0 auto 0.6rem;
+  }
+
+  .about-text h1 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+  }
+
+  /* Project Detail */
+  .projekt-detail { padding: 8rem 1.5rem 4rem; }
+  .projekt-galerie { width: 100%; }
+
+  /* Mehr lesen */
+  .mehr-lesen-text.collapsed {
+    max-height: 5.4em;
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+
+  .mehr-lesen-btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .mehr-lesen-wrapper { text-align: center; }
+
+  /* Footer */
+  footer { padding: 2rem 1.2rem; }
+
+  /* Datenschutz */
+  .datenschutz-section { padding: 7rem 1.2rem 3rem; }
+
+  /* Kontakt */
+  .kontakt-section {
+    padding: 2rem 1.2rem;
+    margin: 0 1.2rem;
+  }
+
+  /* Home – Über mich */
+  .home-about-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .home-about-img { width: 72%; max-width: 320px; }
+
+  .home-about-p2 { display: none; }
+}
+
+/* ── Scheduled release ("Im Pinken Wien"): pink veil + countdown ───────── */
+.launch-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(214, 155, 165, 0.4);
+  -webkit-backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(1.5px);
+  pointer-events: none;
+}
+.launch-veil[hidden] { display: none; }
+.launch-veil span {
+  font-family: var(--font-headline);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  line-height: 1.15;
+  color: var(--weiss);
+  text-shadow: 0 1px 12px rgba(101, 17, 34, 0.55);
+}
+/* While the veil is up, the hover title overlay would only fight it. */
+.shop-prints-card:has(.launch-veil:not([hidden])) .shop-prints-overlay { display: none; }
+
+.launch-countdown {
+  display: inline-flex;
+  gap: 0.9rem;
+  margin-top: 0.9rem;
+}
+.launch-countdown span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 3.4rem;
+  padding: 0.55rem 0.4rem 0.45rem;
+  background: var(--rosa);
+  color: var(--weiss);
+  border-radius: 6px;
+}
+.launch-countdown b {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.launch-countdown small {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* Product page: replaces the buy button until the release */
+.produkt-launch {
+  margin: 2rem 0;
+  padding: 1.4rem 1rem 1.5rem;
+  text-align: center;
+  background: rgba(214, 155, 165, 0.22);
+  border: 1px solid var(--rosa);
+  border-radius: 6px;
+}
+.produkt-launch[hidden] { display: none; }
+.produkt-launch-label {
+  font-family: var(--font-headline);
+  font-size: 1.6rem;
+  color: var(--burgunder);
+  line-height: 1.2;
+}
+
+/* Homepage teaser: wide banner, wider than the grid below it */
+.home-launch {
+  display: block;
+  position: relative;
+  left: 50%;
+  width: min(1560px, calc(100vw - 3rem));
+  transform: translateX(-50%);
+  margin: 0 0 4.5rem;
+  color: inherit;
+  text-decoration: none;
+}
+.home-launch-img {
+  position: relative;
+  aspect-ratio: 2.5 / 1;
+  overflow: hidden;
+  border-radius: 6px;
+}
+/* The mockup is zoomed so only the artwork itself fills the banner (frame
+   and wall are cropped away). Numbers come from the artwork's position in
+   impinkenwien.jpg (x 336–1672, y 556–1460 of 2000). */
+.home-launch-img img {
+  position: absolute;
+  width: 151%;
+  height: auto;
+  max-width: none;
+  left: -25.4%;
+  top: -140.3%;
+  display: block;
+  transition: transform 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.home-launch:hover .home-launch-img img { transform: scale(1.03); }
+.home-launch-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--weiss);
+  text-shadow: 0 1px 14px rgba(101, 17, 34, 0.5);
+  background: linear-gradient(rgba(101, 17, 34, 0), rgba(101, 17, 34, 0.35));
+}
+.home-launch:not(.is-live) .home-launch-overlay {
+  background: rgba(214, 155, 165, 0.45);
+  -webkit-backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(1.5px);
+}
+.home-launch-kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.home-launch-title {
+  font-family: var(--font-headline);
+  font-weight: normal;
+  font-size: clamp(2.4rem, 6.5vw, 5.2rem);
+  line-height: 1.05;
+  margin: 0.4rem 0 1.1rem;
+}
+.home-launch-when {
+  font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+  letter-spacing: 0.05em;
+}
+.home-launch-overlay .launch-countdown { gap: 0.65rem; margin-top: 0.8rem; }
+.home-launch-overlay .launch-countdown span {
+  background: rgba(101, 17, 34, 0.82);
+  text-shadow: none;
+  min-width: 3.3rem;
+  padding: 0.45rem 0.35rem 0.4rem;
+  border-radius: 5px;
+}
+.home-launch-overlay .launch-countdown b { font-size: 1.4rem; }
+.home-launch-overlay .launch-countdown small { font-size: 0.58rem; }
+.home-launch-overlay [hidden] { display: none; }
+
+/* Originals teaser banner: a plain photo as background instead of the
+   zoomed artwork crop used for "Im Pinken Wien". */
+.home-launch.home-launch-originals .home-launch-img img {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+  object-position: 50% 62%;
+}
+.home-launch.home-launch-originals:not(.is-live) .home-launch-overlay {
+  background: rgba(101, 17, 34, 0.28);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.home-launch-originals { cursor: default; }
+a.home-launch-originals { cursor: pointer; }
+
+/* Homepage: three small previews under the originals countdown banner */
+.home-launch.home-launch-originals { margin-bottom: 1.5rem; }
+.originals-preview-cta { margin-top: 0; }
+.originals-preview {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0 auto 1.8rem;
+}
+.originals-preview-thumb {
+  position: relative;
+  display: block;
+  width: 220px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.originals-preview-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(214, 155, 165, 0.3);
+  -webkit-backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(1.5px);
+  transition: opacity 0.4s;
+}
+.originals-preview-thumb:hover::after { opacity: 0.4; }
+.originals-preview-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.home-originals-teaser { padding-bottom: 0; }
+
+@media (max-width: 768px) {
+  .home-launch { width: calc(100vw - 2rem); margin-bottom: 3rem; }
+  .home-launch-img { aspect-ratio: 3 / 2; }
+  .home-launch-img img { width: 172%; left: -36.3%; top: -80%; }
+  .home-launch.home-launch-originals .home-launch-img img { width: 100%; left: 0; top: 0; }
+  .home-launch.home-launch-originals .home-launch-img { aspect-ratio: 4 / 3.6; }
+  .originals-preview { gap: 0.55rem; padding: 0 1rem; }
+  .originals-preview-thumb { width: calc((100vw - 2rem - 1.1rem) / 3); }
+  .launch-countdown { gap: 0.55rem; }
+  .launch-countdown span { min-width: 3.1rem; }
+  .home-launch-overlay .launch-countdown span { min-width: 2.9rem; }
+  .launch-veil span { font-size: 1.6rem; }
+}
+
+/* ── Commission inquiry: home section + dialog ─────────────────────────── */
+.home-auftrag-section { padding-top: 4rem; padding-bottom: 5rem; }
+.home-auftrag-inner {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+.home-auftrag-text { flex: 1; }
+.home-auftrag-img {
+  width: 35%;
+  height: auto;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.anfrage-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 1rem;
+}
+.home-auftrag-title,
+.anfrage-dialog-title {
+  font-family: var(--font-headline);
+  font-weight: normal;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.home-auftrag-title { font-size: clamp(2.2rem, 4.6vw, 3.6rem); margin-bottom: 1.75rem; }
+.home-auftrag-lead { font-size: 1rem; line-height: 1.8; max-width: 30rem; margin: 0 0 1.2rem; }
+.anfrage-warteliste {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0 0 2.25rem;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+}
+.anfrage-warteliste::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--rosa);
+  transform: translateY(-0.05rem);
+}
+.anfrage-open { min-height: 48px; }
+.anfrage-open:focus-visible,
+.anfrage-btn:focus-visible,
+.anfrage-close:focus-visible {
+  outline: 2px solid var(--burgunder);
+  outline-offset: 3px;
+}
+
+/* Page scroll lock while the dialog is open */
+html.anfrage-offen, html.anfrage-offen body { overflow: hidden; }
+
+.anfrage-dialog {
+  width: min(620px, calc(100% - 2rem));
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: var(--weiss);
+  color: var(--burgunder);
+  text-align: left;
+  overflow: hidden;
+  box-shadow: 0 30px 80px -30px rgba(60, 8, 20, 0.45);
+}
+.anfrage-dialog::backdrop { background: rgba(101, 17, 34, 0.45); }
+.anfrage-dialog[open] { animation: anfrage-in 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.anfrage-dialog[open]::backdrop { animation: anfrage-fade 0.3s ease; }
+@keyframes anfrage-in { from { opacity: 0; transform: translateY(12px); } }
+@keyframes anfrage-fade { from { opacity: 0; } }
+
+.anfrage-dialog-main {
+  max-height: min(88vh, 780px);
+  max-height: min(88dvh, 780px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.anfrage-dialog-head { padding: 3rem 3rem 0; }
+.anfrage-dialog-title { font-size: clamp(1.9rem, 3.4vw, 2.6rem); padding-right: 1.5rem; }
+.anfrage-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--burgunder);
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.anfrage-close:hover { background: var(--buttergelb); }
+
+.anfrage-dialog-body { padding: 1.5rem 3rem 0; }
+.anfrage-dialog .anfrage-intro { margin: 0 0 0.9rem; font-size: 0.9rem; line-height: 1.7; }
+.anfrage-dialog .anfrage-warteliste { margin-bottom: 2rem; }
+
+.anfrage-form { text-align: left; margin: 0; }
+.anfrage-form label {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.anfrage-form label > span { display: block; margin-bottom: 0.5rem; }
+.anfrage-form input[type="text"],
+.anfrage-form input[type="email"],
+.anfrage-form textarea {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  font: inherit;
+  font-size: 1rem;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--burgunder);
+  background: var(--buttergelb);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.anfrage-form textarea { resize: vertical; min-height: 7rem; line-height: 1.6; }
+.anfrage-form input:hover,
+.anfrage-form textarea:hover { border-color: var(--rosa); }
+.anfrage-form input:focus,
+.anfrage-form textarea:focus {
+  outline: none;
+  border-color: var(--burgunder);
+  background: var(--weiss);
+}
+.anfrage-row { display: flex; gap: 1rem; }
+.anfrage-row label { flex: 1; min-width: 0; }
+.anfrage-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.anfrage-form .anfrage-consent {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  margin-top: 0.25rem;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+.anfrage-consent input { width: 1.1rem; height: 1.1rem; margin-top: 0.15rem; flex: 0 0 auto; accent-color: var(--burgunder); }
+.anfrage-consent a { text-decoration: underline; }
+
+.anfrage-submitbar {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  margin: 0.5rem -3rem 0;
+  padding: 1rem 3rem 2.25rem;
+  background: linear-gradient(to bottom, rgba(255, 254, 249, 0), var(--weiss) 0.9rem);
+}
+.anfrage-btn { display: block; width: 100%; min-height: 50px; padding: 0.85rem 1.5rem; }
+.anfrage-btn:disabled { opacity: 0.6; cursor: default; }
+.anfrage-done { display: none; }
+
+.anfrage-status { margin: 0 0 1rem; font-size: 0.9rem; line-height: 1.6; outline: none; }
+.anfrage-status.is-error { color: #a01030; }
+.anfrage-status[hidden] { display: none; }
+
+/* Success state: only the message and a close button remain */
+.anfrage-form.is-sent > :not(.anfrage-status):not(.anfrage-submitbar),
+.anfrage-form.is-sent button[type="submit"] { display: none; }
+.anfrage-form.is-sent .anfrage-done { display: block; }
+.anfrage-form.is-sent .anfrage-status { padding: 1rem 0 0.5rem; font-size: 1rem; line-height: 1.8; }
+
+/* Fallback without showModal(): the form simply shows inline */
+.anfrage-dialog.is-inline {
+  position: static;
+  display: block;
+  width: 100%;
+  margin-top: 2.5rem;
+  animation: none;
+  box-shadow: none;
+}
+.anfrage-dialog.is-inline .anfrage-dialog-main { max-height: none; }
 .anfrage-dialog.is-inline .anfrage-close,
 .anfrage-dialog.is-inline .anfrage-done { display: none; }
 
