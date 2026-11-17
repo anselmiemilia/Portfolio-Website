@@ -64,7 +64,10 @@
       de: 'Du hast Fragen, eine Anfrage zu einer Auftragsarbeit oder sonstiges was du mit mir teilen möchtest?',
       en: 'Do you have questions, an inquiry about commissioned work, or anything else you’d like to share with me?'
     },
-    'anfrage.title': { de: 'Commission a painting', en: 'Commission a painting' },
+    'anfrage.title': { de: 'Ein Bild in Auftrag geben', en: 'Commission a painting' },
+    'anfrage.teaser': { de: 'Du wünschst dir ein Bild von mir? Erzähl mir von deiner Idee.', en: 'Dreaming of a painting by me? Tell me about your idea.' },
+    'anfrage.oeffnen': { de: 'Anfragen', en: 'Request' },
+    'anfrage.schliessen': { de: 'Schließen', en: 'Close' },
     'anfrage.intro': { de: 'Du wünschst dir ein Bild von mir? Erzähl mir kurz von deiner Idee, ich melde mich per E-Mail bei dir.', en: 'Dreaming of a painting by me? Tell me briefly about your idea, I’ll get back to you by email.' },
     'anfrage.warteliste': { de: 'Aktuell landen alle Anfragen auf der Warteliste.', en: 'Currently, all inquiries go onto the waitlist.' },
     'anfrage.name': { de: 'Name', en: 'Name' },
@@ -614,6 +617,12 @@
       var entry = translations[el.getAttribute('data-i18n-html')];
       if (!entry) return;
       el.innerHTML = entry[lang];
+    });
+
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      var entry = translations[el.getAttribute('data-i18n-aria')];
+      if (!entry) return;
+      el.setAttribute('aria-label', entry[lang]);
     });
 
     document.querySelectorAll('.lang-btn').forEach(function (btn) {

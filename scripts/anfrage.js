@@ -8,6 +8,58 @@ document.addEventListener('DOMContentLoaded', function () {
   var ENDPOINT = 'https://atelier-admin.emilia-fcf.workers.dev/public/contact';
   var statusEl = document.getElementById('anfrageStatus');
   var btn = form.querySelector('button[type="submit"]');
+  var dialog = document.getElementById('anfrageDialog');
+  var opener = document.getElementById('anfrageOpen');
+  var root = document.documentElement;
+  var canModal = !!(dialog && typeof dialog.showModal === 'function');
+
+  function openDialog() {
+    if (!canModal) {
+      // Fallback for browsers without <dialog>: show the form inline.
+      dialog.setAttribute('open', '');
+      dialog.classList.add('is-inline');
+      opener.hidden = true;
+      form.elements.name.focus();
+      return;
+    }
+    if (dialog.open) return;
+    if (form.classList.contains('is-sent')) {
+      form.classList.remove('is-sent');
+      statusEl.hidden = true;
+    }
+    // Lock page scroll without the content jumping sideways.
+    var gap = window.innerWidth - root.clientWidth;
+    if (gap > 0) document.body.style.paddingRight = gap + 'px';
+    root.classList.add('anfrage-offen');
+    dialog.showModal();
+    dialog.scrollTop = 0;
+    form.elements.name.focus();
+  }
+
+  function closeDialog() {
+    if (canModal && dialog.open) dialog.close();
+  }
+
+  if (dialog && opener) {
+    opener.addEventListener('click', openDialog);
+    dialog.querySelectorAll('[data-anfrage-close]').forEach(function (b) {
+      b.addEventListener('click', closeDialog);
+    });
+    // Backdrop click closes; ignore drags that merely end outside the panel.
+    var downOnBackdrop = false;
+    dialog.addEventListener('mousedown', function (e) { downOnBackdrop = e.target === dialog; });
+    dialog.addEventListener('click', function (e) {
+      if (e.target === dialog && downOnBackdrop) closeDialog();
+      downOnBackdrop = false;
+    });
+    dialog.addEventListener('close', function () {
+      root.classList.remove('anfrage-offen');
+      document.body.style.paddingRight = '';
+      opener.focus();
+    });
+    // Local preview only: index.html#anfrage-open opens the dialog on load.
+    if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname) && location.hash === '#anfrage-open') openDialog();
+  }
 
   function t(key, fallback) {
     if (window.i18n && window.i18n.t) {
@@ -54,6 +106,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (r.ok) {
           form.reset();
           show('anfrage.ok', 'Danke dir! Deine Anfrage steht jetzt auf meiner Warteliste, ich melde mich bei dir.', false);
+          form.classList.add('is-sent');
+          statusEl.focus();
         } else if (r.status === 429) {
           show('anfrage.zuOft', 'Das waren gerade ein paar Anfragen auf einmal. Bitte versuch es später nochmal.', true);
         } else {
