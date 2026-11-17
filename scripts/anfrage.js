@@ -32,7 +32,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (gap > 0) document.body.style.paddingRight = gap + 'px';
     root.classList.add('anfrage-offen');
     dialog.showModal();
-    dialog.scrollTop = 0;
+    var main = dialog.querySelector('.anfrage-dialog-main');
+    if (main) main.scrollTop = 0;
     form.elements.name.focus();
   }
 

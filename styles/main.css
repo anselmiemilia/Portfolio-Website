@@ -2490,32 +2490,58 @@ a.home-launch-originals { cursor: pointer; }
   .launch-veil span { font-size: 1.6rem; }
 }
 
-/* ── Commission inquiry: teaser card + dialog (homepage Kontakt) ──────── */
-.anfrage-teaser {
-  background: var(--weiss);
-  border: 1px solid rgba(101, 17, 34, 0.12);
+/* ── Commission inquiry: home section + dialog ─────────────────────────── */
+.home-auftrag-section { padding-top: 4rem; padding-bottom: 5rem; }
+.home-auftrag-inner {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+.home-auftrag-text { flex: 1; }
+.home-auftrag-img {
+  width: 35%;
+  height: auto;
   border-radius: 6px;
-  padding: 2.25rem 2rem 2.5rem;
-  box-shadow: 0 10px 30px -18px rgba(101, 17, 34, 0.45);
+  flex-shrink: 0;
 }
-.kontakt-section .anfrage-title {
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  margin-bottom: 0.6rem;
+.anfrage-eyebrow {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 1rem;
 }
-.kontakt-section .anfrage-teaser-text { margin: 0 auto 1.1rem; max-width: 30rem; }
-.kontakt-section .anfrage-warteliste {
-  display: inline-block;
-  margin: 0 auto 1.5rem;
-  padding: 0.45rem 1rem;
-  background: var(--rosa);
-  color: var(--weiss);
-  border-radius: 999px;
+.home-auftrag-title,
+.anfrage-dialog-title {
+  font-family: var(--font-headline);
+  font-weight: normal;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.home-auftrag-title { font-size: clamp(2.2rem, 4.6vw, 3.6rem); margin-bottom: 1.75rem; }
+.home-auftrag-lead { font-size: 1rem; line-height: 1.8; max-width: 30rem; margin: 0 0 1.2rem; }
+.anfrage-warteliste {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0 0 2.25rem;
   font-size: 0.8rem;
-  letter-spacing: 0.04em;
-  line-height: 1.4;
-  opacity: 1;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
 }
-.anfrage-open { display: block; margin: 0 auto; min-height: 44px; }
+.anfrage-warteliste::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--rosa);
+  transform: translateY(-0.05rem);
+}
+.anfrage-open { min-height: 48px; }
 .anfrage-open:focus-visible,
 .anfrage-btn:focus-visible,
 .anfrage-close:focus-visible {
@@ -2527,53 +2553,47 @@ a.home-launch-originals { cursor: pointer; }
 html.anfrage-offen, html.anfrage-offen body { overflow: hidden; }
 
 .anfrage-dialog {
-  width: min(600px, calc(100% - 2rem));
+  width: min(920px, calc(100% - 3rem));
   max-width: none;
-  max-height: min(90vh, 900px);
-  max-height: min(90dvh, 900px);
+  max-height: none;
   margin: auto;
   padding: 0;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   background: var(--weiss);
   color: var(--burgunder);
   text-align: left;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  box-shadow: 0 30px 80px -20px rgba(60, 8, 20, 0.5);
+  overflow: hidden;
+  box-shadow: 0 30px 80px -30px rgba(60, 8, 20, 0.45);
 }
-.anfrage-dialog::backdrop {
-  background: rgba(101, 17, 34, 0.38);
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
-}
-.anfrage-dialog[open] { animation: anfrage-in 0.28s cubic-bezier(0.2, 0.8, 0.2, 1); }
-.anfrage-dialog[open]::backdrop { animation: anfrage-fade 0.28s ease; }
-@keyframes anfrage-in { from { opacity: 0; transform: translateY(14px) scale(0.98); } }
+.anfrage-dialog[open] { display: grid; grid-template-columns: 38% 1fr; }
+.anfrage-dialog::backdrop { background: rgba(101, 17, 34, 0.45); }
+.anfrage-dialog[open] { animation: anfrage-in 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.anfrage-dialog[open]::backdrop { animation: anfrage-fade 0.3s ease; }
+@keyframes anfrage-in { from { opacity: 0; transform: translateY(12px); } }
 @keyframes anfrage-fade { from { opacity: 0; } }
 
-.anfrage-dialog-head {
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.9rem 1.25rem 1.1rem 2.5rem;
-  background: var(--weiss);
-  border-bottom: 1px solid rgba(101, 17, 34, 0.12);
+.anfrage-dialog-bild { position: relative; background: var(--buttergelb); }
+.anfrage-dialog-bild img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.anfrage-dialog-title {
-  font-family: var(--font-headline);
-  font-weight: normal;
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  margin: 0;
+.anfrage-dialog-main {
+  max-height: min(88vh, 780px);
+  max-height: min(88dvh, 780px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
+.anfrage-dialog-head { padding: 3rem 3rem 0; }
+.anfrage-dialog-title { font-size: clamp(1.9rem, 3.4vw, 2.6rem); padding-right: 1.5rem; }
 .anfrage-close {
-  flex: 0 0 auto;
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 3;
   width: 44px;
   height: 44px;
   display: grid;
@@ -2582,57 +2602,51 @@ html.anfrage-offen, html.anfrage-offen body { overflow: hidden; }
   border-radius: 50%;
   background: transparent;
   color: var(--burgunder);
-  font-size: 1.9rem;
+  font-family: var(--font-body);
+  font-size: 1.6rem;
   line-height: 1;
   cursor: pointer;
   transition: var(--transition);
 }
 .anfrage-close:hover { background: var(--buttergelb); }
 
-.anfrage-dialog-body { padding: 1.5rem 2.5rem 0; }
-.anfrage-dialog .anfrage-intro { margin: 0 0 1rem; font-size: 0.9rem; line-height: 1.6; }
-.anfrage-dialog .anfrage-warteliste {
-  display: inline-block;
-  margin: 0 0 1.5rem;
-  padding: 0.4rem 0.9rem;
-  background: var(--buttergelb);
-  color: var(--burgunder);
-  border-radius: 999px;
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
-}
+.anfrage-dialog-body { padding: 1.5rem 3rem 0; }
+.anfrage-dialog .anfrage-intro { margin: 0 0 0.9rem; font-size: 0.9rem; line-height: 1.7; }
+.anfrage-dialog .anfrage-warteliste { margin-bottom: 2rem; }
 
 .anfrage-form { text-align: left; margin: 0; }
 .anfrage-form label {
   display: block;
-  margin-bottom: 1.1rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-.anfrage-form label > span { display: block; margin-bottom: 0.4rem; }
+.anfrage-form label > span { display: block; margin-bottom: 0.5rem; }
 .anfrage-form input[type="text"],
 .anfrage-form input[type="email"],
 .anfrage-form textarea {
   display: block;
   width: 100%;
-  padding: 0.7rem 0.85rem;
+  padding: 0.8rem 0.9rem;
   font: inherit;
   font-size: 1rem;
   text-transform: none;
   letter-spacing: normal;
   color: var(--burgunder);
-  background: #fff;
-  border: 1px solid rgba(101, 17, 34, 0.3);
+  background: var(--buttergelb);
+  border: 1px solid transparent;
   border-radius: 4px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
-.anfrage-form textarea { resize: vertical; min-height: 7.5rem; line-height: 1.5; }
+.anfrage-form textarea { resize: vertical; min-height: 7rem; line-height: 1.6; }
+.anfrage-form input:hover,
+.anfrage-form textarea:hover { border-color: var(--rosa); }
 .anfrage-form input:focus,
 .anfrage-form textarea:focus {
   outline: none;
   border-color: var(--burgunder);
-  box-shadow: 0 0 0 3px rgba(214, 155, 165, 0.55);
+  background: var(--weiss);
 }
 .anfrage-row { display: flex; gap: 1rem; }
 .anfrage-row label { flex: 1; min-width: 0; }
@@ -2641,10 +2655,11 @@ html.anfrage-offen, html.anfrage-offen body { overflow: hidden; }
   display: flex;
   gap: 0.7rem;
   align-items: flex-start;
+  margin-top: 0.25rem;
   text-transform: none;
   letter-spacing: normal;
-  font-size: 0.8rem;
-  line-height: 1.55;
+  font-size: 0.78rem;
+  line-height: 1.6;
 }
 .anfrage-consent input { width: 1.1rem; height: 1.1rem; margin-top: 0.15rem; flex: 0 0 auto; accent-color: var(--burgunder); }
 .anfrage-consent a { text-decoration: underline; }
@@ -2653,16 +2668,15 @@ html.anfrage-offen, html.anfrage-offen body { overflow: hidden; }
   position: sticky;
   bottom: 0;
   z-index: 2;
-  margin: 0.5rem -2.5rem 0;
-  padding: 1rem 2.5rem 1.6rem;
-  background: var(--weiss);
-  border-top: 1px solid rgba(101, 17, 34, 0.12);
+  margin: 0.5rem -3rem 0;
+  padding: 1rem 3rem 2.25rem;
+  background: linear-gradient(to bottom, rgba(255, 254, 249, 0), var(--weiss) 0.9rem);
 }
-.anfrage-btn { display: block; width: 100%; min-height: 48px; padding: 0.85rem 1.5rem; }
+.anfrage-btn { display: block; width: 100%; min-height: 50px; padding: 0.85rem 1.5rem; }
 .anfrage-btn:disabled { opacity: 0.6; cursor: default; }
 .anfrage-done { display: none; }
 
-.anfrage-status { margin: 0 0 1rem; font-size: 0.9rem; line-height: 1.6; text-align: center; outline: none; }
+.anfrage-status { margin: 0 0 1rem; font-size: 0.9rem; line-height: 1.6; outline: none; }
 .anfrage-status.is-error { color: #a01030; }
 .anfrage-status[hidden] { display: none; }
 
@@ -2670,50 +2684,53 @@ html.anfrage-offen, html.anfrage-offen body { overflow: hidden; }
 .anfrage-form.is-sent > :not(.anfrage-status):not(.anfrage-submitbar),
 .anfrage-form.is-sent button[type="submit"] { display: none; }
 .anfrage-form.is-sent .anfrage-done { display: block; }
-.anfrage-form.is-sent .anfrage-status { padding: 1.5rem 0 0.5rem; font-size: 1rem; }
-.anfrage-form.is-sent .anfrage-submitbar { border-top: none; }
+.anfrage-form.is-sent .anfrage-status { padding: 1rem 0 0.5rem; font-size: 1rem; line-height: 1.8; }
 
 /* Fallback without showModal(): the form simply shows inline */
 .anfrage-dialog.is-inline {
   position: static;
+  display: block;
   width: 100%;
-  max-height: none;
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
   animation: none;
+  box-shadow: none;
 }
+.anfrage-dialog.is-inline .anfrage-dialog-main { max-height: none; }
+.anfrage-dialog.is-inline .anfrage-dialog-bild,
 .anfrage-dialog.is-inline .anfrage-close,
 .anfrage-dialog.is-inline .anfrage-done { display: none; }
 
+@media (max-width: 860px) {
+  .anfrage-dialog { width: min(600px, calc(100% - 2rem)); }
+  .anfrage-dialog[open] { display: block; }
+  .anfrage-dialog-bild { display: none; }
+}
+@media (max-width: 768px) {
+  .home-auftrag-section { padding-top: 2.5rem; padding-bottom: 3rem; }
+  .home-auftrag-inner { flex-direction: column-reverse; align-items: flex-start; gap: 1.75rem; }
+  .home-auftrag-img { width: 72%; max-width: 320px; }
+  .home-auftrag-title { margin-bottom: 1.25rem; }
+  .anfrage-open { width: 100%; }
+}
 @media (max-width: 600px) {
-  .anfrage-teaser { padding: 1.75rem 1.25rem 2rem; }
-  .kontakt-section .anfrage-warteliste { font-size: 0.72rem; border-radius: 1rem; }
-  .anfrage-dialog .anfrage-warteliste { border-radius: 1rem; }
   .anfrage-row { flex-direction: column; gap: 0; }
   /* Bottom sheet with its own scrolling */
   .anfrage-dialog {
     width: 100%;
-    max-height: 92vh;
-    max-height: 92dvh;
     margin: auto 0 0;
-    border-radius: 14px 14px 0 0;
+    border-radius: 16px 16px 0 0;
   }
+  .anfrage-dialog-main { max-height: 92vh; max-height: 92dvh; }
   .anfrage-dialog[open] { animation-name: anfrage-sheet; }
   @keyframes anfrage-sheet { from { transform: translateY(100%); } }
-  .anfrage-dialog-head { padding: 1.4rem 0.75rem 0.8rem 1.25rem; }
-  .anfrage-dialog-body { padding: 1.1rem 1.25rem 0; }
+  .anfrage-dialog-head { padding: 2.25rem 1.4rem 0; }
+  .anfrage-dialog-body { padding: 1.25rem 1.4rem 0; }
   .anfrage-submitbar {
-    margin: 0.25rem -1.25rem 0;
-    padding: 0.85rem 1.25rem calc(0.85rem + env(safe-area-inset-bottom));
+    margin: 0.25rem -1.4rem 0;
+    padding: 0.9rem 1.4rem calc(1rem + env(safe-area-inset-bottom));
   }
 }
 @media (prefers-reduced-motion: reduce) {
   .anfrage-dialog[open],
   .anfrage-dialog[open]::backdrop { animation: none; }
-}
-
-/* Classic contact block under the commission teaser */
-.kontakt-classic {
-  margin-top: 3rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid rgba(101, 17, 34, 0.2);
 }
