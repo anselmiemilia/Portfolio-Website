@@ -1,10 +1,11 @@
-// Commission inquiry form (homepage #kontakt). Posts to the Cloudflare
-// Pages Function /api/contact, which emails the inquiry to the studio.
+// Commission inquiry form (homepage #kontakt). Posts to the public contact
+// endpoint of the Atelier Admin dashboard, where the inquiry shows up on the
+// "Anfragen" board. Nothing here touches the shop's checkout functions.
 document.addEventListener('DOMContentLoaded', function () {
   var form = document.getElementById('anfrageForm');
   if (!form) return;
 
-  var ENDPOINT = 'https://atelier-anselmi.pages.dev/api/contact';
+  var ENDPOINT = 'https://atelier-admin.emilia-fcf.workers.dev/public/contact';
   var statusEl = document.getElementById('anfrageStatus');
   var btn = form.querySelector('button[type="submit"]');
 
@@ -33,8 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
       name: data.get('name'),
       email: data.get('email'),
       message: data.get('message'),
-      deadline: data.get('deadline'),
+      timeframe: data.get('deadline'),
       budget: data.get('budget'),
+      language: window.i18n && window.i18n.getLang && window.i18n.getLang() === 'en' ? 'en' : 'de',
       website: data.get('website'),
       consent: form.elements.consent.checked
     };
