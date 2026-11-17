@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Anfragen | Atelier Anselmi</title>
+  <link rel="icon" type="image/png" href="assets/logo/favicon-logo.png?v=2">
+  <link href="styles/main.css?v=116" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo"><img src="assets/logo/logo-atelier-anselmi.png" alt="Atelier Anselmi" class="logo-default"><img src="assets/logo/logo-atelier-anselmi-rosa.png" alt="Atelier Anselmi" class="logo-hover"></a>
+  </header>
+
+  <main>
+    <section class="anfragen-admin">
+      <h1>Anfragen</h1>
+
+      <form id="loginForm" class="anfragen-login">
+        <label>Passwort
+          <input type="password" id="token" autocomplete="current-password" required>
+        </label>
+        <button type="submit" class="produkt-kaufen-btn">Anmelden</button>
+      </form>
+      <p id="msg" class="anfragen-msg" role="status" hidden></p>
+
+      <div id="list" class="anfragen-list" hidden></div>
+    </section>
+  </main>
+
+  <script src="scripts/anfragen-admin.js?v=1"></script>
+</body>
+</html>

@@ -12,9 +12,10 @@
   <link rel="preload" as="image" href="assets/logo/hero-wordmark.png" fetchpriority="high">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/Military Scribe/Military Scribe.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/apercu-mono-pro/ApercuMonoProRegular.woff2" crossorigin>
-  <link href="styles/main.css?v=115" rel="stylesheet">
-  <script src="scripts/i18n.js?v=116" defer></script>
+  <link href="styles/main.css?v=116" rel="stylesheet">
+  <script src="scripts/i18n.js?v=117" defer></script>
   <script src="scripts/launch.js?v=1" defer></script>
+  <script src="scripts/anfrage.js?v=1" defer></script>
   <script src="scripts/nav.js?v=62" defer></script>
   <script src="scripts/cart.js?v=6" defer></script>
 </head>
@@ -309,13 +310,40 @@
 
   <!-- Kontakt -->
   <section id="kontakt" class="kontakt-section">
-    <h2 data-i18n="kontakt.title">Kontakt</h2>
-    <p data-i18n-html="kontakt.text">Du hast Fragen, eine Anfrage zu einer Auftragsarbeit oder sonstiges was du mit mir teilen möchtest?</p>
-    <p class="kontakt-text2" data-i18n-html="kontakt.text2">Kontaktiere mich gerne hier:</p>
-    <div class="contact-links">
-      <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a>
-      <a href="https://instagram.com/atelieranselmi" target="_blank">@atelieranselmi</a>
-      <a href="https://tiktok.com/@atelieranselmi" target="_blank">TikTok @atelieranselmi</a>
+    <h2 data-i18n="anfrage.title">Commission a painting</h2>
+    <p class="anfrage-intro" data-i18n="anfrage.intro">Du wünschst dir ein Bild von mir? Erzähl mir kurz von deiner Idee, ich melde mich per E-Mail bei dir.</p>
+    <p class="anfrage-warteliste" data-i18n="anfrage.warteliste">Aktuell landen alle Anfragen auf der Warteliste.</p>
+    <form id="anfrageForm" class="anfrage-form" novalidate>
+      <div class="anfrage-row">
+        <label><span data-i18n="anfrage.name">Name</span>
+          <input type="text" name="name" required maxlength="100" autocomplete="name"></label>
+        <label><span data-i18n="anfrage.email">E-Mail</span>
+          <input type="email" name="email" required maxlength="200" autocomplete="email"></label>
+      </div>
+      <label><span data-i18n="anfrage.message">Deine Idee</span>
+        <textarea name="message" rows="5" required minlength="10" maxlength="4000"></textarea></label>
+      <div class="anfrage-row">
+        <label><span data-i18n="anfrage.deadline">Zeitraum / Deadline (optional)</span>
+          <input type="text" name="deadline" maxlength="120"></label>
+        <label><span data-i18n="anfrage.budget">Budget (optional)</span>
+          <input type="text" name="budget" maxlength="120"></label>
+      </div>
+      <div class="anfrage-hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <label class="anfrage-consent"><input type="checkbox" name="consent" required>
+        <span data-i18n-html="anfrage.consent">Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</span></label>
+      <button type="submit" class="produkt-kaufen-btn anfrage-btn" data-i18n="anfrage.senden">Anfrage senden</button>
+      <p id="anfrageStatus" class="anfrage-status" role="status" hidden></p>
+    </form>
+
+    <div class="kontakt-classic">
+      <h2 data-i18n="kontakt.title">Kontakt</h2>
+      <p data-i18n-html="kontakt.text">Du hast Fragen, eine Anfrage zu einer Auftragsarbeit oder sonstiges was du mit mir teilen möchtest?</p>
+      <p class="kontakt-text2" data-i18n-html="kontakt.text2">Kontaktiere mich gerne hier:</p>
+      <div class="contact-links">
+        <a href="mailto:atelier@anselmi.at">atelier@anselmi.at</a>
+        <a href="https://instagram.com/atelieranselmi" target="_blank">@atelieranselmi</a>
+        <a href="https://tiktok.com/@atelieranselmi" target="_blank">TikTok @atelieranselmi</a>
+      </div>
     </div>
   </section>
 

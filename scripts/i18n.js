@@ -64,6 +64,19 @@
       de: 'Du hast Fragen, eine Anfrage zu einer Auftragsarbeit oder sonstiges was du mit mir teilen möchtest?',
       en: 'Do you have questions, an inquiry about commissioned work, or anything else you’d like to share with me?'
     },
+    'anfrage.title': { de: 'Commission a painting', en: 'Commission a painting' },
+    'anfrage.intro': { de: 'Du wünschst dir ein Bild von mir? Erzähl mir kurz von deiner Idee, ich melde mich per E-Mail bei dir.', en: 'Dreaming of a painting by me? Tell me briefly about your idea, I’ll get back to you by email.' },
+    'anfrage.warteliste': { de: 'Aktuell landen alle Anfragen auf der Warteliste.', en: 'Currently, all inquiries go onto the waitlist.' },
+    'anfrage.name': { de: 'Name', en: 'Name' },
+    'anfrage.email': { de: 'E-Mail', en: 'Email' },
+    'anfrage.message': { de: 'Deine Idee', en: 'Your idea' },
+    'anfrage.deadline': { de: 'Zeitraum / Deadline (optional)', en: 'Timeframe / deadline (optional)' },
+    'anfrage.budget': { de: 'Budget (optional)', en: 'Budget (optional)' },
+    'anfrage.consent': { de: 'Ich bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.', en: 'I agree that my details are used to process my inquiry. More in the <a href="datenschutz.html">privacy policy</a>.' },
+    'anfrage.senden': { de: 'Anfrage senden', en: 'Send inquiry' },
+    'anfrage.ok': { de: 'Danke dir! Deine Anfrage steht jetzt auf meiner Warteliste, ich melde mich bei dir.', en: 'Thank you! Your inquiry is now on my waitlist, I’ll get back to you.' },
+    'anfrage.zuOft': { de: 'Das waren gerade ein paar Anfragen auf einmal. Bitte versuch es später nochmal.', en: 'That was a few inquiries in a short time. Please try again later.' },
+    'anfrage.fehler': { de: 'Das hat leider nicht geklappt. Schreib mir bitte direkt an atelier@anselmi.at.', en: 'Sorry, that didn’t work. Please write to me directly at atelier@anselmi.at.' },
     'kontakt.text2': {
       de: 'Kontaktiere mich gerne hier:',
       en: 'Feel free to get in touch here:'
@@ -390,8 +403,8 @@
     },
     'datenschutz.h2.2': { de: '2. Zweck dieser Website', en: '2. Purpose of this Website' },
     'datenschutz.p2': {
-      de: 'Diese Website dient als persönliches Portfolio zur Präsentation gestalterischer Arbeiten und bietet\n                zusätzlich ausgewählte Kunstdrucke (Prints) zum Kauf an. Informationen zu Widerrufsrecht und\n                Rücksendekosten findest du in der <a href="widerrufsrecht.html">Widerrufsbelehrung</a>. Es werden\n                keine Nutzerkonten angelegt und keine Kontaktformulare betrieben.',
-      en: 'This website serves as a personal portfolio for presenting design work and additionally offers\n                a selection of art prints for sale. For information on the right of withdrawal and return costs,\n                see the <a href="widerrufsrecht.html">withdrawal policy</a>. No user accounts are created and no\n                contact forms are operated.'
+      de: 'Diese Website dient als persönliches Portfolio zur Präsentation gestalterischer Arbeiten und bietet\n                zusätzlich ausgewählte Kunstdrucke (Prints) zum Kauf an. Informationen zu Widerrufsrecht und\n                Rücksendekosten findest du in der <a href="widerrufsrecht.html">Widerrufsbelehrung</a>. Es werden\n                keine Nutzerkonten angelegt.',
+      en: 'This website serves as a personal portfolio for presenting design work and additionally offers\n                a selection of art prints for sale. For information on the right of withdrawal and return costs,\n                see the <a href="widerrufsrecht.html">withdrawal policy</a>. No user accounts are created.'
     },
     'datenschutz.h2.3': { de: '3. Hosting', en: '3. Hosting' },
     'datenschutz.p3': {
@@ -412,6 +425,10 @@
     'datenschutz.p5': {
       de: 'Wenn du mich per E-Mail kontaktierst, werden deine Angaben (z. B. Name, E-Mail-Adresse,\n                Nachrichteninhalt) ausschließlich zur Bearbeitung deiner Anfrage verwendet und nicht an Dritte\n                weitergegeben. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw.\n                Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).',
       en: 'If you contact me by email, your information (e.g. name, email address,\n                message content) will be used solely to process your inquiry and will not be shared with third\n                parties. Legal basis: Art. 6 (1)(b) GDPR (pre-contractual measures) or\n                Art. 6 (1)(f) GDPR (legitimate interest).'
+    },
+    'datenschutz.p5b': {
+      de: 'Über das Anfrageformular „Commission a painting“ auf der Startseite übermittelst du Name, E-Mail-Adresse, deine Nachricht sowie optional Zeitraum und Budget. Die Angaben werden ausschließlich zur Bearbeitung deiner Anfrage verwendet und auf einer Warteliste bei meinem Hosting-Anbieter Cloudflare gespeichert, auf die nur ich Zugriff habe; sie werden dort spätestens nach 365 Tagen automatisch gelöscht. Zum Schutz vor Missbrauch wird deine IP-Adresse kurzzeitig (maximal zwei Stunden) zur Begrenzung der Anfragen pro Stunde verarbeitet. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).',
+      en: 'When you use the “Commission a painting” form on the homepage, you submit your name, email address, your message and optionally a timeframe and budget. These details are used solely to process your inquiry and are kept on a waitlist with my hosting provider Cloudflare, to which only I have access; they are automatically deleted there after 365 days at the latest. To prevent abuse, your IP address is briefly processed (for at most two hours) to limit the number of inquiries per hour. Legal basis: Art. 6 (1)(b) GDPR (pre-contractual measures) or Art. 6 (1)(f) GDPR (legitimate interest).'
     },
     'datenschutz.h2.6': { de: '7. Deine Rechte', en: '7. Your Rights' },
     'datenschutz.p6': {
