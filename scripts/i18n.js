@@ -66,7 +66,7 @@
     },
     'anfrage.title': { de: 'Ein Bild in Auftrag geben', en: 'Commission a painting' },
     'anfrage.eyebrow': { de: 'Auftragsarbeit', en: 'Commissions' },
-    'anfrage.teaser': { de: 'Ein Ort, der dir etwas bedeutet, als Bild für dein Zuhause oder als Geschenk. Erzähl mir von deiner Idee.', en: 'A place that means something to you, as a painting for your home or as a gift. Tell me about your idea.' },
+    'anfrage.teaser': { de: 'Du wünschst dir ein Bild von mir? Erzähl mir von deiner Idee.', en: 'Dreaming of a painting by me? Tell me about your idea.' },
     'anfrage.oeffnen': { de: 'Anfragen', en: 'Request' },
     'anfrage.schliessen': { de: 'Schließen', en: 'Close' },
     'anfrage.intro': { de: 'Du wünschst dir ein Bild von mir? Erzähl mir kurz von deiner Idee, ich melde mich per E-Mail bei dir.', en: 'Dreaming of a painting by me? Tell me briefly about your idea, I’ll get back to you by email.' },
