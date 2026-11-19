@@ -49,6 +49,7 @@
     'home.basicPrints.title': { de: 'Classic Prints', en: 'Classic Prints' },
     'home.projekte.title': { de: 'Projekte', en: 'Projects' },
     'home.projekte.cta': { de: 'Zu den Projekten', en: 'See all projects' },
+    'home.findme': { de: 'Atelier Anselmi goes Wild im West<br>29.11.', en: 'Atelier Anselmi goes Wild im West<br>29 Nov' },
     'home.about.title': { de: 'Über mich', en: 'About me' },
     'home.about.p1': {
       de: 'Ich bin Künstlerin und studiere Grafik- & Informationsdesign im fünften Semester an der <em>New Design University</em> in St. Pölten. Ich bin ein sehr visueller Mensch: Bilder helfen mir zu verstehen und Gefühle zu vermitteln, und sie wirken gleichzeitig als eigenständiges Element.',
@@ -66,7 +67,7 @@
     },
     'anfrage.title': { de: 'Ein Bild in Auftrag geben', en: 'Commission a painting' },
     'anfrage.eyebrow': { de: 'Auftragsarbeit', en: 'Commissions' },
-    'anfrage.teaser': { de: 'Du wünschst dir ein Bild von mir? Erzähl mir von deiner Idee.', en: 'Dreaming of a painting by me? Tell me about your idea.' },
+    'anfrage.teaser': { de: 'Du wünschst dir ein Bild von mir?<br>Erzähl mir von deiner Idee.', en: 'Dreaming of a painting by me?<br>Tell me about your idea.' },
     'anfrage.oeffnen': { de: 'Anfragen', en: 'Request' },
     'anfrage.schliessen': { de: 'Schließen', en: 'Close' },
     'anfrage.intro': { de: 'Du wünschst dir ein Bild von mir? Erzähl mir kurz von deiner Idee, ich melde mich per E-Mail bei dir.', en: 'Dreaming of a painting by me? Tell me briefly about your idea, I’ll get back to you by email.' },

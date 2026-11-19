@@ -2480,6 +2480,7 @@ a.home-launch-originals { cursor: pointer; }
   .home-launch { width: calc(100vw - 2rem); margin-bottom: 3rem; }
   .home-launch-img { aspect-ratio: 3 / 2; }
   .home-launch-img img { width: 172%; left: -36.3%; top: -80%; }
+  .home-launch-img img.home-launch-art { width: 100%; left: 0; top: 0; }
   .home-launch.home-launch-originals .home-launch-img img { width: 100%; left: 0; top: 0; }
   .home-launch.home-launch-originals .home-launch-img { aspect-ratio: 4 / 3.6; }
   .originals-preview { gap: 0.55rem; padding: 0 1rem; }
@@ -2718,4 +2719,98 @@ html.anfrage-offen, html.anfrage-offen body { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .anfrage-dialog[open],
   .anfrage-dialog[open]::backdrop { animation: none; }
+}
+
+/* ── Title font ────────────────────────────────────────────────────────────
+   One font for all print AND original titles: Twirlywafflegoo, normal
+   capitalisation, same sizes everywhere. The "Strolling through the Cities"
+   teaser keeps Military Scribe. */
+@font-face {
+  font-family: "Twirlywafflegoo";
+  src: url("../assets/fonts/Twirlywafflegoo/Twirlywafflegoo-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+.produkt-info h1,
+.shop-prints-overlay span,
+.home-launch-title,
+.shop-prints-caption,
+.hero-findme {
+  font-family: "Twirlywafflegoo", var(--font-headline);
+  font-weight: normal;
+  /* no contextual alternates: they turn a capital I into a bracket-like shape */
+  font-feature-settings: "calt" 0, "clig" 0, "liga" 0;
+  font-variant-ligatures: none;
+}
+/* beats the narrow-screen rule that sets the Prints/Originals captions to none */
+#tab-prints .shop-prints-caption,
+#tab-originals .shop-prints-caption {
+  text-transform: none;
+}
+/* The teaser for the new originals keeps the display font (Military Scribe) */
+.home-launch-originals .home-launch-title {
+  font-family: var(--font-headline);
+  text-transform: none;
+}
+
+/* Homepage info pill under the subtitle ("Atelier Anselmi goes Wild im West") */
+.hero-findme {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.45rem 1.1rem;
+  background: var(--rosa);
+  color: var(--weiss);
+  border-radius: 28px;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+}
+.hero-findme {
+  font-family: "Twirlywafflegoo", var(--font-body);
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+}
+
+/* Im Pinken Wien banner uses a ready-made wide crop of the artwork (no zoom tricks) */
+.home-launch-img img.home-launch-art {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+}
+
+/* Shop overview: the title sits left-aligned above the price on every tab */
+#tab-fineart .shop-prints-caption,
+#tab-prints .shop-prints-caption,
+#tab-originals .shop-prints-caption {
+  display: block;
+  margin-top: 1.1rem;
+  text-align: left;
+  font-size: 1.3rem;
+  line-height: 1.25;
+  color: var(--burgunder);
+}
+#tab-fineart .shop-prints-price,
+#tab-prints .shop-prints-price,
+#tab-originals .shop-prints-price {
+  margin-top: 0.3rem;
+  text-align: left;
+}
+
+/* "Atelier Anselmi goes Wild im West" star: hangs over the teaser below the hero
+   (hidden by launch.js after 29.11.) */
+.hero { position: relative; }
+.wild-star {
+  position: absolute;
+  right: clamp(0rem, 1.5vw, 2rem);
+  bottom: -9.5rem;
+  width: clamp(220px, 31vw, 430px);
+  z-index: 6;
+  transform: rotate(9deg);
+  pointer-events: none;
+  filter: drop-shadow(0 8px 16px rgba(101, 17, 34, 0.16));
+}
+.wild-star img { display: block; width: 100%; height: auto; }
+@media (max-width: 768px) {
+  .wild-star { bottom: -8.5rem; right: -0.4rem; width: 195px; }
 }

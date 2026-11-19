@@ -12,8 +12,8 @@
   <link rel="preload" as="image" href="assets/logo/hero-wordmark.png" fetchpriority="high">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/Military Scribe/Military Scribe.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/apercu-mono-pro/ApercuMonoProRegular.woff2" crossorigin>
-  <link href="styles/main.css?v=119" rel="stylesheet">
-  <script src="scripts/i18n.js?v=120" defer></script>
+  <link href="styles/main.css?v=137" rel="stylesheet">
+  <script src="scripts/i18n.js?v=124" defer></script>
   <script src="scripts/launch.js?v=1" defer></script>
   <script src="scripts/anfrage.js?v=4" defer></script>
   <script src="scripts/nav.js?v=62" defer></script>
@@ -43,6 +43,9 @@
   <section class="hero">
     <img src="assets/logo/hero-wordmark.png" alt="Atelier Anselmi" width="1800" height="621" fetchpriority="high" decoding="async" class="hero-wordmark">
     <p class="subtitle" data-i18n-html="hero.subtitle">Künstlerin und Grafikdesign Studentin in Wien</p>
+    <div class="wild-star" data-launch-at="2026-11-30T00:00:00+01:00" data-launch-before>
+      <img src="assets/teaser/wild-im-west-stern.png" width="1000" height="1197" alt="Atelier Anselmi goes Wild im West, 29.11.26" decoding="async">
+    </div>
   </section>
 
   <!-- Teaser: new originals, countdown on top -->
@@ -79,7 +82,7 @@
   <section class="home-section home-fineart-section">
     <a href="shop/im-pinken-wien.html" class="home-launch" data-launch-at="2026-11-07T18:00:00+01:00">
       <div class="home-launch-img">
-        <img src="assets/kunst/impinkenwien/impinkenwien.jpg" decoding="async" alt="„Im Pinken Wien“">
+        <img src="assets/kunst/impinkenwien/banner.jpg" decoding="async" alt="„Im Pinken Wien“" class="home-launch-art">
         <div class="home-launch-overlay">
           <p class="home-launch-kicker" data-launch-before data-launch-at="2026-11-07T18:00:00+01:00" data-i18n="launch.new">Neuer Fine Art Print</p>
           <p class="home-launch-kicker" data-launch-after data-launch-at="2026-11-07T18:00:00+01:00" data-i18n="launch.live" hidden>Jetzt erhältlich</p>
@@ -125,40 +128,6 @@
       <a href="kunst.html" class="back-button" data-i18n="home.fineart.alleAnsehen">Alle ansehen</a>
     </div>
 
-    <div class="home-favourites-wrapper">
-      <h3 class="home-favourites-title" data-i18n="home.favourites.title">Your favourites are back</h3>
-      <div class="shop-prints-grid home-favourites-grid">
-        <a href="shop/pink-new-york-city-fineart.html" class="shop-prints-card">
-          <div class="shop-prints-img-wrap">
-            <img src="assets/kunst/pinknycfineart/pinknycfineart.jpg" loading="lazy" decoding="async" alt="Pink New York City">
-            <div class="shop-prints-overlay"><span>Pink New York City</span></div>
-          </div>
-          <p class="shop-prints-caption">Pink New York City</p>
-        </a>
-        <a href="shop/the-city-of-buses-fineart.html" class="shop-prints-card">
-          <div class="shop-prints-img-wrap">
-            <img src="assets/kunst/thecityofbuses/thecityofbuses.jpg" loading="lazy" decoding="async" alt="The City of Buses">
-            <div class="shop-prints-overlay"><span>The City of Buses</span></div>
-          </div>
-          <p class="shop-prints-caption">The City of Buses</p>
-        </a>
-        <a href="shop/abendrosa-in-marrakesch-fineart.html" class="shop-prints-card">
-          <div class="shop-prints-img-wrap">
-            <img src="assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch.jpg" loading="lazy" decoding="async" alt="Abendrosa in Marrakesch">
-            <div class="shop-prints-overlay"><span>Abendrosa in Marrakesch</span></div>
-          </div>
-          <p class="shop-prints-caption">Abendrosa in Marrakesch</p>
-        </a>
-        <a href="shop/doce-sao-miguel-fineart.html" class="shop-prints-card">
-          <div class="shop-prints-img-wrap">
-            <img src="assets/kunst/docesaomiguel/docesaomiguel.jpg" loading="lazy" decoding="async" alt="Doce São Miguel">
-            <div class="shop-prints-overlay"><span>Doce São Miguel</span></div>
-          </div>
-          <p class="shop-prints-caption">Doce São Miguel</p>
-        </a>
-      </div>
-      <p class="home-favourites-caption" data-i18n="home.favourites.caption">Shop in A5 Fine Art Format</p>
-    </div>
   </section>
 
   <!-- Originals (appears once the new originals are released) -->
@@ -314,7 +283,7 @@
       <div class="home-auftrag-text">
         <p class="anfrage-eyebrow" data-i18n="anfrage.eyebrow">Auftragsarbeit</p>
         <h2 class="home-auftrag-title" data-i18n="anfrage.title">Ein Bild in Auftrag geben</h2>
-        <p class="home-auftrag-lead" data-i18n="anfrage.teaser">Du wünschst dir ein Bild von mir? Erzähl mir von deiner Idee.</p>
+        <p class="home-auftrag-lead" data-i18n-html="anfrage.teaser">Du wünschst dir ein Bild von mir?<br>Erzähl mir von deiner Idee.</p>
         <p class="anfrage-warteliste" data-i18n="anfrage.warteliste">Aktuell landen alle Anfragen auf der Warteliste.</p>
         <button type="button" id="anfrageOpen" class="produkt-kaufen-btn anfrage-open" aria-haspopup="dialog" aria-controls="anfrageDialog" data-i18n="anfrage.oeffnen">Anfragen</button>
       </div>
