@@ -21,7 +21,6 @@
     paris: { de: 'Paris', en: 'Paris' },
     portofino: { de: 'Portofino', en: 'Portofino' },
     rom: { de: 'Rom', en: 'Rome' },
-    saomiguel: { de: 'São Miguel (Azoren)', en: 'São Miguel (Azores)' },
     venedig: { de: 'Venedig', en: 'Venice' },
     wien: { de: 'Wien', en: 'Vienna' }
   };
