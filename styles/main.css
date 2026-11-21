@@ -2815,7 +2815,11 @@ html.anfrage-offen, html.anfrage-offen body { overflow: hidden; }
   transform: rotate(9deg);
   pointer-events: none;
   filter: drop-shadow(0 8px 16px rgba(101, 17, 34, 0.16));
+  transition: transform 0.35s ease;
 }
+/* only the star itself is clickable (links to the Instagram post) */
+.wild-star a { display: block; pointer-events: auto; }
+.wild-star:hover { transform: rotate(5deg) scale(1.04); }
 .wild-star img { display: block; width: 100%; height: auto; }
 @media (max-width: 768px) {
   .wild-star { bottom: -8.5rem; right: -0.4rem; width: 195px; }
