@@ -594,8 +594,21 @@
     'agb.stand': { de: 'Stand: Oktober 2026', en: 'Last updated: October 2026' }
   };
 
+  // A language the visitor picked with the DE/EN switch always wins. Without
+  // a choice, the browser language decides: German if any of the browser's
+  // preferred languages is German (de, de-AT, de-CH ...), English for
+  // everyone else.
   function getLang() {
-    return localStorage.getItem('lang') === 'en' ? 'en' : 'de';
+    var stored = null;
+    try { stored = localStorage.getItem('lang'); } catch (e) { /* storage blocked */ }
+    if (stored === 'en' || stored === 'de') return stored;
+    var prefs = (navigator.languages && navigator.languages.length)
+      ? navigator.languages
+      : [navigator.language || 'de'];
+    for (var i = 0; i < prefs.length; i++) {
+      if (String(prefs[i]).toLowerCase().indexOf('de') === 0) return 'de';
+    }
+    return 'en';
   }
 
   function t(key) {
@@ -638,7 +651,7 @@
   }
 
   function setLang(lang) {
-    localStorage.setItem('lang', lang === 'en' ? 'en' : 'de');
+    try { localStorage.setItem('lang', lang === 'en' ? 'en' : 'de'); } catch (e) { /* storage blocked: still switch for this page */ }
     apply();
   }
 
