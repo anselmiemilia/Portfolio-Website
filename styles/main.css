@@ -2803,7 +2803,7 @@ html.anfrage-offen, html.anfrage-offen body { overflow: hidden; }
 .wild-star {
   position: absolute;
   right: clamp(0rem, 1.5vw, 2rem);
-  bottom: -9.5rem;
+  bottom: -15rem;
   width: clamp(220px, 31vw, 430px);
   z-index: 6;
   transform: rotate(9deg);
