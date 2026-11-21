@@ -75,7 +75,7 @@
   var css =
     '.xmas-bar{position:fixed;left:0;right:0;bottom:0;z-index:90;' +
       'display:flex;align-items:center;justify-content:center;gap:.75rem;' +
-      'padding:.6rem 2.6rem calc(.6rem + env(safe-area-inset-bottom)) 1rem;' +
+      'padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom)) 1rem;' +
       // Cream yellow of the Wild im West star (#fff9dc), burgundy text.
       'background:#fff9dc;color:var(--burgunder,#651122);border-top:1px solid rgba(101,17,34,.25);' +
       'font-family:var(--font-body,monospace);font-size:.72rem;line-height:1.45;text-align:center}' +
@@ -84,13 +84,20 @@
     '.xmas-bar p span+span{font-weight:700}' +
     '.xmas-bar p.xmas-bar-note{margin-top:.5rem;font-size:.9em;opacity:.8}' +
     '.xmas-bar p.xmas-bar-note span+span{font-weight:400;font-size:inherit}' +
-    '.xmas-bar-close{position:absolute;top:50%;right:.6rem;transform:translateY(-50%);' +
-      'background:none;border:0;color:inherit;font-size:1.3rem;line-height:1;padding:.4rem .6rem;cursor:pointer}' +
+    // Headlines ("Order for Christmas by:") in the handwritten headline font.
+    '.xmas-bar p:not(.xmas-bar-note) span:first-child{font-family:"Twirlywafflegoo",var(--font-headline,Georgia,cursive);' +
+      'font-weight:400;font-feature-settings:"calt" 0,"clig" 0,"liga" 0;' +
+      'font-size:1.3em;letter-spacing:.02em;line-height:1.3}' +
+    // "OK" button, handwritten too, centred under the text.
+    '.xmas-bar-close{display:block;margin:.55rem auto 0;background:none;border:1.5px solid currentColor;' +
+      'border-radius:999px;color:inherit;font-family:"Twirlywafflegoo",var(--font-headline,Georgia,cursive);font-size:1.3rem;' +
+      'font-weight:400;font-feature-settings:"calt" 0,"clig" 0,"liga" 0;' +
+      'line-height:1;padding:.3rem 1.2rem;cursor:pointer}' +
     '.xmas-bar-close:hover{color:var(--rosa,#d69ba5)}' +
     '.cart-xmas-note{font-size:.72rem;margin:-.5rem 0 1.25rem;white-space:pre-line}' +
     '@media (max-width:768px){.xmas-bar{font-size:.66rem;padding-left:.75rem}}' +
     // Phones: keep all countries of a language on one line.
-    '@media (max-width:480px){.xmas-bar{padding-right:2rem}.xmas-bar p span+span{font-size:.58rem}}';
+    '@media (max-width:480px){.xmas-bar{padding-right:.75rem}.xmas-bar p span+span{font-size:.58rem}}';
 
   function addStyle() {
     var s = document.createElement('style');
@@ -136,14 +143,14 @@
     var close = document.createElement('button');
     close.type = 'button';
     close.className = 'xmas-bar-close';
-    close.setAttribute('aria-label', 'Close / Schließen');
-    close.innerHTML = '&times;';
+    close.setAttribute('aria-label', 'OK – close / schließen');
+    close.textContent = 'OK';
     close.addEventListener('click', function () {
       bar.remove();
       try { localStorage.setItem(CONFIG.storageKey, '1'); } catch (e) { /* private mode: just hide for now */ }
     });
+    text.appendChild(close);
     bar.appendChild(text);
-    bar.appendChild(close);
     document.body.appendChild(bar);
   }
 
