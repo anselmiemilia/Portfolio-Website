@@ -194,6 +194,7 @@
             '<option value="PICKUP_1213"></option>' +
           '</select>' +
         '</div>' +
+        '<p class="cart-xmas-note"></p>' +
         '<p class="cart-preorder-note"></p>' +
         '<button type="button" class="cart-checkout-btn produkt-kaufen-btn"></button>' +
         '<p class="cart-error"></p>' +
@@ -251,6 +252,12 @@
     note.textContent = isPickup(getShippingZone())
       ? t('cart.abholhinweis', 'Abholung ohne Versandkosten – Bezahlung vorab online')
       : t('cart.versandhinweis', 'zzgl. Versand');
+
+    // Christmas shipping line (EN + DE, see scripts/versandinfo.js).
+    var xmasEl = drawerEl.querySelector('.cart-xmas-note');
+    var xmas = window.AtelierXmas ? window.AtelierXmas.cartNote(getShippingZone()) : null;
+    xmasEl.textContent = xmas ? xmas.en + '\n' + xmas.de : '';
+    xmasEl.style.display = xmas ? '' : 'none';
   }
 
   function renderBadge(items) {
@@ -268,6 +275,8 @@
     checkoutBtn.style.display = items.length ? '' : 'none';
     drawerEl.querySelector('.cart-total-row').style.display = items.length ? '' : 'none';
     drawerEl.querySelector('.cart-shipping-note').style.display = items.length ? '' : 'none';
+    if (items.length) updateShippingNote();
+    else drawerEl.querySelector('.cart-xmas-note').style.display = 'none';
 
     var preorderNoteEl = drawerEl.querySelector('.cart-preorder-note');
     var hasPreorder = items.some(function (i) { return i.preorder; });
