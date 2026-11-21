@@ -254,9 +254,15 @@ nav a:hover::after {
 
 .cart-toggle:hover { color: var(--rosa); }
 
+/* Hand-drawn shopping bag; used as a mask so it follows the text colour
+   (burgundy, rose on hover) like the old line icon did. */
 .cart-icon {
-  width: 1.6rem;
-  height: 1.6rem;
+  display: block;
+  width: 1.8rem;
+  height: 2.6rem;
+  background-color: currentColor;
+  -webkit-mask: url("../assets/icons/einkaufstasche.png") center / contain no-repeat;
+  mask: url("../assets/icons/einkaufstasche.png") center / contain no-repeat;
 }
 
 .cart-count {
@@ -2814,3 +2820,46 @@ html.anfrage-offen, html.anfrage-offen body { overflow: hidden; }
 @media (max-width: 768px) {
   .wild-star { bottom: -8.5rem; right: -0.4rem; width: 195px; }
 }
+
+/* Fine Art Prints: sort control + city headings */
+.shop-sort {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.7rem;
+  max-width: 1300px;
+  margin: 0 auto 2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.shop-sort select {
+  font: inherit;
+  color: var(--burgunder);
+  background: var(--weiss);
+  border: 1px solid rgba(101, 17, 34, 0.35);
+  border-radius: 4px;
+  padding: 0.45rem 2rem 0.45rem 0.8rem;
+  cursor: pointer;
+}
+.shop-sort select:focus { outline: none; border-color: var(--burgunder); box-shadow: 0 0 2px 2px rgba(214, 155, 165, 0.6); }
+.shop-city-heading {
+  flex: 0 0 100%;
+  width: 100%;
+  margin: 1.5rem 0 0;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(101, 17, 34, 0.2);
+  font-family: "Twirlywafflegoo", var(--font-headline);
+  font-feature-settings: "calt" 0, "clig" 0, "liga" 0;
+  font-weight: normal;
+  font-size: 1.7rem;
+  text-align: left;
+  color: var(--burgunder);
+}
+.shop-city-heading:first-child { margin-top: 0; }
+@media (max-width: 768px) {
+  .shop-sort { justify-content: center; }
+}
+
+/* grouped by city: cards start at the left under each heading */
+#tab-fineart .shop-prints-grid.is-grouped { justify-content: flex-start; }

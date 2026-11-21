@@ -8,11 +8,12 @@
     <title data-i18n="meta.title.kunst">Kunst | Atelier Anselmi</title>
     <link rel="icon" type="image/png" href="assets/logo/favicon-logo.png?v=2">
     <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png?v=2">
-    <link href="styles/main.css?v=131" rel="stylesheet">
-  <script src="scripts/i18n.js?v=117" defer></script>
+    <link href="styles/main.css?v=143" rel="stylesheet">
+  <script src="scripts/i18n.js?v=125" defer></script>
   <script src="scripts/launch.js?v=1" defer></script>
+  <script src="scripts/shop-sort.js?v=2" defer></script>
   <script src="scripts/nav.js?v=62" defer></script>
-  <script src="scripts/cart.js?v=6" defer></script>
+  <script src="scripts/cart.js?v=7" defer></script>
 </head>
 
 <body>
@@ -44,8 +45,15 @@
 
         <!-- Fine Art Prints -->
         <div class="kunst-content active" id="tab-fineart">
+            <div class="shop-sort">
+                <label for="fineartSort" data-i18n="sort.label">Sortieren</label>
+                <select id="fineartSort">
+                    <option value="popular" data-i18n="sort.popular">Beliebteste</option>
+                    <option value="city" data-i18n="sort.city">Städte A–Z</option>
+                </select>
+            </div>
             <div class="shop-prints-grid" id="fineart-grid">
-                <a href="shop/im-pinken-wien.html" class="shop-prints-card" data-launch-at="2026-11-07T18:00:00+01:00">
+                <a href="shop/im-pinken-wien.html" class="shop-prints-card" data-city="wien" data-rank="89" data-launch-at="2026-11-07T18:00:00+01:00">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/impinkenwien/impinkenwien.jpg" alt="Im Pinken Wien">
                         <div class="launch-veil" data-launch-before data-launch-at="2026-11-07T18:00:00+01:00"><span data-i18n="launch.availableFromShort">Ab 7.11. um 18 Uhr</span></div>
@@ -55,7 +63,7 @@
                     <p class="shop-prints-price" data-launch-before data-launch-at="2026-11-07T18:00:00+01:00" data-i18n="launch.availableFrom">Verfügbar ab 7.11. um 18 Uhr</p>
                     <p class="shop-prints-price" data-launch-after data-launch-at="2026-11-07T18:00:00+01:00" data-i18n="produkt.abPreis25" hidden>ab € 25,–</p>
                 </a>
-                <a href="shop/durch-rom-spazieren.html" class="shop-prints-card">
+                <a href="shop/durch-rom-spazieren.html" class="shop-prints-card" data-city="rom" data-rank="6">
                     <div class="shop-prints-img-wrap">
                         <span class="preorder-badge new-badge" data-i18n="produkt.neu">Neu</span>
                         <img src="assets/kunst/durchromspazieren/durchromspazieren.jpg" alt="Durch Rom Spazieren">
@@ -64,7 +72,7 @@
                     <p class="shop-prints-caption">Durch Rom Spazieren</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
                 </a>
-                <a href="shop/her-little-london.html" class="shop-prints-card">
+                <a href="shop/her-little-london.html" class="shop-prints-card" data-city="london" data-rank="61">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/herlittlelondon/herlittlelondon.jpg" alt="Her Little London">
                         <div class="shop-prints-overlay"><span>Her Little London</span></div>
@@ -72,7 +80,7 @@
                     <p class="shop-prints-caption">Her Little London</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
                 </a>
-                <a href="shop/bonjour-paris.html" class="shop-prints-card">
+                <a href="shop/bonjour-paris.html" class="shop-prints-card" data-city="paris" data-rank="21">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/bonjourparis/bonjourparis.jpg" alt="Bonjour Paris">
                         <div class="shop-prints-overlay"><span>Bonjour Paris</span></div>
@@ -80,7 +88,7 @@
                     <p class="shop-prints-caption">Bonjour Paris</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
                 </a>
-                <a href="shop/love-in-new-york-city-print.html" class="shop-prints-card">
+                <a href="shop/love-in-new-york-city-print.html" class="shop-prints-card" data-city="newyork" data-rank="41">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/loveinnyc/loveinnyc.jpg" alt="Love in New York City">
                         <div class="shop-prints-overlay"><span>Love in New York City</span></div>
@@ -88,7 +96,7 @@
                     <p class="shop-prints-caption">Love in New York City</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
                 </a>
-                <a href="shop/cafe-central-print.html" class="shop-prints-card">
+                <a href="shop/cafe-central-print.html" class="shop-prints-card" data-city="wien" data-rank="15">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/cafecentral/cafecentral.jpg" alt="Café Central">
                         <div class="shop-prints-overlay"><span>Café Central</span></div>
@@ -96,7 +104,7 @@
                     <p class="shop-prints-caption">Café Central</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
                 </a>
-                <a href="shop/kissing-in-florence.html" class="shop-prints-card">
+                <a href="shop/kissing-in-florence.html" class="shop-prints-card" data-city="florenz" data-rank="28">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/kissinginflorence/kissinginflorence.jpg" alt="Kissing in Florence">
                         <div class="shop-prints-overlay"><span>Kissing in Florence</span></div>
@@ -104,7 +112,7 @@
                     <p class="shop-prints-caption">Kissing in Florence</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
                 </a>
-                <a href="shop/on-venice-bridges.html" class="shop-prints-card">
+                <a href="shop/on-venice-bridges.html" class="shop-prints-card" data-city="venedig" data-rank="17">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/onvenicebridges/onvenicebridges.jpg" alt="On Venice Bridges">
                         <div class="shop-prints-overlay"><span>On Venice Bridges</span></div>
@@ -112,7 +120,7 @@
                     <p class="shop-prints-caption">On Venice Bridges</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
                 </a>
-                <a href="shop/portofino.html" class="shop-prints-card">
+                <a href="shop/portofino.html" class="shop-prints-card" data-city="portofino" data-rank="6">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/portofino/portofino.jpg" alt="Portofino">
                         <div class="shop-prints-overlay"><span>Portofino</span></div>
@@ -120,7 +128,7 @@
                     <p class="shop-prints-caption">Portofino</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
                 </a>
-                <a href="shop/feldkircher-aussichten-print.html" class="shop-prints-card">
+                <a href="shop/feldkircher-aussichten-print.html" class="shop-prints-card" data-city="feldkirch" data-rank="1">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/feldkircheraussichten/feldkircheraussichten.jpg" alt="Feldkircher Aussichten">
                         <div class="shop-prints-overlay"><span>Feldkircher Aussichten</span></div>
@@ -128,7 +136,7 @@
                     <p class="shop-prints-caption">Feldkircher Aussichten</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
                 </a>
-                <a href="shop/am-dorabira-marktplatz.html" class="shop-prints-card">
+                <a href="shop/am-dorabira-marktplatz.html" class="shop-prints-card" data-city="dornbirn" data-rank="3">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/amdorabiramarktplatz/amdorabiramarktplatz.jpg" alt="Am Dorabira Marktplatz">
                         <div class="shop-prints-overlay"><span>Am Dorabira Marktplatz</span></div>
@@ -136,7 +144,7 @@
                     <p class="shop-prints-caption">Am Dorabira Marktplatz</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
                 </a>
-                <a href="shop/first-district-print.html" class="shop-prints-card">
+                <a href="shop/first-district-print.html" class="shop-prints-card" data-city="wien" data-rank="21">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/firstdistrict/firstdistrict.jpg" alt="First District">
                         <div class="shop-prints-overlay"><span>First District</span></div>
@@ -144,7 +152,7 @@
                     <p class="shop-prints-caption">First District</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
                 </a>
-                <a href="shop/in-barcelona-print.html" class="shop-prints-card">
+                <a href="shop/in-barcelona-print.html" class="shop-prints-card" data-city="barcelona" data-rank="2">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/inbarcelona/inbarcelona.jpg" alt="In Barcelona">
                         <div class="shop-prints-overlay"><span>In Barcelona</span></div>
@@ -152,7 +160,7 @@
                     <p class="shop-prints-caption">In Barcelona</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
                 </a>
-                <a href="shop/nyhavn.html" class="shop-prints-card">
+                <a href="shop/nyhavn.html" class="shop-prints-card" data-city="kopenhagen" data-rank="6">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/nyhavn/nyhavn.jpg" alt="Nyhavn">
                         <div class="shop-prints-overlay"><span>Nyhavn</span></div>
@@ -160,7 +168,7 @@
                     <p class="shop-prints-caption">Nyhavn</p>
                     <p class="shop-prints-price">€ 25,–</p>
                 </a>
-                <a href="shop/lissabon-fineart.html" class="shop-prints-card">
+                <a href="shop/lissabon-fineart.html" class="shop-prints-card" data-city="lissabon" data-rank="5">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/lissabon/lissabon.jpg" alt="Lissabon">
                         <div class="shop-prints-overlay"><span>Lissabon</span></div>
@@ -168,7 +176,7 @@
                     <p class="shop-prints-caption">Lissabon</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
                 </a>
-                <a href="shop/pink-new-york-city-fineart.html" class="shop-prints-card">
+                <a href="shop/pink-new-york-city-fineart.html" class="shop-prints-card" data-city="newyork" data-rank="96">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/pinknycfineart/pinknycfineart.jpg" alt="Pink New York City">
                         <div class="shop-prints-overlay"><span>Pink New York City</span></div>
@@ -176,7 +184,7 @@
                     <p class="shop-prints-caption">Pink New York City</p>
                     <p class="shop-prints-price" data-i18n="produkt.abPreis25">ab € 25,–</p>
                 </a>
-                <a href="shop/the-city-of-buses-fineart.html" class="shop-prints-card">
+                <a href="shop/the-city-of-buses-fineart.html" class="shop-prints-card" data-city="london" data-rank="37">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/thecityofbuses/thecityofbuses.jpg" alt="The City of Buses">
                         <div class="shop-prints-overlay"><span>The City of Buses</span></div>
@@ -184,7 +192,7 @@
                     <p class="shop-prints-caption">The City of Buses</p>
                     <p class="shop-prints-price">€ 25,–</p>
                 </a>
-                <a href="shop/abendrosa-in-marrakesch-fineart.html" class="shop-prints-card">
+                <a href="shop/abendrosa-in-marrakesch-fineart.html" class="shop-prints-card" data-city="marrakesch" data-rank="22">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/abendrosainmarrakesch/abendrosainmarrakesch.jpg" alt="Abendrosa in Marrakesch">
                         <div class="shop-prints-overlay"><span>Abendrosa in Marrakesch</span></div>
@@ -192,7 +200,7 @@
                     <p class="shop-prints-caption">Abendrosa in Marrakesch</p>
                     <p class="shop-prints-price">€ 25,–</p>
                 </a>
-                <a href="shop/doce-sao-miguel-fineart.html" class="shop-prints-card">
+                <a href="shop/doce-sao-miguel-fineart.html" class="shop-prints-card" data-city="saomiguel" data-rank="24">
                     <div class="shop-prints-img-wrap">
                         <img src="assets/kunst/docesaomiguel/docesaomiguel.jpg" alt="Doce São Miguel">
                         <div class="shop-prints-overlay"><span>Doce São Miguel</span></div>

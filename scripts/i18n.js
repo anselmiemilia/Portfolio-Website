@@ -50,6 +50,9 @@
     'home.projekte.title': { de: 'Projekte', en: 'Projects' },
     'home.projekte.cta': { de: 'Zu den Projekten', en: 'See all projects' },
     'home.findme': { de: 'Atelier Anselmi goes Wild im West<br>29.11.', en: 'Atelier Anselmi goes Wild im West<br>29 Nov' },
+    'sort.label': { de: 'Sortieren', en: 'Sort by' },
+    'sort.popular': { de: 'Beliebteste', en: 'Most popular' },
+    'sort.city': { de: 'Städte A–Z', en: 'Cities A–Z' },
     'home.about.title': { de: 'Über mich', en: 'About me' },
     'home.about.p1': {
       de: 'Ich bin Künstlerin und studiere Grafik- & Informationsdesign im fünften Semester an der <em>New Design University</em> in St. Pölten. Ich bin ein sehr visueller Mensch: Bilder helfen mir zu verstehen und Gefühle zu vermitteln, und sie wirken gleichzeitig als eigenständiges Element.',

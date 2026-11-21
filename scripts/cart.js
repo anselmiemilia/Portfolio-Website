@@ -156,10 +156,7 @@
     toggleEl.className = 'cart-toggle';
     toggleEl.setAttribute('aria-label', t('cart.oeffnen', 'Warenkorb öffnen'));
     toggleEl.innerHTML =
-      '<svg viewBox="0 0 24 24" class="cart-icon" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">' +
-        '<path d="M6.5 8h11l-1.1 11.2a1.8 1.8 0 0 1-1.8 1.6H9.4a1.8 1.8 0 0 1-1.8-1.6L6.5 8z" stroke-linecap="round" stroke-linejoin="round"/>' +
-        '<path d="M9 8V6a3 3 0 0 1 6 0v2" stroke-linecap="round" stroke-linejoin="round"/>' +
-      '</svg>' +
+      '<span class="cart-icon" aria-hidden="true"></span>' +
       '<span class="cart-count">0</span>';
     toggleEl.addEventListener('click', toggle);
     header.appendChild(toggleEl);
