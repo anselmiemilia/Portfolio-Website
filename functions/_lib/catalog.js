@@ -214,18 +214,8 @@ export const CATALOG = {
     editions: { A5: 100 }
   },
   // Three new originals, teased with a countdown until availableFrom.
-  'im-pinken-wien-original': {
-    name: 'Im Pinken Wien',
-    image: 'https://anselmi.at/assets/kunst/originale/ImPinkenWien/impinkenwien.jpg',
-    availableFrom: '2026-11-22T17:00:00+01:00', // keep in sync with data-launch-at in index.html / kunst.html / the product page
-    prices: { Original: 45000 } // cents — 30 × 40 cm
-  },
-  'durch-rom-spazieren-original': {
-    name: 'Durch Rom Spazieren',
-    image: 'https://anselmi.at/assets/kunst/originale/DurchRomSpazieren/durchromspazieren.jpg',
-    availableFrom: '2026-11-22T17:00:00+01:00', // keep in sync with data-launch-at in index.html / kunst.html / the product page
-    prices: { Original: 65000 } // cents — 40 × 50 cm
-  },
+  // 22.11.2026: Im Pinken Wien (3x verkauft, 2 muessen erstattet werden) and
+  // Durch Rom Spazieren are sold -> removed from the catalog.
   'langs-de-amsterdamse-grachten-original': {
     name: 'Langs de Amsterdamse Grachten',
     image: 'https://anselmi.at/assets/kunst/originale/LangsDeAmsterdamseGrachten/langsdeamsterdamsegrachten.jpg',
