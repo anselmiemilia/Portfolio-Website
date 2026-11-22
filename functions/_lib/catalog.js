@@ -215,13 +215,8 @@ export const CATALOG = {
   },
   // Three new originals, teased with a countdown until availableFrom.
   // 22.11.2026: Im Pinken Wien (3x verkauft, 2 muessen erstattet werden) and
-  // Durch Rom Spazieren are sold -> removed from the catalog.
-  'langs-de-amsterdamse-grachten-original': {
-    name: 'Langs de Amsterdamse Grachten',
-    image: 'https://anselmi.at/assets/kunst/originale/LangsDeAmsterdamseGrachten/langsdeamsterdamsegrachten.jpg',
-    availableFrom: '2026-11-22T17:00:00+01:00', // keep in sync with data-launch-at in index.html / kunst.html / the product page
-    prices: { Original: 45000 } // cents — 30 × 40 cm
-  },
+  // Durch Rom Spazieren and Langs de Amsterdamse Grachten are sold -> removed
+  // from the catalog.
   // One-of-a-kind canvases ("Originale" section). Each has a single price
   // under the "Original" pseudo-size instead of A4/A3 — there's only ever
   // one of these, not a print edition.
