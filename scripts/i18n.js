@@ -317,6 +317,7 @@
     'launch.availableFromShort': { de: 'Ab 7.11. um 18 Uhr', en: 'From 7 Nov at 6 pm' },
     'launch.new': { de: 'Neuer Fine Art Print', en: 'New Fine Art Print' },
     'launch.live': { de: 'Jetzt erhältlich', en: 'Available now' },
+    'launch.originals.live': { de: 'Jetzt erhältlich – nur 1 Stück', en: 'Now available – only 1 piece' },
     'launch.originals.kicker': { de: 'Neue Originale', en: 'New Originals' },
     'launch.originals.preview': { de: 'Vorschau ansehen', en: 'Get a preview' },
     'launch.originals.new': { de: 'Strolling through the Cities', en: 'Strolling through the Cities' },
