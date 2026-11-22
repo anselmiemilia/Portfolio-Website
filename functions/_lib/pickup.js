@@ -16,7 +16,7 @@ export const PICKUP_OPTIONS = {
     date: { de: '29.11.2026', en: '29 Nov 2026' },
     time: { de: '12–18 Uhr', en: '12 noon – 6 pm' },
     address: ADDRESS,
-    until: '2026-11-28T23:59:00+01:00'
+    until: '2026-11-28T19:00:00+01:00' // Vorbestellen bis 28.11., 19 Uhr (muss zu PICKUP_UNTIL in scripts/cart.js passen)
   },
   PICKUP_1213: {
     date: { de: '13.12.2026', en: '13 Dec 2026' },

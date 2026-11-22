@@ -53,9 +53,21 @@
 
   function isPickup(zone) { return zone === 'PICKUP_1129' || zone === 'PICKUP_1213'; }
 
+  // Last moment to order each pickup date. Mirror of `until` in
+  // functions/_lib/pickup.js — keep both in sync; the server is what really
+  // enforces it, this only hides the option in the cart once it has passed.
+  var PICKUP_UNTIL = {
+    PICKUP_1129: '2026-11-28T19:00:00+01:00',
+    PICKUP_1213: '2026-12-12T23:59:00+01:00'
+  };
+  function pickupClosed(zone) {
+    return !!PICKUP_UNTIL[zone] && Date.now() > Date.parse(PICKUP_UNTIL[zone]);
+  }
+
   function getShippingZone() {
     try {
       var zone = localStorage.getItem(SHIPPING_ZONE_KEY);
+      if (pickupClosed(zone)) return '';
       return VALID_ZONES.indexOf(zone) !== -1 ? zone : '';
     } catch (e) {
       return '';
@@ -238,6 +250,10 @@
     zoneOptions[4].textContent = t('cart.versandland.uk', 'Vereinigtes Königreich (UK)');
     zoneOptions[5].textContent = t('cart.abholung.1129', 'Abholung Wild im West – 29.11.');
     zoneOptions[6].textContent = t('cart.abholung.1213', 'Abholung Wild im West – 13.12.');
+    // Once the order deadline has passed the pickup date is no longer offered.
+    zoneOptions[5].hidden = zoneOptions[5].disabled = pickupClosed('PICKUP_1129');
+    zoneOptions[6].hidden = zoneOptions[6].disabled = pickupClosed('PICKUP_1213');
+    if (pickupClosed(shippingZoneSelect.value)) shippingZoneSelect.value = '';
     updateShippingNote();
     if (!checkoutBtn.disabled) {
       checkoutBtn.textContent = t('cart.zurKasse', 'Zur Kasse');
@@ -249,9 +265,12 @@
   function updateShippingNote() {
     if (!drawerEl) return;
     var note = drawerEl.querySelector('.cart-shipping-note');
-    note.textContent = isPickup(getShippingZone())
-      ? t('cart.abholhinweis', 'Abholung ohne Versandkosten – Bezahlung vorab online')
-      : t('cart.versandhinweis', 'zzgl. Versand');
+    var zone = getShippingZone();
+    note.textContent = zone === 'PICKUP_1129'
+      ? t('cart.abholhinweis.1129', 'Abholung ohne Versandkosten – Bezahlung vorab online. Vorbestellen bis 28.11., 19 Uhr.')
+      : isPickup(zone)
+        ? t('cart.abholhinweis', 'Abholung ohne Versandkosten – Bezahlung vorab online')
+        : t('cart.versandhinweis', 'zzgl. Versand');
 
     // Christmas shipping line (EN + DE, see scripts/versandinfo.js).
     var xmasEl = drawerEl.querySelector('.cart-xmas-note');

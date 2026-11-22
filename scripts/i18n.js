@@ -352,6 +352,7 @@
     'cart.abholung.1129': { de: 'Abholung Wild im West – 29.11.', en: 'Pickup Wild im West – 29 Nov' },
     'cart.abholung.1213': { de: 'Abholung Wild im West – 13.12.', en: 'Pickup Wild im West – 13 Dec' },
     'cart.abholhinweis': { de: 'Abholung ohne Versandkosten – Bezahlung vorab online', en: 'Pickup, no shipping costs – pay online in advance' },
+    'cart.abholhinweis.1129': { de: 'Abholung ohne Versandkosten – Bezahlung vorab online. Vorbestellen bis 28.11., 19 Uhr.', en: 'Pickup, no shipping costs – pay online in advance. Pre-order until 28 Nov, 7 pm.' },
     'cart.versandland.placeholder': { de: 'Bitte wählen …', en: 'Please select …' },
     'cart.versandland.at': { de: 'Österreich', en: 'Austria' },
     'cart.versandland.de': { de: 'Deutschland', en: 'Germany' },
