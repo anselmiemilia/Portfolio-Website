@@ -359,6 +359,8 @@
     'cart.versandland.eu': { de: 'Übrige EU', en: 'Rest of EU' },
     'cart.versandland.uk': { de: 'Vereinigtes Königreich (UK)', en: 'United Kingdom' },
     'cart.versandland.ca': { de: 'Kanada', en: 'Canada' },
+    'cart.versandhinweis.ca': { de: 'zzgl. Versand. Zoll, Steuern und Einfuhrabgaben für Kanada sind nicht im Preis enthalten und können bei der Einfuhr für dich anfallen.', en: 'plus shipping. Customs duties, taxes and import fees for Canada are not included in the price and may be charged to you on import.' },
+    'cart.versandhinweis.uk': { de: 'zzgl. Versand. Zoll, Steuern und Einfuhrabgaben für das Vereinigte Königreich sind nicht im Preis enthalten und können bei der Einfuhr für dich anfallen.', en: 'plus shipping. Customs duties, taxes and import fees for the United Kingdom are not included in the price and may be charged to you on import.' },
     'cart.versandland.fehlt': { de: 'Bitte wähle Versandland oder Abholung aus.', en: 'Please select a shipping country or pickup.' },
     'cart.zurKasse': { de: 'Zur Kasse', en: 'Checkout' },
     'cart.wirdGeladen': { de: 'Einen Moment …', en: 'One moment …' },

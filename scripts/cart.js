@@ -297,7 +297,11 @@
       ? t('cart.abholhinweis.1129', 'Abholung ohne Versandkosten – Bezahlung vorab online. Vorbestellen bis 28.11., 19 Uhr.')
       : isPickup(zone)
         ? t('cart.abholhinweis', 'Abholung ohne Versandkosten – Bezahlung vorab online')
-        : t('cart.versandhinweis', 'zzgl. Versand');
+        : zone === 'CA'
+          ? t('cart.versandhinweis.ca', 'zzgl. Versand. Zoll, Steuern und Einfuhrabgaben für Kanada sind nicht im Preis enthalten und können bei der Einfuhr für dich anfallen.')
+          : zone === 'GB'
+            ? t('cart.versandhinweis.uk', 'zzgl. Versand. Zoll, Steuern und Einfuhrabgaben für das Vereinigte Königreich sind nicht im Preis enthalten und können bei der Einfuhr für dich anfallen.')
+            : t('cart.versandhinweis', 'zzgl. Versand');
 
     // Christmas shipping line (EN + DE, see scripts/versandinfo.js).
     var xmasEl = drawerEl.querySelector('.cart-xmas-note');
