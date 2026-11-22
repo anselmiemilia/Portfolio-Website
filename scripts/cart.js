@@ -49,7 +49,16 @@
       .catch(function () { /* qty cap just won't show, checkout still enforces it */ });
   }
 
-  var VALID_ZONES = ['AT', 'DE', 'EU_OTHER', 'GB', 'PICKUP_1129', 'PICKUP_1213'];
+  var VALID_ZONES = ['AT', 'DE', 'EU_OTHER', 'GB', 'PICKUP_1129', 'PICKUP_1213', 'CA'];
+
+  // Kanada gibt es nur für das Amsterdam-Original (Mirror von
+  // CANADA_ONLY_PRODUCT_IDS in functions/_lib/shippingRates.js; der Server
+  // erzwingt es, das Dropdown blendet die Option nur aus).
+  var CANADA_PRODUCT_IDS = ['langs-de-amsterdamse-grachten-original'];
+  function canadaAllowed(items) {
+    items = items || readCart();
+    return items.length > 0 && items.every(function (i) { return CANADA_PRODUCT_IDS.indexOf(i.id) !== -1; });
+  }
 
   function isPickup(zone) { return zone === 'PICKUP_1129' || zone === 'PICKUP_1213'; }
 
@@ -204,6 +213,7 @@
             '<option value="GB"></option>' +
             '<option value="PICKUP_1129"></option>' +
             '<option value="PICKUP_1213"></option>' +
+            '<option value="CA"></option>' +
           '</select>' +
         '</div>' +
         '<p class="cart-xmas-note"></p>' +
@@ -253,12 +263,29 @@
     // Once the order deadline has passed the pickup date is no longer offered.
     zoneOptions[5].hidden = zoneOptions[5].disabled = pickupClosed('PICKUP_1129');
     zoneOptions[6].hidden = zoneOptions[6].disabled = pickupClosed('PICKUP_1213');
+    zoneOptions[7].textContent = t('cart.versandland.ca', 'Kanada');
+    updateCanadaOption();
     if (pickupClosed(shippingZoneSelect.value)) shippingZoneSelect.value = '';
     updateShippingNote();
     if (!checkoutBtn.disabled) {
       checkoutBtn.textContent = t('cart.zurKasse', 'Zur Kasse');
     }
     renderDrawer();
+  }
+
+  // Kanada nur anbieten (und auswählbar lassen), solange ausschließlich das
+  // Amsterdam-Original im Warenkorb liegt.
+  function updateCanadaOption(items) {
+    if (!shippingZoneSelect) return;
+    var opt = shippingZoneSelect.querySelector('option[value="CA"]');
+    if (!opt) return;
+    var ok = canadaAllowed(items);
+    opt.hidden = opt.disabled = !ok;
+    if (!ok && shippingZoneSelect.value === 'CA') {
+      shippingZoneSelect.value = '';
+      setShippingZone('');
+      updateShippingNote();
+    }
   }
 
   // "zzgl. Versand" bei Versand, bei Abholung: kostenlos + Vorauszahlung.
@@ -289,6 +316,7 @@
   function renderDrawer(items) {
     if (!itemsEl) return;
     items = items || readCart();
+    updateCanadaOption(items);
     itemsEl.innerHTML = '';
     emptyEl.style.display = items.length ? 'none' : 'block';
     checkoutBtn.style.display = items.length ? '' : 'none';

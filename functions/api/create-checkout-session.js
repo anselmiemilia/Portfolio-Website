@@ -5,7 +5,7 @@
 // against CATALOG, the single source of truth for what something costs.
 
 import { CATALOG } from '../_lib/catalog.js';
-import { COUNTRIES, PRODUCT_FORMAT, getSelectableCountries } from '../_lib/shippingRates.js';
+import { COUNTRIES, PRODUCT_FORMAT, CANADA_ONLY_PRODUCT_IDS, getSelectableCountries } from '../_lib/shippingRates.js';
 import { loadSold, remainingFor } from '../_lib/stock.js';
 import { corsHeaders } from '../_lib/cors.js';
 import { PICKUP_OPTIONS, isPickupZone, pickupUnavailableReason, pickupText } from '../_lib/pickup.js';
@@ -19,7 +19,7 @@ import { PICKUP_OPTIONS, isPickupZone, pickupUnavailableReason, pickupText } fro
 // (günstigere) Zone angeklickt werden. shipping_address_collection wird
 // zusätzlich auf genau die Länder dieser Zone eingeschränkt, damit die in
 // Stripe eingegebene Adresse gar nicht in eine andere Zone fallen kann.
-const VALID_ZONES = ['AT', 'DE', 'EU_OTHER', 'GB'];
+const VALID_ZONES = ['AT', 'DE', 'EU_OTHER', 'GB', 'CA'];
 
 // Abholung beim Flohmarkt „Wild im West“ zählt als eigene "Zone": keine
 // Versandkosten, keine Adresse (functions/_lib/pickup.js).
@@ -29,7 +29,8 @@ const SHIPPING_OPTION_LABELS = {
   AT: { de: 'Österreich', en: 'Austria' },
   DE: { de: 'Deutschland', en: 'Germany' },
   EU_OTHER: { de: 'Übrige EU', en: 'Rest of EU' },
-  GB: { de: 'Vereinigtes Königreich (UK)', en: 'United Kingdom' }
+  GB: { de: 'Vereinigtes Königreich (UK)', en: 'United Kingdom' },
+  CA: { de: 'Kanada', en: 'Canada' }
 };
 
 const SITE_ORIGIN = 'https://anselmi.at';
@@ -93,7 +94,7 @@ function buildShippingOptions(format, lang, zone) {
 // (cheaper) zone than the one already paid for.
 function allowedCountriesForZone(zone) {
   var all = getSelectableCountries().map(function (c) { return c.code; });
-  if (zone === 'AT' || zone === 'DE' || zone === 'GB') return [zone];
+  if (zone === 'AT' || zone === 'DE' || zone === 'GB' || zone === 'CA') return [zone];
   return all.filter(function (code) { return COUNTRIES[code].tier === 'EU_OTHER'; });
 }
 
@@ -128,6 +129,11 @@ export async function onRequestPost({ request, env }) {
     return jsonResponse({ error: 'Bitte wähle dein Versandland aus.' }, 400, request);
   }
   const isPickup = isPickupZone(shippingZone);
+  // Kanada gibt es nur für das Amsterdam-Original: jeder Artikel im Warenkorb
+  // muss in der Freigabeliste stehen, sonst wird die Zone abgelehnt.
+  if (shippingZone === 'CA' && !items.every(function (i) { return i && CANADA_ONLY_PRODUCT_IDS.includes(i.id); })) {
+    return jsonResponse({ error: 'Versand nach Kanada ist nur für „Langs de Amsterdamse Grachten“ möglich. / Shipping to Canada is only available for “Langs de Amsterdamse Grachten”.' }, 400, request);
+  }
   if (isPickup) {
     const reason = pickupUnavailableReason(shippingZone);
     if (reason) return jsonResponse({ error: reason }, 409, request);
