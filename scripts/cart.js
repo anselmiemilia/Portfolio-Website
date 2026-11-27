@@ -54,7 +54,7 @@
   // Kanada gibt es nur für das Amsterdam-Original (Mirror von
   // CANADA_ONLY_PRODUCT_IDS in functions/_lib/shippingRates.js; der Server
   // erzwingt es, das Dropdown blendet die Option nur aus).
-  var CANADA_PRODUCT_IDS = ['langs-de-amsterdamse-grachten-original'];
+  var CANADA_PRODUCT_IDS = ['langs-de-amsterdamse-grachten-original', 'langs-de-amsterdamse-grachten'];
   function canadaAllowed(items) {
     items = items || readCart();
     return items.length > 0 && items.every(function (i) { return CANADA_PRODUCT_IDS.indexOf(i.id) !== -1; });
@@ -274,7 +274,7 @@
   }
 
   // Kanada nur anbieten (und auswählbar lassen), solange ausschließlich das
-  // Amsterdam-Original im Warenkorb liegt.
+  // Amsterdam-Original bzw. der Amsterdam-Print im Warenkorb liegt.
   function updateCanadaOption(items) {
     if (!shippingZoneSelect) return;
     var opt = shippingZoneSelect.querySelector('option[value="CA"]');

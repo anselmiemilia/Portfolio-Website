@@ -199,6 +199,10 @@
       de: '<strong>Lieferzeit in der EU:</strong> Der Versand dauert standardmäßig 5–10 Werktage.',
       en: '<strong>Delivery time within the EU:</strong> Shipping takes 5–10 working days as standard.'
     },
+    'produkt.versandinfo.ca': {
+      de: '<strong>Versand nach Kanada:</strong> Zoll, Steuern und Einfuhrabgaben sind nicht im Preis oder in den Versandkosten enthalten und müssen von der Empfängerin bzw. dem Empfänger bezahlt werden.',
+      en: '<strong>Shipping to Canada:</strong> Customs duties, taxes and import fees are not included in the price or the shipping costs and must be paid by the recipient.'
+    },
     'produkt.versandinfo.uk': {
       de: '<strong>Versand ins Vereinigte Königreich (UK):</strong> Es fallen voraussichtlich Einfuhrabgaben von rund 25 % des Kaufpreises an. Diese sind nicht im Preis oder in den Versandkosten enthalten und müssen von der Empfängerin bzw. dem Empfänger bezahlt werden.',
       en: '<strong>Shipping to the United Kingdom (UK):</strong> Import charges of around 25% of the purchase price will likely apply. They are not included in the price or the shipping costs and must be paid by the recipient.'

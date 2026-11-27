@@ -129,10 +129,10 @@ export async function onRequestPost({ request, env }) {
     return jsonResponse({ error: 'Bitte wähle dein Versandland aus.' }, 400, request);
   }
   const isPickup = isPickupZone(shippingZone);
-  // Kanada gibt es nur für das Amsterdam-Original: jeder Artikel im Warenkorb
+  // Kanada gibt es nur für Amsterdam (Original + Print): jeder Artikel im Warenkorb
   // muss in der Freigabeliste stehen, sonst wird die Zone abgelehnt.
   if (shippingZone === 'CA' && !items.every(function (i) { return i && CANADA_ONLY_PRODUCT_IDS.includes(i.id); })) {
-    return jsonResponse({ error: 'Versand nach Kanada ist nur für „Langs de Amsterdamse Grachten“ möglich. / Shipping to Canada is only available for “Langs de Amsterdamse Grachten”.' }, 400, request);
+    return jsonResponse({ error: 'Versand nach Kanada ist nur für „Langs de Amsterdamse Grachten“ möglich (andere Artikel bitte separat bestellen). / Shipping to Canada is only available for “Langs de Amsterdamse Grachten”.' }, 400, request);
   }
   if (isPickup) {
     const reason = pickupUnavailableReason(shippingZone);

@@ -56,15 +56,16 @@ export const COUNTRIES = {
   HU: { name: "Ungarn",         tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
   CY: { name: "Zypern",         tier: "EU_OTHER", PM45: 16.54, PM70: 22.87, ORIGINAL: 25 },
   GB: { name: "Vereinigtes Königreich (UK)", tier: "GB", PM45: 12.40, A3: 17.25, ORIGINAL: 22.55 },
-  // Kanada: Sonderfall nur für das Amsterdam-Original (Kundinnenwunsch,
-  // 22.11.2026). Gilt NUR für Warenkörbe, die ausschließlich die Produkte in
-  // CANADA_ONLY_PRODUCT_IDS enthalten - das erzwingt create-checkout-session.js.
-  CA: { name: "Kanada", tier: "CA", ORIGINAL: 42.13 },
+  // Kanada: Sonderfall nur für Amsterdam (Original + Fine Art Print;
+  // Kundinnenwunsch, 22.11. bzw. 27.11.2026). Gilt NUR für Warenkörbe, die
+  // ausschließlich die Produkte in CANADA_ONLY_PRODUCT_IDS enthalten - das
+  // erzwingt create-checkout-session.js. A5 zahlt wie A4 (PM45).
+  CA: { name: "Kanada", tier: "CA", PM45: 19.40, A3: 27.90, ORIGINAL: 42.13 },
 };
 
 // Produkte, die nach Kanada versendet werden dürfen (sonst ist Kanada kein
 // Versandland). Weitere Produkte nur hier ergänzen.
-export const CANADA_ONLY_PRODUCT_IDS = ["langs-de-amsterdamse-grachten-original"];
+export const CANADA_ONLY_PRODUCT_IDS = ["langs-de-amsterdamse-grachten-original", "langs-de-amsterdamse-grachten"];
 
 // Länder, die NICHT über die Paketmarke versendbar sind
 export const UNSUPPORTED_COUNTRIES = {
