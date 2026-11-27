@@ -10,6 +10,7 @@
   if (!grid || !sel) return;
 
   var CITIES = {
+    amsterdam: { de: 'Amsterdam', en: 'Amsterdam' },
     barcelona: { de: 'Barcelona', en: 'Barcelona' },
     dornbirn: { de: 'Dornbirn', en: 'Dornbirn' },
     feldkirch: { de: 'Feldkirch', en: 'Feldkirch' },
